@@ -1,0 +1,87 @@
+{
+  "source": "data/screenplay/ (original, written by the builder)",
+  "files": [
+    "episode-001.txt",
+    "episode-002.txt",
+    "episode-003.txt",
+    "episode-004.txt",
+    "episode-005.txt",
+    "episode-006.txt"
+  ],
+  "dialogue_lines": 184,
+  "per_episode": {
+    "1": 32,
+    "2": 32,
+    "3": 34,
+    "4": 28,
+    "5": 34,
+    "6": 24
+  },
+  "tight_slot_seconds": {
+    "n": 184,
+    "median": 2.6,
+    "mean": 2.512,
+    "min": 1.2,
+    "max": 5.0,
+    "p90": 3.6
+  },
+  "slots_under_1_5s": {
+    "count": 19,
+    "share": 0.103
+  },
+  "word_count": {
+    "n": 184,
+    "median": 7.5,
+    "mean": 7.897,
+    "min": 1.0,
+    "max": 18.0,
+    "p90": 12.0
+  },
+  "english_words_per_second": {
+    "n": 184,
+    "median": 3.182,
+    "mean": 3.148,
+    "min": 0.833,
+    "max": 5.833,
+    "p90": 4.118
+  },
+  "gap_between_lines_seconds": {
+    "n": 178,
+    "median": 0.6,
+    "mean": 1.366,
+    "min": -0.6,
+    "max": 8.0,
+    "p90": 2.8
+  },
+  "consecutive_overlaps": 1,
+  "chains": 3,
+  "chain_kinds": {
+    "interlocked": 2,
+    "same-speaker": 4
+  },
+  "voice_over": 8,
+  "off_screen": 8,
+  "distinct_speaker_labels": 13,
+  "canonical_speakers": [
+    "Brother Anselm",
+    "Company clerk (Caine's man, grey coat)",
+    "Company clerk (shipping office, grey beard)",
+    "Constable Roe",
+    "Delia",
+    "Edda Halloran",
+    "Halloran (Edda's father)",
+    "Joss Marek",
+    "Mistress Caine",
+    "Silas Vane",
+    "Voice of the lamp"
+  ],
+  "loose_minus_tight_seconds": {
+    "n": 184,
+    "median": 0.6,
+    "mean": 1.325,
+    "min": 0.0,
+    "max": 8.0,
+    "p90": 2.8
+  },
+  "long_lines_12_words_or_more": 25
+}

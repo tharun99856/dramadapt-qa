@@ -1,0 +1,192 @@
+EPISODE NUMBER: 5
+EPISODE LOGLINE: The money behind the lace turns out to run through the chaplain who blesses Edda's kitchen, and Constable Roe arrives to take the old keeper out of his own chair.
+CONTINUITY NOTES: THE COMPANY CLERK in this episode is the shipping-office man, grey beard, different from Caine's clerk in episode two. Edda says "Father" to two living men in one scene. Her "Mistress Caine" is now fixed.
+[SCRIPT START]
+
+SCENE 01
+Int. harbour office – morning
+[Scene Start: 0:00.0]
+[Scene End: 0:44.0]
+
+CAMERA:
+[0:00.0 - 0:03.2]
+A counter of deal boards. A grey-bearded clerk with a stamp and no interest in anyone.
+
+THE COMPANY CLERK (flat):
+[0:03.2 - 0:06.0]
+"Name of the vessel or nothing."
+
+EDDA (patient):
+[0:06.6 - 0:09.2]
+"The trawler on the shoal, the fourth night."
+
+THE COMPANY CLERK (interested now):
+[0:09.8 - 0:13.6]
+"That one was written off before it sank."
+
+ACTION:
+[0:13.6 - 0:15.4]
+Her hand stays on the counter. The stamp does not move.
+
+EDDA (careful):
+[0:16.0 - 0:19.4]
+"Then who insured it, and who paid the bargeman's lace?"
+
+THE COMPANY CLERK (below his voice):
+[0:20.0 - 0:23.2]
+"Mistress, there's a gentleman at the altar who does both."
+
+BROTHER ANSELM (arriving, warm):
+[0:23.8 - 0:27.0]
+"Miss Halloran. At nine in the morning, over my ledger."
+
+EDDA ( Testing him):
+[0:27.6 - 0:30.4]
+"Father Anselm. Is this your ledger too?"
+
+BROTHER ANSELM (unbothered):
+[0:31.0 - 0:34.2]
+"The church takes money from whoever is unafraid to give it."
+
+EDDA (low):
+[0:34.8 - 0:36.4]
+"And Caine gives."
+
+BROTHER ANSELM (final):
+[0:37.0 - 0:40.4]
+"Caine gives, I keep your father breathing, and you keep silent."
+
+SOUND FX:
+[0:40.4 - 0:44.0]
+Boots, many of them, on the office stair.
+
+SCENE 02
+EXT. QUAY - CONTINUOUS
+[Scene Start: 0:44.0]
+[Scene End: 1:30.0]
+
+ACTION:
+[0:44.0 - 0:46.6]
+Roe and two men come along the quay toward the lamp stair.
+
+CONSTABLE ROE (formal):
+[0:46.6 - 0:50.2]
+"Halloran. You will come with me for the sale of king's stores."
+
+HALORAN (upright, dying):
+[0:50.8 - 0:54.0]
+"I bought them back. There's a man who remembers buying them."
+
+SILAS (from the crowd, delighted):
+[0:54.6 - 0:57.8]
+"The man's dead, old keeper. He died in my father's bed."
+
+EDDA (in front of her father):
+[0:58.4 - 1:00.6]
+"Step off the stair, Silas Vane."
+
+SILAS (mock-hurt):
+[1:01.2 - 1:03.4]
+"Still the betrothed? Two years and still—"
+
+EDDA (cutting):
+[1:04.0 - 1:05.4]
+"Two years and still no."
+
+JOSS (through the crowd):
+[1:06.0 - 1:09.2]
+"Say the '61 price out loud and see whose name it has."
+
+MISTRESS CAINE (arriving, cold):
+[1:09.8 - 1:12.6]
+"You will all be silent in my harbour."
+
+EDDA (fixed):
+[1:13.2 - 1:15.0]
+"In your harbour, Mistress Caine."
+
+MISTRESS CAINE (to the constable only):
+[1:15.6 - 1:18.4]
+"Take the keeper. The girl can bring the paper."
+
+ACTION:
+[1:18.4 - 1:20.2]
+Two men lift an old man out of his own chair.
+
+HALORAN (to his daughter, loud):
+[1:20.8 - 1:24.0]
+"Edda — keep the light on me, that's all I ask of you!"
+
+EDDA (to the man she calls Father, then the man she calls Father):
+[1:24.6 - 1:26.4]
+"Father, hold on. Father Anselm, hold him."
+
+BROTHER ANSELM (surprised into kindness):
+[1:27.0 - 1:28.8]
+"... I will. Carry him careful."
+
+SCENE 03
+INT. KEEPER'S HOUSE - NIGHT
+[Scene Start: 1:30.0]
+[Scene End: 2:14.0]
+
+SOUND FX:
+[1:30.0 - 1:32.4]
+A fire, the letter on the fender, nobody burning it yet.
+
+DELIA (frightened):
+[1:32.4 - 1:35.2]
+"They'll be back for him in the morning, love."
+
+EDDA (tired):
+[1:35.8 - 1:37.4]
+"They'll be back for the lamp."
+
+JOSS (at the door, not coming in):
+[1:38.0 - 1:41.6]
+"Then the lamp wants buying, and I have the money in my coat."
+
+EDDA (not believing):
+[1:42.2 - 1:44.0]
+"A bargeman with Caine's money."
+
+JOSS (flat):
+[1:44.6 - 1:47.8]
+"Caine's money is my money now, and has been nine months."
+
+ACTION:
+[1:47.8 - 1:49.6]
+She puts the letter in the fire herself and does not watch it.
+
+EDDA (small, to the fire):
+[1:50.2 - 1:52.0]
+"Nine months you watched me starve."
+
+JOSS (unflinching):
+[1:52.6 - 1:55.8]
+"Nine months I asked Caine for one winter and she said no."
+
+EDDA (breaking):
+[1:56.4 - 1:58.4]
+"Then why did you not say so?"
+
+JOSS (honest, ugly):
+[1:59.0 - 2:02.6]
+"Because if I was your buyer you'd have let me be your husband out of duty."
+
+CAMERA:
+[2:02.6 - 2:04.6]
+Delia leaves the room with the bowl.
+
+EDDA (tender, at last):
+[2:05.2 - 2:08.4]
+"I would have let you be my husband because of the gate."
+
+JOSS (quiet):
+[2:09.0 - 2:11.0]
+"Then say the gate, and I'll do the paper."
+
+SOUND FX:
+[2:11.0 - 2:14.0]
+The lamp turns over an empty quay.
+[SCRIPT END]

@@ -1,0 +1,121 @@
+# Transparent category rules for the Phase 0 sample selection.
+# Two signals: the screenplay's own delivery tags (the writer's stated emotion) and text patterns.
+# scripts/select_sample.py writes docs/category_audit.md so every match can be inspected and these lists corrected.
+
+short_slot_seconds: 1.5
+long_line_words: 12
+
+address_terms:
+  - "Father"
+  - "Father Anselm"
+  - "Mistress Caine"
+  - "Aunt"
+  - "Marek"
+  - "Joss"
+  - "Silas Vane"
+  - "Vane"
+  - "Miss Halloran"
+  - "love"
+  - "lass"
+  - "girl"
+  - "child"
+  - "bargeman"
+  - "keeper"
+  - "Mistress"
+  - "sir"
+
+tender_delivery:
+  - tender
+  - soft
+  - gentle
+  - kind
+  - warm
+  - pleading
+  - begging
+  - breaking
+  - broken
+  - desperate
+  - afraid
+  - frightened
+  - quiet
+  - small
+  - careful
+  - patient
+  - fussed
+  - not moving
+  - still
+
+threat_delivery:
+  - hard
+  - cold
+  - ice
+  - cutting
+  - mock
+  - final
+  - flat
+  - low
+  - measured
+  - warning
+  - businesslike
+  - unmoved
+  - unrepentant
+  - dry
+  - official
+  - formal
+
+threat_text:
+  - "\\banswer for\\b"
+  - "\\bor I take\\b"
+  - "\\btake her away\\b"
+  - "\\bTake the keeper\\b"
+  - "\\bhold him\\b"
+  - "\\bstep off\\b"
+  - "\\bstand there\\b"
+  - "\\bmagistrate\\b"
+  - "\\binquiry letter\\b"
+  - "\\bsold a ship's stores\\b"
+  - "\\bdid not say it\\b"
+  - "Someone did"
+  - "\\byou lie\\b"
+  - "\\bYou lie\\b"
+  - "\\bwhat a .{0,30} costs\\b"
+  - "\\bnot worth\\b"
+  - "\\bgive me the rope\\b"
+  - "\\byou will drop\\b"
+  - "\\bnot one more\\b"
+  - "\\bmind your own\\b"
+  - "\\bit is you he means\\b"
+  - "\\bbeing priced\\b"
+  - "\\bdid it without\\b"
+  - "\\bwhy did you go\\b"
+  - "\\bI hear you\\b"
+  - "\\bnot a dare\\b"
+  - "\\bcosts a keeper's daughter\\b"
+  - "\\bsay that to\\b"
+  - "\\bshe means the paper\\b"
+  - "\\bsearch the house\\b"
+  - "\\bwill hear of this\\b"
+
+tender_text:
+  - "\\bhush now\\b"
+  - "\\bI am here\\b"
+  - "\\beat, love\\b"
+  - "\\bmy girl\\b"
+  - "\\ball I have left\\b"
+  - "\\bhold on\\b"
+  - "\\bplease\\b"
+  - "\\bkeep the light on me\\b"
+  - "\\beven if I burn\\b"
+  - "\\bthe lamp stays lit\\b"
+  - "\\bit isn't alone\\b"
+  - "\\bcount it with you\\b"
+  - "\\bcarry him careful\\b"
+  - "\\bturn to him\\b"
+  - "\\bsay it as a promise\\b"
+  - "\\bdo not speak\\b"
+  - "\\bwant you standing\\b"
+  - "\\bshe is all I have\\b"
+  - "\\bnot tonight\\b"
+  - "\\bnever touch\\b"
+  - "\\bwas full already\\b"
+  - "\\bwho can't sleep\\b"

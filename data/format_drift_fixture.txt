@@ -1,0 +1,30 @@
+EPISODE NUMBER: 91
+EPISODE LOGLINE: Format-drift fixture. Not part of the season. Exists only to prove the parser reports an unfamiliar format instead of crashing or quietly guessing.
+CONTINUITY NOTES: Deliberately broken in four ways: one speaker block with no time range, one unquoted speaker block, one unparsable time, one stray line outside a block.
+[SCRIPT START]
+
+scene 01
+INT. SAMPLE ROOM - DAY
+[Scene Start: 0:00.0]
+[Scene End: 0:30.0]
+
+CAMERA:
+[0:00.0 - 0:03.0]
+A lamp turns in an empty room.
+
+SAMPLE STRANGER (flat):
+[0:06.0 - 0:09.0]
+"This block has a time range and should parse."
+
+SAMPLE STRANGER (late):
+"This block is missing its time range entirely and must be reported."
+
+SAMPLE CLERK (dry):
+This speaker block forgot its quotation marks.
+
+SAMPLE PILOT (shouting):
+[xx:yy - bogus]
+"This block has an unparsable time range."
+
+A line of prose that belongs to no block at all.
+[SCRIPT END]

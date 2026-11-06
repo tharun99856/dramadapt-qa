@@ -1,0 +1,13 @@
+target_lines: 100
+per_episode_max: 17
+seed: 20261106
+minimums:
+  short_slot: 15
+  chain_member: 3          # counted as whole chains, so 6 lines are pulled in
+  voice_or_offscreen: 5
+  address_shift: 10
+  threat_or_accusation: 10
+  tender_or_intimate: 10
+  long_line: 5
+# Rare categories are filled first so an abundant pool cannot crowd them out.
+scarce_first: true

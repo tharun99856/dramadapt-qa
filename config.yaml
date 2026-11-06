@@ -1,0 +1,63 @@
+# One file for everything that could legitimately change between runs.
+# The API key is NEVER stored here; it is read from the environment variable named below.
+
+provider:
+  # Any OpenAI-compatible endpoint works: OpenAI, Groq, OpenRouter, Together,
+  # Google Gemini's openai-compatible path, or a local Ollama (http://localhost:11434/v1).
+  #
+  # Chosen on 6 Nov 2026 after probing three models on Telugu (see docs/model_probe.md):
+  #   openai/gpt-oss-120b  - real Telugu, correct verb-final order, verbose against slots
+  #   qwen/qwen3.8-27b     - real Telugu, shorter lines, flatter affect
+  #   openai/gpt-oss-20b   - failed: ran out of tokens before producing Telugu
+  # Both survivors translated "Aunt" into an Indian kinship term (అమ్మమ్మ, grandmother),
+  # against the explicit instruction not to - that is exactly what check 2 exists to catch.
+  base_url: "https://api.groq.com/openai/v1"
+  model: "openai/gpt-oss-120b"
+  api_key_env: "GROQ_API_KEY"
+  temperature: 0
+  max_output_tokens: 4000
+  request_timeout_seconds: 180
+  # Free-tier keys throttle by tokens per minute. A 429 is not a failure of the tool, so it
+  # waits and retries rather than letting a batch come back empty.
+  rate_limit_retries: 5
+  rate_limit_wait_seconds: 20
+  # One scene may not eat the run: this caps both the single wait and the total waiting per batch,
+  # so a throttled scene is refused and reported as not judged instead of blocking for an hour.
+  max_wait_seconds_per_batch: 600
+  # A batch whose exact prompt is already in this label's call log is answered from the log rather
+  # than re-requested. Free-tier throughput makes a 36-request run impossible to finish in one go,
+  # and re-paying for an answer we already have does not help. Pass --fresh to ignore the log.
+  reuse_logged_calls: true
+
+# Costs are only reported if you fill these in. null means "not priced", and the
+# report then says so instead of guessing. This key is a free-tier Groq key, so the
+# measured figure is tokens, not money - the tokens are real and logged per request.
+pricing:
+  usd_per_million_prompt: null
+  usd_per_million_completion: null
+  note: "free tier: not billed. Tokens are measured; dollars are deliberately left unset."
+
+batching:
+  # Requests scale with scenes, not lines. These caps only split a very long scene.
+  max_lines_per_request: 14
+  # The real ceiling on a free key is tokens per minute, not lines per request.
+  max_prompt_tokens: 6000
+
+telugu:
+  # Filled by scripts/calibrate_rate.py. Until then the timing check refuses to guess.
+  syllables_per_second: null
+  over_tight_margin: 0.15
+  # Second model for the risk in PRD 12: a weak model can make a first pass look
+  # artificially bad. Set a second model here to run Step A twice.
+  comparison_model: "qwen/qwen3.8-27b"
+
+first_pass:
+  # The fixed Step A prompt. It is kept in a file so the run is reproducible.
+  instruction: >-
+    You are localizing one season of an English-language period microdrama into Telugu for
+    dubbing. Preserve meaning and emotion exactly. Use natural conversational Telugu with
+    period-appropriate, dubbing-style register: honorific plural forms between people of
+    different standing, singular informal only where the English itself is intimate or
+    contemptuous. Keep the relationships and the forms of address intact. Keep each line
+    short enough to be spoken inside its time slot. Do not modernize the setting and do not
+    convert English titles into Indian kinship terms. Return JSON only.

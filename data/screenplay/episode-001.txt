@@ -1,0 +1,208 @@
+EPISODE NUMBER: 1
+EPISODE LOGLINE: Edda Halloran keeps the lamp through her father's sickness while Mistress Caine, her aunt by marriage, arrives with constables to take the deed before the tide turns.
+CONTINUITY NOTES: Edda calls Caine "Aunt Caine" at Christmastide, before this episode. She has not yet used "Mistress Caine" until now. Joss Marek is heard before he is seen. The lamp is spoken of as a person.
+[SCRIPT START]
+
+SCENE 01
+INT. LAMP ROOM - NIGHT
+[Scene Start: 0:00.0]
+[Scene End: 0:44.0]
+
+CAMERA:
+[0:00.0 - 0:03.2]
+Rain slants across the gallery glass. The lamp turns, throwing a slow bar of light over the room.
+
+ACTION:
+[0:03.2 - 0:06.0]
+Edda Halloran trims the wick with steady, practiced hands.
+
+EDDA (steady):
+[0:06.0 - 0:08.2]
+"The lamp stays lit."
+
+ACTION:
+[0:08.2 - 0:10.4]
+Behind her, Halloran sits wrapped in a coat, watching his own daughter work.
+
+HALORAN (weak):
+[0:10.4 - 0:12.8]
+"Set the wick down, lass."
+
+EDDA (firm):
+[0:13.4 - 0:14.8]
+"I set it down an hour ago."
+
+SOUND FX:
+[0:14.8 - 0:16.6]
+A cart on the quay road. Two sets of boots.
+
+HALORAN (afraid):
+[0:16.6 - 0:19.0]
+"Caine came again while you slept."
+
+EDDA (cold):
+[0:19.6 - 0:21.2]
+"She always comes when I sleep."
+
+CAMERA:
+[0:21.2 - 0:23.0]
+His hand shakes inside the blanket.
+
+HALORAN (pleading):
+[0:23.0 - 0:26.4]
+"Promise me you will not sign her paper."
+
+EDDA (careful):
+[0:27.0 - 0:29.0]
+"What paper?"
+
+ACTION:
+[0:29.0 - 0:31.4]
+She does not turn from the lamp. Her voice goes flat and adult.
+
+EDDA (quiet anger):
+[0:31.4 - 0:35.2]
+"Tell me what she wants with my father's name."
+
+HALORAN (broken):
+[0:35.8 - 0:38.0]
+"The lamp, Edda. Only the lamp."
+
+SOUND FX:
+[0:38.0 - 0:40.6]
+Iron on iron at the gate. A knuckle rapping.
+
+EDDA (flat):
+[0:40.6 - 0:42.2]
+"Then she can wait for the tide."
+
+SCENE 02
+EXT. GATE AND QUAY - CONTINUOUS
+[Scene Start: 0:44.0]
+[Scene End: 1:26.0]
+
+CAMERA:
+[0:44.0 - 0:46.4]
+The gate swings. Mistress Caine enters dry under an umbrella carried by her son.
+
+MISTRESS CAINE (sweet):
+[0:46.4 - 0:49.0]
+"Open the gate, child. It is only family."
+
+EDDA O.S. (hard):
+[0:49.6 - 0:51.0]
+"Family does not bring constables."
+
+SILAS (mock):
+[0:51.6 - 0:54.8]
+"Your father owed mine. You could still marry it off."
+
+ACTION:
+[0:54.8 - 0:57.0]
+Caine unfolds a paper on the wall without asking.
+
+MISTRESS CAINE (businesslike):
+[0:57.0 - 1:01.2]
+"The debt is mine, the deed is mine, the winter is mine."
+
+EDDA (low):
+[1:01.8 - 1:03.2]
+"Say it once more."
+
+MISTRESS CAINE (unmoved):
+[1:03.2 - 1:05.0]
+"The lamp is mine by morning."
+
+JOSS (off-screen):
+[1:05.6 - 1:08.4]
+"Tell that to the tide, Mistress."
+
+CAMERA:
+[1:08.4 - 1:10.0]
+A barge slides out of the dark along the quay wall.
+
+HALORAN (frightened):
+[1:10.0 - 1:12.4]
+"The bargeman. He is trouble, Edda."
+
+EDDA (measured):
+[1:13.0 - 1:16.8]
+"He is the only one who answered a bell tonight."
+
+CONSTABLE ROE (formal):
+[1:17.4 - 1:20.6]
+"By my authority — is this the keeper's daughter?"
+
+EDDA (ice):
+[1:21.2 - 1:22.4]
+"By your authority. Yes."
+
+SOUND FX:
+[1:22.4 - 1:26.0]
+Fog bell, once. The company clerk coughs somewhere in the dark.
+
+SCENE 03
+INT. LAMP ROOM - LATER
+[Scene Start: 1:26.0]
+[Scene End: 2:04.0]
+
+ACTION:
+[1:26.0 - 1:28.0]
+The paper lies on the table. Nobody has touched it.
+
+MISTRESS CAINE (final):
+[1:28.0 - 1:31.6]
+"Sign by the turn of the glass, or I take the lamp tonight."
+
+EDDA (still):
+[1:32.2 - 1:33.4]
+"No."
+
+SILAS (smiling):
+[1:33.4 - 1:35.0]
+"She always says no ... "
+
+SILAS (same, leaning in):
+[1:35.6 - 1:37.4]
+"... until the price is right."
+
+HALORAN (desperate):
+[1:38.0 - 1:39.8]
+"Edda, my girl, do not ..."
+
+SOUND FX:
+[1:39.8 - 1:43.0]
+The foghorn swallows the room.
+
+HALORAN (same, urgent):
+[1:43.0 - 1:45.2]
+"... sign nothing tonight."
+
+EDDA (formal, a line newly drawn):
+[1:45.8 - 1:49.2]
+"You will leave my father's room, Mistress Caine."
+
+MISTRESS CAINE (cutting):
+[1:49.8 - 1:51.6]
+"Aunt. That is what you called me at Christmastide."
+
+EDDA (not moving):
+[1:52.2 - 1:53.4]
+"Call it what you like."
+
+JOSS V.O. (from the quay):
+[1:54.0 - 1:56.8]
+"Barge is clear. She means the paper, not the girl."
+
+ACTION:
+[1:56.8 - 1:57.6]
+The door closes on them. Edda kneels by her father's chair.
+
+EDDA (tender):
+[1:57.6 - 2:00.2]
+"The lamp stays lit, Father. Even if I burn for it."
+
+SOUND FX:
+[2:00.2 - 2:04.0]
+The turn of the glass. Rain softens.
+[SCRIPT END]

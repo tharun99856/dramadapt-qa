@@ -1,0 +1,120 @@
+# Relationship and address sheet (machine-prefilled from the screenplay's own continuity notes).
+# Every row is UNCONFIRMED until the builder checks it against the episodes.
+# The relationship check reads this file; it never invents an expected register on its own.
+
+telugu_register_standard:
+  status: DRAFT - needs the builder's sign-off (addendum open item 3)
+  decision: preserve the period setting; period-appropriate Telugu in the style of dubbing
+  draft_paragraph: >-
+    Target is a solemn, dubbing-era Telugu register: second-person plural honorific forms
+    (meeku / vaaru / gaaRu verb endings) between Edda and Mistress Caine, Silas Vane,
+    Constable Roe and Brother Anselm; singular informal (nee / vaaDu) only where the
+    screenplay itself marks intimacy or contempt, namely Edda with her father, Delia with
+    Edda, and Joss with Edda from episode 4 onward. English titles stay as borrowed
+    address terms (Mistress Caine, Constable-gaaru) rather than being converted into
+    Indian kinship titles, because the setting is not Indian. Address terms are what the
+    relationship check is looking at, so a shift that the sheet does not predict is a flag.
+
+relationships:
+  - speaker: Edda Halloran
+    listener: Mistress Caine
+    episodes: 1-6
+    expected_register: formal, distant, honorific plural
+    expected_address_terms: ["Mistress Caine"]
+    address_shifts:
+      - {episode: 1, text_marker: "Mistress Caine", note: "first hostile formal use; before this she said Aunt Caine"}
+      - {episode: 3, text_marker: "Aunt would have said that nicer", note: "the one private slip to Aunt"}
+      - {episode: 6, text_marker: "Aunt. You were always family", note: "delimit return to Aunt, deliberate"}
+    confirmed: false
+
+  - speaker: Edda Halloran
+    listener: Halloran (Edda's father)
+    episodes: 1-6
+    expected_register: informal, tender, singular
+    expected_address_terms: ["Father"]
+    address_shifts:
+      - {episode: 2, text_marker: "Hush now, Father", note: "role reversal, she comforts him"}
+      - {episode: 3, text_marker: "I hear you, Father"}
+    confirmed: false
+
+  - speaker: Edda Halloran
+    listener: Joss Marek
+    episodes: 1-6
+    expected_register: formal until episode 4, then first name
+    expected_address_terms: ["Marek"]
+    address_shifts:
+      - {episode: 2, text_marker: "Marek", note: "she has not used his first name yet"}
+      - {episode: 4, text_marker: "Joss — the coat", note: "first spoken Joss, per continuity notes"}
+      - {episode: 6, text_marker: "Marek", note: "public/legal register, not a regression"}
+    confirmed: false
+
+  - speaker: Edda Halloran
+    listener: Silas Vane
+    episodes: 1-6
+    expected_register: cold, full-name address, no honorific warmth
+    expected_address_terms: ["Silas Vane", "Vane"]
+    address_shifts:
+      - {episode: 5, text_marker: "Step off the stair, Silas Vane"}
+    confirmed: false
+
+  - speaker: Edda Halloran
+    listener: Brother Anselm
+    episodes: 3-6
+    expected_register: formal, title-bearing
+    expected_address_terms: ["Father Anselm"]
+    address_shifts:
+      - {episode: 5, text_marker: "Father Anselm, hold him", note: "TEST CASE: 'Father' addressed to two living men in one line"}
+    confirmed: false
+
+  - speaker: Halloran (Edda's father)
+    listener: Edda Halloran
+    episodes: 1-6
+    expected_register: informal, paternal
+    expected_address_terms: ["Edda", "lass", "girl", "my girl"]
+    confirmed: false
+
+  - speaker: Mistress Caine
+    listener: Edda Halloran
+    episodes: 1-6
+    expected_register: condescending-sweet, uses Miss Halloran and the keeper's girl
+    expected_address_terms: ["Miss Halloran", "child", "girl"]
+    address_shifts:
+      - {episode: 1, text_marker: "Aunt. That is what you called me at Christmastide", note: "she polices the address term herself"}
+    confirmed: false
+
+  - speaker: Joss Marek
+    listener: Edda Halloran
+    episodes: 1-6
+    expected_register: plain, familiar without being insolent
+    expected_address_terms: ["Edda"]
+    confirmed: false
+
+  - speaker: Delia
+    listener: Edda Halloran
+    episodes: 2-5
+    expected_register: household informal; the only speaker allowed to say love
+    expected_address_terms: ["love"]
+    notes: if another character uses "love" / its Telugu equivalent, that is a voice break.
+    confirmed: false
+
+  - speaker: Silas Vane
+    listener: Edda Halloran
+    episodes: 1-6
+    expected_register: provoking, half-formal
+    expected_address_terms: ["Miss Halloran", "keeper's girl"]
+    confirmed: false
+
+  - speaker: Constable Roe
+    listener: anyone
+    episodes: 1-6
+    expected_register: official, third-person forms
+    expected_address_terms: ["Mistress", "the keeper's daughter"]
+    confirmed: false
+
+  - speaker: Voice of the lamp
+    listener: Edda Halloran
+    episodes: 4-6
+    expected_register: child voice, no honorific content, counting
+    expected_address_terms: []
+    notes: unplaced child voice heard only in Edda's scenes. Not a real dubbing target; flag with care.
+    confirmed: false

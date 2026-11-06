@@ -1,0 +1,181 @@
+{
+  "smoke_timing": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "_updated": "2026-11-06T13:41:18+00:00",
+  "_aggregate": {
+    "requests_total": 104,
+    "prompt_tokens": 146222,
+    "completion_tokens": 96982,
+    "cost_usd": null
+  },
+  "dry_run_no_key": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "provisional_timing": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "demo_timing_uncalibrated": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "first_pass": {
+    "requests_total": 18,
+    "requests_measured": 18,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {
+      "first_pass": 18
+    },
+    "prompt_tokens": 34599,
+    "completion_tokens": 21137,
+    "cost_usd": null,
+    "priced": false,
+    "models": [
+      "openai/gpt-oss-120b"
+    ]
+  },
+  "first_pass_alt": {
+    "requests_total": 18,
+    "requests_measured": 18,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {
+      "first_pass": 18
+    },
+    "prompt_tokens": 37416,
+    "completion_tokens": 5245,
+    "cost_usd": null,
+    "priced": false,
+    "models": [
+      "qwen/qwen3.8-27b"
+    ]
+  },
+  "script_probe": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "baseline": {
+    "requests_total": 18,
+    "requests_measured": 18,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {
+      "baseline": 18
+    },
+    "prompt_tokens": 9633,
+    "completion_tokens": 14990,
+    "cost_usd": null,
+    "priced": false,
+    "models": [
+      "openai/gpt-oss-120b"
+    ]
+  },
+  "drift_demo": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "plumbing_check": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "merge_test": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "structured": {
+    "requests_total": 50,
+    "requests_measured": 50,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {
+      "meaning": 18,
+      "relationship": 18,
+      "naturalness": 14
+    },
+    "prompt_tokens": 64574,
+    "completion_tokens": 55610,
+    "cost_usd": null,
+    "priced": false,
+    "models": [
+      "openai/gpt-oss-120b"
+    ]
+  },
+  "new_input_rehearsal": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "qa_rehearsal": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  }
+}

@@ -1,0 +1,45 @@
+# Fragments used by scripts/run_seeded.py to inject known errors into the Telugu first pass.
+# These are machine-drafted Telugu fragments: the Telugu reviewer should read them before the
+# seeded run is used in the doc. Seeded errors are deliberately blunter than natural ones, and
+# the report keeps them separate from the main result (PRD §6 Step E).
+
+negation:
+  # appended as its own sentence so the polarity flips visibly
+  tail: " అది లేదు."
+  expected_check: meaning
+
+honorific_downgrade:
+  # first pattern that occurs in the line wins; order goes from most specific to broadest
+  patterns:
+    - ["చేశారు", "చేశావు"]
+    - ["ఇచ్చారు", "ఇచ్చావు"]
+    - ["వినండి", "వినవే"]
+    - ["చూడండి", "చూడు"]
+    - ["ారు", "ావు"]
+  expected_check: relationship
+
+address_swap:
+  # terms from another relationship on the sheet, dropped in front of the line
+  prefixes:
+    - "ఆంటీ, "
+    - "సార్, "
+    - "అన్నా, "
+    - "నాన్న, "
+  expected_check: relationship
+
+slot_padding:
+  # long enough to blow any short slot
+  tail: " నా మాట విను, ఇంకా చాలా చెప్పాలి ఉంది, ఆగవు."
+  expected_check: timing
+
+untranslated_left:
+  # the extreme literal case: the English line was never actually localized
+  mode: replace_with_english
+  expected_check: meaning
+
+counts:
+  negation: 2
+  honorific_downgrade: 2
+  untranslated_left: 2
+  slot_padding: 2
+  address_swap: 2

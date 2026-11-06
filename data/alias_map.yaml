@@ -1,0 +1,48 @@
+# Alias map: speaker label as written -> canonical character.
+# Keyed by label AND episode range, because one label can be two different people.
+# Source: continuity notes in data/screenplay/. Machine-prefilled; confirm before Phase 0.
+
+- label: EDDA
+  episodes: 1-6
+  canonical: Edda Halloran
+
+- label: HALORAN
+  episodes: 1-6
+  canonical: Halloran (Edda's father)
+
+- label: MISTRESS CAINE
+  episodes: 1-6
+  canonical: Mistress Caine
+
+- label: JOSS
+  episodes: 1-6
+  canonical: Joss Marek
+
+- label: SILAS
+  episodes: 1-6
+  canonical: Silas Vane
+
+- label: CONSTABLE ROE
+  episodes: 1-6
+  canonical: Constable Roe
+
+- label: BROTHER ANSELM
+  episodes: 2-6
+  canonical: Brother Anselm
+
+- label: DELIA
+  episodes: 2-5
+  canonical: Delia
+
+- label: VOICE OF THE LAMP
+  episodes: 4-6
+  canonical: Voice of the lamp
+
+# Same label, different men. This is the reason the map is keyed by episode range.
+- label: THE COMPANY CLERK
+  episodes: 2
+  canonical: Company clerk (Caine's man, grey coat)
+
+- label: THE COMPANY CLERK
+  episodes: 5
+  canonical: Company clerk (shipping office, grey beard)

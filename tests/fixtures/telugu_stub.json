@@ -1,0 +1,17 @@
+{
+  "provenance": {
+    "method": "handwritten_test_fixture",
+    "note": "Telugu for eight sample lines, written by hand to smoke-test the timing check and the report. This is NOT the Phase 0 first pass (Step A) and must never be scored as if it were.",
+    "measured": false
+  },
+  "lines": [
+    {"line_id": "E01-L001", "telugu": "దీపం కాలినే ఉంటుంది."},
+    {"line_id": "E01-L003", "telugu": "నొక గంట క్రితమే దాన్ని నేను కింద పెట్టేశాను."},
+    {"line_id": "E01-L004", "telugu": "నువ్వు నిద్రపోతున్న సమయంలో కేన్ మళ్ళీ వచ్చారు."},
+    {"line_id": "E01-L005", "telugu": "నేను నిద్రపోతే ఆమె ఎప్పుడూ వస్తారు."},
+    {"line_id": "E01-L006", "telugu": "ఆమె పత్రానికి మీరు సంతకం చేయరని నాకు మాట ఇవ్వండి."},
+    {"line_id": "E01-L007", "telugu": "ఏ పత్రం?"},
+    {"line_id": "E01-L014", "telugu": "అప్పు నాదే, పత్రం నాదే, ఈ శీతాకాలం కూడా నాదే."},
+    {"line_id": "E01-L015", "telugu": "మరోసారి చెప్పండి."}
+  ]
+}

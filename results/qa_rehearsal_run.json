@@ -1,0 +1,2396 @@
+{
+  "generated": "2026-11-06T13:41:18+00:00",
+  "phase": "qa_rehearsal",
+  "model": null,
+  "source": {
+    "input": "data/screenplay",
+    "files": [
+      "episode-001.txt",
+      "episode-002.txt",
+      "episode-003.txt",
+      "episode-004.txt",
+      "episode-005.txt",
+      "episode-006.txt"
+    ],
+    "telugu_file": "data/telugu/first_pass.json",
+    "unparsed_blocks": 0,
+    "parse_warnings": 3
+  },
+  "batching": {
+    "batches": 18,
+    "requests": 0
+  },
+  "run_log": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "errors": [],
+  "counts": {
+    "lines": 184,
+    "flags": 91,
+    "by_check": {
+      "timing": 69,
+      "script": 22
+    },
+    "by_severity": {
+      "high": 69,
+      "medium": 22
+    }
+  },
+  "flags": [
+    {
+      "line_id": "E04-L015",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 4.86s > loose window 4.00s (tight slot 1.20s, 4.05x the slot, 17 akshara at 3.5/s)",
+      "suggestion": "cut about 3 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E05-L012",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 11.14s > loose window 3.80s (tight slot 3.20s, 3.48x the slot, 39 akshara at 3.5/s)",
+      "suggestion": "cut about 26 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E02-L006",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 4.86s > loose window 2.20s (tight slot 1.60s, 3.04x the slot, 17 akshara at 3.5/s)",
+      "suggestion": "cut about 9 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E05-L029",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 5.43s > loose window 2.40s (tight slot 1.80s, 3.02x the slot, 19 akshara at 3.5/s)",
+      "suggestion": "cut about 11 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E01-L003",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 4.00s > loose window 3.20s (tight slot 1.40s, 2.86x the slot, 14 akshara at 3.5/s)",
+      "suggestion": "cut about 3 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E02-L007",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 4.00s exceeds the 1.40s slot by more than 15% (2.86x the slot, 14 akshara at 3.5/s)",
+      "suggestion": "trim to 5 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E05-L022",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 5.14s > loose window 2.40s (tight slot 1.80s, 2.86x the slot, 18 akshara at 3.5/s)",
+      "suggestion": "cut about 10 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E01-L005",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 4.57s > loose window 3.40s (tight slot 1.60s, 2.86x the slot, 16 akshara at 3.5/s)",
+      "suggestion": "cut about 4 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E02-L012",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 8.86s > loose window 3.80s (tight slot 3.20s, 2.77x the slot, 31 akshara at 3.5/s)",
+      "suggestion": "cut about 18 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E05-L015",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 6.00s > loose window 2.80s (tight slot 2.20s, 2.73x the slot, 21 akshara at 3.5/s)",
+      "suggestion": "cut about 11 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E01-L029",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 4.86s > loose window 2.40s (tight slot 1.80s, 2.70x the slot, 17 akshara at 3.5/s)",
+      "suggestion": "cut about 9 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E01-L015",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 3.71s exceeds the 1.40s slot by more than 15% (2.65x the slot, 13 akshara at 3.5/s)",
+      "suggestion": "trim to 5 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E06-L006",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 6.86s > loose window 3.20s (tight slot 2.60s, 2.64x the slot, 24 akshara at 3.5/s)",
+      "suggestion": "cut about 13 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E01-L030",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.14s > loose window 1.80s (tight slot 1.20s, 2.62x the slot, 11 akshara at 3.5/s)",
+      "suggestion": "cut about 5 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E05-L032",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 9.14s > loose window 6.20s (tight slot 3.60s, 2.54x the slot, 32 akshara at 3.5/s)",
+      "suggestion": "cut about 10 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E01-L024",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 4.00s > loose window 2.20s (tight slot 1.60s, 2.50x the slot, 14 akshara at 3.5/s)",
+      "suggestion": "cut about 6 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E04-L004",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 5.43s > loose window 2.80s (tight slot 2.20s, 2.47x the slot, 19 akshara at 3.5/s)",
+      "suggestion": "cut about 9 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E02-L011",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.43s > loose window 2.00s (tight slot 1.40s, 2.45x the slot, 12 akshara at 3.5/s)",
+      "suggestion": "cut about 5 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E03-L023",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 6.57s > loose window 3.40s (tight slot 2.80s, 2.35x the slot, 23 akshara at 3.5/s)",
+      "suggestion": "cut about 11 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E04-L023",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 8.29s > loose window 4.20s (tight slot 3.60s, 2.30x the slot, 29 akshara at 3.5/s)",
+      "suggestion": "cut about 14 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E06-L002",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 8.57s > loose window 6.60s (tight slot 3.80s, 2.26x the slot, 30 akshara at 3.5/s)",
+      "suggestion": "cut about 7 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E04-L006",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 6.29s > loose window 6.00s (tight slot 2.80s, 2.24x the slot, 22 akshara at 3.5/s)",
+      "suggestion": "cut about 1 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E05-L016",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.14s > loose window 2.00s (tight slot 1.40s, 2.24x the slot, 11 akshara at 3.5/s)",
+      "suggestion": "cut about 4 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E06-L004",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 6.29s > loose window 3.40s (tight slot 2.80s, 2.24x the slot, 22 akshara at 3.5/s)",
+      "suggestion": "cut about 10 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E02-L020",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 4.00s exceeds the 1.80s slot by more than 15% (2.22x the slot, 14 akshara at 3.5/s)",
+      "suggestion": "trim to 7 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E05-L010",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 7.43s exceeds the 3.40s slot by more than 15% (2.18x the slot, 26 akshara at 3.5/s)",
+      "suggestion": "trim to 13 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E01-L021",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 2.57s exceeds the 1.20s slot by more than 15% (2.14x the slot, 9 akshara at 3.5/s)",
+      "suggestion": "trim to 4 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E02-L010",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 6.00s > loose window 3.40s (tight slot 2.80s, 2.14x the slot, 21 akshara at 3.5/s)",
+      "suggestion": "cut about 9 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E04-L027",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 8.00s > loose window 4.40s (tight slot 3.80s, 2.11x the slot, 28 akshara at 3.5/s)",
+      "suggestion": "cut about 13 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E03-L029",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.71s > loose window 2.40s (tight slot 1.80s, 2.06x the slot, 13 akshara at 3.5/s)",
+      "suggestion": "cut about 5 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E03-L030",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.71s > loose window 2.40s (tight slot 1.80s, 2.06x the slot, 13 akshara at 3.5/s)",
+      "suggestion": "cut about 5 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E04-L009",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.71s > loose window 2.40s (tight slot 1.80s, 2.06x the slot, 13 akshara at 3.5/s)",
+      "suggestion": "cut about 5 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E02-L004",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 2.86s exceeds the 1.40s slot by more than 15% (2.04x the slot, 10 akshara at 3.5/s)",
+      "suggestion": "trim to 5 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E01-L004",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 4.86s > loose window 3.00s (tight slot 2.40s, 2.02x the slot, 17 akshara at 3.5/s)",
+      "suggestion": "cut about 6 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E05-L009",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.14s > loose window 2.20s (tight slot 1.60s, 1.96x the slot, 11 akshara at 3.5/s)",
+      "suggestion": "cut about 3 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E03-L018",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 7.43s > loose window 4.40s (tight slot 3.80s, 1.95x the slot, 26 akshara at 3.5/s)",
+      "suggestion": "cut about 11 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E01-L024",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "chain_over_slot",
+      "evidence": "chain C01-001 (E01-L024, E01-L025) estimated 6.57s against 3.40s of combined slot (1.93x)",
+      "suggestion": "translate the whole chain as one Telugu sentence, then split it at a natural break",
+      "status": "pending",
+      "note": "verb-final Telugu cannot be built fragment by fragment"
+    },
+    {
+      "line_id": "E06-L023",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 6.00s exceeds the 3.20s slot by more than 15% (1.88x the slot, 21 akshara at 3.5/s)",
+      "suggestion": "trim to 12 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E04-L025",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 2.57s > loose window 2.00s (tight slot 1.40s, 1.84x the slot, 9 akshara at 3.5/s)",
+      "suggestion": "cut about 2 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E04-L013",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 6.57s > loose window 4.20s (tight slot 3.60s, 1.83x the slot, 23 akshara at 3.5/s)",
+      "suggestion": "cut about 8 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E03-L030",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "chain_over_slot",
+      "evidence": "chain C03-003 (E03-L030, E03-L031) estimated 6.29s against 3.60s of combined slot (1.75x)",
+      "suggestion": "translate the whole chain as one Telugu sentence, then split it at a natural break",
+      "status": "pending",
+      "note": "verb-final Telugu cannot be built fragment by fragment"
+    },
+    {
+      "line_id": "E04-L007",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 6.29s exceeds the 3.60s slot by more than 15% (1.75x the slot, 22 akshara at 3.5/s)",
+      "suggestion": "trim to 14 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E05-L011",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 6.29s > loose window 4.20s (tight slot 3.60s, 1.75x the slot, 22 akshara at 3.5/s)",
+      "suggestion": "cut about 7 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E05-L019",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.14s > loose window 2.40s (tight slot 1.80s, 1.75x the slot, 11 akshara at 3.5/s)",
+      "suggestion": "cut about 3 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E05-L031",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.43s > loose window 2.60s (tight slot 2.00s, 1.71x the slot, 12 akshara at 3.5/s)",
+      "suggestion": "cut about 3 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E05-L017",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 5.43s > loose window 3.80s (tight slot 3.20s, 1.70x the slot, 19 akshara at 3.5/s)",
+      "suggestion": "cut about 6 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E03-L017",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 2.00s exceeds the 1.20s slot by more than 15% (1.67x the slot, 7 akshara at 3.5/s)",
+      "suggestion": "trim to 4 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E03-L024",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 4.00s exceeds the 2.40s slot by more than 15% (1.67x the slot, 14 akshara at 3.5/s)",
+      "suggestion": "trim to 9 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E06-L008",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 4.00s exceeds the 2.40s slot by more than 15% (1.67x the slot, 14 akshara at 3.5/s)",
+      "suggestion": "trim to 9 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E04-L021",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 2.29s > loose window 2.00s (tight slot 1.40s, 1.63x the slot, 8 akshara at 3.5/s)",
+      "suggestion": "cut about 1 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E03-L025",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 5.14s > loose window 3.80s (tight slot 3.20s, 1.61x the slot, 18 akshara at 3.5/s)",
+      "suggestion": "cut about 5 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E01-L006",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 5.43s > loose window 4.00s (tight slot 3.40s, 1.60x the slot, 19 akshara at 3.5/s)",
+      "suggestion": "cut about 5 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E01-L026",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 2.86s exceeds the 1.80s slot by more than 15% (1.59x the slot, 10 akshara at 3.5/s)",
+      "suggestion": "trim to 7 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E04-L014",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.14s > loose window 2.60s (tight slot 2.00s, 1.57x the slot, 11 akshara at 3.5/s)",
+      "suggestion": "cut about 2 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E04-L017",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.43s > loose window 2.80s (tight slot 2.20s, 1.56x the slot, 12 akshara at 3.5/s)",
+      "suggestion": "cut about 2 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E01-L026",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "chain_over_slot",
+      "evidence": "chain C01-002 (E01-L026, E01-L027) estimated 6.00s against 4.00s of combined slot (1.50x)",
+      "suggestion": "translate the whole chain as one Telugu sentence, then split it at a natural break",
+      "status": "pending",
+      "note": "verb-final Telugu cannot be built fragment by fragment"
+    },
+    {
+      "line_id": "E01-L025",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 2.57s > loose window 2.40s (tight slot 1.80s, 1.43x the slot, 9 akshara at 3.5/s)",
+      "suggestion": "cut about 1 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E02-L013",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 2.00s exceeds the 1.40s slot by more than 15% (1.43x the slot, 7 akshara at 3.5/s)",
+      "suggestion": "trim to 5 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E02-L015",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 6.00s > loose window 4.80s (tight slot 4.20s, 1.43x the slot, 21 akshara at 3.5/s)",
+      "suggestion": "cut about 4 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E03-L031",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 2.57s exceeds the 1.80s slot by more than 15% (1.43x the slot, 9 akshara at 3.5/s)",
+      "suggestion": "trim to 7 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E01-L027",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.14s > loose window 2.80s (tight slot 2.20s, 1.43x the slot, 11 akshara at 3.5/s)",
+      "suggestion": "cut about 1 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E05-L007",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.71s > loose window 3.40s (tight slot 2.80s, 1.33x the slot, 13 akshara at 3.5/s)",
+      "suggestion": "cut about 1 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E04-L001",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.43s > loose window 3.20s (tight slot 2.60s, 1.32x the slot, 12 akshara at 3.5/s)",
+      "suggestion": "cut about 1 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E04-L024",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 3.43s > loose window 3.20s (tight slot 2.60s, 1.32x the slot, 12 akshara at 3.5/s)",
+      "suggestion": "cut about 1 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E03-L014",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 2.86s exceeds the 2.20s slot by more than 15% (1.30x the slot, 10 akshara at 3.5/s)",
+      "suggestion": "trim to 8 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E04-L011",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 2.86s > loose window 2.80s (tight slot 2.20s, 1.30x the slot, 10 akshara at 3.5/s)",
+      "suggestion": "cut about 1 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E06-L024",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 2.86s exceeds the 2.20s slot by more than 15% (1.30x the slot, 10 akshara at 3.5/s)",
+      "suggestion": "trim to 8 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E05-L027",
+      "check": "timing",
+      "severity": "medium",
+      "verdict": "over_slot",
+      "evidence": "estimate 2.29s exceeds the 1.80s slot by more than 15% (1.27x the slot, 8 akshara at 3.5/s)",
+      "suggestion": "trim to 7 akshara or less",
+      "status": "pending",
+      "note": "risk, not failure: dubbing can retime or trim a line"
+    },
+    {
+      "line_id": "E05-L026",
+      "check": "timing",
+      "severity": "high",
+      "verdict": "overlaps_next_line",
+      "evidence": "estimate 4.29s > loose window 4.20s (tight slot 3.60s, 1.19x the slot, 15 akshara at 3.5/s)",
+      "suggestion": "cut about 1 akshara",
+      "status": "pending",
+      "note": "risk, not failure: the window describes the English performance"
+    },
+    {
+      "line_id": "E01-L017",
+      "check": "script",
+      "severity": "medium",
+      "verdict": "mixed_script",
+      "evidence": "40% Latin letters against 60% Telugu: 'ఆ మాటను జలానికి చెప్పండి, Mistress.'",
+      "suggestion": "decide each English term on purpose - write it in Telugu or keep it in English everywhere, not line by line",
+      "status": "pending",
+      "note": "loanwords are a legitimate choice; a draft that varies them per line is not"
+    },
+    {
+      "line_id": "E02-L009",
+      "check": "script",
+      "severity": "medium",
+      "verdict": "mixed_script",
+      "evidence": "59% Latin letters against 41% Telugu: 'Mistress Caine దీనిని వినిపిస్తారు.'",
+      "suggestion": "decide each English term on purpose - write it in Telugu or keep it in English everywhere, not line by line",
+      "status": "pending",
+      "note": "loanwords are a legitimate choice; a draft that varies them per line is not"
+    },
+    {
+      "line_id": "E02-L026",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 8 Latin words, detected script LATIN: 'Mee thandri naaku 61 lo darwaza chadavadam nerpindi.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E02-L028",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 6 Latin words, detected script LATIN: 'Shanthamga undi, Nanna. Nenu ikkada unna.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E02-L029",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 6 Latin words, detected script LATIN: 'Aame ki hastakshara ki emi teliyadu.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E02-L030",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 10 Latin words, detected script LATIN: \"Adi nannu 'aame' ani pilichadu, nenu patrikalo oka vakyam la\"",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E02-L031",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 6 Latin words, detected script LATIN: 'Darwaza nilipi, Edda. Aadani artham meeru.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E03-L002",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 6 Latin words, detected script LATIN: 'Naaku oka gaṇṭa undi, Mistress Caine.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E03-L003",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 6 Latin words, detected script LATIN: 'Mee daggara aapada undi. Adi takkuva.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E03-L006",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 4 Latin words, detected script LATIN: 'Adi teesukondi. Nenu choostanu.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E03-L008",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 3 Latin words, detected script LATIN: 'Avaadu vatini konnaadu.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E03-L010",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 9 Latin words, detected script LATIN: 'Silas Vane, mruthyu vyakti patra nundi meeru emi korukuntunn'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E03-L011",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 14 Latin words, detected script LATIN: 'Miss Halloran, mee peru naa bed lo undi, alage aa lamp meeda'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E03-L012",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 7 Latin words, detected script LATIN: 'Meeru seal ki kooda layakaledu. Aameyi teesukondi.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E06-L010",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 8 Latin words, detected script LATIN: 'Meeru mee kaligina okka kutumbamni shatru ga marchaaru.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E06-L011",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 9 Latin words, detected script LATIN: 'Aunt. Nee eppudu kutumbam laanti vunnavu. Kani dayava ledu.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E06-L012",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 6 Latin words, detected script LATIN: 'Meeru mee lampu neeku pettukondi, pillagaa.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E06-L016",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 9 Latin words, detected script LATIN: 'Nenu naa peru adhi meeda pettina, meeru appudu emi?'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E06-L017",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 5 Latin words, detected script LATIN: 'Nee deepam neeti pettina bargeman.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E06-L018",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 7 Latin words, detected script LATIN: 'Adhi icchadam ki chinna vishayam kaadu, meeru.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E06-L019",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 13 Latin words, detected script LATIN: 'Edda, pillagaa. Nenu naa swantam poddalu meeda mari inka nil'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E06-L020",
+      "check": "script",
+      "severity": "high",
+      "verdict": "not_in_telugu_script",
+      "evidence": "no Telugu letters; 5 Latin words, detected script LATIN: 'Nenu choostunnanu, Appa. Nenu choostunnanu.'",
+      "suggestion": "re-render this line in Telugu script before it goes to the studio",
+      "status": "pending",
+      "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    }
+  ],
+  "verdicts": {
+    "timing": [
+      {
+        "line_id": "E01-L001",
+        "akshara": 8,
+        "estimated_seconds": 2.286,
+        "tight_window": 2.2,
+        "loose_window": 4.4,
+        "telugu_to_slot_ratio": 1.039,
+        "english_words_per_second": 1.818
+      },
+      {
+        "line_id": "E01-L003",
+        "akshara": 14,
+        "estimated_seconds": 4.0,
+        "tight_window": 1.4,
+        "loose_window": 3.2,
+        "telugu_to_slot_ratio": 2.857,
+        "english_words_per_second": 5.0
+      },
+      {
+        "line_id": "E01-L004",
+        "akshara": 17,
+        "estimated_seconds": 4.857,
+        "tight_window": 2.4,
+        "loose_window": 3.0,
+        "telugu_to_slot_ratio": 2.024,
+        "english_words_per_second": 2.5
+      },
+      {
+        "line_id": "E01-L005",
+        "akshara": 16,
+        "estimated_seconds": 4.571,
+        "tight_window": 1.6,
+        "loose_window": 3.4,
+        "telugu_to_slot_ratio": 2.857,
+        "english_words_per_second": 3.75
+      },
+      {
+        "line_id": "E01-L006",
+        "akshara": 19,
+        "estimated_seconds": 5.429,
+        "tight_window": 3.4,
+        "loose_window": 4.0,
+        "telugu_to_slot_ratio": 1.597,
+        "english_words_per_second": 2.353
+      },
+      {
+        "line_id": "E01-L007",
+        "akshara": 3,
+        "estimated_seconds": 0.857,
+        "tight_window": 2.0,
+        "loose_window": 4.4,
+        "telugu_to_slot_ratio": 0.429,
+        "english_words_per_second": 1.0
+      },
+      {
+        "line_id": "E01-L014",
+        "akshara": 12,
+        "estimated_seconds": 3.429,
+        "tight_window": 4.2,
+        "loose_window": 4.8,
+        "telugu_to_slot_ratio": 0.816,
+        "english_words_per_second": 2.857
+      },
+      {
+        "line_id": "E01-L015",
+        "akshara": 13,
+        "estimated_seconds": 3.714,
+        "tight_window": 1.4,
+        "loose_window": 1.4,
+        "telugu_to_slot_ratio": 2.653,
+        "english_words_per_second": 2.857
+      },
+      {
+        "line_id": "E01-L017",
+        "akshara": 11,
+        "estimated_seconds": 3.143,
+        "tight_window": 2.8,
+        "loose_window": 4.4,
+        "telugu_to_slot_ratio": 1.122,
+        "english_words_per_second": 2.143
+      },
+      {
+        "line_id": "E01-L021",
+        "akshara": 9,
+        "estimated_seconds": 2.571,
+        "tight_window": 1.2,
+        "loose_window": 6.8,
+        "telugu_to_slot_ratio": 2.143,
+        "english_words_per_second": 3.333
+      },
+      {
+        "line_id": "E01-L023",
+        "akshara": 2,
+        "estimated_seconds": 0.571,
+        "tight_window": 1.2,
+        "loose_window": 1.2,
+        "telugu_to_slot_ratio": 0.476,
+        "english_words_per_second": 0.833
+      },
+      {
+        "line_id": "E01-L024",
+        "akshara": 14,
+        "estimated_seconds": 4.0,
+        "tight_window": 1.6,
+        "loose_window": 2.2,
+        "telugu_to_slot_ratio": 2.5,
+        "english_words_per_second": 3.125
+      },
+      {
+        "line_id": "E01-L025",
+        "akshara": 9,
+        "estimated_seconds": 2.571,
+        "tight_window": 1.8,
+        "loose_window": 2.4,
+        "telugu_to_slot_ratio": 1.429,
+        "english_words_per_second": 3.333
+      },
+      {
+        "line_id": "E01-L026",
+        "akshara": 10,
+        "estimated_seconds": 2.857,
+        "tight_window": 1.8,
+        "loose_window": 5.0,
+        "telugu_to_slot_ratio": 1.587,
+        "english_words_per_second": 3.333
+      },
+      {
+        "line_id": "E01-L027",
+        "akshara": 11,
+        "estimated_seconds": 3.143,
+        "tight_window": 2.2,
+        "loose_window": 2.8,
+        "telugu_to_slot_ratio": 1.429,
+        "english_words_per_second": 1.818
+      },
+      {
+        "line_id": "E01-L029",
+        "akshara": 17,
+        "estimated_seconds": 4.857,
+        "tight_window": 1.8,
+        "loose_window": 2.4,
+        "telugu_to_slot_ratio": 2.698,
+        "english_words_per_second": 5.0
+      },
+      {
+        "line_id": "E01-L030",
+        "akshara": 11,
+        "estimated_seconds": 3.143,
+        "tight_window": 1.2,
+        "loose_window": 1.8,
+        "telugu_to_slot_ratio": 2.619,
+        "english_words_per_second": 4.167
+      },
+      {
+        "line_id": "E02-L004",
+        "akshara": 10,
+        "estimated_seconds": 2.857,
+        "tight_window": 1.4,
+        "loose_window": 3.6,
+        "telugu_to_slot_ratio": 2.041,
+        "english_words_per_second": 3.571
+      },
+      {
+        "line_id": "E02-L006",
+        "akshara": 17,
+        "estimated_seconds": 4.857,
+        "tight_window": 1.6,
+        "loose_window": 2.2,
+        "telugu_to_slot_ratio": 3.036,
+        "english_words_per_second": 4.375
+      },
+      {
+        "line_id": "E02-L007",
+        "akshara": 14,
+        "estimated_seconds": 4.0,
+        "tight_window": 1.4,
+        "loose_window": 4.4,
+        "telugu_to_slot_ratio": 2.857,
+        "english_words_per_second": 3.571
+      },
+      {
+        "line_id": "E02-L009",
+        "akshara": 8,
+        "estimated_seconds": 2.286,
+        "tight_window": 2.2,
+        "loose_window": 10.2,
+        "telugu_to_slot_ratio": 1.039,
+        "english_words_per_second": 2.727
+      },
+      {
+        "line_id": "E02-L010",
+        "akshara": 21,
+        "estimated_seconds": 6.0,
+        "tight_window": 2.8,
+        "loose_window": 3.4,
+        "telugu_to_slot_ratio": 2.143,
+        "english_words_per_second": 2.5
+      },
+      {
+        "line_id": "E02-L011",
+        "akshara": 12,
+        "estimated_seconds": 3.429,
+        "tight_window": 1.4,
+        "loose_window": 2.0,
+        "telugu_to_slot_ratio": 2.449,
+        "english_words_per_second": 2.857
+      },
+      {
+        "line_id": "E02-L012",
+        "akshara": 31,
+        "estimated_seconds": 8.857,
+        "tight_window": 3.2,
+        "loose_window": 3.8,
+        "telugu_to_slot_ratio": 2.768,
+        "english_words_per_second": 3.125
+      },
+      {
+        "line_id": "E02-L013",
+        "akshara": 7,
+        "estimated_seconds": 2.0,
+        "tight_window": 1.4,
+        "loose_window": 3.4,
+        "telugu_to_slot_ratio": 1.429,
+        "english_words_per_second": 3.571
+      },
+      {
+        "line_id": "E02-L015",
+        "akshara": 21,
+        "estimated_seconds": 6.0,
+        "tight_window": 4.2,
+        "loose_window": 4.8,
+        "telugu_to_slot_ratio": 1.429,
+        "english_words_per_second": 2.381
+      },
+      {
+        "line_id": "E02-L016",
+        "akshara": 5,
+        "estimated_seconds": 1.429,
+        "tight_window": 1.6,
+        "loose_window": 2.2,
+        "telugu_to_slot_ratio": 0.893,
+        "english_words_per_second": 1.875
+      },
+      {
+        "line_id": "E02-L020",
+        "akshara": 14,
+        "estimated_seconds": 4.0,
+        "tight_window": 1.8,
+        "loose_window": 7.8,
+        "telugu_to_slot_ratio": 2.222,
+        "english_words_per_second": 4.444
+      },
+      {
+        "line_id": "E02-L025",
+        "akshara": 4,
+        "estimated_seconds": 1.143,
+        "tight_window": 1.2,
+        "loose_window": 1.8,
+        "telugu_to_slot_ratio": 0.952,
+        "english_words_per_second": 4.167
+      },
+      {
+        "line_id": "E03-L014",
+        "akshara": 10,
+        "estimated_seconds": 2.857,
+        "tight_window": 2.2,
+        "loose_window": 5.0,
+        "telugu_to_slot_ratio": 1.299,
+        "english_words_per_second": 2.273
+      },
+      {
+        "line_id": "E03-L017",
+        "akshara": 7,
+        "estimated_seconds": 2.0,
+        "tight_window": 1.2,
+        "loose_window": 3.8,
+        "telugu_to_slot_ratio": 1.667,
+        "english_words_per_second": 4.167
+      },
+      {
+        "line_id": "E03-L018",
+        "akshara": 26,
+        "estimated_seconds": 7.429,
+        "tight_window": 3.8,
+        "loose_window": 4.4,
+        "telugu_to_slot_ratio": 1.955,
+        "english_words_per_second": 3.158
+      },
+      {
+        "line_id": "E03-L021",
+        "akshara": 5,
+        "estimated_seconds": 1.429,
+        "tight_window": 1.4,
+        "loose_window": 2.0,
+        "telugu_to_slot_ratio": 1.02,
+        "english_words_per_second": 1.429
+      },
+      {
+        "line_id": "E03-L023",
+        "akshara": 23,
+        "estimated_seconds": 6.571,
+        "tight_window": 2.8,
+        "loose_window": 3.4,
+        "telugu_to_slot_ratio": 2.347,
+        "english_words_per_second": 3.929
+      },
+      {
+        "line_id": "E03-L024",
+        "akshara": 14,
+        "estimated_seconds": 4.0,
+        "tight_window": 2.4,
+        "loose_window": 7.6,
+        "telugu_to_slot_ratio": 1.667,
+        "english_words_per_second": 2.5
+      },
+      {
+        "line_id": "E03-L025",
+        "akshara": 18,
+        "estimated_seconds": 5.143,
+        "tight_window": 3.2,
+        "loose_window": 3.8,
+        "telugu_to_slot_ratio": 1.607,
+        "english_words_per_second": 3.438
+      },
+      {
+        "line_id": "E03-L029",
+        "akshara": 13,
+        "estimated_seconds": 3.714,
+        "tight_window": 1.8,
+        "loose_window": 2.4,
+        "telugu_to_slot_ratio": 2.063,
+        "english_words_per_second": 3.889
+      },
+      {
+        "line_id": "E03-L030",
+        "akshara": 13,
+        "estimated_seconds": 3.714,
+        "tight_window": 1.8,
+        "loose_window": 2.4,
+        "telugu_to_slot_ratio": 2.063,
+        "english_words_per_second": 4.444
+      },
+      {
+        "line_id": "E03-L031",
+        "akshara": 9,
+        "estimated_seconds": 2.571,
+        "tight_window": 1.8,
+        "loose_window": 4.6,
+        "telugu_to_slot_ratio": 1.429,
+        "english_words_per_second": 3.889
+      },
+      {
+        "line_id": "E04-L001",
+        "akshara": 12,
+        "estimated_seconds": 3.429,
+        "tight_window": 2.6,
+        "loose_window": 3.2,
+        "telugu_to_slot_ratio": 1.319,
+        "english_words_per_second": 2.308
+      },
+      {
+        "line_id": "E04-L002",
+        "akshara": 10,
+        "estimated_seconds": 2.857,
+        "tight_window": 2.6,
+        "loose_window": 5.4,
+        "telugu_to_slot_ratio": 1.099,
+        "english_words_per_second": 1.923
+      },
+      {
+        "line_id": "E04-L004",
+        "akshara": 19,
+        "estimated_seconds": 5.429,
+        "tight_window": 2.2,
+        "loose_window": 2.8,
+        "telugu_to_slot_ratio": 2.468,
+        "english_words_per_second": 3.182
+      },
+      {
+        "line_id": "E04-L006",
+        "akshara": 22,
+        "estimated_seconds": 6.286,
+        "tight_window": 2.8,
+        "loose_window": 6.0,
+        "telugu_to_slot_ratio": 2.245,
+        "english_words_per_second": 3.214
+      },
+      {
+        "line_id": "E04-L007",
+        "akshara": 22,
+        "estimated_seconds": 6.286,
+        "tight_window": 3.6,
+        "loose_window": 10.4,
+        "telugu_to_slot_ratio": 1.746,
+        "english_words_per_second": 3.056
+      },
+      {
+        "line_id": "E04-L009",
+        "akshara": 13,
+        "estimated_seconds": 3.714,
+        "tight_window": 1.8,
+        "loose_window": 2.4,
+        "telugu_to_slot_ratio": 2.063,
+        "english_words_per_second": 2.222
+      },
+      {
+        "line_id": "E04-L011",
+        "akshara": 10,
+        "estimated_seconds": 2.857,
+        "tight_window": 2.2,
+        "loose_window": 2.8,
+        "telugu_to_slot_ratio": 1.299,
+        "english_words_per_second": 3.182
+      },
+      {
+        "line_id": "E04-L013",
+        "akshara": 23,
+        "estimated_seconds": 6.571,
+        "tight_window": 3.6,
+        "loose_window": 4.2,
+        "telugu_to_slot_ratio": 1.825,
+        "english_words_per_second": 3.056
+      },
+      {
+        "line_id": "E04-L014",
+        "akshara": 11,
+        "estimated_seconds": 3.143,
+        "tight_window": 2.0,
+        "loose_window": 2.6,
+        "telugu_to_slot_ratio": 1.571,
+        "english_words_per_second": 4.0
+      },
+      {
+        "line_id": "E04-L015",
+        "akshara": 17,
+        "estimated_seconds": 4.857,
+        "tight_window": 1.2,
+        "loose_window": 4.0,
+        "telugu_to_slot_ratio": 4.048,
+        "english_words_per_second": 5.833
+      },
+      {
+        "line_id": "E04-L017",
+        "akshara": 12,
+        "estimated_seconds": 3.429,
+        "tight_window": 2.2,
+        "loose_window": 2.8,
+        "telugu_to_slot_ratio": 1.558,
+        "english_words_per_second": 3.182
+      },
+      {
+        "line_id": "E04-L018",
+        "akshara": 5,
+        "estimated_seconds": 1.429,
+        "tight_window": 1.4,
+        "loose_window": 2.0,
+        "telugu_to_slot_ratio": 1.02,
+        "english_words_per_second": 3.571
+      },
+      {
+        "line_id": "E04-L021",
+        "akshara": 8,
+        "estimated_seconds": 2.286,
+        "tight_window": 1.4,
+        "loose_window": 2.0,
+        "telugu_to_slot_ratio": 1.633,
+        "english_words_per_second": 2.143
+      },
+      {
+        "line_id": "E04-L023",
+        "akshara": 29,
+        "estimated_seconds": 8.286,
+        "tight_window": 3.6,
+        "loose_window": 4.2,
+        "telugu_to_slot_ratio": 2.302,
+        "english_words_per_second": 3.889
+      },
+      {
+        "line_id": "E04-L024",
+        "akshara": 12,
+        "estimated_seconds": 3.429,
+        "tight_window": 2.6,
+        "loose_window": 3.2,
+        "telugu_to_slot_ratio": 1.319,
+        "english_words_per_second": 2.308
+      },
+      {
+        "line_id": "E04-L025",
+        "akshara": 9,
+        "estimated_seconds": 2.571,
+        "tight_window": 1.4,
+        "loose_window": 2.0,
+        "telugu_to_slot_ratio": 1.837,
+        "english_words_per_second": 2.857
+      },
+      {
+        "line_id": "E04-L027",
+        "akshara": 28,
+        "estimated_seconds": 8.0,
+        "tight_window": 3.8,
+        "loose_window": 4.4,
+        "telugu_to_slot_ratio": 2.105,
+        "english_words_per_second": 3.684
+      },
+      {
+        "line_id": "E05-L003",
+        "akshara": 15,
+        "estimated_seconds": 4.286,
+        "tight_window": 3.8,
+        "loose_window": 6.2,
+        "telugu_to_slot_ratio": 1.128,
+        "english_words_per_second": 2.105
+      },
+      {
+        "line_id": "E05-L007",
+        "akshara": 13,
+        "estimated_seconds": 3.714,
+        "tight_window": 2.8,
+        "loose_window": 3.4,
+        "telugu_to_slot_ratio": 1.327,
+        "english_words_per_second": 2.5
+      },
+      {
+        "line_id": "E05-L009",
+        "akshara": 11,
+        "estimated_seconds": 3.143,
+        "tight_window": 1.6,
+        "loose_window": 2.2,
+        "telugu_to_slot_ratio": 1.964,
+        "english_words_per_second": 1.875
+      },
+      {
+        "line_id": "E05-L010",
+        "akshara": 26,
+        "estimated_seconds": 7.429,
+        "tight_window": 3.4,
+        "loose_window": 9.6,
+        "telugu_to_slot_ratio": 2.185,
+        "english_words_per_second": 3.235
+      },
+      {
+        "line_id": "E05-L011",
+        "akshara": 22,
+        "estimated_seconds": 6.286,
+        "tight_window": 3.6,
+        "loose_window": 4.2,
+        "telugu_to_slot_ratio": 1.746,
+        "english_words_per_second": 3.333
+      },
+      {
+        "line_id": "E05-L012",
+        "akshara": 39,
+        "estimated_seconds": 11.143,
+        "tight_window": 3.2,
+        "loose_window": 3.8,
+        "telugu_to_slot_ratio": 3.482,
+        "english_words_per_second": 3.438
+      },
+      {
+        "line_id": "E05-L014",
+        "akshara": 7,
+        "estimated_seconds": 2.0,
+        "tight_window": 2.2,
+        "loose_window": 2.8,
+        "telugu_to_slot_ratio": 0.909,
+        "english_words_per_second": 2.727
+      },
+      {
+        "line_id": "E05-L015",
+        "akshara": 21,
+        "estimated_seconds": 6.0,
+        "tight_window": 2.2,
+        "loose_window": 2.8,
+        "telugu_to_slot_ratio": 2.727,
+        "english_words_per_second": 3.182
+      },
+      {
+        "line_id": "E05-L016",
+        "akshara": 11,
+        "estimated_seconds": 3.143,
+        "tight_window": 1.4,
+        "loose_window": 2.0,
+        "telugu_to_slot_ratio": 2.245,
+        "english_words_per_second": 3.571
+      },
+      {
+        "line_id": "E05-L017",
+        "akshara": 19,
+        "estimated_seconds": 5.429,
+        "tight_window": 3.2,
+        "loose_window": 3.8,
+        "telugu_to_slot_ratio": 1.696,
+        "english_words_per_second": 3.75
+      },
+      {
+        "line_id": "E05-L019",
+        "akshara": 11,
+        "estimated_seconds": 3.143,
+        "tight_window": 1.8,
+        "loose_window": 2.4,
+        "telugu_to_slot_ratio": 1.746,
+        "english_words_per_second": 2.778
+      },
+      {
+        "line_id": "E05-L022",
+        "akshara": 18,
+        "estimated_seconds": 5.143,
+        "tight_window": 1.8,
+        "loose_window": 2.4,
+        "telugu_to_slot_ratio": 2.857,
+        "english_words_per_second": 3.889
+      },
+      {
+        "line_id": "E05-L026",
+        "akshara": 15,
+        "estimated_seconds": 4.286,
+        "tight_window": 3.6,
+        "loose_window": 4.2,
+        "telugu_to_slot_ratio": 1.19,
+        "english_words_per_second": 3.611
+      },
+      {
+        "line_id": "E05-L027",
+        "akshara": 8,
+        "estimated_seconds": 2.286,
+        "tight_window": 1.8,
+        "loose_window": 2.4,
+        "telugu_to_slot_ratio": 1.27,
+        "english_words_per_second": 2.778
+      },
+      {
+        "line_id": "E05-L029",
+        "akshara": 19,
+        "estimated_seconds": 5.429,
+        "tight_window": 1.8,
+        "loose_window": 2.4,
+        "telugu_to_slot_ratio": 3.016,
+        "english_words_per_second": 3.333
+      },
+      {
+        "line_id": "E05-L031",
+        "akshara": 12,
+        "estimated_seconds": 3.429,
+        "tight_window": 2.0,
+        "loose_window": 2.6,
+        "telugu_to_slot_ratio": 1.714,
+        "english_words_per_second": 3.5
+      },
+      {
+        "line_id": "E05-L032",
+        "akshara": 32,
+        "estimated_seconds": 9.143,
+        "tight_window": 3.6,
+        "loose_window": 6.2,
+        "telugu_to_slot_ratio": 2.54,
+        "english_words_per_second": 4.444
+      },
+      {
+        "line_id": "E06-L002",
+        "akshara": 30,
+        "estimated_seconds": 8.571,
+        "tight_window": 3.8,
+        "loose_window": 6.6,
+        "telugu_to_slot_ratio": 2.256,
+        "english_words_per_second": 3.158
+      },
+      {
+        "line_id": "E06-L004",
+        "akshara": 22,
+        "estimated_seconds": 6.286,
+        "tight_window": 2.8,
+        "loose_window": 3.4,
+        "telugu_to_slot_ratio": 2.245,
+        "english_words_per_second": 2.5
+      },
+      {
+        "line_id": "E06-L006",
+        "akshara": 24,
+        "estimated_seconds": 6.857,
+        "tight_window": 2.6,
+        "loose_window": 3.2,
+        "telugu_to_slot_ratio": 2.637,
+        "english_words_per_second": 3.077
+      },
+      {
+        "line_id": "E06-L008",
+        "akshara": 14,
+        "estimated_seconds": 4.0,
+        "tight_window": 2.4,
+        "loose_window": 5.2,
+        "telugu_to_slot_ratio": 1.667,
+        "english_words_per_second": 2.917
+      },
+      {
+        "line_id": "E06-L021",
+        "akshara": 4,
+        "estimated_seconds": 1.143,
+        "tight_window": 1.6,
+        "loose_window": 2.2,
+        "telugu_to_slot_ratio": 0.714,
+        "english_words_per_second": 1.25
+      },
+      {
+        "line_id": "E06-L023",
+        "akshara": 21,
+        "estimated_seconds": 6.0,
+        "tight_window": 3.2,
+        "loose_window": 6.0,
+        "telugu_to_slot_ratio": 1.875,
+        "english_words_per_second": 2.812
+      },
+      {
+        "line_id": "E06-L024",
+        "akshara": 10,
+        "estimated_seconds": 2.857,
+        "tight_window": 2.2,
+        "loose_window": 2.2,
+        "telugu_to_slot_ratio": 1.299,
+        "english_words_per_second": 1.818
+      }
+    ],
+    "script": [
+      {
+        "line_id": "E01-L001",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E01-L003",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E01-L004",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E01-L005",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E01-L006",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E01-L007",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 2
+      },
+      {
+        "line_id": "E01-L014",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E01-L015",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E01-L017",
+        "script": "TELUGU",
+        "telugu_letter_share": 0.6,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E01-L021",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E01-L023",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 1
+      },
+      {
+        "line_id": "E01-L024",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E01-L025",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E01-L026",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E01-L027",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E01-L029",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E01-L030",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E02-L004",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E02-L006",
+        "script": "TELUGU",
+        "telugu_letter_share": 0.783,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E02-L007",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E02-L009",
+        "script": "TELUGU",
+        "telugu_letter_share": 0.409,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E02-L010",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E02-L011",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E02-L012",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 9
+      },
+      {
+        "line_id": "E02-L013",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E02-L015",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E02-L016",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E02-L020",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E02-L025",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E02-L026",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 8
+      },
+      {
+        "line_id": "E02-L028",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E02-L029",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E02-L030",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 10
+      },
+      {
+        "line_id": "E02-L031",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E03-L002",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E03-L003",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E03-L006",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E03-L008",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E03-L010",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 9
+      },
+      {
+        "line_id": "E03-L011",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 14
+      },
+      {
+        "line_id": "E03-L012",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E03-L014",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E03-L017",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E03-L018",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 10
+      },
+      {
+        "line_id": "E03-L021",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E03-L023",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E03-L024",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E03-L025",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E03-L029",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E03-L030",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E03-L031",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E04-L001",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E04-L002",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E04-L004",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E04-L006",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E04-L007",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 8
+      },
+      {
+        "line_id": "E04-L009",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E04-L011",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E04-L013",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 9
+      },
+      {
+        "line_id": "E04-L014",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E04-L015",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E04-L017",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E04-L018",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E04-L021",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E04-L023",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 11
+      },
+      {
+        "line_id": "E04-L024",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E04-L025",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E04-L027",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 10
+      },
+      {
+        "line_id": "E05-L003",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E05-L007",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E05-L009",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E05-L010",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 10
+      },
+      {
+        "line_id": "E05-L011",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 8
+      },
+      {
+        "line_id": "E05-L012",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 13
+      },
+      {
+        "line_id": "E05-L014",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E05-L015",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E05-L016",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E05-L017",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 8
+      },
+      {
+        "line_id": "E05-L019",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E05-L022",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E05-L026",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E05-L027",
+        "script": "TELUGU",
+        "telugu_letter_share": 0.846,
+        "latin_words": 3
+      },
+      {
+        "line_id": "E05-L029",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E05-L031",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 4
+      },
+      {
+        "line_id": "E05-L032",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 10
+      },
+      {
+        "line_id": "E06-L002",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 10
+      },
+      {
+        "line_id": "E06-L004",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 9
+      },
+      {
+        "line_id": "E06-L006",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E06-L008",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E06-L010",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 8
+      },
+      {
+        "line_id": "E06-L011",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 9
+      },
+      {
+        "line_id": "E06-L012",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 6
+      },
+      {
+        "line_id": "E06-L016",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 9
+      },
+      {
+        "line_id": "E06-L017",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E06-L018",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E06-L019",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 13
+      },
+      {
+        "line_id": "E06-L020",
+        "script": "LATIN",
+        "telugu_letter_share": 0.0,
+        "latin_words": 5
+      },
+      {
+        "line_id": "E06-L021",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 2
+      },
+      {
+        "line_id": "E06-L023",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 7
+      },
+      {
+        "line_id": "E06-L024",
+        "script": "TELUGU",
+        "telugu_letter_share": 1.0,
+        "latin_words": 3
+      }
+    ]
+  },
+  "summaries": {
+    "timing": {
+      "syllables_per_second": 3.5,
+      "margin": 0.15,
+      "lines_checked": 80,
+      "lines_without_telugu": 84,
+      "lines_not_in_telugu_script": [
+        [
+          "E02-L026",
+          "LATIN"
+        ],
+        [
+          "E02-L028",
+          "LATIN"
+        ],
+        [
+          "E02-L029",
+          "LATIN"
+        ],
+        [
+          "E02-L030",
+          "LATIN"
+        ],
+        [
+          "E02-L031",
+          "LATIN"
+        ],
+        [
+          "E03-L002",
+          "LATIN"
+        ],
+        [
+          "E03-L003",
+          "LATIN"
+        ],
+        [
+          "E03-L006",
+          "LATIN"
+        ],
+        [
+          "E03-L008",
+          "LATIN"
+        ],
+        [
+          "E03-L010",
+          "LATIN"
+        ],
+        [
+          "E03-L011",
+          "LATIN"
+        ],
+        [
+          "E03-L012",
+          "LATIN"
+        ],
+        [
+          "E06-L010",
+          "LATIN"
+        ],
+        [
+          "E06-L011",
+          "LATIN"
+        ],
+        [
+          "E06-L012",
+          "LATIN"
+        ],
+        [
+          "E06-L016",
+          "LATIN"
+        ],
+        [
+          "E06-L017",
+          "LATIN"
+        ],
+        [
+          "E06-L018",
+          "LATIN"
+        ],
+        [
+          "E06-L019",
+          "LATIN"
+        ],
+        [
+          "E06-L020",
+          "LATIN"
+        ]
+      ],
+      "chains_checked": 3,
+      "english_baseline_words_per_second": null,
+      "ratio_to_tight_slot": {
+        "median": 1.746,
+        "p75": 2.302,
+        "p90": 2.857,
+        "max": 4.048
+      },
+      "share_over_tight_with_margin": 0.825,
+      "selectivity_note": "A share near 1.0 means this check is shortlisting nothing: either the rate is not calibrated for this show yet, or the draft really does overrun every slot. Read the median ratio before trusting the flag list.",
+      "rate_source": "override passed on the command line - not calibrated"
+    },
+    "script": {
+      "lines_checked": 100,
+      "lines_without_telugu": 84,
+      "lines_without_letters": 0,
+      "not_in_telugu_script": 20,
+      "mixed_script": 2,
+      "mixed_min_latin_share": 0.25,
+      "note": "zero model calls; this check exists because Step A really did return 20 Latin-script lines out of 100 on the default model and none on the comparison model"
+    }
+  },
+  "stats": {}
+}

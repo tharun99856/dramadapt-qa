@@ -1,0 +1,856 @@
+{
+  "provenance": {
+    "method": "api",
+    "provider_base_url": "https://api.groq.com/openai/v1",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0,
+    "generated": "2026-11-06T12:23:57+00:00",
+    "sample_seed": 20261106,
+    "measured": true,
+    "note": "machine first pass - stand-in, not a human localization"
+  },
+  "lines": [
+    {
+      "line_id": "E01-L001",
+      "telugu": "దీపం వెలిగేలా ఉంది.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "The lamp stays lit."
+    },
+    {
+      "line_id": "E01-L003",
+      "telugu": "నేను దాన్ని ఒక గంటకు ముందు పెట్టాను.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.4,
+      "english": "I set it down an hour ago."
+    },
+    {
+      "line_id": "E01-L004",
+      "telugu": "ఎడ్డా, కెయిన్ మళ్లీ నీవు నిద్రిస్తున్నప్పుడు వచ్చాడు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.4,
+      "english": "Caine came again while you slept."
+    },
+    {
+      "line_id": "E01-L005",
+      "telugu": "ఆమె నేను నిద్రిస్తున్నప్పుడు ఎప్పుడూ వస్తుంది.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "She always comes when I sleep."
+    },
+    {
+      "line_id": "E01-L006",
+      "telugu": "వాగ్దానం చేయి, నీవు ఆమె పత్రాన్ని సంతకం చేయవద్దు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.4,
+      "english": "Promise me you will not sign her paper."
+    },
+    {
+      "line_id": "E01-L007",
+      "telugu": "ఏ పత్రం?",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.0,
+      "english": "What paper?"
+    },
+    {
+      "line_id": "E01-L014",
+      "telugu": "బాకీ నా, ఒప్పందం నా, శీతాకాలం నా.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 4.2,
+      "english": "The debt is mine, the deed is mine, the winter is mine."
+    },
+    {
+      "line_id": "E01-L015",
+      "telugu": "దయచేసి, మళ్ళీ ఒకసారి చెప్పండి.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.4,
+      "english": "Say it once more."
+    },
+    {
+      "line_id": "E01-L017",
+      "telugu": "ఆ మాటను జలానికి చెప్పండి, Mistress.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.8,
+      "english": "Tell that to the tide, Mistress."
+    },
+    {
+      "line_id": "E01-L021",
+      "telugu": "మీ అధికారంతో. అవును.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.2,
+      "english": "By your authority. Yes."
+    },
+    {
+      "line_id": "E01-L023",
+      "telugu": "లేదు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.2,
+      "english": "No."
+    },
+    {
+      "line_id": "E01-L024",
+      "telugu": "మిస్ హాలొరన్, ఆమె ఎప్పుడూ 'లేదు' అంటుంది...",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "She always says no ..."
+    },
+    {
+      "line_id": "E01-L025",
+      "telugu": "... ధర సరైనంత వరకు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "... until the price is right."
+    },
+    {
+      "line_id": "E01-L026",
+      "telugu": "ఎడ్డా, నా అమ్మాయా, చేయవద్దు...",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "Edda, my girl, do not ..."
+    },
+    {
+      "line_id": "E01-L027",
+      "telugu": "... ఈ రాత్రి ఏదీ సంతకం చేయకు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "... sign nothing tonight."
+    },
+    {
+      "line_id": "E01-L029",
+      "telugu": "అంటీ. మీరు క్రిస్మస్ కాలంలో నన్ను అంతే పిలిచారు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "Aunt. That is what you called me at Christmastide."
+    },
+    {
+      "line_id": "E01-L030",
+      "telugu": "మీకు నచ్చినట్లుగా పిలవండి.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.2,
+      "english": "Call it what you like."
+    },
+    {
+      "line_id": "E02-L004",
+      "telugu": "టికెట్ నౌకతో కాలిపోయింది.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.4,
+      "english": "Ticket burnt with the ship."
+    },
+    {
+      "line_id": "E02-L006",
+      "telugu": "అలా అయితే, మీరు, Marek, అతని తల నింపుతున్నారా?",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "So it is you filling his head."
+    },
+    {
+      "line_id": "E02-L007",
+      "telugu": "అతని తల ఇప్పటికే నిండిపోయింది.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.4,
+      "english": "His head was full already."
+    },
+    {
+      "line_id": "E02-L009",
+      "telugu": "Mistress Caine దీనిని వినిపిస్తారు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "Mistress Caine will hear of this."
+    },
+    {
+      "line_id": "E02-L010",
+      "telugu": "తిను, ప్రియ. అతను నిన్ను నిలబడి ఉండాలని కోరుతాడు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.8,
+      "english": "Eat, love. He will want you standing."
+    },
+    {
+      "line_id": "E02-L011",
+      "telugu": "అతను దీపాన్ని కోరుకుంటున్నారు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.4,
+      "english": "He wants the lamp."
+    },
+    {
+      "line_id": "E02-L012",
+      "telugu": "అతను నీ తండ్రిని వసంతానికి ముందు రాయిపై నుంచి తొలగించాలని కోరుకుంటున్నాడు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.2,
+      "english": "He wants your father off the rock before the spring."
+    },
+    {
+      "line_id": "E02-L013",
+      "telugu": "అది అదే విషయం.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.4,
+      "english": "That is the same thing."
+    },
+    {
+      "line_id": "E02-L015",
+      "telugu": "మిస్ హల్లొరాన్, కంపెనీ కీపర్ శీతాకాలానికి దానం అందిస్తోంది.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 4.2,
+      "english": "Miss Halloran. The company offers charity for the keeper's winter."
+    },
+    {
+      "line_id": "E02-L016",
+      "telugu": "కేన్ నుండి దానం.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "Charity from Caine."
+    },
+    {
+      "line_id": "E02-L020",
+      "telugu": "తండ్రి సంతకం చేయడు. అది సమాధానం.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "Father does not sign. That is the answer."
+    },
+    {
+      "line_id": "E02-L025",
+      "telugu": "... మీరు ఎలా ...",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.2,
+      "english": "... how did you ..."
+    },
+    {
+      "line_id": "E02-L026",
+      "telugu": "Mee thandri naaku 61 lo darwaza chadavadam nerpindi.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 2.8,
+      "english": "Your father taught me to read a gate in '61."
+    },
+    {
+      "line_id": "E02-L028",
+      "telugu": "Shanthamga undi, Nanna. Nenu ikkada unna.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 1.8,
+      "english": "Hush now, Father. I am here."
+    },
+    {
+      "line_id": "E02-L029",
+      "telugu": "Aame ki hastakshara ki emi teliyadu.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 2.8,
+      "english": "She has no idea what a signature costs."
+    },
+    {
+      "line_id": "E02-L030",
+      "telugu": "Adi nannu 'aame' ani pilichadu, nenu patrikalo oka vakyam laga.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 3.8,
+      "english": "He called me 'she' like I was a clause in the paper."
+    },
+    {
+      "line_id": "E02-L031",
+      "telugu": "Darwaza nilipi, Edda. Aadani artham meeru.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 2.2,
+      "english": "Lock the gate, Edda. It is you he means."
+    },
+    {
+      "line_id": "E03-L002",
+      "telugu": "Naaku oka gaṇṭa undi, Mistress Caine.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 2.2,
+      "english": "I have an hour, Mistress Caine."
+    },
+    {
+      "line_id": "E03-L003",
+      "telugu": "Mee daggara aapada undi. Adi takkuva.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 2.4,
+      "english": "You have the tide. It is less."
+    },
+    {
+      "line_id": "E03-L006",
+      "telugu": "Adi teesukondi. Nenu choostanu.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 1.8,
+      "english": "Carry it. I will watch."
+    },
+    {
+      "line_id": "E03-L008",
+      "telugu": "Avaadu vatini konnaadu.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 1.2,
+      "english": "He bought them."
+    },
+    {
+      "line_id": "E03-L010",
+      "telugu": "Silas Vane, mruthyu vyakti patra nundi meeru emi korukuntunnaru?",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 3.4,
+      "english": "What do you want, Silas, out of a dead man's paper?"
+    },
+    {
+      "line_id": "E03-L011",
+      "telugu": "Miss Halloran, mee peru naa bed lo undi, alage aa lamp meeda naa seal.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 3.2,
+      "english": "Your name in my bed and my seal on that lamp."
+    },
+    {
+      "line_id": "E03-L012",
+      "telugu": "Meeru seal ki kooda layakaledu. Aameyi teesukondi.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 2.8,
+      "english": "You are not worth a seal. Take her away."
+    },
+    {
+      "line_id": "E03-L014",
+      "telugu": "ఎవరో చేశారు. మెట్ల నుండి.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "Someone did. From the stair."
+    },
+    {
+      "line_id": "E03-L017",
+      "telugu": "నీ వెలుగు నా పని.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.2,
+      "english": "Your light is my work."
+    },
+    {
+      "line_id": "E03-L018",
+      "telugu": "మారెక్, ‘61 విచారణ లేఖ ఒక కీపర్ కుమార్తెకు ఎంత ఖర్చవుతుందో చెప్పండి.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.8,
+      "english": "Then tell me what a '61 inquiry letter costs a keeper's daughter."
+    },
+    {
+      "line_id": "E03-L021",
+      "telugu": "ఈ రాత్రి కాదు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.4,
+      "english": "Not tonight."
+    },
+    {
+      "line_id": "E03-L023",
+      "telugu": "ఆమెకి తెలియదు, ఆమెను ధరలతో చూస్తున్నారు, ప్రేమతో కాదు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.8,
+      "english": "She does not know she is being priced and not courted."
+    },
+    {
+      "line_id": "E03-L024",
+      "telugu": "అంటీ, అది మరింత బాగుగా చెప్పేవారు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.4,
+      "english": "Aunt would have said that nicer."
+    },
+    {
+      "line_id": "E03-L025",
+      "telugu": "నీవు ఇంటికి వెళ్లావు, నా అమ్మాయి. ఎందుకు వెళ్లావు?",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.2,
+      "english": "You went to the house. My girl, why did you go?"
+    },
+    {
+      "line_id": "E03-L029",
+      "telugu": "నేను వాళ్లు దాన్ని తీసుకెళ్లనివ్వను.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "I will not let them take it."
+    },
+    {
+      "line_id": "E03-L030",
+      "telugu": "దాన్ని వాగ్దానంగా చెప్పు, సవాల్‌గా కాదు—",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "Say it as a promise, not a ..."
+    },
+    {
+      "line_id": "E03-L031",
+      "telugu": "నేను వినుతున్నాను, నాన్నా.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "... a dare. I hear you, Father."
+    },
+    {
+      "line_id": "E04-L001",
+      "telugu": "తిరుగుతూ ఉండు. తిరుగుతూ ఉండు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.6,
+      "english": "Keep it turning. Keep it turning."
+    },
+    {
+      "line_id": "E04-L002",
+      "telugu": "ఒకటి, రెండు, మూడు, నాలుగు —",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.6,
+      "english": "One, two, three, four —"
+    },
+    {
+      "line_id": "E04-L004",
+      "telugu": "సీడీని వెలిగించండి! ఎవరో సీడీని వెలిగించండి!",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "LIGHT THE STAIR! Somebody light the stair!"
+    },
+    {
+      "line_id": "E04-L006",
+      "telugu": "అప్పుడు అతను తడిగా, సరైనవాడిగా ఉంటుంది, ఆ క్రమంలో.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.8,
+      "english": "Then he'll be wet and right, in that order."
+    },
+    {
+      "line_id": "E04-L007",
+      "telugu": "తిరుగు అతనికి. తిరుగు అతనికి, అతను నా తండ్రి నీరు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.6,
+      "english": "Turn to him. Turn to him, he is my father's water."
+    },
+    {
+      "line_id": "E04-L009",
+      "telugu": "ఎవరికి కూడా కాదు. బార్ నిలిచింది.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "Nobody's. The bar held."
+    },
+    {
+      "line_id": "E04-L011",
+      "telugu": "నీ బార్ నిలిచింది. ట్రాలర్ కాదు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "Your bar held. The trawler did not."
+    },
+    {
+      "line_id": "E04-L013",
+      "telugu": "రెండు జీవించి, మూడు వెళ్లిపోయారు, బాలుడు ఇంకా నా డెక్క్‌పై ఉన్నాడు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.6,
+      "english": "Two alive, three gone, and the boy's still on my deck."
+    },
+    {
+      "line_id": "E04-L014",
+      "telugu": "ఎడ్డా, నా షోల్‌లో మూడు. నాకె చెప్పు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.0,
+      "english": "Three on my shoal. Say it to me."
+    },
+    {
+      "line_id": "E04-L015",
+      "telugu": "నీకు అవసరమైన విధంగా నేను చెప్పుతాను.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.2,
+      "english": "I'll say it any way you need."
+    },
+    {
+      "line_id": "E04-L017",
+      "telugu": "అతను తర్వాత నిద్రపోని వాడు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "He's the one who can't sleep after."
+    },
+    {
+      "line_id": "E04-L018",
+      "telugu": "జోస్ — కోట్. ఎవరి?",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.4,
+      "english": "Joss — the coat. Whose?"
+    },
+    {
+      "line_id": "E04-L021",
+      "telugu": "ఇది ఒంటరిగా లేదు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.4,
+      "english": "It isn't alone."
+    },
+    {
+      "line_id": "E04-L023",
+      "telugu": "నా తండ్రి నన్ను తొమ్మిదేళ్ల వయస్సులో ఇక్కడ పెట్టి, లెక్కించు, ఆపకు అని చెప్పారు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.6,
+      "english": "My father put me up here at nine and said count and don't stop."
+    },
+    {
+      "line_id": "E04-L024",
+      "telugu": "— తొమ్మిది, పది, పదకొండు, పన్నెండు —",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.6,
+      "english": "— nine, ten, eleven, twelve —"
+    },
+    {
+      "line_id": "E04-L025",
+      "telugu": "ఇది సరిపోతుంది. దిగు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.4,
+      "english": "That's enough. Go down."
+    },
+    {
+      "line_id": "E04-L027",
+      "telugu": "నీవు నా తండ్రి దీపాన్ని తాకితే, దాని పక్కన కాదు, దానిలోనే నిలబెడతావు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.8,
+      "english": "If you touch my father's lamp you'll be standing in it, not beside it."
+    },
+    {
+      "line_id": "E05-L003",
+      "telugu": "ఆది మునిగే ముందు వదిలివేయబడింది.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.8,
+      "english": "That one was written off before it sank."
+    },
+    {
+      "line_id": "E05-L007",
+      "telugu": "ఫాదర్ యాన్సెల్మ్ గారు. ఇది మీ లెడ్జర్ కూడా?",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.8,
+      "english": "Father Anselm. Is this your ledger too?"
+    },
+    {
+      "line_id": "E05-L009",
+      "telugu": "మరియు మిస్ట్రెస్ కేన్ గారు ఇస్తారు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "And Caine gives."
+    },
+    {
+      "line_id": "E05-L010",
+      "telugu": "కేన్ ఇస్తారు, నేను మీ తండ్రి శ్వాసను నిలుపుతాను, మీరు నిశ్శబ్దంగా ఉండండి.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.4,
+      "english": "Caine gives, I keep your father breathing, and you keep silent."
+    },
+    {
+      "line_id": "E05-L011",
+      "telugu": "హల్లొరాన్ గారు, మీరు రాజు నిల్వల విక్రయానికి నాతో రావాలి.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.6,
+      "english": "Halloran. You will come with me for the sale of king's stores."
+    },
+    {
+      "line_id": "E05-L012",
+      "telugu": "ఎడ్డా, నేను వాటిని తిరిగి కొనుగోలు చేశాను. వాటిని కొనుగోలు చేసిన ఒక మనిషి గుర్తు పెట్టుకున్నాడు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.2,
+      "english": "I bought them back. There's a man who remembers buying them."
+    },
+    {
+      "line_id": "E05-L014",
+      "telugu": "సిలాస్ వేన్, మెట్లు దిగు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "Step off the stair, Silas Vane."
+    },
+    {
+      "line_id": "E05-L015",
+      "telugu": "మిస్ హల్లొరాన్, ఇంకా నిశ్చితార్థి? రెండు సంవత్సరాలు గడిచినా—",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "Still the betrothed? Two years and still—"
+    },
+    {
+      "line_id": "E05-L016",
+      "telugu": "రెండు సంవత్సరాలు, ఇంకా కాదు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.4,
+      "english": "Two years and still no."
+    },
+    {
+      "line_id": "E05-L017",
+      "telugu": "‘61 ధరను పెద్దగా చెప్పి, దాని పేరు ఎవరికో చూడండి.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.2,
+      "english": "Say the '61 price out loud and see whose name it has."
+    },
+    {
+      "line_id": "E05-L019",
+      "telugu": "మీ నౌకాశ్రయంలో, మిస్ట్రెస్ కేన్ గారు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "In your harbour, Mistress Caine."
+    },
+    {
+      "line_id": "E05-L022",
+      "telugu": "నాన్న, పట్టుకో. ఫాదర్ ఆంసెల్మ్ గారు, అతనిని పట్టుకో.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "Father, hold on. Father Anselm, hold him."
+    },
+    {
+      "line_id": "E05-L026",
+      "telugu": "అప్పుడు దీపం కొనాలి, నా కోట్లో డబ్బు ఉంది.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.6,
+      "english": "Then the lamp wants buying, and I have the money in my coat."
+    },
+    {
+      "line_id": "E05-L027",
+      "telugu": "కెయిన్‌的钱తో ఒక బార్గెమన్.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "A bargeman with Caine's money."
+    },
+    {
+      "line_id": "E05-L029",
+      "telugu": "తొమ్మిది నెలలుగా మీరు నన్ను ఆకలితో చూస్తున్నారు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "Nine months you watched me starve."
+    },
+    {
+      "line_id": "E05-L031",
+      "telugu": "అప్పుడు మీరు ఎందుకు చెప్పలేదు?",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.0,
+      "english": "Then why did you not say so?"
+    },
+    {
+      "line_id": "E05-L032",
+      "telugu": "ఎడ్డా, నేను మీ కొనుగోలుదారుడైతే, మీరు నన్ను మీ భర్తగా బాధ్యతతో అనుమతించేవారు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.6,
+      "english": "Because if I was your buyer you'd have let me be your husband out of duty."
+    },
+    {
+      "line_id": "E06-L002",
+      "telugu": "అప్పుడు నేను దాన్ని నీటికి చదివిస్తాను. నీరు ఎక్కువ కాలంగా నిజాయితీగా ఉంది.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.8,
+      "english": "Then I'll read it to the water. The water's been honest longer."
+    },
+    {
+      "line_id": "E06-L004",
+      "telugu": "మిస్ హల్లొరన్, మీరు నా పత్రికను కొనుగోలు చేశారు. నా డబ్బుతో.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.8,
+      "english": "You bought my paper. With my money."
+    },
+    {
+      "line_id": "E06-L006",
+      "telugu": "అతనిని అరెస్టు చేయండి! అతను నీటిపై దొంగతనం చేస్తున్నాడు!",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.6,
+      "english": "Arrest him! He's a smuggler on the water!"
+    },
+    {
+      "line_id": "E06-L008",
+      "telugu": "అప్పుడు నా తండ్రి ఆరోపణపై, సిలాస్ వేన్.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.4,
+      "english": "On the charge of my father, then."
+    },
+    {
+      "line_id": "E06-L010",
+      "telugu": "Meeru mee kaligina okka kutumbamni shatru ga marchaaru.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 3.4,
+      "english": "You have made an enemy of the only family you had left."
+    },
+    {
+      "line_id": "E06-L011",
+      "telugu": "Aunt. Nee eppudu kutumbam laanti vunnavu. Kani dayava ledu.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 2.8,
+      "english": "Aunt. You were always family. Just not kind."
+    },
+    {
+      "line_id": "E06-L012",
+      "telugu": "Meeru mee lampu neeku pettukondi, pillagaa.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 1.6,
+      "english": "Keep your lamp, girl."
+    },
+    {
+      "line_id": "E06-L016",
+      "telugu": "Nenu naa peru adhi meeda pettina, meeru appudu emi?",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 2.6,
+      "english": "If I put my name on it, what are you then?"
+    },
+    {
+      "line_id": "E06-L017",
+      "telugu": "Nee deepam neeti pettina bargeman.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 2.6,
+      "english": "The bargeman who keeps your light burning."
+    },
+    {
+      "line_id": "E06-L018",
+      "telugu": "Adhi icchadam ki chinna vishayam kaadu, meeru.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 2.4,
+      "english": "That is not a small thing to be offered."
+    },
+    {
+      "line_id": "E06-L019",
+      "telugu": "Edda, pillagaa. Nenu naa swantam poddalu meeda mari inka nilabadutunnanu, naa pai choosthavo.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 3.8,
+      "english": "Edda. Lass. I am standing on my own stair again, look at me."
+    },
+    {
+      "line_id": "E06-L020",
+      "telugu": "Nenu choostunnanu, Appa. Nenu choostunnanu.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 3.0,
+      "english": "I'm looking, Father. I'm looking."
+    },
+    {
+      "line_id": "E06-L021",
+      "telugu": "— పదమూడు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "— thirteen."
+    },
+    {
+      "line_id": "E06-L023",
+      "telugu": "కాంతి వెలిగించు, ఎడ్డా. మూడు పడవలు ఇంటికి వస్తున్నాయి.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 3.2,
+      "english": "Light the stair, Edda. There's three boats coming home."
+    },
+    {
+      "line_id": "E06-L024",
+      "telugu": "దీపం వెలిగినట్లే ఉంటుంది.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "The lamp stays lit."
+    }
+  ],
+  "errors": [],
+  "coverage": {
+    "requested": 100,
+    "returned": 100,
+    "not_telugu_script": [
+      "E02-L026",
+      "E02-L028",
+      "E02-L029",
+      "E02-L030",
+      "E02-L031",
+      "E03-L002",
+      "E03-L003",
+      "E03-L006",
+      "E03-L008",
+      "E03-L010",
+      "E03-L011",
+      "E03-L012",
+      "E06-L010",
+      "E06-L011",
+      "E06-L012",
+      "E06-L016",
+      "E06-L017",
+      "E06-L018",
+      "E06-L019",
+      "E06-L020"
+    ]
+  },
+  "run_log": {
+    "requests_total": 18,
+    "requests_measured": 18,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {
+      "first_pass": 18
+    },
+    "prompt_tokens": 34599,
+    "completion_tokens": 21137,
+    "cost_usd": null,
+    "priced": false,
+    "models": [
+      "openai/gpt-oss-120b"
+    ]
+  }
+}

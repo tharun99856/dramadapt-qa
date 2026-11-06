@@ -1,0 +1,1111 @@
+{
+  "phase": "baseline",
+  "generated": "2026-11-06T12:31:17+00:00",
+  "model": "openai/gpt-oss-120b",
+  "batches": [
+    {
+      "batch": "episode-001.txt#S01",
+      "lines": [
+        "E01-L001",
+        "E01-L003",
+        "E01-L004",
+        "E01-L005",
+        "E01-L006",
+        "E01-L007"
+      ]
+    },
+    {
+      "batch": "episode-001.txt#S02",
+      "lines": [
+        "E01-L014",
+        "E01-L015",
+        "E01-L017",
+        "E01-L021"
+      ]
+    },
+    {
+      "batch": "episode-001.txt#S03",
+      "lines": [
+        "E01-L023",
+        "E01-L024",
+        "E01-L025",
+        "E01-L026",
+        "E01-L027",
+        "E01-L029",
+        "E01-L030"
+      ]
+    },
+    {
+      "batch": "episode-002.txt#S01",
+      "lines": [
+        "E02-L004",
+        "E02-L006",
+        "E02-L007",
+        "E02-L009"
+      ]
+    },
+    {
+      "batch": "episode-002.txt#S02",
+      "lines": [
+        "E02-L010",
+        "E02-L011",
+        "E02-L012",
+        "E02-L013",
+        "E02-L015",
+        "E02-L016",
+        "E02-L020"
+      ]
+    },
+    {
+      "batch": "episode-002.txt#S03",
+      "lines": [
+        "E02-L025",
+        "E02-L026",
+        "E02-L028",
+        "E02-L029",
+        "E02-L030",
+        "E02-L031"
+      ]
+    },
+    {
+      "batch": "episode-003.txt#S01",
+      "lines": [
+        "E03-L002",
+        "E03-L003",
+        "E03-L006",
+        "E03-L008",
+        "E03-L010",
+        "E03-L011",
+        "E03-L012"
+      ]
+    },
+    {
+      "batch": "episode-003.txt#S02",
+      "lines": [
+        "E03-L014",
+        "E03-L017",
+        "E03-L018",
+        "E03-L021",
+        "E03-L023",
+        "E03-L024"
+      ]
+    },
+    {
+      "batch": "episode-003.txt#S03",
+      "lines": [
+        "E03-L025",
+        "E03-L029",
+        "E03-L030",
+        "E03-L031"
+      ]
+    },
+    {
+      "batch": "episode-004.txt#S01",
+      "lines": [
+        "E04-L001",
+        "E04-L002",
+        "E04-L004",
+        "E04-L006",
+        "E04-L007"
+      ]
+    },
+    {
+      "batch": "episode-004.txt#S02",
+      "lines": [
+        "E04-L009",
+        "E04-L011",
+        "E04-L013",
+        "E04-L014",
+        "E04-L015",
+        "E04-L017",
+        "E04-L018"
+      ]
+    },
+    {
+      "batch": "episode-004.txt#S03",
+      "lines": [
+        "E04-L021",
+        "E04-L023",
+        "E04-L024",
+        "E04-L025",
+        "E04-L027"
+      ]
+    },
+    {
+      "batch": "episode-005.txt#S01",
+      "lines": [
+        "E05-L003",
+        "E05-L007",
+        "E05-L009",
+        "E05-L010"
+      ]
+    },
+    {
+      "batch": "episode-005.txt#S02",
+      "lines": [
+        "E05-L011",
+        "E05-L012",
+        "E05-L014",
+        "E05-L015",
+        "E05-L016",
+        "E05-L017",
+        "E05-L019",
+        "E05-L022"
+      ]
+    },
+    {
+      "batch": "episode-005.txt#S03",
+      "lines": [
+        "E05-L026",
+        "E05-L027",
+        "E05-L029",
+        "E05-L031",
+        "E05-L032"
+      ]
+    },
+    {
+      "batch": "episode-006.txt#S01",
+      "lines": [
+        "E06-L002",
+        "E06-L004",
+        "E06-L006",
+        "E06-L008"
+      ]
+    },
+    {
+      "batch": "episode-006.txt#S02",
+      "lines": [
+        "E06-L010",
+        "E06-L011",
+        "E06-L012",
+        "E06-L016",
+        "E06-L017",
+        "E06-L018",
+        "E06-L019",
+        "E06-L020"
+      ]
+    },
+    {
+      "batch": "episode-006.txt#S03",
+      "lines": [
+        "E06-L021",
+        "E06-L023",
+        "E06-L024"
+      ]
+    }
+  ],
+  "flags": [
+    {
+      "line_id": "E01-L001",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Telugu phrasing \"దీపం వెలిగేలా ఉంది\" is awkward; more natural would be \"దీపం వెలిగి ఉంది\" or \"దీపం వెలిగేలా ఉంది\" is redundant.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E01-L003",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Uses \"ఒక గంటకు ముందు\" which means \"an hour before\" instead of the correct \"an hour ago\" – should be \"ఒక గంట క్రితం\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E01-L004",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Unnecessary addition of the name \"ఎడ్డా,\" which isn’t in the English line, and the tense \"నీవు నిద్రిస్తున్నప్పుడు\" is present progressive rather than past; a more accurate translation would omit the name and use \"నీవు నిద్రించినప్పుడు\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E01-L014",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "\"deed\" translated as \"ఒప్పందం\" (agreement) which is inaccurate; a better term would be \"కార్యం\" or \"క్రియ\". The overall phrasing sounds unnatural.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E01-L015",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Added \"దయచేసి\" (please) which is not present in the English line, altering the tone.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E01-L017",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "\"tide\" translated as \"జలానికి\" (to water) which is incorrect; the proper word is \"అలలు\" or \"అలలకు\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E01-L024",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Added \"మిస్ హాలొరన్\" (Miss Halloran) which is not present in the original English line, altering the meaning.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E02-L004",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Literal translation is awkward; should convey \"Ticket burned along with the ship\" e.g., \"టికెట్ నౌకతో కలిసి కాలిపోయింది\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E02-L006",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Unnatural phrasing and unnecessary speaker name; \"అతని తల నింపుతున్నారా?\" is literal and sounds odd, better \"అతని మనసు నింపుతున్నారా?\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E02-L009",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Incorrect verb form and unnatural phrasing; \"వినిపిస్తారు\" is wrong. Should be something like \"Mistress Caine దీనిని గురించి వింటారు\" or \"ఇది గురించి తెలుసుకుంటారు\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E02-L011",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Verb form incorrect; should be \"అతను దీపాన్ని కోరుకుంటున్నాడు\" instead of the plural/respectful \"కోరుకుంటున్నారు\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E02-L015",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Missing possessive marker for \"keeper's\"; translation should reflect \"కీపర్ యొక్క శీతాకాలానికి\" rather than \"కీపర్ శీతాకాలానికి\" for naturalness.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E02-L025",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Translation is incomplete; only \"మీరు ఎలా ...\" is given, missing the rest of the phrase.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E02-L026",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Literal translation is unnatural; \"darwaza chadavadam\" is odd for \"read a gate\" and the year should be expressed as \"61లో\" or \"1961లో\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E02-L028",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "\"Shanthamga undi\" is not the usual way to say \"Hush now\"; a more natural rendering would be \"శాంతంగా ఉండండి\" or \"నిశ్శబ్దంగా ఉండండి\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E02-L029",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Missing the notion of \"costs\"; the Telugu version says she doesn't know about a signature, not what it costs. Should convey \"సంతకం ఎంత ఖర్చు అవుతుందో ఆమెకు తెలియదు\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E02-L031",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "The translation is garbled and does not convey the original meaning. \"Darwaza nilipi, Edda. Aadani arthur meeru\" is incorrect; a proper rendering would be \"గేట్‌ను మూసేయి, ఎడ్డా. అతను నిన్ను ఉద్దేశిస్తున్నాడు.\"",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E03-L003",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "The translation misinterprets \"tide\" as \"aapada\" (disaster) and does not convey the intended meaning of \"time\"; also the phrase is unnatural in Telugu.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E03-L010",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "The phrase \"mruthyu vyakti patra\" is awkward and does not naturally express \"dead man's paper\"; the overall sentence sounds stilted.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E03-L011",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Adds \"Miss Halloran\" which is not in the English line, and uses unnatural wording like \"naa bed lo undi\"; the translation does not accurately reflect the original phrasing.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E03-L012",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "The expression \"seal ki kooda layakaledu\" is unnatural; a more natural rendering would avoid the literal word \"seal\" and use a phrase that fits Telugu idiom.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E03-L018",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Telugu adds speaker name “మారెక్,” which isn’t in the English line, and the translation misinterprets the garbled English phrase; it should reflect the original meaning without inserting names.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E03-L023",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "The translation of “being priced” as “ధరలతో చూస్తున్నారు” and “not courted” as “ప్రేమతో కాదు” is unnatural and inaccurate; it doesn’t convey the idea of being evaluated for value versus being romantically pursued.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E03-L025",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "\"My girl\" rendered as \"నా అమ్మాయి\" is awkward for a father speaking to his daughter; a more natural term would be \"నా కుమార్తె\" or \"నా ప్రియతమా\". Also the address is split into a separate sentence, losing the comma.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E03-L030",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "\"dare\" translated as \"సవాల్\" (challenge) which is not the best equivalent; a more appropriate word would be \"ధైర్యం\" or \"సాహసం\". The phrase also ends abruptly with an em dash, not matching the English ellipsis.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E03-L031",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "The translation omits the \"... a dare\" part that continues from the previous line, leaving only \"I hear you, Father.\"",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E04-L004",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Incorrect translation of \"stair\" – used \"సీడీ\" which means \"CD\"; should be \"మెట్లు\" or \"సీడీ\" is wrong context.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E04-L007",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Awkward phrasing; \"తిరుగు అతనికి\" is unnatural for \"Turn to him\" and \"అతను నా తండ్రి నీరు\" sounds literal and unclear; a more natural rendering would be \"అతనివైపు తిరుగు, అతను నా తండ్రి నీరు\" or rephrase for context.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E04-L009",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "The fragment \"Nobody's.\" is ambiguous; translation \"ఎవరికి కూడా కాదు\" is vague and does not convey the intended meaning.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E04-L011",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "\"The trawler did not\" is mistranslated as \"ట్రాలర్ కాదు\" which means \"not the trawler\"; it should convey that the trawler did not hold, e.g., \"ట్రాలర్ నిలిచలేదు\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E04-L014",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Speaker is Halloran (Edda's father) but translation addresses \"ఎడ్డా\"; also \"నాకె చెప్పు\" lacks a space and sounds unnatural. Should be \"నాకు చెప్పు\" and avoid misnaming.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E04-L021",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Uses \"ఇది\" (this) instead of the more natural \"అది\" (that) for referring to the lamp.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E04-L023",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "The negative imperative \"ఆపకు\" is ungrammatical; a natural form would be \"ఆపకండి\" or \"ఆపకండి\". Also the flow could be smoother, e.g., \"నా తండ్రి నన్ను తొమ్మిదేళ్ల వయస్సులో ఇక్కడ పెట్టి, లెక్కించమని, ఆపకండి అని చెప్పారు.\"",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E04-L025",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "\"ఇది సరిపోతుంది\" is acceptable, but \"దిగు\" is a very abrupt informal command; a more natural phrasing would be \"కిందకు రా\" or \"కిందకు వెళ్లండి.\"",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E04-L027",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "The verb form \"నిలబెడతావు\" is awkward; a natural future tense would be \"నిలబెడుతావు\". Also saying \"దానిలోనే\" (inside it) for a lamp sounds odd; \"దాని లోపల\" or rephrasing the whole sentence would be clearer.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E05-L003",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "\"written off\" is rendered as \"వదిలివేయబడింది\" which means \"abandoned\"; the correct sense (declared a loss) is missing.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E05-L007",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Unnatural address \"ఫాదర్ యాన్సెల్మ్ గారు\" and loanword \"లెడ్జర్\"; a more natural Telugu would use \"అన్సెల్మ్ పాద్రి\" and \"ఖాతాపుస్తకం\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E05-L009",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "\"Caine\" is mistakenly turned into \"మిస్ట్రెస్ కేన్ గారు\" and the verb \"gives\" is translated as \"ఇస్తారు\" without context; the name should stay as \"కేన్\" and the phrase needs proper meaning.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E05-L010",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Same error as above: \"Caine gives\" is mistranslated as \"కేన్ ఇస్తారు\"; also the sentence structure is awkward and does not convey the conditional tone of the English line.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E05-L012",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Added address \"ఎడ్డా,\" which is not present in the English line.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E05-L015",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Inserted \"మిస్ హల్లొరాన్\" (Miss Halloran) which is not in the original dialogue.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E05-L017",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Translation of \"see whose name it has\" is awkward; should be something like \"దాని మీద ఎవరి పేరు ఉందో చూడండి\" instead of \"దాని పేరు ఎవరికో చూడండి\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E05-L022",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Mixed English and Telugu in the address (\"ఫాదర్ ఆంసెల్మ్ గారు\") and added honorifics not in the source; should be consistent, e.g., \"అన్సెల్మ్ గారు\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E05-L026",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "‘coat’ is mistranslated as కోట (fort) instead of కోట్ (coat); the phrase lacks the initial ‘Then’ and sounds unnatural.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E05-L027",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Contains a Chinese character 钱 and mixes languages; the Telugu sentence is malformed.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E05-L029",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Verb tense is wrong (present progressive instead of past); ‘starve’ is rendered as ఆకలితో which is inaccurate.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E05-L032",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Adds an unnecessary speaker name ‘ఎడ్డా’; the translation of ‘out of duty’ is awkward and not a direct match for the English.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E06-L004",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Incorrect speaker name added (\"మిస్ హల్లొరన్\") and wrong honorific; should reflect \"Mistress Caine\" in Telugu.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E06-L006",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "\"smuggler on the water\" rendered as \"నీటిపై దొంగతనం చేస్తున్నాడు\" which changes meaning; should convey \"smuggler\" rather than \"theft\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E06-L008",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Contains extraneous text \"సిలాస్ వేన్\" and misspells \"ఆరోపణ\" as \"ఆరోగణ\"; translation is inaccurate and unnatural.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E06-L010",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Awkward phrasing and incorrect pronoun/verb form; \"mee kaligina\" is unnatural and should be \"nee kaligina\" or \"nee\" and the verb should be \"marchav\" not \"marchaaru\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E06-L011",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Translation of \"Just not kind\" is wrong – \"Kani dayava ledu\" means \"no mercy\"; also the first sentence is clumsy: \"Nee eppudu kutumbam laanti vunnavu\" should be rephrased.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E06-L012",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Redundant and unnatural wording; \"Meeru mee lampu neeku pettukondi\" repeats pronouns and should be simplified to something like \"Nee lampu pettukondi\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E06-L016",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Sentence is incomplete and unnatural; \"meeru appudu emi?\" does not convey \"what are you then?\" and needs a proper question form.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E06-L017",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Wrong word for \"bargeman\" (translated as \"bargain\") and the clause \"Nee deepam neeti pettina\" is awkward.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E06-L018",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Unnecessary \"meeru\" at the end and unnatural word order; should be \"Adhi icchadam chinna vishayam kaadu.\"",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E06-L019",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "Multiple unnatural expressions: \"poddalu\" for \"stair\", awkward phrase \"mari inka nilabadutunnanu\", and \"naa pai choosthavo\" sounds forced.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    },
+    {
+      "line_id": "E06-L023",
+      "check": "baseline",
+      "severity": "medium",
+      "verdict": "reported_problem",
+      "evidence": "The phrase \"Light the stair\" is mistranslated as \"కాంతి వెలిగించు\" which means \"turn on the light\"; it should convey lighting the stairway (e.g., \"సీడీని వెలిగించు\" or similar).",
+      "suggestion": "",
+      "status": "pending",
+      "note": "generic single-prompt QA, Phase 0 control only"
+    }
+  ],
+  "stats": {
+    "raw_problems": [
+      {
+        "line_id": "E01-L001",
+        "issue": "Telugu phrasing \"దీపం వెలిగేలా ఉంది\" is awkward; more natural would be \"దీపం వెలిగి ఉంది\" or \"దీపం వెలిగేలా ఉంది\" is redundant.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E01-L003",
+        "issue": "Uses \"ఒక గంటకు ముందు\" which means \"an hour before\" instead of the correct \"an hour ago\" – should be \"ఒక గంట క్రితం\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E01-L004",
+        "issue": "Unnecessary addition of the name \"ఎడ్డా,\" which isn’t in the English line, and the tense \"నీవు నిద్రిస్తున్నప్పుడు\" is present progressive rather than past; a more accurate translation would omit the name and use \"నీవు నిద్రించినప్పుడు\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E01-L014",
+        "issue": "\"deed\" translated as \"ఒప్పందం\" (agreement) which is inaccurate; a better term would be \"కార్యం\" or \"క్రియ\". The overall phrasing sounds unnatural.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E01-L015",
+        "issue": "Added \"దయచేసి\" (please) which is not present in the English line, altering the tone.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E01-L017",
+        "issue": "\"tide\" translated as \"జలానికి\" (to water) which is incorrect; the proper word is \"అలలు\" or \"అలలకు\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E01-L024",
+        "issue": "Added \"మిస్ హాలొరన్\" (Miss Halloran) which is not present in the original English line, altering the meaning.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E02-L004",
+        "issue": "Literal translation is awkward; should convey \"Ticket burned along with the ship\" e.g., \"టికెట్ నౌకతో కలిసి కాలిపోయింది\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E02-L006",
+        "issue": "Unnatural phrasing and unnecessary speaker name; \"అతని తల నింపుతున్నారా?\" is literal and sounds odd, better \"అతని మనసు నింపుతున్నారా?\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E02-L009",
+        "issue": "Incorrect verb form and unnatural phrasing; \"వినిపిస్తారు\" is wrong. Should be something like \"Mistress Caine దీనిని గురించి వింటారు\" or \"ఇది గురించి తెలుసుకుంటారు\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E02-L011",
+        "issue": "Verb form incorrect; should be \"అతను దీపాన్ని కోరుకుంటున్నాడు\" instead of the plural/respectful \"కోరుకుంటున్నారు\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E02-L015",
+        "issue": "Missing possessive marker for \"keeper's\"; translation should reflect \"కీపర్ యొక్క శీతాకాలానికి\" rather than \"కీపర్ శీతాకాలానికి\" for naturalness.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E02-L025",
+        "issue": "Translation is incomplete; only \"మీరు ఎలా ...\" is given, missing the rest of the phrase.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E02-L026",
+        "issue": "Literal translation is unnatural; \"darwaza chadavadam\" is odd for \"read a gate\" and the year should be expressed as \"61లో\" or \"1961లో\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E02-L028",
+        "issue": "\"Shanthamga undi\" is not the usual way to say \"Hush now\"; a more natural rendering would be \"శాంతంగా ఉండండి\" or \"నిశ్శబ్దంగా ఉండండి\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E02-L029",
+        "issue": "Missing the notion of \"costs\"; the Telugu version says she doesn't know about a signature, not what it costs. Should convey \"సంతకం ఎంత ఖర్చు అవుతుందో ఆమెకు తెలియదు\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E02-L031",
+        "issue": "The translation is garbled and does not convey the original meaning. \"Darwaza nilipi, Edda. Aadani arthur meeru\" is incorrect; a proper rendering would be \"గేట్‌ను మూసేయి, ఎడ్డా. అతను నిన్ను ఉద్దేశిస్తున్నాడు.\"",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E03-L003",
+        "issue": "The translation misinterprets \"tide\" as \"aapada\" (disaster) and does not convey the intended meaning of \"time\"; also the phrase is unnatural in Telugu.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E03-L010",
+        "issue": "The phrase \"mruthyu vyakti patra\" is awkward and does not naturally express \"dead man's paper\"; the overall sentence sounds stilted.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E03-L011",
+        "issue": "Adds \"Miss Halloran\" which is not in the English line, and uses unnatural wording like \"naa bed lo undi\"; the translation does not accurately reflect the original phrasing.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E03-L012",
+        "issue": "The expression \"seal ki kooda layakaledu\" is unnatural; a more natural rendering would avoid the literal word \"seal\" and use a phrase that fits Telugu idiom.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E03-L018",
+        "issue": "Telugu adds speaker name “మారెక్,” which isn’t in the English line, and the translation misinterprets the garbled English phrase; it should reflect the original meaning without inserting names.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E03-L023",
+        "issue": "The translation of “being priced” as “ధరలతో చూస్తున్నారు” and “not courted” as “ప్రేమతో కాదు” is unnatural and inaccurate; it doesn’t convey the idea of being evaluated for value versus being romantically pursued.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E03-L025",
+        "issue": "\"My girl\" rendered as \"నా అమ్మాయి\" is awkward for a father speaking to his daughter; a more natural term would be \"నా కుమార్తె\" or \"నా ప్రియతమా\". Also the address is split into a separate sentence, losing the comma.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E03-L030",
+        "issue": "\"dare\" translated as \"సవాల్\" (challenge) which is not the best equivalent; a more appropriate word would be \"ధైర్యం\" or \"సాహసం\". The phrase also ends abruptly with an em dash, not matching the English ellipsis.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E03-L031",
+        "issue": "The translation omits the \"... a dare\" part that continues from the previous line, leaving only \"I hear you, Father.\"",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E04-L004",
+        "issue": "Incorrect translation of \"stair\" – used \"సీడీ\" which means \"CD\"; should be \"మెట్లు\" or \"సీడీ\" is wrong context.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E04-L007",
+        "issue": "Awkward phrasing; \"తిరుగు అతనికి\" is unnatural for \"Turn to him\" and \"అతను నా తండ్రి నీరు\" sounds literal and unclear; a more natural rendering would be \"అతనివైపు తిరుగు, అతను నా తండ్రి నీరు\" or rephrase for context.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E04-L009",
+        "issue": "The fragment \"Nobody's.\" is ambiguous; translation \"ఎవరికి కూడా కాదు\" is vague and does not convey the intended meaning.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E04-L011",
+        "issue": "\"The trawler did not\" is mistranslated as \"ట్రాలర్ కాదు\" which means \"not the trawler\"; it should convey that the trawler did not hold, e.g., \"ట్రాలర్ నిలిచలేదు\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E04-L014",
+        "issue": "Speaker is Halloran (Edda's father) but translation addresses \"ఎడ్డా\"; also \"నాకె చెప్పు\" lacks a space and sounds unnatural. Should be \"నాకు చెప్పు\" and avoid misnaming.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E04-L021",
+        "issue": "Uses \"ఇది\" (this) instead of the more natural \"అది\" (that) for referring to the lamp.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E04-L023",
+        "issue": "The negative imperative \"ఆపకు\" is ungrammatical; a natural form would be \"ఆపకండి\" or \"ఆపకండి\". Also the flow could be smoother, e.g., \"నా తండ్రి నన్ను తొమ్మిదేళ్ల వయస్సులో ఇక్కడ పెట్టి, లెక్కించమని, ఆపకండి అని చెప్పారు.\"",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E04-L025",
+        "issue": "\"ఇది సరిపోతుంది\" is acceptable, but \"దిగు\" is a very abrupt informal command; a more natural phrasing would be \"కిందకు రా\" or \"కిందకు వెళ్లండి.\"",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E04-L027",
+        "issue": "The verb form \"నిలబెడతావు\" is awkward; a natural future tense would be \"నిలబెడుతావు\". Also saying \"దానిలోనే\" (inside it) for a lamp sounds odd; \"దాని లోపల\" or rephrasing the whole sentence would be clearer.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E05-L003",
+        "issue": "\"written off\" is rendered as \"వదిలివేయబడింది\" which means \"abandoned\"; the correct sense (declared a loss) is missing.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E05-L007",
+        "issue": "Unnatural address \"ఫాదర్ యాన్సెల్మ్ గారు\" and loanword \"లెడ్జర్\"; a more natural Telugu would use \"అన్సెల్మ్ పాద్రి\" and \"ఖాతాపుస్తకం\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E05-L009",
+        "issue": "\"Caine\" is mistakenly turned into \"మిస్ట్రెస్ కేన్ గారు\" and the verb \"gives\" is translated as \"ఇస్తారు\" without context; the name should stay as \"కేన్\" and the phrase needs proper meaning.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E05-L010",
+        "issue": "Same error as above: \"Caine gives\" is mistranslated as \"కేన్ ఇస్తారు\"; also the sentence structure is awkward and does not convey the conditional tone of the English line.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E05-L012",
+        "issue": "Added address \"ఎడ్డా,\" which is not present in the English line.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E05-L015",
+        "issue": "Inserted \"మిస్ హల్లొరాన్\" (Miss Halloran) which is not in the original dialogue.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E05-L017",
+        "issue": "Translation of \"see whose name it has\" is awkward; should be something like \"దాని మీద ఎవరి పేరు ఉందో చూడండి\" instead of \"దాని పేరు ఎవరికో చూడండి\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E05-L022",
+        "issue": "Mixed English and Telugu in the address (\"ఫాదర్ ఆంసెల్మ్ గారు\") and added honorifics not in the source; should be consistent, e.g., \"అన్సెల్మ్ గారు\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E05-L026",
+        "issue": "‘coat’ is mistranslated as కోట (fort) instead of కోట్ (coat); the phrase lacks the initial ‘Then’ and sounds unnatural.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E05-L027",
+        "issue": "Contains a Chinese character 钱 and mixes languages; the Telugu sentence is malformed.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E05-L029",
+        "issue": "Verb tense is wrong (present progressive instead of past); ‘starve’ is rendered as ఆకలితో which is inaccurate.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E05-L032",
+        "issue": "Adds an unnecessary speaker name ‘ఎడ్డా’; the translation of ‘out of duty’ is awkward and not a direct match for the English.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E06-L004",
+        "issue": "Incorrect speaker name added (\"మిస్ హల్లొరన్\") and wrong honorific; should reflect \"Mistress Caine\" in Telugu.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E06-L006",
+        "issue": "\"smuggler on the water\" rendered as \"నీటిపై దొంగతనం చేస్తున్నాడు\" which changes meaning; should convey \"smuggler\" rather than \"theft\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E06-L008",
+        "issue": "Contains extraneous text \"సిలాస్ వేన్\" and misspells \"ఆరోపణ\" as \"ఆరోగణ\"; translation is inaccurate and unnatural.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E06-L010",
+        "issue": "Awkward phrasing and incorrect pronoun/verb form; \"mee kaligina\" is unnatural and should be \"nee kaligina\" or \"nee\" and the verb should be \"marchav\" not \"marchaaru\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E06-L011",
+        "issue": "Translation of \"Just not kind\" is wrong – \"Kani dayava ledu\" means \"no mercy\"; also the first sentence is clumsy: \"Nee eppudu kutumbam laanti vunnavu\" should be rephrased.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E06-L012",
+        "issue": "Redundant and unnatural wording; \"Meeru mee lampu neeku pettukondi\" repeats pronouns and should be simplified to something like \"Nee lampu pettukondi\".",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E06-L016",
+        "issue": "Sentence is incomplete and unnatural; \"meeru appudu emi?\" does not convey \"what are you then?\" and needs a proper question form.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E06-L017",
+        "issue": "Wrong word for \"bargeman\" (translated as \"bargain\") and the clause \"Nee deepam neeti pettina\" is awkward.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E06-L018",
+        "issue": "Unnecessary \"meeru\" at the end and unnatural word order; should be \"Adhi icchadam chinna vishayam kaadu.\"",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E06-L019",
+        "issue": "Multiple unnatural expressions: \"poddalu\" for \"stair\", awkward phrase \"mari inka nilabadutunnanu\", and \"naa pai choosthavo\" sounds forced.",
+        "hallucinated_id": false
+      },
+      {
+        "line_id": "E06-L023",
+        "issue": "The phrase \"Light the stair\" is mistranslated as \"కాంతి వెలిగించు\" which means \"turn on the light\"; it should convey lighting the stairway (e.g., \"సీడీని వెలిగించు\" or similar).",
+        "hallucinated_id": false
+      }
+    ],
+    "batches": 18,
+    "batches_with_no_problems": 0,
+    "problems_reported": 58,
+    "unknown_ids": 0
+  },
+  "errors": [],
+  "meta": {
+    "lines": 100,
+    "elapsed_seconds": 136.4
+  },
+  "run_log": {
+    "requests_total": 18,
+    "requests_measured": 18,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {
+      "baseline": 18
+    },
+    "prompt_tokens": 9633,
+    "completion_tokens": 14990,
+    "cost_usd": null,
+    "priced": false,
+    "models": [
+      "openai/gpt-oss-120b"
+    ]
+  },
+  "source": {
+    "telugu_file": "data\\telugu\\first_pass.json",
+    "telugu_provenance": {
+      "method": "api",
+      "provider_base_url": "https://api.groq.com/openai/v1",
+      "model": "openai/gpt-oss-120b",
+      "temperature": 0,
+      "generated": "2026-11-06T12:23:57+00:00",
+      "sample_seed": 20261106,
+      "measured": true,
+      "note": "machine first pass - stand-in, not a human localization"
+    },
+    "sample_seed": 20261106
+  }
+}

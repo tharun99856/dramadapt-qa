@@ -1,0 +1,75 @@
+{
+  "seed": 20261106,
+  "plan_file": "data\\selection_plan.yaml",
+  "target": 100,
+  "selected": 100,
+  "per_episode": {
+    "1": 17,
+    "2": 17,
+    "3": 17,
+    "4": 17,
+    "5": 17,
+    "6": 15
+  },
+  "categories": {
+    "short_slot": {
+      "in_corpus": 19,
+      "in_sample_lines": 18,
+      "in_sample_units": 18,
+      "unit": "lines",
+      "minimum": 15,
+      "met": true
+    },
+    "chain_member": {
+      "in_corpus": 6,
+      "in_sample_lines": 6,
+      "in_sample_units": 3,
+      "unit": "chains",
+      "minimum": 3,
+      "met": true
+    },
+    "voice_or_offscreen": {
+      "in_corpus": 16,
+      "in_sample_lines": 13,
+      "in_sample_units": 13,
+      "unit": "lines",
+      "minimum": 5,
+      "met": true
+    },
+    "address_shift": {
+      "in_corpus": 11,
+      "in_sample_lines": 10,
+      "in_sample_units": 10,
+      "unit": "lines",
+      "minimum": 10,
+      "met": true
+    },
+    "threat_or_accusation": {
+      "in_corpus": 61,
+      "in_sample_lines": 31,
+      "in_sample_units": 31,
+      "unit": "lines",
+      "minimum": 10,
+      "met": true
+    },
+    "tender_or_intimate": {
+      "in_corpus": 59,
+      "in_sample_lines": 34,
+      "in_sample_units": 34,
+      "unit": "lines",
+      "minimum": 10,
+      "met": true
+    },
+    "long_line": {
+      "in_corpus": 25,
+      "in_sample_lines": 12,
+      "in_sample_units": 12,
+      "unit": "lines",
+      "minimum": 5,
+      "met": true
+    }
+  },
+  "all_minimums_met": true,
+  "cap_relaxations": [],
+  "note": "Sample comes from data/screenplay/, written by the builder. No Kuku pack content."
+}

@@ -1,0 +1,27 @@
+# Never commit a key.
+.api_key
+*.key
+.env
+
+# The Kuku input pack must not appear in this repository in any form.
+# Excluded by name pattern so a stray copy cannot be added by accident.
+*[Pp]ack*/
+*Kuku*[Pp]ack/
+*input_pack/
+*input-pack/
+*kuku_pack/
+*confidential*/
+*_source_material/
+
+# Local environment and tooling noise
+__pycache__/
+# Working copies the builder makes while re-running experiments; not part of the submission.
+scratch/
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+desktop.ini

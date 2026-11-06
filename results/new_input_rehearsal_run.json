@@ -1,0 +1,71 @@
+{
+  "generated": "2026-11-06T13:41:17+00:00",
+  "phase": "new_input_rehearsal",
+  "model": null,
+  "source": {
+    "input": "data/new_show_demo",
+    "files": [
+      "episode-001.txt"
+    ],
+    "telugu_file": "None",
+    "unparsed_blocks": 0,
+    "parse_warnings": 34
+  },
+  "batching": {
+    "batches": 3,
+    "requests": 0
+  },
+  "run_log": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "errors": [],
+  "counts": {
+    "lines": 34,
+    "flags": 0,
+    "by_check": {},
+    "by_severity": {}
+  },
+  "flags": [],
+  "verdicts": {
+    "timing": [],
+    "script": []
+  },
+  "summaries": {
+    "timing": {
+      "syllables_per_second": 3.5,
+      "margin": 0.15,
+      "lines_checked": 0,
+      "lines_without_telugu": 34,
+      "lines_not_in_telugu_script": [],
+      "chains_checked": 1,
+      "english_baseline_words_per_second": null,
+      "ratio_to_tight_slot": {
+        "median": null,
+        "p75": null,
+        "p90": null,
+        "max": null
+      },
+      "share_over_tight_with_margin": null,
+      "selectivity_note": "A share near 1.0 means this check is shortlisting nothing: either the rate is not calibrated for this show yet, or the draft really does overrun every slot. Read the median ratio before trusting the flag list.",
+      "rate_source": "override passed on the command line - not calibrated"
+    },
+    "script": {
+      "lines_checked": 0,
+      "lines_without_telugu": 34,
+      "lines_without_letters": 0,
+      "not_in_telugu_script": 0,
+      "mixed_script": 0,
+      "mixed_min_latin_share": 0.25,
+      "note": "zero model calls; this check exists because Step A really did return 20 Latin-script lines out of 100 on the default model and none on the comparison model"
+    }
+  },
+  "stats": {}
+}

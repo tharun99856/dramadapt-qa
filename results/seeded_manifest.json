@@ -1,0 +1,157 @@
+{
+  "seed": 20261106,
+  "edits": [
+    {
+      "op": "negation",
+      "line_id": "E05-L022",
+      "expected_check": "meaning",
+      "before": "నాన్న, ఆగి ఉండు. ఫాదర్ ఆన్సెల్మ్, ఆయన్ని పట్టుకోండి.",
+      "after": "నాన్న, ఆగి ఉండు. ఫాదర్ ఆన్సెల్మ్, ఆయన్ని పట్టుకోండి. అది లేదు.",
+      "english": "Father, hold on. Father Anselm, hold him.",
+      "slot_seconds": 1.8,
+      "akshara_before": 17,
+      "akshara_after": 21,
+      "categories": [
+        "address_shift",
+        "ambiguous_register",
+        "tender_or_intimate",
+        "threat_or_accusation"
+      ]
+    },
+    {
+      "op": "negation",
+      "line_id": "E03-L018",
+      "expected_check": "meaning",
+      "before": "అయితే చెప్పండి, 61 విచారణ లేఖ కాపలాదారి కూతురికి ఎంత ఖర్చు?",
+      "after": "అయితే చెప్పండి, 61 విచారణ లేఖ కాపలాదారి కూతురికి ఎంత ఖర్చు? అది లేదు.",
+      "english": "Then tell me what a '61 inquiry letter costs a keeper's daughter.",
+      "slot_seconds": 3.8,
+      "akshara_before": 25,
+      "akshara_after": 29,
+      "categories": [
+        "address_term",
+        "long_line",
+        "threat_or_accusation"
+      ]
+    },
+    {
+      "op": "honorific_downgrade",
+      "line_id": "E03-L024",
+      "expected_check": "relationship",
+      "before": "అత్తయ్య అయితే అది సుతారంగా అనేవారు.",
+      "after": "అత్తయ్య అయితే అది సుతారంగా అనేవావు.",
+      "english": "Aunt would have said that nicer.",
+      "slot_seconds": 2.4,
+      "akshara_before": 16,
+      "akshara_after": 16,
+      "categories": [
+        "address_shift"
+      ]
+    },
+    {
+      "op": "untranslated_left",
+      "line_id": "E05-L016",
+      "expected_check": "meaning",
+      "before": "రెండేళ్ళయినా కాదు.",
+      "after": "Two years and still no.",
+      "english": "Two years and still no.",
+      "slot_seconds": 1.4,
+      "akshara_before": 7,
+      "akshara_after": 0,
+      "categories": [
+        "short_slot",
+        "threat_or_accusation"
+      ]
+    },
+    {
+      "op": "untranslated_left",
+      "line_id": "E03-L017",
+      "expected_check": "meaning",
+      "before": "మీ దీపం నా పని.",
+      "after": "Your light is my work.",
+      "english": "Your light is my work.",
+      "slot_seconds": 1.2,
+      "akshara_before": 6,
+      "akshara_after": 0,
+      "categories": [
+        "short_slot"
+      ]
+    },
+    {
+      "op": "slot_padding",
+      "line_id": "E01-L023",
+      "expected_check": "timing",
+      "before": "కాదు.",
+      "after": "కాదు. నా మాట విను, ఇంకా చాలా చెప్పాలి ఉంది, ఆగవు.",
+      "english": "No.",
+      "slot_seconds": 1.2,
+      "akshara_before": 2,
+      "akshara_after": 19,
+      "categories": [
+        "short_slot",
+        "tender_or_intimate"
+      ]
+    },
+    {
+      "op": "slot_padding",
+      "line_id": "E01-L003",
+      "expected_check": "timing",
+      "before": "గంట క్రితమే నేను పెట్టేశాను.",
+      "after": "గంట క్రితమే నేను పెట్టేశాను. నా మాట విను, ఇంకా చాలా చెప్పాలి ఉంది, ఆగవు.",
+      "english": "I set it down an hour ago.",
+      "slot_seconds": 1.4,
+      "akshara_before": 11,
+      "akshara_after": 28,
+      "categories": [
+        "short_slot"
+      ]
+    },
+    {
+      "op": "address_swap",
+      "line_id": "E02-L012",
+      "expected_check": "relationship",
+      "before": "వసంతానికి ముందే నాన్నను ఆ రాతిమీద దించాలని ఆయన కోరుకుంటున్నాడు.",
+      "after": "ఆంటీ, వసంతానికి ముందే నాన్నను ఆ రాతిమీద దించాలని ఆయన కోరుకుంటున్నాడు.",
+      "english": "He wants your father off the rock before the spring.",
+      "slot_seconds": 3.2,
+      "akshara_before": 28,
+      "akshara_after": 30,
+      "categories": [
+        "tender_or_intimate"
+      ]
+    },
+    {
+      "op": "address_swap",
+      "line_id": "E04-L027",
+      "expected_check": "relationship",
+      "before": "నాన్న దీపాన్ని ముట్టుకుంటే, మీరు దాని పక్కన కాదు — దానిలోపల నిలబడతారు.",
+      "after": "సార్, నాన్న దీపాన్ని ముట్టుకుంటే, మీరు దాని పక్కన కాదు — దానిలోపల నిలబడతారు.",
+      "english": "If you touch my father's lamp you'll be standing in it, not beside it.",
+      "slot_seconds": 3.8,
+      "akshara_before": 29,
+      "akshara_after": 30,
+      "categories": [
+        "long_line",
+        "tender_or_intimate"
+      ]
+    }
+  ],
+  "edits_by_op": {
+    "negation": 2,
+    "honorific_downgrade": 1,
+    "untranslated_left": 2,
+    "slot_padding": 2,
+    "address_swap": 2
+  },
+  "edits_total": 9,
+  "could_not_seed": [
+    {
+      "op": "honorific_downgrade",
+      "wanted": 2,
+      "made": 1,
+      "reason": "no candidate line contained a fragment this op could change"
+    }
+  ],
+  "caveat": "seeded errors are easier to detect than natural ones; reported by type only (PRD §6 Step E)",
+  "telugu_fragments_status": "machine-drafted, reviewer sign-off still open (data/seed_ops.yaml)"
+}

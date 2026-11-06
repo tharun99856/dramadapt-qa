@@ -1,0 +1,186 @@
+EPISODE NUMBER: 4
+EPISODE LOGLINE: A wreck in the storm puts Halloran at the mercy of the bargeman he was warned about, and the child's voice that counts the lamp's turns becomes the one thing Edda will not explain to anyone else.
+CONTINUITY NOTES: First time Edda says "Joss" out loud. First time the lamp is called "he". VOICE OF THE LAMP is a child heard only in Edda's scenes; keep the voice unplaced.
+[SCRIPT START]
+
+SCENE 01
+EXT. THE STORM WATER – NIGHT
+[Scene Start: 0:00.0]
+[Scene End: 0:42.0]
+
+CAMERA:
+[0:00.0 – 0:04.0]
+The sea is black and folded. The lamp searches and finds nothing.
+
+SOUND FX:
+[0:04.0 – 0:07.6]
+Wind in the gallery. Glass drumming.
+
+EDDA (shouting to herself):
+[0:07.6 – 0:10.2]
+"Keep it turning. Keep it turning."
+
+VOICE OF THE LAMP (V.O., a child):
+[0:10.8 – 0:13.4]
+"One, two, three, four —"
+
+ACTION:
+[0:13.4 – 0:15.6]
+She stops counting with it. That is how we know she hears it.
+
+EDDA (afraid):
+[0:16.2 – 0:18.0]
+"Not tonight. Please, not tonight."
+
+SOUND FX:
+[0:18.0 – 0:22.4]
+A mast going. Timber the length of the sky.
+
+JOSS (off-screen):
+[0:23.0 – 0:25.2]
+"LIGHT THE STAIR! Somebody light the stair!"
+
+CONSTABLE ROE (far):
+[0:25.8 – 0:28.0]
+"That's his barge out there in that!"
+
+JOSS V.O. (flat, calm, certain):
+[0:28.6 – 0:31.4]
+"Then he'll be wet and right, in that order."
+
+ACTION:
+[0:31.4 – 0:34.0]
+The lamp finds a hull sideways on the shoal.
+
+EDDA (to the lamp, begging):
+[0:34.6 – 0:38.2]
+"Turn to him. Turn to him, he is my father's water."
+
+SOUND FX:
+[0:38.2 – 0:42.0]
+The first boat goes over the bar.
+
+SCENE 02
+INT. KEEPER'S HOUSE – NIGHT
+[Scene Start: 0:42.0 – 1:26.0]
+
+ACTION:
+[0:42.0 – 0:45.0]
+Halloran is up, coat on wrong way round, listening to the sea like a man at a door.
+
+HALORAN (shouting over wind):
+[0:45.0 – 0:47.8]
+"Which one is it? Which ship is on my shoal!"
+
+EDDA (steady, a lie):
+[0:48.4 – 0:50.2]
+"Nobody's. The bar held."
+
+HALORAN (instantly):
+[0:50.8 – 0:52.4]
+"You lie like your mother."
+
+ACTION:
+[0:52.4 – 0:54.6]
+The door goes. Joss comes in with water pouring off him and a stranger's coat.
+
+JOSS (gasping):
+[0:55.2 – 0:57.4]
+"Your bar held. The trawler did not."
+
+DELIA (fussed):
+[0:58.0 – 1:00.6]
+"Look at him, look at the floor he's made —"
+
+JOSS (not stopping):
+[1:01.2 – 1:04.8]
+"Two alive, three gone, and the boy's still on my deck."
+
+HALORAN (broken):
+[1:05.4 – 1:07.4]
+"Three on my shoal. Say it to me."
+
+JOSS (tired):
+[1:08.0 – 1:09.2]
+"I'll say it any way you need."
+
+CAMERA:
+[1:09.2 – 1:11.4]
+Edda watching the bargeman lie to her father kindly.
+
+EDDA (careful):
+[1:12.0 – 1:14.6]
+"You told him the count before you told me."
+
+JOSS (unashamed):
+[1:15.2 – 1:17.4]
+"He's the one who can't sleep after."
+
+EDDA (the name, first time):
+[1:18.0 – 1:19.4]
+"Joss — the coat. Whose?"
+
+JOSS (closing):
+[1:20.0 – 1:22.4]
+"The man who paid for my lace."
+
+SOUND FX:
+[1:22.4 – 1:26.0]
+Wind takes a slate off the roof.
+
+SCENE 03
+INT. LAMP GALLERY – LATER
+[Scene Start: 1:26.0 – 2:06.0]
+
+ACTION:
+[1:26.0 – 1:29.0]
+She is up the stair with the oil and he is up the stair with her.
+
+JOSS (quieter):
+[1:29.0 – 1:31.6]
+"You keep this glass clean at midnight alone."
+
+EDDA (flat):
+[1:32.2 – 1:33.6]
+"It isn't alone."
+
+JOSS (giving up):
+[1:34.2 – 1:36.0]
+"No. Right. It isn't."
+
+CAMERA:
+[1:36.0 – 1:38.4]
+Through the glass, the wreck lights still on the water.
+
+EDDA (small):
+[1:39.0 – 1:42.6]
+"My father put me up here at nine and said count and don't stop."
+
+VOICE OF THE LAMP (V.O., a child):
+[1:43.2 – 1:45.8]
+"— nine, ten, eleven, twelve —"
+
+EDDA (to it, gentle):
+[1:46.4 – 1:47.8]
+"That's enough. Go down."
+
+JOSS (not asking):
+[1:48.4 – 1:51.2]
+"I'll count it with you when the glass turns."
+
+ACTION:
+[1:51.2 – 1:53.0]
+Her shoulder against the cold iron; his, a hand's width away.
+
+EDDA (tender, terrified):
+[1:53.6 – 1:57.4]
+"If you touch my father's lamp you'll be standing in it, not beside it."
+
+JOSS (straight):
+[1:58.0 – 2:00.6]
+"Then I'll stand in it. Ask me in the morning."
+
+SOUND FX:
+[2:00.6 – 2:06.0]
+The lamp turns; the sea goes on counting.
+[SCRIPT END]

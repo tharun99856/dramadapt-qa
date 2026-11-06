@@ -1,0 +1,208 @@
+EPISODE NUMBER: 3
+EPISODE LOGLINE: Edda goes to the company office to bargain for one more winter and learns that Silas Vane holds a letter that can hang her father; the bargain she brings home is worse than the one she refused.
+CONTINUITY NOTES: Edda uses "Mistress Caine" in public and slips to "Aunt" once, alone, in this episode. Joss still has not been called "Joss" by her. The letter in Silas's coat is from the '61 inquiry.
+[SCRIPT START]
+
+SCENE 01
+INT. COMPANY OFFICE - DAY
+[Scene Start: 0:00.0]
+[Scene End: 0:46.0]
+
+CAMERA:
+[0:00.0 - 0:03.4]
+A ledger higher than a man. Caine writes without looking up.
+
+MISTRESS CAINE (busy):
+[0:03.4 - 0:05.6]
+"Stand there until I finish."
+
+EDDA (controlled):
+[0:06.2 - 0:08.4]
+"I have an hour, Mistress Caine."
+
+MISTRESS CAINE (dry):
+[0:09.0 - 0:11.4]
+"You have the tide. It is less."
+
+ACTION:
+[0:11.4 - 0:14.0]
+Silas comes in wet, coat buttoned wrong, and enjoys the room.
+
+SILAS (light):
+[0:14.0 - 0:17.2]
+"The keeper's girl at our desk. Mother, say something kind."
+
+EDDA (to Caine only):
+[0:17.8 - 0:21.6]
+"Two winters on the lamp and I will carry your coal myself."
+
+MISTRESS CAINE (amused):
+[0:22.2 - 0:24.0]
+"Carry it. I will watch."
+
+SILAS (serious now):
+[0:24.6 - 0:28.4]
+"There is a letter here that says your father sold a ship's stores."
+
+EDDA (still):
+[0:29.0 - 0:30.2]
+"He bought them."
+
+SILAS (enjoying it):
+[0:30.8 - 0:32.4]
+"Say that to the magistrate."
+
+ACTION:
+[0:32.4 - 0:34.8]
+Her hand finds the back of a chair and stays on it.
+
+EDDA (low):
+[0:35.4 - 0:38.8]
+"What do you want, Silas, out of a dead man's paper?"
+
+SILAS (final):
+[0:39.4 - 0:42.6]
+"Your name in my bed and my seal on that lamp."
+
+MISTRESS CAINE (sharp):
+[0:43.2 - 0:46.0]
+"You are not worth a seal. Take her away."
+
+SCENE 02
+EXT. SHORE STAIR - RAIN
+[Scene Start: 0:46.0]
+[Scene End: 1:30.0]
+
+SOUND FX:
+[0:46.0 - 0:49.0]
+Rain on four hundred steps.
+
+EDDA (shaking):
+[0:49.0 - 0:50.6]
+"I did not say it."
+
+JOSS (off-screen):
+[0:51.2 - 0:53.4]
+"Someone did. From the stair."
+
+ACTION:
+[0:53.4 - 0:55.6]
+He is under the awning with his oilskin off, which means he has been waiting.
+
+JOSS (not kind):
+[0:56.2 - 0:59.0]
+"You are stood in the rain over a man's handwriting."
+
+EDDA (bitter):
+[0:59.6 - 1:01.2]
+"And you are stood in my light."
+
+JOSS (short):
+[1:01.8 - 1:03.0]
+"Your light is my work."
+
+CAMERA:
+[1:03.0 - 1:05.0]
+Two gulls, one rope, the space between two people on a stair.
+
+EDDA (measured):
+[1:05.6 - 1:09.4]
+"Then tell me what a '61 inquiry letter costs a keeper's daughter."
+
+JOSS (careful now):
+[1:10.0 - 1:12.0]
+"Everything. And nothing, if the buyer is honest."
+
+JOSS (leaning, overlapping):
+[1:11.4 - 1:13.2]
+"Ask me who I sold the lace for."
+
+EDDA (afraid of it):
+[1:14.0 - 1:15.4]
+"Not tonight."
+
+SILAS (from the door, loud):
+[1:16.0 - 1:19.4]
+"Mother wants her answer before the glass turns again!"
+
+ACTION:
+[1:19.4 - 1:21.0]
+The door bangs shut on his own joke.
+
+JOSS V.O. (quiet, mostly to himself):
+[1:21.6 - 1:24.4]
+"She does not know she is being priced and not courted."
+
+EDDA (to the rain):
+[1:25.0 - 1:27.4]
+"Aunt would have said that nicer."
+
+SOUND FX:
+[1:27.4 - 1:30.0]
+The tide bell twice, then not at all.
+
+SCENE 03
+INT. LAMP ROOM - NIGHT
+[Scene Start: 1:30.0]
+[Scene End: 2:12.0]
+
+ACTION:
+[1:30.0 - 1:32.6]
+Halloran is awake for the first time in two days, propped on a chair.
+
+HALORAN (clear):
+[1:32.6 - 1:35.8]
+"You went to the house. My girl, why did you go?"
+
+EDDA (small):
+[1:36.4 - 1:38.0]
+"You were dying quietly."
+
+HALORAN (harsh, loving):
+[1:38.6 - 1:42.0]
+"Then let me do it without a signature on my back."
+
+ACTION:
+[1:42.0 - 1:43.6]
+He puts her hand flat on the table, as if she is eight.
+
+HALORAN (tender):
+[1:44.2 - 1:47.6]
+"If they take the lamp, they take the ten years I put in it."
+
+EDDA (breaking):
+[1:48.2 - 1:50.0]
+"I will not let them take it."
+
+HALORAN (same, urgent):
+[1:50.6 - 1:52.4]
+"Say it as a promise, not a ... "
+
+EDDA (finishing it):
+[1:53.0 - 1:54.8]
+"... a dare. I hear you, Father."
+
+CAMERA:
+[1:54.8 - 1:57.0]
+The glass turns. Her face, in sections, lit and dark.
+
+EDDA (to the lamp):
+[1:57.6 - 2:01.4]
+"Not one more winter. Every winter they come for."
+
+JOSS O.S. (at the stair, far):
+[2:02.0 - 2:04.6]
+"Marek's barge is at the gate if you want a witness."
+
+ACTION:
+[2:04.6 - 2:06.2]
+She does not answer him. She takes the paper and folds it small.
+
+EDDA (decided):
+[2:06.8 - 2:09.6]
+"Tomorrow I will sign with a witness or not at all."
+
+SOUND FX:
+[2:09.6 - 2:12.0]
+The turn of the glass.
+[SCRIPT END]

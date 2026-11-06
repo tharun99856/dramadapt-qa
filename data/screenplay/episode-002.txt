@@ -1,0 +1,204 @@
+EPISODE NUMBER: 2
+EPISODE LOGLINE: The constable searches Joss Marek's barge for smuggled lace while Edda, certain the bargeman poisoned her father's judgment, is forced to take his help at the water gate.
+CONTINUITY NOTES: Edda still calls Joss "Marek" — never "Joss". Delia is the only one who uses "love". THE COMPANY CLERK here is Caine's man in a grey coat; the shipping-office clerk in episode five is a different man under the same label.
+[SCRIPT START]
+
+SCENE 01
+EXT. QUAY - EARLY MORNING
+[Scene Start: 0:00.0]
+[Scene End: 0:40.0]
+
+CAMERA:
+[0:00.0 - 0:03.0]
+Fog on the water. The barge rides low, ropes coiled, a lantern on the thwart.
+
+ACTION:
+[0:03.0 - 0:05.6]
+Constable Roe lifts a sailcloth with two fingers.
+
+CONSTABLE ROE (official):
+[0:05.6 - 0:08.4]
+"Turn it out. All of it."
+
+JOSS (patient):
+[0:09.0 - 0:11.2]
+"It is lace, sir. Bought with honest money."
+
+THE COMPANY CLERK (greedy):
+[0:11.8 - 0:14.0]
+"Lace with no harbour ticket on it."
+
+JOSS (dry):
+[0:14.6 - 0:16.0]
+"Ticket burnt with the ship."
+
+ACTION:
+[0:16.0 - 0:18.2]
+He does not lie. That is the problem.
+
+CONSTABLE ROE (hard):
+[0:18.2 - 0:21.6]
+"Then you will answer for the ship as well as the lace."
+
+SOUND FX:
+[0:21.6 - 0:23.4]
+Boots on the shore. Edda coming fast.
+
+EDDA O.S. (accusing):
+[0:23.4 - 0:25.0]
+"So it is you filling his head."
+
+JOSS (tired):
+[0:25.6 - 0:27.0]
+"His head was full already."
+
+CAMERA:
+[0:27.0 - 0:29.4]
+Her face when she realises the constable is on her side of this.
+
+EDDA (shifting):
+[0:30.0 - 0:33.2]
+"Constable. Search the house, not the man who feeds it."
+
+THE COMPANY CLERK (pleased):
+[0:33.8 - 0:36.0]
+"Mistress Caine will hear of this."
+
+SCENE 02
+INT. KEEPER'S HOUSE - KITCHEN - DAY
+[Scene Start: 0:40.0]
+[Scene End: 1:24.0]
+
+ACTION:
+[0:40.0 - 0:44.0]
+Delia sets a bowl by the fire and pushes it away from herself.
+
+DELIA (kind):
+[0:44.0 - 0:46.8]
+"Eat, love. He will want you standing."
+
+EDDA (raw):
+[0:47.4 - 0:48.8]
+"He wants the lamp."
+
+DELIA (careful):
+[0:49.4 - 0:52.6]
+"He wants your father off the rock before the spring."
+
+EDDA (quiet):
+[0:53.2 - 0:54.6]
+"That is the same thing."
+
+ACTION:
+[0:54.6 - 0:56.0]
+The bowl goes untouched.
+
+DELIA (blunt):
+[0:56.6 - 0:59.8]
+"Then starve politely. It will help."
+
+BROTHER ANSELM (measured):
+[1:00.4 - 1:04.6]
+"Miss Halloran. The company offers charity for the keeper's winter."
+
+EDDA (cold):
+[1:05.2 - 1:06.8]
+"Charity from Caine."
+
+BROTHER ANSELM (unbothered):
+[1:07.4 - 1:10.6]
+"Charity is charity, child, whoever signs it."
+
+EDDA (low, dangerous):
+[1:11.2 - 1:14.0]
+"Say that to him when he asks for bread."
+
+BROTHER ANSELM (warning):
+[1:14.6 - 1:17.0]
+"My child, do not make an enemy of a signature."
+
+ACTION:
+[1:17.0 - 1:18.6]
+She looks at the door he came in by.
+
+EDDA (flat):
+[1:19.2 - 1:21.0]
+"Father does not sign. That is the answer."
+
+SOUND FX:
+[1:21.0 - 1:24.0]
+The tide bell from the barge, twice.
+
+SCENE 03
+EXT. WATER GATE - DUSK
+[Scene Start: 1:24.0]
+[Scene End: 2:08.0]
+
+CAMERA:
+[1:24.0 - 1:27.0]
+The gate is frozen at the hinge. Halloran's weight in Edda's arms.
+
+EDDA (struggling):
+[1:27.0 - 1:28.6]
+"Give me the rope."
+
+JOSS (already there):
+[1:29.2 - 1:30.8]
+"You will drop him."
+
+EDDA (furious):
+[1:31.4 - 1:33.0]
+"Mind your own water."
+
+ACTION:
+[1:33.0 - 1:35.2]
+The rope goes around her father without a word spoken.
+
+JOSS (quiet):
+[1:35.8 - 1:37.6]
+"Hold the lamp. Do not speak."
+
+EDDA (shaken):
+[1:38.2 - 1:39.4]
+"... how did you ... "
+
+JOSS (not proud):
+[1:40.0 - 1:42.8]
+"Your father taught me to read a gate in '61."
+
+HALORAN (drifting):
+[1:43.4 - 1:46.6]
+"The girl will not sign it, Joss. She is all I have left."
+
+EDDA (to her father, soft):
+[1:47.2 - 1:49.0]
+"Hush now, Father. I am here."
+
+CAMERA:
+[1:49.0 - 1:51.0]
+Joss, hearing his own name used by someone else's mouth.
+
+JOSS V.O. (later, from the quay):
+[1:51.6 - 1:54.4]
+"She has no idea what a signature costs."
+
+ACTION:
+[1:54.4 - 1:56.0]
+The fog comes in to the first stair.
+
+EDDA (to herself):
+[1:56.6 - 2:00.4]
+"He called me 'she' like I was a clause in the paper."
+
+JOSS (off-screen, far):
+[2:01.0 - 2:03.2]
+"Lock the gate, Edda. It is you he means."
+
+EDDA (not moving):
+[2:03.8 - 2:05.4]
+"Then he can knock."
+
+SOUND FX:
+[2:05.4 - 2:08.0]
+The lamp turns over the black water.
+[SCRIPT END]
