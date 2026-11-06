@@ -15,6 +15,11 @@ Companion docs: `PRD.md` (requirements and the Phase 0 experiment), `PRD_ADDENDU
 (parser rules and window definitions), `docs/solution_two_pager.md` (the submission doc),
 `docs/failure_log.md` (what went wrong during the build).
 
+Repository: https://github.com/tharun99856/dramadapt-qa. The API key is not in it and never will be -
+`src/config.py` reads `GROQ_API_KEY` from the environment or an untracked `.api_key` file, and
+`.env.example` documents both. Without a key the tool still runs: `--checks timing,script` and
+`--skip-step-a` need no model at all, which is how the new-input path is rehearsed.
+
 ---
 
 ## Data provenance
