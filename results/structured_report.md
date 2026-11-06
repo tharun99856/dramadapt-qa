@@ -1,6 +1,6 @@
 # DramAdapt QA report - structured
 
-Generated 2026-11-06T13:28:41+00:00. Model: `openai/gpt-oss-120b`.
+Generated 2026-11-06T15:00:18+00:00. Model: `None`.
 
 ## Summary
 
@@ -8,15 +8,15 @@ Generated 2026-11-06T13:28:41+00:00. Model: `openai/gpt-oss-120b`.
 - Lines with Telugu attached: **100** of 100
 - Checks completed: **4** of 5  *(partially judged: naturalness)*
 - Lines flagged: **90**
-- Flags by check: meaning=13, naturalness=27, relationship=21, script=22, timing=69
-- Flags by severity: high=84, low=27, medium=41
+- Flags by check: meaning=13, naturalness=40, relationship=21, script=22, timing=69
+- Flags by severity: high=84, low=40, medium=41
 - Model coverage: lines sent but not classified - relationship 30. For relationship this is usually no relationship-sheet row for the pair or an addressee that cannot be identified from the line; those lines are neither flagged nor cleared.
 - Timing: rate **3.5** akshara/s (override passed on the command line - not calibrated), median estimate/slot ratio **1.746**, p90 2.857, max 4.048 - **82%** of measured lines overrun their slot by more than 15%. A share near 1.0 means this check is shortlisting nothing, so read the ratio before trusting the list.
-- Requests: 50 for 18 scene batches (prompt tokens 64574, completion tokens 55610, cost None)
+- Requests: 55 for 18 scene batches (prompt tokens 69143, completion tokens 60126, cost None)
 
 ## Checks that did not finish
 
-- **naturalness** (partial): 7 of 18 batches refused; 63 lines judged, 37 not
+- **naturalness** (partial): 2 of 18 batches refused; 84 lines judged, 16 not
 
 These are failures or gaps, not clean passes. Lines a check never read were not judged.
 
@@ -64,6 +64,19 @@ These are failures or gaps, not clean passes. Lines a check never read were not 
 | E04-L011_naturalness | E04-L011 | naturalness | low | possibly_unnatural | Your bar held. The trawler did not. | నీ బార్ నిలిచింది. ట్రాలర్ కాదు. ~2.857s/10ak | 2.2 | "ట్రాలర్ కాదు" does not convey the intended meaning (the trawler did not hold). It sounds… |  | pending |
 | E04-L013_naturalness | E04-L013 | naturalness | low | possibly_unnatural | Two alive, three gone, and the boy's still on my deck. | రెండు జీవించి, మూడు వెళ్లిపోయారు, బాలుడు ఇంకా నా డెక్క్‌పై ఉన్నాడు. ~6.571s/23ak | 3.6 | "రెండు జీవించి" is awkward; a more natural phrasing would be "రెండు జీవించి ఉన్నారు". The… |  | pending |
 | E04-L014_naturalness | E04-L014 | naturalness | low | possibly_unnatural | Three on my shoal. Say it to me. | ఎడ్డా, నా షోల్‌లో మూడు. నాకె చెప్పు. ~3.143s/11ak | 2.0 | The sentence is fragmented and contains a typo: "నాకె చెప్పు" should be "నాకు చెప్పు" and… |  | pending |
+| E04-L023_naturalness | E04-L023 | naturalness | low | possibly_unnatural | My father put me up here at nine and said count and don't stop. | నా తండ్రి నన్ను తొమ్మిదేళ్ల వయస్సులో ఇక్కడ పెట్టి, లెక్కించు, ఆపకు అని చెప్పారు. ~8.286s/29ak | 3.6 | Negative imperative "ఆపకు" sounds odd; a more natural phrasing would be "ఆపకండి" or "ఆపవద… |  | pending |
+| E04-L025_naturalness | E04-L025 | naturalness | low | possibly_unnatural | That's enough. Go down. | ఇది సరిపోతుంది. దిగు. ~2.571s/9ak | 1.4 | Uses informal singular imperative "దిగు"; according to the required register it should be… |  | pending |
+| E04-L027_naturalness | E04-L027 | naturalness | low | possibly_unnatural | If you touch my father's lamp you'll be standing in it, not beside it. | నీవు నా తండ్రి దీపాన్ని తాకితే, దాని పక్కన కాదు, దానిలోనే నిలబెడతావు. ~8.0s/28ak | 3.8 | Employs singular informal "నీవు...నిలబెడతావు"; the period dubbing register calls for seco… |  | pending |
+| E05-L009_naturalness | E05-L009 | naturalness | low | possibly_unnatural | And Caine gives. | మరియు మిస్ట్రెస్ కేన్ గారు ఇస్తారు. ~3.143s/11ak | 1.6 | Literal translation feels stiff; double honorific "మిస్ట్రెస్ ... గారు" and fragment lack… |  | pending |
+| E05-L010_naturalness | E05-L010 | naturalness | low | possibly_unnatural | Caine gives, I keep your father breathing, and you keep silent. | కేన్ ఇస్తారు, నేను మీ తండ్రి శ్వాసను నిలుపుతాను, మీరు నిశ్శబ్దంగా ఉండండి. ~7.429s/26ak | 3.4 | First clause "కేన్ ఇస్తారు" is a fragment without object; overall sentence mixes fragment… |  | pending |
+| E05-L026_naturalness | E05-L026 | naturalness | low | possibly_unnatural | Then the lamp wants buying, and I have the money in my coat. | అప్పుడు దీపం కొనాలి, నా కోట్లో డబ్బు ఉంది. ~4.286s/15ak | 3.6 | Literal translation; 'దీపం కొనాలి' is stiff, and 'నా కోట్లో' mis‑uses 'కోట్' (coat) as 'క… |  | pending |
+| E05-L027_naturalness | E05-L027 | naturalness | low | possibly_unnatural | A bargeman with Caine's money. | కెయిన్‌的钱తో ఒక బార్గెమన్. ~2.286s/8ak | 1.8 | Mixes Chinese character 钱 with Telugu, and uses a borrowed noun 'బార్గెమన్' without prope… |  | pending |
+| E05-L032_naturalness | E05-L032 | naturalness | low | possibly_unnatural | Because if I was your buyer you'd have let me be your husband out of duty. | ఎడ్డా, నేను మీ కొనుగోలుదారుడైతే, మీరు నన్ను మీ భర్తగా బాధ్యతతో అనుమతించేవారు. ~9.143s/32ak | 3.6 | Stilted phrasing ('బాధ్యతతో అనుమతించేవారు'), awkward word order, and overly literal rende… |  | pending |
+| E06-L002_naturalness | E06-L002 | naturalness | low | possibly_unnatural | Then I'll read it to the water. The water's been honest longer. | అప్పుడు నేను దాన్ని నీటికి చదివిస్తాను. నీరు ఎక్కువ కాలంగా నిజాయితీగా ఉంది. ~8.571s/30ak | 3.8 | Literal translation; metaphor ‘water has been honest’ sounds odd in Telugu and feels stif… |  | pending |
+| E06-L004_naturalness | E06-L004 | naturalness | low | possibly_unnatural | You bought my paper. With my money. | మిస్ హల్లొరన్, మీరు నా పత్రికను కొనుగోలు చేశారు. నా డబ్బుతో. ~6.286s/22ak | 2.8 | Adds unrelated title “మిస్ హల్లొరన్”; phrasing is abrupt and overly literal. |  | pending |
+| E06-L006_naturalness | E06-L006 | naturalness | low | possibly_unnatural | Arrest him! He's a smuggler on the water! | అతనిని అరెస్టు చేయండి! అతను నీటిపై దొంగతనం చేస్తున్నాడు! ~6.857s/24ak | 2.6 | Uses ‘నీటిపై దొంగతనం’ which is unnatural for ‘smuggler on the water’; word choice is off. |  | pending |
+| E06-L008_naturalness | E06-L008 | naturalness | low | possibly_unnatural | On the charge of my father, then. | అప్పుడు నా తండ్రి ఆరోపణపై, సిలాస్ వేన్. ~4.0s/14ak | 2.4 | Mis‑translation of ‘charge’; includes name “సిలాస్ వేన్” incorrectly and uses wrong term … |  | pending |
+| E06-L024_naturalness | E06-L024 | naturalness | low | possibly_unnatural | The lamp stays lit. | దీపం వెలిగినట్లే ఉంటుంది. ~2.857s/10ak | 2.2 | The phrasing "వెలిగినట్లే ఉంటుంది" sounds stiff/translated; a more natural period‑style r… |  | pending |
 | E01-L014_relationship | E01-L014 | relationship | medium | honorific_dropped | The debt is mine, the deed is mine, the winter is mine. | బాకీ నా, ఒప్పందం నా, శీతాకాలం నా. ~3.429s/12ak | 4.2 | Mistress Caine is expected to use a condescending‑sweet register and address Edda as "Mis… | Add the expected address, e.g., "Miss Halloran, బాకీ నా, ఒప్పందం నా, శీతాకాలం నా." | pending |
 | E01-L015_relationship | E01-L015 | relationship | medium | honorific_dropped | Say it once more. | దయచేసి, మళ్ళీ ఒకసారి చెప్పండి. ~3.714s/13ak | 1.4 | Edda should address Mistress Caine with the formal honorific plural and the title "Mistre… | Insert the title, e.g., "Mistress Caine, దయచేసి, మళ్ళీ ఒకసారి చెప్పండి." | pending |
 | E01-L017_relationship | E01-L017 | relationship | high | address_mismatch | Tell that to the tide, Mistress. | ఆ మాటను జలానికి చెప్పండి, Mistress. ~3.143s/11ak | 2.8 | Joss is speaking to Edda, whose expected address term is "Edda". The Telugu line retains … | Replace "Mistress" with the appropriate familiar address, e.g., "Edda, ఆ మాటను జలానికి చె… | pending |
@@ -179,7 +192,11 @@ These are failures or gaps, not clean passes. Lines a check never read were not 
 
 ## Not flagged
 
-E01-L001, E01-L007, E01-L023, E02-L016, E03-L021, E04-L002, E04-L018, E05-L003, E05-L014, E06-L021
+E01-L023, E04-L002, E04-L018, E06-L021
+
+## Not flagged, but not read by every check (6 lines)
+
+E01-L001, E01-L007, E02-L016, E03-L021, E05-L003, E05-L014
 
 ## Reading this report
 
@@ -187,4 +204,4 @@ E01-L001, E01-L007, E01-L023, E02-L016, E03-L021, E04-L002, E04-L018, E05-L003, 
 - Naturalness flags are advisory only and carry no score.
 - Nothing here is auto-approved. Every flag needs an editor action.
 - Akshara counts in the timing column are machine counts of Telugu syllables by `src/telugu.py`: one per base letter, minus one per virama, so a conjunct counts once.
-- Absent from the flag list is not the same as cleared: 30 line(s) were sent to a model that declined to judge them and 37 sat in a batch the model never answered. Check the coverage line above before reading this as a pass.
+- Absent from the flag list is not the same as cleared: 30 line(s) were sent to a model that declined to judge them; 16 sat in a batch the model never answered. Check the coverage lines above before reading this as a pass.

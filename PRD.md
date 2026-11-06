@@ -184,19 +184,29 @@ JSON of the full run (inputs, prompts, raw model responses, flags, editor action
 | Structured QA: script form | **zero** — pure Python |
 
 The v1 figure of "3–4 calls per line, ~300–400 calls" is gone. What the experiment actually spent, read
-out of `results/run_log.json` after the real runs: **104 requests in total, 146,222 prompt tokens and
-96,982 completion tokens** - Step A 18 requests per model (34,599/21,137 and 37,416/5,245), the baseline
-control 18 (9,633/14,990), the structured pass 50 (64,574/55,610, of which 47 batches came back from the
-call log instead of the network on the resume). That is 50 requests for 100 lines of structured QA, not
-300-400, and cost is `null` rather than a price because the tier never billed us. The two-page doc quotes
-the same file.
+out of `results/run_log.json` after the real runs: **109 requests in total, 150,791 prompt tokens and
+101,498 completion tokens** - Step A 18 requests per model (34,599/21,137 and 37,416/5,245), the baseline
+control 18 (9,633/14,990), the structured pass 55 (69,143/60,126, of which 16 of the final 18 naturalness
+batches came back from the call log rather than the network). That is 55 requests for 100 lines of
+structured QA - 18 per check, not 300-400 - and cost is `null` rather than a price because the tier never
+billed us. The two-page doc quotes the same file.
 
-**Budget and resumption.** A free-tier key caps this model at 200,000 tokens per day and a full
-structured pass spends about 129,000 of them, so the design assumes a run can be interrupted: waits obey
+**Budget and resumption.** A free-tier key caps this model at 200,000 tokens per day and a full structured
+pass spends about 127,000 of them, so the design assumes a run can be interrupted: waits obey
 the provider's `retry-after` within `provider.max_wait_seconds_per_batch`, a refused scene keeps the
 scenes that answered and is reported as *partially judged*, and a batch whose exact prompt is already in
 the label's call log is replayed rather than re-requested (`--fresh` to force the request). Cost is
 therefore never paid twice for the same answer, and "run it again" is affordable on the day's budget.
+
+What the cap actually feels like is worth recording, because it is not a wall. Finishing naturalness this
+afternoon: 16 of 18 batches were replayed or answered, and two 8-line batches - the median size, not the
+largest - returned `still throttled (429 after 530s of waits)` and `(429 after 600s of waits)`, while a
+73-token probe in the same window succeeded. A retry of just those two with the wait ceiling lowered to
+90 s failed both again and spent nothing, because the other 16 came from the log. So the budget frees
+token by token as the window rolls: whether a batch answers depends on when you ask, not how big it is.
+The measured consequence is in the artifact - naturalness judged **84 of 100 lines**, the report saying
+"2 of 18 batches refused; 84 lines judged, 16 not" and listing those 16 under *sat in a batch the model
+never answered*, and 16 of the 18 naturalness batches never needing a second payment.
 
 **Human gate.** The human stays the final gate. The tool shortlists risky lines so editors read fewer lines, not zero.
 
@@ -250,12 +260,12 @@ Checked against §14 as of 6 November 2026. The detail lives in `README.md` and 
 | Five checks + baseline control, scene-batched, run log | done and **run against a live model**; tokens measured, cost `null` because the tier is free |
 | Step A first-pass Telugu, two models | done, 18 requests each, 100/100 coverage, 20 lines returned without Telugu script on the default model |
 | Baseline control (Step C) | done: 18 requests, 9,633 prompt / 14,990 completion tokens, 58 problems reported |
-| Structured run (Step C) | done: meaning, relationship and script form complete over all 100 lines; naturalness judged 63 of 100 lines and is reported as partially judged, because the free tier's 200,000-tokens-per-day budget ran out mid-check and the batches that answered were kept. Timing ran on the same 100 lines but only at a **provisional 3.5 akshara/s passed on the command line** (69 flags, 82% of measured lines over their slot by more than 15%); with `config.yaml` still at `syllables_per_second: null` the check refuses to guess, so that list is a rehearsal of the arithmetic, not a calibrated finding |
+| Structured run (Step C) | done: meaning, relationship and script form complete over all 100 lines; naturalness judged **84 of 100** and reported as partially judged - two 8-line batches stayed `429` through 530 s and 600 s of waiting and the 16 that answered were kept. Timing ran on the same 100 lines but only at a **provisional 3.5 akshara/s passed on the command line** (69 flags, 82% of measured lines over their slot by more than 15%); with `config.yaml` still at `syllables_per_second: null` the check refuses to guess, so that list is a rehearsal of the arithmetic, not a calibrated finding |
 | New-input rerun path | `scripts/run_qa.py --input <file or folder>`; `--merge` re-prices one check without paying for the others; a batch already in the call log is replayed instead of re-requested, and `--fresh` forces a real request. Rehearsed twice at zero requests, artifacts on disk; the LLM half on unseen input waits for a token-budget day |
-| Self-tests | 76 passing, plus `tests/run_ui_test.py` driving the UI under `AppTest` |
+| Self-tests | 80 passing, plus `tests/run_ui_test.py` driving the UI under `AppTest` |
 | Review UI with approve / edit / dismiss | done, exercised under `AppTest` |
 | Two-page doc | drafted, `docs/solution_two_pager.md`, with `PENDING` slots where the human numbers belong |
-| Failure log | 19 numbered entries, six of them found only after a real key was wired in |
+| Failure log | 20 numbered entries, six of them found only after a real key was wired in |
 | Rate calibration (open item) | **not done** - needs the builder to time ten lines aloud |
 | Step B blind annotation | **not done** - the builder's own judgement; `data/annotation/blind_annotation.csv` is generated, current with the live draft, and empty |
 | Step D scoring, acceptance pass and the GO/NO-GO | **not done** - blocked on Step B, not on tooling |

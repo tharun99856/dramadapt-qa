@@ -175,14 +175,24 @@ Limit 200000, Used 198682, Requested 2237. Please try again in 6m37.008s`, with
 `retry-after` instead of a hardcoded ramp (waiting 20 s against a 398 s hint is a guaranteed second
 failure), it stops waiting when no attempt is left rather than sleeping before giving up, and a per-batch
 `max_wait_seconds_per_batch` ceiling stops one stubborn scene from eating the run. And because a whole
-structured pass costs about 129k of those 200k tokens - measured per check over 18 scene batches:
-meaning 35,571, relationship 54,292, naturalness 38,984 extrapolated from its 14 answered batches -
+structured pass costs about 127k of those 200k tokens - measured per check over 18 scene batches:
+meaning 35,571, relationship 54,292, naturalness 37,332 scaled from its 19 logged requests -
 one day of free tier is about 1.5 full passes. That is why `run_structured.py` and `run_qa.py` replay
 any batch whose exact prompt is already in the label's call log (`--fresh` forces a real re-request),
 so a run interrupted by the budget can be finished later without paying twice. The replay is keyed on
 model + system + user text, so changing a prompt cannot inherit an answer from the old prompt: it just
 misses. This is what turned today's dead end into a free re-score: 47 of 54 batches came back from the
 log, one request was actually spent, and the 30-refusal finding above cost nothing to discover.
+
+What the later retries taught is not in that arithmetic. The cap is not a wall you hit and stop at: at
+14:20 UTC, after a 429 that morning, a 73-token probe succeeded, and a naturalness merge answered 7 of
+its 7 unpriced batches - then two of them, `episode-005.txt#S02` and `episode-006.txt#S02`, refused
+through 530 s and 600 s of waiting. Both are ordinary 8-line batches, the median size, so whether a
+scene gets an answer depends on *when* you ask, not how big the request is: the window frees tokens as
+they age out, one at a time. A second attempt with the wait ceiling cut to 90 s refused both again and
+spent nothing, because the other 16 batches came from the log - 16 reused, 2 attempted, 55 requests
+total either way. Naturalness therefore ends at **84 of 100 lines judged**, and the report says so in
+those words rather than rounding it up to a pass.
 
 **19. A document claimed a run that no artifact supports.** `PRD.md` §15 said the second screenplay in
 `data/new_show_demo/` was "used to prove the new-input rerun", which reads as a full gate run on unseen
@@ -196,12 +206,28 @@ because nothing had Telugu) and `results/qa_rehearsal_*` (full corpus with the r
 100 with Telugu, 91 flags - 69 timing and 22 script form). The timing half of that is not a calibrated
 number: `config.yaml` still has `syllables_per_second: null`, so the run passed 3.5 on the command line
 and the artifact records the rate as "override passed on the command line - not calibrated". The LLM
-half on unseen input is still not run, and the docs now say that instead of implying it was. Second, the report itself was laundering the gap: for
-the unseen episode it printed "Every line was read by every check that could run on it" two lines below
-a warning that no line had Telugu, and then listed all 34 as "Not flagged". `write_markdown` now counts
-lines with no Telugu alongside refused batches and declined verdicts, and puts them under "Flagged by
-nothing because nothing read it" instead of under cleared. `tests/run_tests.py` asserts the pass claim
-is withheld, which is now 76 self-tests.
+half on unseen input is still not run, and the docs now say that instead of implying it was. Second, the
+report printed the opposite of its own warning: for the unseen episode it said "Every line was read by
+every check that could run on it" two lines below a warning that no line had Telugu, and then listed all
+34 as "Not flagged". `write_markdown` now counts lines with no Telugu alongside refused batches and
+declined verdicts and keeps them out of the cleared list. The first version of that heading then needed
+correcting too: it claimed *nothing* had read those lines, when the pure-code checks had read all of them -
+what is true is that they were not read by every check. Four assertions in `tests/run_tests.py` now hold
+the line, at 80 self-tests.
+
+**20. A merge silently deleted the record that a check was only partially judged.** Re-rendering the
+structured report after the naturalness retry - `--checks timing,script --merge structured`, zero
+requests, all three LLM checks carried over - turned `errors` from
+`[{"check": "naturalness", "partial": true, "error": "2 of 18 batches refused; 84 lines judged, 16 not"}]`
+into `[]`. The flags survived, the summaries survived, and the "Checks that did not finish" section simply
+vanished, because the merge dropped prior errors for any check whose *flags* were carried over - which is
+exactly the partially judged one. This was found by diffing against the snapshot taken before the render,
+not by reading the code, where the expression looked like sensible de-duplication. It is the same failure
+as entry 17 one layer up: work that was honestly recorded as incomplete, quietly becoming a clean pass.
+Now `carry_over_errors()` in `scripts/run_structured.py`, tested four ways: a timing re-render keeps the
+naturalness refusal, re-running a check replaces its own error, and an untouched check's error survives.
+The base artifact was restored from the snapshot and re-merged, so the shipped
+`results/structured_run.json` carries the refusal again.
 
 ## Small, real, worth writing down
 

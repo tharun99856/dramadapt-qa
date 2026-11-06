@@ -155,7 +155,7 @@ tier was never billed: the run log reports real tokens and `cost_usd: null`, not
 | Step A, default model | 18 | 34,599 | 21,137 | 100/100 lines, **20 with no Telugu letters** |
 | Step A, comparison model | 18 | 37,416 | 5,245 | 100/100 lines, 0 with no Telugu letters |
 | Baseline control (Step C) | 18 | 9,633 | 14,990 | 58 problems, 0 batches silent |
-| Structured checks (Step C) | 50 | 64,574 | 55,610 | meaning 13, relationship 21 (+30 not judged), timing 69, naturalness 27 (7 of 18 batches refused), script 22 |
+| Structured checks (Step C) | 55 | 69,143 | 60,126 | meaning 13, relationship 21 (+30 not judged), timing 69, naturalness 40 over 84 of 100 lines (2 of 18 batches refused), script 22 |
 
 Per-1M list prices exist for both models (`docs/public_evidence.md` item 8), so a paid run is
 extrapolatable from these tokens - but the figures above are what this environment actually spent,
@@ -163,18 +163,24 @@ which is nothing.
 
 **Read `results/run_log.json` by phase, not by aggregate.** That file keeps one block per label ever
 written in this workspace, which includes the development labels (`dry_run_no_key`, `merge_test`,
-`plumbing_check`, `smoke_timing`, `script_probe`, `drift_demo`), so its `_aggregate` line is what this
-workshop spent, not what the experiment costs. The four rows above are the phases of record:
+`plumbing_check`, `smoke_timing`, `script_probe`, `drift_demo`) and the two zero-request rehearsals
+(`new_input_rehearsal`, `qa_rehearsal`), so its `_aggregate` line is what this workshop spent, not what
+the experiment costs. The four rows above are the phases of record:
 `first_pass`, `first_pass_alt`, `baseline` and `structured`.
 
-**Throughput is the real limit, so the run is resumable.** The structured pass needs 54 model requests
-(three of the five checks ask per scene; timing and script form ask nothing). The free tier caps this
-model at **200,000 tokens per day** and a full pass costs about **129,000**, so the account affords
-roughly 1.5 passes a day. Two things follow, both in the code. A refused batch costs only that batch:
-each LLM check catches the failure per scene, keeps the scenes that answered, and reports the check as
-*partially judged* rather than completed or clean. And a batch whose exact prompt is already in
+**Throughput is the real limit, so the run is resumable.** A clean structured pass needs 54 model
+requests (three of the five checks ask per scene; timing and script form ask nothing); the label logged
+55 because one naturalness batch had to be asked twice. The free tier caps this model at **200,000 tokens
+per day** and a full pass costs about **127,000**, so on paper the account affords roughly 1.5 passes a
+day. In practice the cap behaves like a rolling window rather than a wall: finishing naturalness, 16 of
+18 batches answered and two ordinary 8-line batches stayed `429` through 530 s and 600 s of waiting,
+while a 73-token probe in the same window went straight through. That is only survivable because of two
+properties in the code. A refused batch costs only that batch: each LLM check catches the failure per
+scene, keeps the scenes that answered, and reports the check as *partially judged* rather than completed
+or clean. And a batch whose exact prompt is already in
 `results/<label>_calls.jsonl` is replayed from the log instead of re-requested, so re-running a
-half-finished label spends tokens only on what is missing (`--fresh` forces every batch to be paid for
+half-finished label spends tokens only on what is missing - the retry that fixed 21 more lines reused 16
+of 18 batches and paid for two. (`--fresh` forces every batch to be paid for
 again; a replayed batch is not recorded again, so the run log counts every request exactly once).
 `provider.reuse_logged_calls: false` turns the replay off for the whole configuration. Waits obey the
 provider's own `retry-after` header, capped by `provider.max_wait_seconds_per_batch`, because a 398-second

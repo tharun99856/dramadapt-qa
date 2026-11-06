@@ -1,13 +1,13 @@
 {
   "phase": "structured",
-  "generated": "2026-11-06T13:27:26+00:00",
-  "model": "openai/gpt-oss-120b",
+  "generated": "2026-11-06T15:00:18+00:00",
+  "model": null,
   "checks_run": [
-    "meaning",
-    "relationship",
-    "naturalness",
+    "timing",
     "script",
-    "timing"
+    "meaning",
+    "naturalness",
+    "relationship"
   ],
   "requests_per_batch_target": 14,
   "batches": [
@@ -203,616 +203,6 @@
     }
   ],
   "flags": [
-    {
-      "line_id": "E01-L015",
-      "check": "meaning",
-      "severity": "medium",
-      "verdict": "weakened",
-      "evidence": "English: Say it once more. / Telugu: దయచేసి, మళ్ళీ ఒకసారి చెప్పండి. / reason: Added polite \"దయచేసి\" which softens the imperative",
-      "suggestion": "మళ్ళీ ఒకసారి చెప్పండి.",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E02-L006",
-      "check": "meaning",
-      "severity": "medium",
-      "verdict": "weakened",
-      "evidence": "English: So it is you filling his head. / Telugu: అలా అయితే, మీరు, Marek, అతని తల నింపుతున్నారా? / reason: Changed a declarative accusation into a question and added a name, reducing the force",
-      "suggestion": "అలా అయితే, మీరు అతని తల నింపుతున్నారు.",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E02-L009",
-      "check": "meaning",
-      "severity": "high",
-      "verdict": "reversed",
-      "evidence": "English: Mistress Caine will hear of this. / Telugu: Mistress Caine దీనిని వినిపిస్తారు. / reason: Agency reversed – Telugu says she will make it heard rather than she will hear it",
-      "suggestion": "Mistress Caine దీనిని వింటారు.",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E02-L029",
-      "check": "meaning",
-      "severity": "medium",
-      "verdict": "weakened",
-      "evidence": "English: She has no idea what a signature costs. / Telugu: Aame ki hastakshara ki emi teliyadu. / reason: Cost nuance omitted",
-      "suggestion": "Aame ki hastakshara ki daam emi teliyadu.",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E03-L030",
-      "check": "meaning",
-      "severity": "medium",
-      "verdict": "weakened",
-      "evidence": "English: Say it as a promise, not a ... / Telugu: దాన్ని వాగ్దానంగా చెప్పు, సవాల్‌గా కాదు— / reason: The Telugu omits the word “dare” after “not a”.",
-      "suggestion": "దాన్ని వాగ్దానంగా చెప్పు, ధైర్యంగా కాదు—",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E03-L031",
-      "check": "meaning",
-      "severity": "medium",
-      "verdict": "weakened",
-      "evidence": "English: ... a dare. I hear you, Father. / Telugu: నేను వినుతున్నాను, నాన్నా. / reason: The Telugu drops the “a dare” clause from the English sentence.",
-      "suggestion": "ధైర్యంగా. నేను వినుతున్నాను, నాన్నా.",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E04-L004",
-      "check": "meaning",
-      "severity": "high",
-      "verdict": "missing",
-      "evidence": "English: LIGHT THE STAIR! Somebody light the stair! / Telugu: సీడీని వెలిగించండి! ఎవరో సీడీని వెలిగించండి! / reason: Incorrect noun; \"సీడీ\" means CD, not stair",
-      "suggestion": "మెట్టును వెలిగించండి! ఎవరో మెట్టును వెలిగించండి!",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E04-L009",
-      "check": "meaning",
-      "severity": "medium",
-      "verdict": "weakened",
-      "evidence": "English: Nobody's. The bar held. / Telugu: ఎవరికి కూడా కాదు. బార్ నిలిచింది. / reason: Telugu misinterprets 'Nobody's' as 'not for anyone' instead of 'no one'",
-      "suggestion": "ఎవరూ కాదు. బార్ నిలిచింది.",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E04-L011",
-      "check": "meaning",
-      "severity": "medium",
-      "verdict": "weakened",
-      "evidence": "English: Your bar held. The trawler did not. / Telugu: నీ బార్ నిలిచింది. ట్రాలర్ కాదు. / reason: Telugu omits 'did not' for the trawler, changing the nuance",
-      "suggestion": "నీ బార్ నిలిచింది. ట్రాలర్ నిలిచలేదు.",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E05-L026",
-      "check": "meaning",
-      "severity": "medium",
-      "verdict": "weakened",
-      "evidence": "English: Then the lamp wants buying, and I have the money in my coat. / Telugu: అప్పుడు దీపం కొనాలి, నా కోట్లో డబ్బు ఉంది. / reason: \"coat\" was mistranslated as \"కోట్లో\" (fort) losing the specific detail",
-      "suggestion": "అప్పుడు దీపం కొనాలి, నా కోట్‌లో డబ్బు ఉంది.",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E05-L029",
-      "check": "meaning",
-      "severity": "medium",
-      "verdict": "weakened",
-      "evidence": "English: Nine months you watched me starve. / Telugu: తొమ్మిది నెలలుగా మీరు నన్ను ఆకలితో చూస్తున్నారు. / reason: \"starve\" was rendered as \"ఆకలితో చూస్తున్నారు\", implying the listener is hungry rather than the speaker starving",
-      "suggestion": "తొమ్మిది నెలలుగా మీరు నన్ను ఆకలితో మిగిల్చారు.",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E06-L008",
-      "check": "meaning",
-      "severity": "high",
-      "verdict": "reversed",
-      "evidence": "English: On the charge of my father, then. / Telugu: అప్పుడు నా తండ్రి ఆరోపణపై, సిలాస్ వేన్. / reason: Added unrelated name 'Silas Vane', altering the original reference.",
-      "suggestion": "అప్పుడు నా తండ్రి ఆరోపణపై.",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E06-L019",
-      "check": "meaning",
-      "severity": "medium",
-      "verdict": "weakened",
-      "evidence": "English: Edda. Lass. I am standing on my own stair again, look at me. / Telugu: Edda, pillagaa. Nenu naa swantam poddalu meeda mari inka nilabadutunnanu, naa pai choosthavo. / reason: Changed imperative \"look at me\" to a question \"will you look at me?\", reducing the force.",
-      "suggestion": "Edda, pillagaa. Nenu naa swantam poddalu meeda mari nilabadutunnanu, naa pai choosthu.",
-      "status": "pending",
-      "note": "medium confidence, model judgement"
-    },
-    {
-      "line_id": "E01-L014",
-      "check": "relationship",
-      "severity": "medium",
-      "verdict": "honorific_dropped",
-      "evidence": "Mistress Caine is expected to use a condescending‑sweet register and address Edda as \"Miss Halloran\" (or \"child\"/\"girl\"). The Telugu line contains no address term at all, losing the required honorific.",
-      "suggestion": "Add the expected address, e.g., \"Miss Halloran, బాకీ నా, ఒప్పందం నా, శీతాకాలం నా.\"",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E01-L015",
-      "check": "relationship",
-      "severity": "medium",
-      "verdict": "honorific_dropped",
-      "evidence": "Edda should address Mistress Caine with the formal honorific plural and the title \"Mistress Caine\". The Telugu line omits this address, using only a polite request.",
-      "suggestion": "Insert the title, e.g., \"Mistress Caine, దయచేసి, మళ్ళీ ఒకసారి చెప్పండి.\"",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E01-L017",
-      "check": "relationship",
-      "severity": "high",
-      "verdict": "address_mismatch",
-      "evidence": "Joss is speaking to Edda, whose expected address term is \"Edda\". The Telugu line retains the English title \"Mistress\", which belongs to a different relationship on the sheet. | rules: 'Mistress' belongs to another relationship on the sheet",
-      "suggestion": "Replace \"Mistress\" with the appropriate familiar address, e.g., \"Edda, ఆ మాటను జలానికి చెప్పండి.\"",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E01-L029",
-      "check": "relationship",
-      "severity": "high",
-      "verdict": "address_mismatch",
-      "evidence": "Mistress Caine calls herself \"అంటీ\" (Aunt), which is not among the expected address terms (Miss Halloran, child, girl) for Caine→Edda and shifts the register to an informal kinship term. | rules: 'Aunt' is not predicted for Edda Halloran",
-      "suggestion": "Replace \"అంటీ\" with an expected term such as \"Miss Halloran\" or a condescending \"child\" to preserve the prescribed register.",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E02-L026",
-      "check": "relationship",
-      "severity": "medium",
-      "verdict": "too_formal",
-      "evidence": "Telugu uses the plural honorific \"Mee\" (second‑person plural) while the sheet expects a plain, familiar register (informal \"Nee\" or no honorific) for Joss → Edda.",
-      "suggestion": "Replace \"Mee thandri\" with \"Nee thandri\" or simply \"Thandri\" to match the familiar tone.",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E02-L031",
-      "check": "relationship",
-      "severity": "medium",
-      "verdict": "too_formal",
-      "evidence": "Telugu uses the honorific \"meeru\" (second‑person plural) after the address \"Edda\", whereas the expected register for Joss → Edda is plain, familiar without honorifics.",
-      "suggestion": "Change \"meeru\" to the informal \"nee\" (or omit pronoun) to keep the tone familiar: e.g., \"Darwaza nilipi, Edda. Aadani artham nee.\"",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E03-L002",
-      "check": "relationship",
-      "severity": "medium",
-      "verdict": "too_informal",
-      "evidence": "Uses \"Naaku\" (to me) instead of the expected honorific plural \"Meeku\" and lacks honorific verb endings for a formal distant relationship with Mistress Caine.",
-      "suggestion": "Change to \"Meeku oka gaṇṭa undi, Mistress Caine.\"",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E03-L003",
-      "check": "relationship",
-      "severity": "high",
-      "verdict": "address_mismatch",
-      "evidence": "Mistress Caine does not use any of the expected address terms (Miss Halloran, child, girl) when speaking to Edda Halloran.",
-      "suggestion": "Add an address term, e.g., \"Miss Halloran, Mee daggara aapada undi. Adi takkuva.\"",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E03-L006",
-      "check": "relationship",
-      "severity": "high",
-      "verdict": "address_mismatch",
-      "evidence": "No expected address term (Miss Halloran, child, girl) is used by Mistress Caine toward Edda Halloran.",
-      "suggestion": "Prepend an address term, e.g., \"Miss Halloran, Adi teesukondi. Nenu choostanu.\"",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E03-L008",
-      "check": "relationship",
-      "severity": "high",
-      "verdict": "address_mismatch",
-      "evidence": "Edda Halloran omits the required \"Mistress Caine\" address term when speaking to her.",
-      "suggestion": "Add the address term, e.g., \"Mistress Caine, Avaadu vatini konnaadu.\"",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E03-L010",
-      "check": "relationship",
-      "severity": "high",
-      "verdict": "address_mismatch",
-      "evidence": "Edda Halloran addresses \"Silas Vane\" instead of the expected \"Mistress Caine\" for this speaker‑listener pair, violating the address term rule.",
-      "suggestion": "Include the proper address, e.g., \"Mistress Caine, Silas Vane, mruthyu vyakti patra nundi meeru emi korukuntunnaru?\"",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E03-L012",
-      "check": "relationship",
-      "severity": "high",
-      "verdict": "address_mismatch",
-      "evidence": "Mistress Caine does not use any of the expected address terms (Miss Halloran, child, girl) when addressing Edda Halloran.",
-      "suggestion": "Add an address term, e.g., \"Miss Halloran, Meeru seal ki kooda layakaledu. Aameyi teesukondi.\"",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E03-L024",
-      "check": "relationship",
-      "severity": "high",
-      "verdict": "address_mismatch",
-      "evidence": "Telugu uses the address term \"అంటీ\" (Aunt) which is not predicted for the Edda→Joss pair; the sheet only predicts this slip for Edda→Mistress Caine, so the address is mismatched here.",
-      "suggestion": "Replace \"అంటీ\" with a neutral reference or ensure the relationship sheet includes this address use for the current listener.",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E03-L031",
-      "check": "relationship",
-      "severity": "high",
-      "verdict": "address_mismatch",
-      "evidence": "Edda addresses her father as 'నాన్నా', a title not listed in the relationship sheet for this speaker‑listener pair, causing a mismatch.",
-      "suggestion": "Remove the honorific address or add 'నాన్న'/'నాన్నా' to the expected_address_terms for Edda→Halloran if it is intended.",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E05-L011",
-      "check": "relationship",
-      "severity": "high",
-      "verdict": "address_mismatch",
-      "evidence": "Constable Roe addresses Halloran by name with \"Halloran గారు\"; the sheet expects titles like \"Mistress\" or \"the keeper's daughter\" for official register.",
-      "suggestion": "Use an expected title such as \"Mistress Halloran\" or \"keeper's daughter\" instead of the name alone.",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E05-L029",
-      "check": "relationship",
-      "severity": "medium",
-      "verdict": "too_formal",
-      "evidence": "Edda addresses Joss with the honorific plural \"మీరు\" and verb ending \"చూస్తున్నారు\", which is more formal than the plain familiar register expected for this pair.",
-      "suggestion": "Replace \"మీరు\" with the informal singular \"నీవు\" and use a corresponding verb form (e.g., \"చూస్తున్నావు\").",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E05-L031",
-      "check": "relationship",
-      "severity": "medium",
-      "verdict": "too_formal",
-      "evidence": "Same issue as L029: the honorific plural \"మీరు\" makes the line overly formal for the expected familiar register between Edda and Joss.",
-      "suggestion": "Use informal singular pronoun \"నీవు\" and verb form \"చెప్పలేదు\" instead of \"చెప్పలేదు?\" with honorifics.",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E05-L032",
-      "check": "relationship",
-      "severity": "medium",
-      "verdict": "too_formal",
-      "evidence": "Joss uses the honorific \"మీ\" (your) when speaking to Edda, exceeding the plain familiar register expected for Joss→Edda; the address term \"ఎడ్డా\" is correct, but pronoun choice is too formal.",
-      "suggestion": "Switch to informal pronouns \"నీ\" and adjust verb endings accordingly (e.g., \"నీ కొనుగోలుదారుడైతే, నీవు నన్ను నీ భర్తగా...\" ).",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E06-L008",
-      "check": "relationship",
-      "severity": "high",
-      "verdict": "address_mismatch",
-      "evidence": "The line inserts \"సిలాస్ వేన్\" (Silas Vane), a name not predicted by the relationship sheet, and omits the required address \"Mistress Caine\" with honorific plural.",
-      "suggestion": "Replace the unexpected name with the proper address, e.g., \"Mistress Caine, మీ తండ్రి ఆరోపణపై...\" and use honorific plural forms.",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E06-L011",
-      "check": "relationship",
-      "severity": "medium",
-      "verdict": "too_informal",
-      "evidence": "Edda addresses Mistress Caine with informal singular \"Nee\" instead of the expected honorific plural (e.g., \"Meeku\") despite the sheet allowing the shift to \"Aunt\" as address term. | rules: 'Aunt' is not predicted for Mistress Caine",
-      "suggestion": "Replace \"Nee\" with honorific plural form such as \"Meeku\" and keep the \"Aunt\" address.",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E06-L024",
-      "check": "relationship",
-      "severity": "high",
-      "verdict": "address_mismatch",
-      "evidence": "Speaker Edda is expected to address Mistress Caine with formal honorifics and the term \"Mistress Caine\", but the Telugu line contains no address term or honorific plural forms.",
-      "suggestion": "Add a formal address, e.g., \"మిస్ట్రెస్ కేన్, దీపం వెలిగినట్లే ఉంటుంది.\" using appropriate honorific verb endings.",
-      "status": "pending",
-      "note": "medium confidence, sheet plus model judgement"
-    },
-    {
-      "line_id": "E01-L004",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Word order feels stiff; more natural would be “నీవు నిద్రిస్తున్నప్పుడు కెయిన్ మళ్లీ వచ్చాడు.”",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L005",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Sentence order is awkward; native speakers would say “నేను నిద్రిస్తున్నప్పుడు ఆమె ఎప్పుడూ వస్తుంది.”",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L014",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Literal word‑for‑word rendering; \"బాకీ\" is not the usual term for \"debt\" and the phrase sounds stiff for a period businesslike line.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L015",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Adds \"దయచేసి\" which makes it overly polite for a low‑tone command; the original tone is more abrupt.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L017",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "\"జలానికి\" means \"to water\" not \"to the tide\"; the idiom is rendered inaccurately and sounds unnatural in period Telugu.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L024",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Uses English title \"మిస్ హాలొరన్\"; should employ second‑person plural honorific (e.g., \"మీకు\"/\"వారు\") to match the prescribed solemn Telugu register.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L026",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Verb form \"చేయవద్దు\" is formal; father‑daughter intimacy calls for informal singular imperative like \"చేయకు\".",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L029",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Address term \"అంటీ\" is an Indian kinship word; period‑appropriate dubbing should keep the English title or use a respectful honorific, not a familial term.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L006",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "The phrase “అతని తల నింపుతున్నారా?” is not idiomatic Telugu for “filling his head”; also inserting the English name “Marek” mid‑sentence feels stiff and mixes registers.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L009",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Verb choice is off – “వినిపిస్తారు” is unnatural for “will hear”; a more natural rendering would be “వింటారు”. The rest of the line is acceptable.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L011",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Uses respectful plural verb కోరుకుంటున్నారు despite intimate context where singular informal (కోరుకుంటాడు) is expected.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L025",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Trailing‑off phrase is incomplete; lacks verb after \"మీరు ఎలా\" making it sound cut off and unnatural.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L026",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Literal translation \"darwaza chadavadam\" (read a gate) is nonsensical in Telugu; phrasing is stiff and mixes informal \"naaku\" with a literal rendering.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L030",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Metaphor \"patrikalo oka vakyam laga\" is awkward; overall phrasing sounds translated and mixes registers.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L031",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Second sentence \"Aadani artham meeru\" is ungrammatical and unclear; the imperative \"nilipi\" also mismatches the solemn register.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E03-L003",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "\"aapada\" means disaster, not tide; translation feels literal and stiff",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E03-L006",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "imperative form should be \"teesukondi\"; current \"teesupondi\" is incorrect",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E03-L017",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Uses informal singular \"నీ\" while the required solemn dubbing register calls for honorific \"మీ\" in this speaker‑listener relationship.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E03-L018",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Mixes registers (addressing \"మారెక్\" without honorific, literal phrasing) and sounds stilted; a more period‑appropriate phrasing would improve naturalness.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E03-L023",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Literal translation \"ధరలతో చూస్తున్నారు\" is awkward; a more idiomatic expression is needed for the metaphor of being priced.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E03-L030",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Uses English loanword \"సవాల్\" instead of native \"సవాలు\"; feels slightly out of period register.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L004",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Literal translation of “light the stair”; “సీడీని వెలిగించండి” sounds odd and not how a period‑style speaker would phrase it.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L006",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Awkward literal rendering of “wet and right, in that order”; phrasing is stiff and not natural Telugu.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L007",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Metaphorical “father’s water” is rendered literally; the line feels translated and unnatural in the target register.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L011",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "\"ట్రాలర్ కాదు\" does not convey the intended meaning (the trawler did not hold). It sounds like a literal denial rather than a statement of failure.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L013",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "\"రెండు జీవించి\" is awkward; a more natural phrasing would be \"రెండు జీవించి ఉన్నారు\". The rest is fine.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L014",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "The sentence is fragmented and contains a typo: \"నాకె చెప్పు\" should be \"నాకు చెప్పు\" and the first clause needs a verb (e.g., \"నా షోల్‌లో మూడు ఉన్నాయి\").",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
     {
       "line_id": "E04-L015",
       "check": "timing",
@@ -1722,1330 +1112,749 @@
       "suggestion": "re-render this line in Telugu script before it goes to the studio",
       "status": "pending",
       "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
+    },
+    {
+      "line_id": "E01-L004",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Word order feels stiff; more natural would be “నీవు నిద్రిస్తున్నప్పుడు కెయిన్ మళ్లీ వచ్చాడు.”",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L005",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Sentence order is awkward; native speakers would say “నేను నిద్రిస్తున్నప్పుడు ఆమె ఎప్పుడూ వస్తుంది.”",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L014",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal word‑for‑word rendering; \"బాకీ\" is not the usual term for \"debt\" and the phrase sounds stiff for a period businesslike line.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L015",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Adds \"దయచేసి\" which makes it overly polite for a low‑tone command; the original tone is more abrupt.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L017",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"జలానికి\" means \"to water\" not \"to the tide\"; the idiom is rendered inaccurately and sounds unnatural in period Telugu.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L024",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Uses English title \"మిస్ హాలొరన్\"; should employ second‑person plural honorific (e.g., \"మీకు\"/\"వారు\") to match the prescribed solemn Telugu register.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L026",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Verb form \"చేయవద్దు\" is formal; father‑daughter intimacy calls for informal singular imperative like \"చేయకు\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L029",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Address term \"అంటీ\" is an Indian kinship word; period‑appropriate dubbing should keep the English title or use a respectful honorific, not a familial term.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L006",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "The phrase “అతని తల నింపుతున్నారా?” is not idiomatic Telugu for “filling his head”; also inserting the English name “Marek” mid‑sentence feels stiff and mixes registers.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L009",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Verb choice is off – “వినిపిస్తారు” is unnatural for “will hear”; a more natural rendering would be “వింటారు”. The rest of the line is acceptable.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L011",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Uses respectful plural verb కోరుకుంటున్నారు despite intimate context where singular informal (కోరుకుంటాడు) is expected.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L025",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Trailing‑off phrase is incomplete; lacks verb after \"మీరు ఎలా\" making it sound cut off and unnatural.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L026",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal translation \"darwaza chadavadam\" (read a gate) is nonsensical in Telugu; phrasing is stiff and mixes informal \"naaku\" with a literal rendering.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L030",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Metaphor \"patrikalo oka vakyam laga\" is awkward; overall phrasing sounds translated and mixes registers.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L031",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Second sentence \"Aadani artham meeru\" is ungrammatical and unclear; the imperative \"nilipi\" also mismatches the solemn register.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E03-L003",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"aapada\" means disaster, not tide; translation feels literal and stiff",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E03-L006",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "imperative form should be \"teesukondi\"; current \"teesupondi\" is incorrect",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E03-L017",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Uses informal singular \"నీ\" while the required solemn dubbing register calls for honorific \"మీ\" in this speaker‑listener relationship.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E03-L018",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Mixes registers (addressing \"మారెక్\" without honorific, literal phrasing) and sounds stilted; a more period‑appropriate phrasing would improve naturalness.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E03-L023",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal translation \"ధరలతో చూస్తున్నారు\" is awkward; a more idiomatic expression is needed for the metaphor of being priced.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E03-L030",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Uses English loanword \"సవాల్\" instead of native \"సవాలు\"; feels slightly out of period register.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L004",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal translation of “light the stair”; “సీడీని వెలిగించండి” sounds odd and not how a period‑style speaker would phrase it.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L006",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Awkward literal rendering of “wet and right, in that order”; phrasing is stiff and not natural Telugu.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L007",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Metaphorical “father’s water” is rendered literally; the line feels translated and unnatural in the target register.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L011",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"ట్రాలర్ కాదు\" does not convey the intended meaning (the trawler did not hold). It sounds like a literal denial rather than a statement of failure.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L013",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"రెండు జీవించి\" is awkward; a more natural phrasing would be \"రెండు జీవించి ఉన్నారు\". The rest is fine.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L014",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "The sentence is fragmented and contains a typo: \"నాకె చెప్పు\" should be \"నాకు చెప్పు\" and the first clause needs a verb (e.g., \"నా షోల్‌లో మూడు ఉన్నాయి\").",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L023",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Negative imperative \"ఆపకు\" sounds odd; a more natural phrasing would be \"ఆపకండి\" or \"ఆపవద్దు\". The rest is acceptable.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L025",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Uses informal singular imperative \"దిగు\"; according to the required register it should be plural honorific (e.g., \"దిగండి\").",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L027",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Employs singular informal \"నీవు...నిలబెడతావు\"; the period dubbing register calls for second‑person plural honorific forms (\"మీరు...నిలబెడతారు\").",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L009",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal translation feels stiff; double honorific \"మిస్ట్రెస్ ... గారు\" and fragment lacks object, not how a speaker would naturally phrase it.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L010",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "First clause \"కేన్ ఇస్తారు\" is a fragment without object; overall sentence mixes fragments and may sound unnatural in period dubbing.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L026",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal translation; 'దీపం కొనాలి' is stiff, and 'నా కోట్లో' mis‑uses 'కోట్' (coat) as 'కోట' (fort). Register is off.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L027",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Mixes Chinese character 钱 with Telugu, and uses a borrowed noun 'బార్గెమన్' without proper grammar; overall unnatural.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L032",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Stilted phrasing ('బాధ్యతతో అనుమతించేవారు'), awkward word order, and overly literal rendering of 'buyer' and 'husband' concepts.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L002",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal translation; metaphor ‘water has been honest’ sounds odd in Telugu and feels stiff.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L004",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Adds unrelated title “మిస్ హల్లొరన్”; phrasing is abrupt and overly literal.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L006",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Uses ‘నీటిపై దొంగతనం’ which is unnatural for ‘smuggler on the water’; word choice is off.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L008",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Mis‑translation of ‘charge’; includes name “సిలాస్ వేన్” incorrectly and uses wrong term ‘ఆరోగణ’.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L024",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "The phrasing \"వెలిగినట్లే ఉంటుంది\" sounds stiff/translated; a more natural period‑style rendering might be \"దీపం వెలిగేలా ఉంటుంది\" or similar.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L015",
+      "check": "meaning",
+      "severity": "medium",
+      "verdict": "weakened",
+      "evidence": "English: Say it once more. / Telugu: దయచేసి, మళ్ళీ ఒకసారి చెప్పండి. / reason: Added polite \"దయచేసి\" which softens the imperative",
+      "suggestion": "మళ్ళీ ఒకసారి చెప్పండి.",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E02-L006",
+      "check": "meaning",
+      "severity": "medium",
+      "verdict": "weakened",
+      "evidence": "English: So it is you filling his head. / Telugu: అలా అయితే, మీరు, Marek, అతని తల నింపుతున్నారా? / reason: Changed a declarative accusation into a question and added a name, reducing the force",
+      "suggestion": "అలా అయితే, మీరు అతని తల నింపుతున్నారు.",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E02-L009",
+      "check": "meaning",
+      "severity": "high",
+      "verdict": "reversed",
+      "evidence": "English: Mistress Caine will hear of this. / Telugu: Mistress Caine దీనిని వినిపిస్తారు. / reason: Agency reversed – Telugu says she will make it heard rather than she will hear it",
+      "suggestion": "Mistress Caine దీనిని వింటారు.",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E02-L029",
+      "check": "meaning",
+      "severity": "medium",
+      "verdict": "weakened",
+      "evidence": "English: She has no idea what a signature costs. / Telugu: Aame ki hastakshara ki emi teliyadu. / reason: Cost nuance omitted",
+      "suggestion": "Aame ki hastakshara ki daam emi teliyadu.",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E03-L030",
+      "check": "meaning",
+      "severity": "medium",
+      "verdict": "weakened",
+      "evidence": "English: Say it as a promise, not a ... / Telugu: దాన్ని వాగ్దానంగా చెప్పు, సవాల్‌గా కాదు— / reason: The Telugu omits the word “dare” after “not a”.",
+      "suggestion": "దాన్ని వాగ్దానంగా చెప్పు, ధైర్యంగా కాదు—",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E03-L031",
+      "check": "meaning",
+      "severity": "medium",
+      "verdict": "weakened",
+      "evidence": "English: ... a dare. I hear you, Father. / Telugu: నేను వినుతున్నాను, నాన్నా. / reason: The Telugu drops the “a dare” clause from the English sentence.",
+      "suggestion": "ధైర్యంగా. నేను వినుతున్నాను, నాన్నా.",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E04-L004",
+      "check": "meaning",
+      "severity": "high",
+      "verdict": "missing",
+      "evidence": "English: LIGHT THE STAIR! Somebody light the stair! / Telugu: సీడీని వెలిగించండి! ఎవరో సీడీని వెలిగించండి! / reason: Incorrect noun; \"సీడీ\" means CD, not stair",
+      "suggestion": "మెట్టును వెలిగించండి! ఎవరో మెట్టును వెలిగించండి!",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E04-L009",
+      "check": "meaning",
+      "severity": "medium",
+      "verdict": "weakened",
+      "evidence": "English: Nobody's. The bar held. / Telugu: ఎవరికి కూడా కాదు. బార్ నిలిచింది. / reason: Telugu misinterprets 'Nobody's' as 'not for anyone' instead of 'no one'",
+      "suggestion": "ఎవరూ కాదు. బార్ నిలిచింది.",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E04-L011",
+      "check": "meaning",
+      "severity": "medium",
+      "verdict": "weakened",
+      "evidence": "English: Your bar held. The trawler did not. / Telugu: నీ బార్ నిలిచింది. ట్రాలర్ కాదు. / reason: Telugu omits 'did not' for the trawler, changing the nuance",
+      "suggestion": "నీ బార్ నిలిచింది. ట్రాలర్ నిలిచలేదు.",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E05-L026",
+      "check": "meaning",
+      "severity": "medium",
+      "verdict": "weakened",
+      "evidence": "English: Then the lamp wants buying, and I have the money in my coat. / Telugu: అప్పుడు దీపం కొనాలి, నా కోట్లో డబ్బు ఉంది. / reason: \"coat\" was mistranslated as \"కోట్లో\" (fort) losing the specific detail",
+      "suggestion": "అప్పుడు దీపం కొనాలి, నా కోట్‌లో డబ్బు ఉంది.",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E05-L029",
+      "check": "meaning",
+      "severity": "medium",
+      "verdict": "weakened",
+      "evidence": "English: Nine months you watched me starve. / Telugu: తొమ్మిది నెలలుగా మీరు నన్ను ఆకలితో చూస్తున్నారు. / reason: \"starve\" was rendered as \"ఆకలితో చూస్తున్నారు\", implying the listener is hungry rather than the speaker starving",
+      "suggestion": "తొమ్మిది నెలలుగా మీరు నన్ను ఆకలితో మిగిల్చారు.",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E06-L008",
+      "check": "meaning",
+      "severity": "high",
+      "verdict": "reversed",
+      "evidence": "English: On the charge of my father, then. / Telugu: అప్పుడు నా తండ్రి ఆరోపణపై, సిలాస్ వేన్. / reason: Added unrelated name 'Silas Vane', altering the original reference.",
+      "suggestion": "అప్పుడు నా తండ్రి ఆరోపణపై.",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E06-L019",
+      "check": "meaning",
+      "severity": "medium",
+      "verdict": "weakened",
+      "evidence": "English: Edda. Lass. I am standing on my own stair again, look at me. / Telugu: Edda, pillagaa. Nenu naa swantam poddalu meeda mari inka nilabadutunnanu, naa pai choosthavo. / reason: Changed imperative \"look at me\" to a question \"will you look at me?\", reducing the force.",
+      "suggestion": "Edda, pillagaa. Nenu naa swantam poddalu meeda mari nilabadutunnanu, naa pai choosthu.",
+      "status": "pending",
+      "note": "medium confidence, model judgement"
+    },
+    {
+      "line_id": "E01-L014",
+      "check": "relationship",
+      "severity": "medium",
+      "verdict": "honorific_dropped",
+      "evidence": "Mistress Caine is expected to use a condescending‑sweet register and address Edda as \"Miss Halloran\" (or \"child\"/\"girl\"). The Telugu line contains no address term at all, losing the required honorific.",
+      "suggestion": "Add the expected address, e.g., \"Miss Halloran, బాకీ నా, ఒప్పందం నా, శీతాకాలం నా.\"",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E01-L015",
+      "check": "relationship",
+      "severity": "medium",
+      "verdict": "honorific_dropped",
+      "evidence": "Edda should address Mistress Caine with the formal honorific plural and the title \"Mistress Caine\". The Telugu line omits this address, using only a polite request.",
+      "suggestion": "Insert the title, e.g., \"Mistress Caine, దయచేసి, మళ్ళీ ఒకసారి చెప్పండి.\"",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E01-L017",
+      "check": "relationship",
+      "severity": "high",
+      "verdict": "address_mismatch",
+      "evidence": "Joss is speaking to Edda, whose expected address term is \"Edda\". The Telugu line retains the English title \"Mistress\", which belongs to a different relationship on the sheet. | rules: 'Mistress' belongs to another relationship on the sheet",
+      "suggestion": "Replace \"Mistress\" with the appropriate familiar address, e.g., \"Edda, ఆ మాటను జలానికి చెప్పండి.\"",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E01-L029",
+      "check": "relationship",
+      "severity": "high",
+      "verdict": "address_mismatch",
+      "evidence": "Mistress Caine calls herself \"అంటీ\" (Aunt), which is not among the expected address terms (Miss Halloran, child, girl) for Caine→Edda and shifts the register to an informal kinship term. | rules: 'Aunt' is not predicted for Edda Halloran",
+      "suggestion": "Replace \"అంటీ\" with an expected term such as \"Miss Halloran\" or a condescending \"child\" to preserve the prescribed register.",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E02-L026",
+      "check": "relationship",
+      "severity": "medium",
+      "verdict": "too_formal",
+      "evidence": "Telugu uses the plural honorific \"Mee\" (second‑person plural) while the sheet expects a plain, familiar register (informal \"Nee\" or no honorific) for Joss → Edda.",
+      "suggestion": "Replace \"Mee thandri\" with \"Nee thandri\" or simply \"Thandri\" to match the familiar tone.",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E02-L031",
+      "check": "relationship",
+      "severity": "medium",
+      "verdict": "too_formal",
+      "evidence": "Telugu uses the honorific \"meeru\" (second‑person plural) after the address \"Edda\", whereas the expected register for Joss → Edda is plain, familiar without honorifics.",
+      "suggestion": "Change \"meeru\" to the informal \"nee\" (or omit pronoun) to keep the tone familiar: e.g., \"Darwaza nilipi, Edda. Aadani artham nee.\"",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E03-L002",
+      "check": "relationship",
+      "severity": "medium",
+      "verdict": "too_informal",
+      "evidence": "Uses \"Naaku\" (to me) instead of the expected honorific plural \"Meeku\" and lacks honorific verb endings for a formal distant relationship with Mistress Caine.",
+      "suggestion": "Change to \"Meeku oka gaṇṭa undi, Mistress Caine.\"",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E03-L003",
+      "check": "relationship",
+      "severity": "high",
+      "verdict": "address_mismatch",
+      "evidence": "Mistress Caine does not use any of the expected address terms (Miss Halloran, child, girl) when speaking to Edda Halloran.",
+      "suggestion": "Add an address term, e.g., \"Miss Halloran, Mee daggara aapada undi. Adi takkuva.\"",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E03-L006",
+      "check": "relationship",
+      "severity": "high",
+      "verdict": "address_mismatch",
+      "evidence": "No expected address term (Miss Halloran, child, girl) is used by Mistress Caine toward Edda Halloran.",
+      "suggestion": "Prepend an address term, e.g., \"Miss Halloran, Adi teesukondi. Nenu choostanu.\"",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E03-L008",
+      "check": "relationship",
+      "severity": "high",
+      "verdict": "address_mismatch",
+      "evidence": "Edda Halloran omits the required \"Mistress Caine\" address term when speaking to her.",
+      "suggestion": "Add the address term, e.g., \"Mistress Caine, Avaadu vatini konnaadu.\"",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E03-L010",
+      "check": "relationship",
+      "severity": "high",
+      "verdict": "address_mismatch",
+      "evidence": "Edda Halloran addresses \"Silas Vane\" instead of the expected \"Mistress Caine\" for this speaker‑listener pair, violating the address term rule.",
+      "suggestion": "Include the proper address, e.g., \"Mistress Caine, Silas Vane, mruthyu vyakti patra nundi meeru emi korukuntunnaru?\"",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E03-L012",
+      "check": "relationship",
+      "severity": "high",
+      "verdict": "address_mismatch",
+      "evidence": "Mistress Caine does not use any of the expected address terms (Miss Halloran, child, girl) when addressing Edda Halloran.",
+      "suggestion": "Add an address term, e.g., \"Miss Halloran, Meeru seal ki kooda layakaledu. Aameyi teesukondi.\"",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E03-L024",
+      "check": "relationship",
+      "severity": "high",
+      "verdict": "address_mismatch",
+      "evidence": "Telugu uses the address term \"అంటీ\" (Aunt) which is not predicted for the Edda→Joss pair; the sheet only predicts this slip for Edda→Mistress Caine, so the address is mismatched here.",
+      "suggestion": "Replace \"అంటీ\" with a neutral reference or ensure the relationship sheet includes this address use for the current listener.",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E03-L031",
+      "check": "relationship",
+      "severity": "high",
+      "verdict": "address_mismatch",
+      "evidence": "Edda addresses her father as 'నాన్నా', a title not listed in the relationship sheet for this speaker‑listener pair, causing a mismatch.",
+      "suggestion": "Remove the honorific address or add 'నాన్న'/'నాన్నా' to the expected_address_terms for Edda→Halloran if it is intended.",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E05-L011",
+      "check": "relationship",
+      "severity": "high",
+      "verdict": "address_mismatch",
+      "evidence": "Constable Roe addresses Halloran by name with \"Halloran గారు\"; the sheet expects titles like \"Mistress\" or \"the keeper's daughter\" for official register.",
+      "suggestion": "Use an expected title such as \"Mistress Halloran\" or \"keeper's daughter\" instead of the name alone.",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E05-L029",
+      "check": "relationship",
+      "severity": "medium",
+      "verdict": "too_formal",
+      "evidence": "Edda addresses Joss with the honorific plural \"మీరు\" and verb ending \"చూస్తున్నారు\", which is more formal than the plain familiar register expected for this pair.",
+      "suggestion": "Replace \"మీరు\" with the informal singular \"నీవు\" and use a corresponding verb form (e.g., \"చూస్తున్నావు\").",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E05-L031",
+      "check": "relationship",
+      "severity": "medium",
+      "verdict": "too_formal",
+      "evidence": "Same issue as L029: the honorific plural \"మీరు\" makes the line overly formal for the expected familiar register between Edda and Joss.",
+      "suggestion": "Use informal singular pronoun \"నీవు\" and verb form \"చెప్పలేదు\" instead of \"చెప్పలేదు?\" with honorifics.",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E05-L032",
+      "check": "relationship",
+      "severity": "medium",
+      "verdict": "too_formal",
+      "evidence": "Joss uses the honorific \"మీ\" (your) when speaking to Edda, exceeding the plain familiar register expected for Joss→Edda; the address term \"ఎడ్డా\" is correct, but pronoun choice is too formal.",
+      "suggestion": "Switch to informal pronouns \"నీ\" and adjust verb endings accordingly (e.g., \"నీ కొనుగోలుదారుడైతే, నీవు నన్ను నీ భర్తగా...\" ).",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E06-L008",
+      "check": "relationship",
+      "severity": "high",
+      "verdict": "address_mismatch",
+      "evidence": "The line inserts \"సిలాస్ వేన్\" (Silas Vane), a name not predicted by the relationship sheet, and omits the required address \"Mistress Caine\" with honorific plural.",
+      "suggestion": "Replace the unexpected name with the proper address, e.g., \"Mistress Caine, మీ తండ్రి ఆరోపణపై...\" and use honorific plural forms.",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E06-L011",
+      "check": "relationship",
+      "severity": "medium",
+      "verdict": "too_informal",
+      "evidence": "Edda addresses Mistress Caine with informal singular \"Nee\" instead of the expected honorific plural (e.g., \"Meeku\") despite the sheet allowing the shift to \"Aunt\" as address term. | rules: 'Aunt' is not predicted for Mistress Caine",
+      "suggestion": "Replace \"Nee\" with honorific plural form such as \"Meeku\" and keep the \"Aunt\" address.",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
+    },
+    {
+      "line_id": "E06-L024",
+      "check": "relationship",
+      "severity": "high",
+      "verdict": "address_mismatch",
+      "evidence": "Speaker Edda is expected to address Mistress Caine with formal honorifics and the term \"Mistress Caine\", but the Telugu line contains no address term or honorific plural forms.",
+      "suggestion": "Add a formal address, e.g., \"మిస్ట్రెస్ కేన్, దీపం వెలిగినట్లే ఉంటుంది.\" using appropriate honorific verb endings.",
+      "status": "pending",
+      "note": "medium confidence, sheet plus model judgement"
     }
   ],
   "verdicts": {
-    "meaning": [
-      {
-        "line_id": "E01-L001",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L003",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L004",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L005",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L006",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L007",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L014",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L015",
-        "verdict": "weakened",
-        "reason": "Added polite \"దయచేసి\" which softens the imperative"
-      },
-      {
-        "line_id": "E01-L017",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L021",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L023",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L024",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L025",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L026",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L027",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L029",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E01-L030",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L004",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L006",
-        "verdict": "weakened",
-        "reason": "Changed a declarative accusation into a question and added a name, reducing the force"
-      },
-      {
-        "line_id": "E02-L007",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L009",
-        "verdict": "reversed",
-        "reason": "Agency reversed – Telugu says she will make it heard rather than she will hear it"
-      },
-      {
-        "line_id": "E02-L010",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L011",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L012",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L013",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L015",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L016",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L020",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L025",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L026",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L028",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L029",
-        "verdict": "weakened",
-        "reason": "Cost nuance omitted"
-      },
-      {
-        "line_id": "E02-L030",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E02-L031",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L002",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L003",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L006",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L008",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L010",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L011",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L012",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L014",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L017",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L018",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L021",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L023",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L024",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L025",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L029",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E03-L030",
-        "verdict": "weakened",
-        "reason": "The Telugu omits the word “dare” after “not a”."
-      },
-      {
-        "line_id": "E03-L031",
-        "verdict": "weakened",
-        "reason": "The Telugu drops the “a dare” clause from the English sentence."
-      },
-      {
-        "line_id": "E04-L001",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L002",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L004",
-        "verdict": "missing",
-        "reason": "Incorrect noun; \"సీడీ\" means CD, not stair"
-      },
-      {
-        "line_id": "E04-L006",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L007",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L009",
-        "verdict": "weakened",
-        "reason": "Telugu misinterprets 'Nobody's' as 'not for anyone' instead of 'no one'"
-      },
-      {
-        "line_id": "E04-L011",
-        "verdict": "weakened",
-        "reason": "Telugu omits 'did not' for the trawler, changing the nuance"
-      },
-      {
-        "line_id": "E04-L013",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L014",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L015",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L017",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L018",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L021",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L023",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L024",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L025",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E04-L027",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L003",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L007",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L009",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L010",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L011",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L012",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L014",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L015",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L016",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L017",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L019",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L022",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L026",
-        "verdict": "weakened",
-        "reason": "\"coat\" was mistranslated as \"కోట్లో\" (fort) losing the specific detail"
-      },
-      {
-        "line_id": "E05-L027",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L029",
-        "verdict": "weakened",
-        "reason": "\"starve\" was rendered as \"ఆకలితో చూస్తున్నారు\", implying the listener is hungry rather than the speaker starving"
-      },
-      {
-        "line_id": "E05-L031",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E05-L032",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L002",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L004",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L006",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L008",
-        "verdict": "reversed",
-        "reason": "Added unrelated name 'Silas Vane', altering the original reference."
-      },
-      {
-        "line_id": "E06-L010",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L011",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L012",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L016",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L017",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L018",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L019",
-        "verdict": "weakened",
-        "reason": "Changed imperative \"look at me\" to a question \"will you look at me?\", reducing the force."
-      },
-      {
-        "line_id": "E06-L020",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L021",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L023",
-        "verdict": "same",
-        "reason": ""
-      },
-      {
-        "line_id": "E06-L024",
-        "verdict": "same",
-        "reason": ""
-      }
-    ],
-    "relationship": [
-      {
-        "line_id": "E01-L001",
-        "verdict": "unknown",
-        "evidence": "No relationship rule covers Edda Halloran speaking to any listener in this line; the sheet only defines Edda↔Mistress Caine and Halloran↔Edda."
-      },
-      {
-        "line_id": "E01-L003",
-        "verdict": "unknown",
-        "evidence": "Same as above – the relationship sheet provides no register or address expectations for this speaker‑listener pair."
-      },
-      {
-        "line_id": "E01-L004",
-        "verdict": "consistent",
-        "evidence": "Father uses informal paternal register (నీవు, వచ్చాడు) and addresses Edda by name \"ఎడ్డా\", which matches an expected address term."
-      },
-      {
-        "line_id": "E01-L005",
-        "verdict": "unknown",
-        "evidence": "No applicable relationship entry for Edda speaking here; the sheet does not define her register toward this listener."
-      },
-      {
-        "line_id": "E01-L006",
-        "verdict": "consistent",
-        "evidence": "Father again uses informal paternal register (నీవు ... చేయవద్దు) and, while not using a name, does not introduce any unexpected address term; the register matches the expected informal paternal style."
-      },
-      {
-        "line_id": "E01-L007",
-        "verdict": "unknown",
-        "evidence": "No relationship rule for Edda's line; the sheet lacks guidance for this interaction."
-      },
-      {
-        "line_id": "E01-L014",
-        "verdict": "honorific_dropped",
-        "evidence": "Mistress Caine is expected to use a condescending‑sweet register and address Edda as \"Miss Halloran\" (or \"child\"/\"girl\"). The Telugu line contains no address term at all, losing the required honorific."
-      },
-      {
-        "line_id": "E01-L015",
-        "verdict": "honorific_dropped",
-        "evidence": "Edda should address Mistress Caine with the formal honorific plural and the title \"Mistress Caine\". The Telugu line omits this address, using only a polite request."
-      },
-      {
-        "line_id": "E01-L017",
-        "verdict": "address_mismatch",
-        "evidence": "Joss is speaking to Edda, whose expected address term is \"Edda\". The Telugu line retains the English title \"Mistress\", which belongs to a different relationship on the sheet."
-      },
-      {
-        "line_id": "E01-L021",
-        "verdict": "consistent",
-        "evidence": "Edda uses the honorific \"మీ\" and a formal tone, matching the expected formal, distant register for speaking to Mistress Caine. No address term is required in this short reply."
-      },
-      {
-        "line_id": "E01-L023",
-        "verdict": "consistent",
-        "evidence": "Edda replies with a simple negative \"లేదు.\" without any address term, matching the formal distant register expected for her interaction with Mistress Caine; the verb form is acceptable in this context."
-      },
-      {
-        "line_id": "E01-L024",
-        "verdict": "consistent",
-        "evidence": "Silas uses the expected address \"మిస్ హాలొరన్\" and a neutral verb form, fitting the provoking half‑formal register defined for Silas→Edda."
-      },
-      {
-        "line_id": "E01-L025",
-        "verdict": "consistent",
-        "evidence": "Continuation of Silas's line contains no address term and maintains the same register as the previous segment."
-      },
-      {
-        "line_id": "E01-L026",
-        "verdict": "consistent",
-        "evidence": "Halloran (father) addresses Edda as \"ఎడ్డా, నా అమ్మాయా\" using informal paternal language and the expected address term \"my girl\"."
-      },
-      {
-        "line_id": "E01-L027",
-        "verdict": "consistent",
-        "evidence": "Father’s continuation uses informal singular imperative \"చేయకు\", matching the informal paternal register for father→daughter."
-      },
-      {
-        "line_id": "E01-L029",
-        "verdict": "address_mismatch",
-        "evidence": "Mistress Caine calls herself \"అంటీ\" (Aunt), which is not among the expected address terms (Miss Halloran, child, girl) for Caine→Edda and shifts the register to an informal kinship term."
-      },
-      {
-        "line_id": "E01-L030",
-        "verdict": "consistent",
-        "evidence": "Edda uses honorific plural \"మీకు\" and polite imperative \"పిలవండి\", aligning with the formal distant register required for her speech to Mistress Caine."
-      },
-      {
-        "line_id": "E02-L004",
-        "verdict": "consistent",
-        "evidence": "Telugu uses a plain past verb without honorifics, matching the expected plain familiar register for Joss speaking to Edda; no address term needed."
-      },
-      {
-        "line_id": "E02-L006",
-        "verdict": "unknown",
-        "evidence": "No relationship‑sheet entry defines how Edda should address Joss, so the register and address cannot be validated."
-      },
-      {
-        "line_id": "E02-L007",
-        "verdict": "consistent",
-        "evidence": "Plain statement with no honorifics, fitting the \"plain, familiar\" register expected for Joss speaking to Edda; matches prior line history."
-      },
-      {
-        "line_id": "E02-L009",
-        "verdict": "unknown",
-        "evidence": "The relationship sheet has no row for the Company clerk speaking to Mistress Caine; therefore register and address cannot be checked."
-      },
-      {
-        "line_id": "E02-L010",
-        "verdict": "consistent",
-        "evidence": "Telugu uses informal imperative \"తిను\" and second‑person singular \"నిన్ను\" with the address term \"ప్రియ\" (love), matching the household informal register and expected address term for Delia→Edda."
-      },
-      {
-        "line_id": "E02-L011",
-        "verdict": "unknown",
-        "evidence": "No relationship‑sheet row for Edda Halloran speaking to this listener, so the expected register and address cannot be verified."
-      },
-      {
-        "line_id": "E02-L012",
-        "verdict": "consistent",
-        "evidence": "Telugu uses informal second‑person singular \"నీ\" and ordinary verb form, fitting the household informal register for Delia→Edda; the required address term \"love\" is not mandatory, only exclusive."
-      },
-      {
-        "line_id": "E02-L013",
-        "verdict": "unknown",
-        "evidence": "No relationship‑sheet entry for Edda Halloran to this listener, preventing a register check."
-      },
-      {
-        "line_id": "E02-L015",
-        "verdict": "unknown",
-        "evidence": "Relationship sheet lacks a row for Brother Anselm speaking to Miss Halloran; the line cannot be evaluated against expected register or address."
-      },
-      {
-        "line_id": "E02-L016",
-        "verdict": "unknown",
-        "evidence": "No relationship‑sheet entry for Edda Halloran to this listener, so register compliance cannot be assessed."
-      },
-      {
-        "line_id": "E02-L020",
-        "verdict": "unknown",
-        "evidence": "The line involves \"Father\", which belongs to a different relationship not present in the sheet; also no entry for Edda Halloran to this listener."
-      },
-      {
-        "line_id": "E02-L025",
-        "verdict": "unknown",
-        "evidence": "Relationship sheet does not define Edda Halloran's register toward this listener, so no basis for assessment."
-      },
-      {
-        "line_id": "E02-L026",
-        "verdict": "too_formal",
-        "evidence": "Telugu uses the plural honorific \"Mee\" (second‑person plural) while the sheet expects a plain, familiar register (informal \"Nee\" or no honorific) for Joss → Edda."
-      },
-      {
-        "line_id": "E02-L028",
-        "verdict": "unknown",
-        "evidence": "The sheet contains no entry for Edda Halloran speaking to her father, so the expected register cannot be checked."
-      },
-      {
-        "line_id": "E02-L029",
-        "verdict": "unknown",
-        "evidence": "Joss Marek's voice‑over does not address Edda directly and the sheet only covers Joss → Edda dialogue with address terms; no register can be validated."
-      },
-      {
-        "line_id": "E02-L030",
-        "verdict": "unknown",
-        "evidence": "Edda Halloran is speaking to herself; the relationship sheet does not define self‑address, so no verdict can be given."
-      },
-      {
-        "line_id": "E02-L031",
-        "verdict": "too_formal",
-        "evidence": "Telugu uses the honorific \"meeru\" (second‑person plural) after the address \"Edda\", whereas the expected register for Joss → Edda is plain, familiar without honorifics."
-      },
-      {
-        "line_id": "E03-L002",
-        "verdict": "too_informal",
-        "evidence": "Uses \"Naaku\" (to me) instead of the expected honorific plural \"Meeku\" and lacks honorific verb endings for a formal distant relationship with Mistress Caine."
-      },
-      {
-        "line_id": "E03-L003",
-        "verdict": "address_mismatch",
-        "evidence": "Mistress Caine does not use any of the expected address terms (Miss Halloran, child, girl) when speaking to Edda Halloran."
-      },
-      {
-        "line_id": "E03-L006",
-        "verdict": "address_mismatch",
-        "evidence": "No expected address term (Miss Halloran, child, girl) is used by Mistress Caine toward Edda Halloran."
-      },
-      {
-        "line_id": "E03-L008",
-        "verdict": "address_mismatch",
-        "evidence": "Edda Halloran omits the required \"Mistress Caine\" address term when speaking to her."
-      },
-      {
-        "line_id": "E03-L010",
-        "verdict": "address_mismatch",
-        "evidence": "Edda Halloran addresses \"Silas Vane\" instead of the expected \"Mistress Caine\" for this speaker‑listener pair, violating the address term rule."
-      },
-      {
-        "line_id": "E03-L011",
-        "verdict": "consistent",
-        "evidence": "Silas Vane uses the expected address term \"Miss Halloran\" and appropriate half‑formal register when speaking to Edda Halloran."
-      },
-      {
-        "line_id": "E03-L012",
-        "verdict": "address_mismatch",
-        "evidence": "Mistress Caine does not use any of the expected address terms (Miss Halloran, child, girl) when addressing Edda Halloran."
-      },
-      {
-        "line_id": "E03-L014",
-        "verdict": "consistent",
-        "evidence": "Speaker Joss to Edda, plain familiar register expected; Telugu uses neutral phrasing with no honorifics or address, matching the English and prior usage."
-      },
-      {
-        "line_id": "E03-L017",
-        "verdict": "consistent",
-        "evidence": "Speaker Joss to Edda, plain familiar register; Telugu uses informal singular \"నీ\" which fits a familiar but not intimate tone, and no address term is required."
-      },
-      {
-        "line_id": "E03-L018",
-        "verdict": "unknown",
-        "evidence": "No relationship entry for Edda speaking to Joss; the sheet only defines Joss→Edda and Edda→Mistress Caine, so the register and address expectations cannot be checked."
-      },
-      {
-        "line_id": "E03-L021",
-        "verdict": "unknown",
-        "evidence": "Same as above: no sheet entry for Edda→Joss, so the line cannot be evaluated against expected register or address terms."
-      },
-      {
-        "line_id": "E03-L023",
-        "verdict": "consistent",
-        "evidence": "Speaker Joss (voice‑over) to Edda, plain familiar register; Telugu stays neutral, no address term, matching the English tone and prior lines."
-      },
-      {
-        "line_id": "E03-L024",
-        "verdict": "address_mismatch",
-        "evidence": "Telugu uses the address term \"అంటీ\" (Aunt) which is not predicted for the Edda→Joss pair; the sheet only predicts this slip for Edda→Mistress Caine, so the address is mismatched here."
-      },
-      {
-        "line_id": "E03-L025",
-        "verdict": "consistent",
-        "evidence": "Father uses informal singular 'నీవు' and address term 'నా అమ్మాయి' matching expected_register 'informal, paternal' and expected_address_terms including 'my girl'."
-      },
-      {
-        "line_id": "E03-L029",
-        "verdict": "consistent",
-        "evidence": "Edda speaks without honorifics, using plain first‑person and no address term, fitting the informal paternal register."
-      },
-      {
-        "line_id": "E03-L030",
-        "verdict": "consistent",
-        "evidence": "Father gives an informal imperative 'చెప్పు' and no address term, aligning with the informal paternal register."
-      },
-      {
-        "line_id": "E03-L031",
-        "verdict": "address_mismatch",
-        "evidence": "Edda addresses her father as 'నాన్నా', a title not listed in the relationship sheet for this speaker‑listener pair, causing a mismatch."
-      },
-      {
-        "line_id": "E04-L001",
-        "verdict": "unknown",
-        "evidence": "No relationship entry for Edda Halloran speaking to any listener; the sheet only defines her interaction with Mistress Caine."
-      },
-      {
-        "line_id": "E04-L002",
-        "verdict": "consistent",
-        "evidence": "The Telugu is a simple counting sequence with no honorifics, matching the expected child‑voice, non‑honorific register for Voice of the lamp → Edda."
-      },
-      {
-        "line_id": "E04-L004",
-        "verdict": "consistent",
-        "evidence": "Joss Marek uses a polite imperative (వెలిగించండి) which fits the plain, familiar register expected for Joss → Edda; no unexpected address term is used."
-      },
-      {
-        "line_id": "E04-L006",
-        "verdict": "consistent",
-        "evidence": "The line is a neutral statement about a third party, using standard verb forms appropriate to the plain familiar register for Joss → Edda."
-      },
-      {
-        "line_id": "E04-L007",
-        "verdict": "unknown",
-        "evidence": "The sheet lacks a relationship entry for Edda Halloran addressing the lamp; therefore the register cannot be validated."
-      },
-      {
-        "line_id": "E04-L009",
-        "verdict": "consistent",
-        "evidence": "Neutral statement with no pronouns; matches the formal register expected for Edda speaking to Joss before the first-name shift."
-      },
-      {
-        "line_id": "E04-L011",
-        "verdict": "consistent",
-        "evidence": "Uses informal singular \"నీ\" and no honorifics, fitting the plain‑familiar register Joss should use with Edda."
-      },
-      {
-        "line_id": "E04-L013",
-        "verdict": "consistent",
-        "evidence": "No address term; simple narration fits the plain‑familiar register between Joss and Edda."
-      },
-      {
-        "line_id": "E04-L014",
-        "verdict": "consistent",
-        "evidence": "Addresses Edda by name \"ఎడ్డా\" and uses informal paternal imperative, matching the father‑daughter informal register."
-      },
-      {
-        "line_id": "E04-L015",
-        "verdict": "consistent",
-        "evidence": "Uses \"నీకు\" (to you) informal singular, appropriate for Joss's familiar tone with Edda."
-      },
-      {
-        "line_id": "E04-L017",
-        "verdict": "consistent",
-        "evidence": "No direct address; neutral statement aligns with the familiar register between Joss and Edda."
-      },
-      {
-        "line_id": "E04-L018",
-        "verdict": "consistent",
-        "evidence": "Addresses Joss by first name \"జోస్\", exactly as the episode‑4 shift predicts; register is appropriate."
-      },
-      {
-        "line_id": "E04-L021",
-        "verdict": "unknown",
-        "evidence": "No relationship entry for speaker Edda Halloran and the implied listener; sheet only covers Edda↔Mistress Caine and Voice of the lamp↔Edda."
-      },
-      {
-        "line_id": "E04-L023",
-        "verdict": "unknown",
-        "evidence": "No relationship entry for speaker Edda Halloran and the implied listener; sheet does not define this exchange."
-      },
-      {
-        "line_id": "E04-L024",
-        "verdict": "consistent",
-        "evidence": "Matches expected child voice register: counting phrase, no honorifics, and no address terms as specified for Voice of the lamp → Edda Halloran."
-      },
-      {
-        "line_id": "E04-L025",
-        "verdict": "unknown",
-        "evidence": "No relationship entry for speaker Edda Halloran and the implied listener (the lamp); sheet does not cover this exchange."
-      },
-      {
-        "line_id": "E04-L027",
-        "verdict": "unknown",
-        "evidence": "No relationship entry for speaker Edda Halloran and the implied listener (the lamp); sheet does not cover this exchange."
-      },
-      {
-        "line_id": "E05-L003",
-        "verdict": "unknown",
-        "evidence": "No relationship-sheet entry for Company clerk (shipping office) and any listener; cannot assess register or address consistency."
-      },
-      {
-        "line_id": "E05-L007",
-        "verdict": "unknown",
-        "evidence": "Speaker Edda addresses \"Father Anselm\"; the relationship sheet only covers Edda‑Mistress Caine, so the expected register and address terms are undefined for this exchange."
-      },
-      {
-        "line_id": "E05-L009",
-        "verdict": "unknown",
-        "evidence": "Although the Telugu mentions \"మిస్ట్రెస్ కేన్ గారు\", the line is a statement about Caine, not a direct address. The sheet only defines address usage for Edda‑Mistress Caine, not for third‑person references, so no clear consistency check applies."
-      },
-      {
-        "line_id": "E05-L010",
-        "verdict": "unknown",
-        "evidence": "Speaker Brother Anselm has no corresponding relationship entry; therefore register and honorific expectations cannot be evaluated."
-      },
-      {
-        "line_id": "E05-L011",
-        "verdict": "address_mismatch",
-        "evidence": "Constable Roe addresses Halloran by name with \"Halloran గారు\"; the sheet expects titles like \"Mistress\" or \"the keeper's daughter\" for official register."
-      },
-      {
-        "line_id": "E05-L012",
-        "verdict": "consistent",
-        "evidence": "Halloran (father) calls Edda by her name \"ఎడ్డా\" and uses informal paternal language, matching the expected register and address terms."
-      },
-      {
-        "line_id": "E05-L014",
-        "verdict": "consistent",
-        "evidence": "Edda addresses Silas Vane with his full name and no honorific, exactly as the sheet predicts (cold, full‑name address)."
-      },
-      {
-        "line_id": "E05-L015",
-        "verdict": "consistent",
-        "evidence": "Silas Vane uses the expected address term \"మిస్ హల్లొరాన్\" and a half‑formal provoking tone, fitting the sheet."
-      },
-      {
-        "line_id": "E05-L016",
-        "verdict": "consistent",
-        "evidence": "Edda replies without an address term, maintaining the cold register expected for her dialogue with Silas."
-      },
-      {
-        "line_id": "E05-L017",
-        "verdict": "consistent",
-        "evidence": "Joss Marek speaks plainly to Edda without a direct address term, which aligns with the expected familiar but non‑insolent register."
-      },
-      {
-        "line_id": "E05-L019",
-        "verdict": "consistent",
-        "evidence": "Edda uses \"మిస్ట్రెస్ కేన్ గారు\" with honorific \"గారు\", matching the formal, distant register and expected address term."
-      },
-      {
-        "line_id": "E05-L022",
-        "verdict": "unknown",
-        "evidence": "The relationship sheet has no entry for Edda speaking to her father; therefore the expected register and address terms are undefined."
-      },
-      {
-        "line_id": "E05-L026",
-        "verdict": "consistent",
-        "evidence": "Joss uses plain language without honorifics, matching the expected familiar register for Joss→Edda; no address term needed and delivery tag aligns; prior Joss lines use similar register."
-      },
-      {
-        "line_id": "E05-L027",
-        "verdict": "unknown",
-        "evidence": "No relationship entry for Edda→Joss in the sheet, so the expected register and address terms cannot be verified."
-      },
-      {
-        "line_id": "E05-L029",
-        "verdict": "too_formal",
-        "evidence": "Edda addresses Joss with the honorific plural \"మీరు\" and verb ending \"చూస్తున్నారు\", which is more formal than the plain familiar register expected for this pair."
-      },
-      {
-        "line_id": "E05-L031",
-        "verdict": "too_formal",
-        "evidence": "Same issue as L029: the honorific plural \"మీరు\" makes the line overly formal for the expected familiar register between Edda and Joss."
-      },
-      {
-        "line_id": "E05-L032",
-        "verdict": "too_formal",
-        "evidence": "Joss uses the honorific \"మీ\" (your) when speaking to Edda, exceeding the plain familiar register expected for Joss→Edda; the address term \"ఎడ్డా\" is correct, but pronoun choice is too formal."
-      },
-      {
-        "line_id": "E06-L002",
-        "verdict": "consistent",
-        "evidence": "Telugu uses neutral verb forms and omits a direct address, which is acceptable for a plain, familiar register between Joss and Edda; no unexpected titles appear."
-      },
-      {
-        "line_id": "E06-L004",
-        "verdict": "consistent",
-        "evidence": "The Telugu correctly addresses Edda as \"మిస్ హల్లొరన్\" (Miss Halloran) and uses the honorific \"మీరు\", matching the condescending‑sweet register expected of Mistress Caine."
-      },
-      {
-        "line_id": "E06-L006",
-        "verdict": "consistent",
-        "evidence": "Imperative \"చేయండి\" is a polite/formal form appropriate for Silas's half‑formal, provoking tone; no unexpected address terms are used."
-      },
-      {
-        "line_id": "E06-L008",
-        "verdict": "address_mismatch",
-        "evidence": "The line inserts \"సిలాస్ వేన్\" (Silas Vane), a name not predicted by the relationship sheet, and omits the required address \"Mistress Caine\" with honorific plural."
-      },
-      {
-        "line_id": "E06-L010",
-        "verdict": "consistent",
-        "evidence": "Uses honorific plural \"Meeru\" appropriate for condescending-sweet register; no address term needed but tone matches expected condescension without dropping respect."
-      },
-      {
-        "line_id": "E06-L011",
-        "verdict": "too_informal",
-        "evidence": "Edda addresses Mistress Caine with informal singular \"Nee\" instead of the expected honorific plural (e.g., \"Meeku\") despite the sheet allowing the shift to \"Aunt\" as address term."
-      },
-      {
-        "line_id": "E06-L012",
-        "verdict": "consistent",
-        "evidence": "Mistress Caine uses honorific plural \"Meeru\" and the allowed address term \"pillagaa\" (girl) in a condescending‑sweet tone, matching the expected register."
-      },
-      {
-        "line_id": "E06-L016",
-        "verdict": "consistent",
-        "evidence": "Edda uses honorific plural \"meeru\" and maintains the formal, distant register required for speaking to Mistress Caine."
-      },
-      {
-        "line_id": "E06-L017",
-        "verdict": "consistent",
-        "evidence": "Joss uses informal singular \"Nee\" which fits the plain, familiar register for speaking to Edda; no prohibited address term is used."
-      },
-      {
-        "line_id": "E06-L018",
-        "verdict": "consistent",
-        "evidence": "Edda employs honorific plural \"meeru\" preserving the formal, honorific register expected for Mistress Caine."
-      },
-      {
-        "line_id": "E06-L019",
-        "verdict": "consistent",
-        "evidence": "Father uses paternal informal address \"pillagaa\" (girl) as listed in expected terms; register is informal and paternal as required."
-      },
-      {
-        "line_id": "E06-L020",
-        "verdict": "unknown",
-        "evidence": "The relationship sheet does not define expectations for Edda addressing her father; the address term \"Appa\" is outside the covered speaker‑listener pairs."
-      },
-      {
-        "line_id": "E06-L021",
-        "verdict": "consistent",
-        "evidence": "Child voice counting line with no address terms, matching expected register and address list (none)."
-      },
-      {
-        "line_id": "E06-L023",
-        "verdict": "consistent",
-        "evidence": "Uses expected address \"ఎడ్డా\" and plain familiar imperative, fitting the \"plain, familiar without being insolent\" register."
-      },
-      {
-        "line_id": "E06-L024",
-        "verdict": "address_mismatch",
-        "evidence": "Speaker Edda is expected to address Mistress Caine with formal honorifics and the term \"Mistress Caine\", but the Telugu line contains no address term or honorific plural forms."
-      }
-    ],
-    "naturalness": [
-      {
-        "line_id": "E01-L001",
-        "verdict": "natural",
-        "note": "Straightforward description; phrasing fits period dubbing style."
-      },
-      {
-        "line_id": "E01-L003",
-        "verdict": "natural",
-        "note": "Clear and idiomatic; “ఒక గంటకు ముందు” is acceptable in formal speech."
-      },
-      {
-        "line_id": "E01-L004",
-        "verdict": "possibly_unnatural",
-        "note": "Word order feels stiff; more natural would be “నీవు నిద్రిస్తున్నప్పుడు కెయిన్ మళ్లీ వచ్చాడు.”"
-      },
-      {
-        "line_id": "E01-L005",
-        "verdict": "possibly_unnatural",
-        "note": "Sentence order is awkward; native speakers would say “నేను నిద్రిస్తున్నప్పుడు ఆమె ఎప్పుడూ వస్తుంది.”"
-      },
-      {
-        "line_id": "E01-L006",
-        "verdict": "natural",
-        "note": "Appropriate informal address and phrasing for a pleading father‑daughter exchange."
-      },
-      {
-        "line_id": "E01-L007",
-        "verdict": "natural",
-        "note": "Simple interrogative, fits casual speech."
-      },
-      {
-        "line_id": "E01-L014",
-        "verdict": "possibly_unnatural",
-        "note": "Literal word‑for‑word rendering; \"బాకీ\" is not the usual term for \"debt\" and the phrase sounds stiff for a period businesslike line."
-      },
-      {
-        "line_id": "E01-L015",
-        "verdict": "possibly_unnatural",
-        "note": "Adds \"దయచేసి\" which makes it overly polite for a low‑tone command; the original tone is more abrupt."
-      },
-      {
-        "line_id": "E01-L017",
-        "verdict": "possibly_unnatural",
-        "note": "\"జలానికి\" means \"to water\" not \"to the tide\"; the idiom is rendered inaccurately and sounds unnatural in period Telugu."
-      },
-      {
-        "line_id": "E01-L021",
-        "verdict": "natural",
-        "note": "Concise, uses appropriate honorific \"మీ\" and fits the solemn dubbing register."
-      },
-      {
-        "line_id": "E01-L023",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E01-L024",
-        "verdict": "possibly_unnatural",
-        "note": "Uses English title \"మిస్ హాలొరన్\"; should employ second‑person plural honorific (e.g., \"మీకు\"/\"వారు\") to match the prescribed solemn Telugu register."
-      },
-      {
-        "line_id": "E01-L025",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E01-L026",
-        "verdict": "possibly_unnatural",
-        "note": "Verb form \"చేయవద్దు\" is formal; father‑daughter intimacy calls for informal singular imperative like \"చేయకు\"."
-      },
-      {
-        "line_id": "E01-L027",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E01-L029",
-        "verdict": "possibly_unnatural",
-        "note": "Address term \"అంటీ\" is an Indian kinship word; period‑appropriate dubbing should keep the English title or use a respectful honorific, not a familial term."
-      },
-      {
-        "line_id": "E01-L030",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L004",
-        "verdict": "natural",
-        "note": "The sentence is grammatically correct and fits the solemn dubbing register; “టికెట్ నౌకతో కాలిపోయింది.” sounds like a plausible period line."
-      },
-      {
-        "line_id": "E02-L006",
-        "verdict": "possibly_unnatural",
-        "note": "The phrase “అతని తల నింపుతున్నారా?” is not idiomatic Telugu for “filling his head”; also inserting the English name “Marek” mid‑sentence feels stiff and mixes registers."
-      },
-      {
-        "line_id": "E02-L007",
-        "verdict": "natural",
-        "note": "Straightforward statement; “అతని తల ఇప్పటికే నిండిపోయింది.” is natural in the required register."
-      },
-      {
-        "line_id": "E02-L009",
-        "verdict": "possibly_unnatural",
-        "note": "Verb choice is off – “వినిపిస్తారు” is unnatural for “will hear”; a more natural rendering would be “వింటారు”. The rest of the line is acceptable."
-      },
-      {
-        "line_id": "E02-L010",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L011",
-        "verdict": "possibly_unnatural",
-        "note": "Uses respectful plural verb కోరుకుంటున్నారు despite intimate context where singular informal (కోరుకుంటాడు) is expected."
-      },
-      {
-        "line_id": "E02-L012",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L013",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L015",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L016",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L020",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L025",
-        "verdict": "possibly_unnatural",
-        "note": "Trailing‑off phrase is incomplete; lacks verb after \"మీరు ఎలా\" making it sound cut off and unnatural."
-      },
-      {
-        "line_id": "E02-L026",
-        "verdict": "possibly_unnatural",
-        "note": "Literal translation \"darwaza chadavadam\" (read a gate) is nonsensical in Telugu; phrasing is stiff and mixes informal \"naaku\" with a literal rendering."
-      },
-      {
-        "line_id": "E02-L028",
-        "verdict": "natural",
-        "note": "\"Shanthamga undi, Nanna. Nenu ikkada unna.\" is acceptable for a soft, intimate address to a father in the prescribed register."
-      },
-      {
-        "line_id": "E02-L029",
-        "verdict": "natural",
-        "note": "\"Aame ki hastakshara ki emi teliyadu.\" conveys the meaning naturally using a slightly formal Sanskrit‑derived term, fitting the period style."
-      },
-      {
-        "line_id": "E02-L030",
-        "verdict": "possibly_unnatural",
-        "note": "Metaphor \"patrikalo oka vakyam laga\" is awkward; overall phrasing sounds translated and mixes registers."
-      },
-      {
-        "line_id": "E02-L031",
-        "verdict": "possibly_unnatural",
-        "note": "Second sentence \"Aadani artham meeru\" is ungrammatical and unclear; the imperative \"nilipi\" also mismatches the solemn register."
-      },
-      {
-        "line_id": "E03-L002",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L003",
-        "verdict": "possibly_unnatural",
-        "note": "\"aapada\" means disaster, not tide; translation feels literal and stiff"
-      },
-      {
-        "line_id": "E03-L006",
-        "verdict": "possibly_unnatural",
-        "note": "imperative form should be \"teesukondi\"; current \"teesupondi\" is incorrect"
-      },
-      {
-        "line_id": "E03-L008",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L010",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L011",
-        "verdict": "natural",
-        "note": "address term \"Miss Halloran\" is acceptable as borrowed title; phrasing fits dubbing style"
-      },
-      {
-        "line_id": "E03-L012",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L014",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L017",
-        "verdict": "possibly_unnatural",
-        "note": "Uses informal singular \"నీ\" while the required solemn dubbing register calls for honorific \"మీ\" in this speaker‑listener relationship."
-      },
-      {
-        "line_id": "E03-L018",
-        "verdict": "possibly_unnatural",
-        "note": "Mixes registers (addressing \"మారెక్\" without honorific, literal phrasing) and sounds stilted; a more period‑appropriate phrasing would improve naturalness."
-      },
-      {
-        "line_id": "E03-L021",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L023",
-        "verdict": "possibly_unnatural",
-        "note": "Literal translation \"ధరలతో చూస్తున్నారు\" is awkward; a more idiomatic expression is needed for the metaphor of being priced."
-      },
-      {
-        "line_id": "E03-L024",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L025",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L029",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L030",
-        "verdict": "possibly_unnatural",
-        "note": "Uses English loanword \"సవాల్\" instead of native \"సవాలు\"; feels slightly out of period register."
-      },
-      {
-        "line_id": "E03-L031",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E04-L001",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E04-L002",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E04-L004",
-        "verdict": "possibly_unnatural",
-        "note": "Literal translation of “light the stair”; “సీడీని వెలిగించండి” sounds odd and not how a period‑style speaker would phrase it."
-      },
-      {
-        "line_id": "E04-L006",
-        "verdict": "possibly_unnatural",
-        "note": "Awkward literal rendering of “wet and right, in that order”; phrasing is stiff and not natural Telugu."
-      },
-      {
-        "line_id": "E04-L007",
-        "verdict": "possibly_unnatural",
-        "note": "Metaphorical “father’s water” is rendered literally; the line feels translated and unnatural in the target register."
-      },
-      {
-        "line_id": "E04-L009",
-        "verdict": "natural",
-        "note": "The phrasing is acceptable for a solemn period style; no register issues."
-      },
-      {
-        "line_id": "E04-L011",
-        "verdict": "possibly_unnatural",
-        "note": "\"ట్రాలర్ కాదు\" does not convey the intended meaning (the trawler did not hold). It sounds like a literal denial rather than a statement of failure."
-      },
-      {
-        "line_id": "E04-L013",
-        "verdict": "possibly_unnatural",
-        "note": "\"రెండు జీవించి\" is awkward; a more natural phrasing would be \"రెండు జీవించి ఉన్నారు\". The rest is fine."
-      },
-      {
-        "line_id": "E04-L014",
-        "verdict": "possibly_unnatural",
-        "note": "The sentence is fragmented and contains a typo: \"నాకె చెప్పు\" should be \"నాకు చెప్పు\" and the first clause needs a verb (e.g., \"నా షోల్‌లో మూడు ఉన్నాయి\")."
-      },
-      {
-        "line_id": "E04-L015",
-        "verdict": "natural",
-        "note": "Clear, appropriate informal singular address and natural wording."
-      },
-      {
-        "line_id": "E04-L017",
-        "verdict": "natural",
-        "note": "The sentence is understandable and fits the informal register between Joss and Edda."
-      },
-      {
-        "line_id": "E04-L018",
-        "verdict": "natural",
-        "note": "Simple, natural question with correct informal register."
-      }
-    ],
     "timing": [
       {
         "line_id": "E01-L001",
@@ -4369,147 +3178,1435 @@
         "telugu_letter_share": 1.0,
         "latin_words": 3
       }
+    ],
+    "naturalness": [
+      {
+        "line_id": "E01-L001",
+        "verdict": "natural",
+        "note": "Straightforward description; phrasing fits period dubbing style."
+      },
+      {
+        "line_id": "E01-L003",
+        "verdict": "natural",
+        "note": "Clear and idiomatic; “ఒక గంటకు ముందు” is acceptable in formal speech."
+      },
+      {
+        "line_id": "E01-L004",
+        "verdict": "possibly_unnatural",
+        "note": "Word order feels stiff; more natural would be “నీవు నిద్రిస్తున్నప్పుడు కెయిన్ మళ్లీ వచ్చాడు.”"
+      },
+      {
+        "line_id": "E01-L005",
+        "verdict": "possibly_unnatural",
+        "note": "Sentence order is awkward; native speakers would say “నేను నిద్రిస్తున్నప్పుడు ఆమె ఎప్పుడూ వస్తుంది.”"
+      },
+      {
+        "line_id": "E01-L006",
+        "verdict": "natural",
+        "note": "Appropriate informal address and phrasing for a pleading father‑daughter exchange."
+      },
+      {
+        "line_id": "E01-L007",
+        "verdict": "natural",
+        "note": "Simple interrogative, fits casual speech."
+      },
+      {
+        "line_id": "E01-L014",
+        "verdict": "possibly_unnatural",
+        "note": "Literal word‑for‑word rendering; \"బాకీ\" is not the usual term for \"debt\" and the phrase sounds stiff for a period businesslike line."
+      },
+      {
+        "line_id": "E01-L015",
+        "verdict": "possibly_unnatural",
+        "note": "Adds \"దయచేసి\" which makes it overly polite for a low‑tone command; the original tone is more abrupt."
+      },
+      {
+        "line_id": "E01-L017",
+        "verdict": "possibly_unnatural",
+        "note": "\"జలానికి\" means \"to water\" not \"to the tide\"; the idiom is rendered inaccurately and sounds unnatural in period Telugu."
+      },
+      {
+        "line_id": "E01-L021",
+        "verdict": "natural",
+        "note": "Concise, uses appropriate honorific \"మీ\" and fits the solemn dubbing register."
+      },
+      {
+        "line_id": "E01-L023",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E01-L024",
+        "verdict": "possibly_unnatural",
+        "note": "Uses English title \"మిస్ హాలొరన్\"; should employ second‑person plural honorific (e.g., \"మీకు\"/\"వారు\") to match the prescribed solemn Telugu register."
+      },
+      {
+        "line_id": "E01-L025",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E01-L026",
+        "verdict": "possibly_unnatural",
+        "note": "Verb form \"చేయవద్దు\" is formal; father‑daughter intimacy calls for informal singular imperative like \"చేయకు\"."
+      },
+      {
+        "line_id": "E01-L027",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E01-L029",
+        "verdict": "possibly_unnatural",
+        "note": "Address term \"అంటీ\" is an Indian kinship word; period‑appropriate dubbing should keep the English title or use a respectful honorific, not a familial term."
+      },
+      {
+        "line_id": "E01-L030",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L004",
+        "verdict": "natural",
+        "note": "The sentence is grammatically correct and fits the solemn dubbing register; “టికెట్ నౌకతో కాలిపోయింది.” sounds like a plausible period line."
+      },
+      {
+        "line_id": "E02-L006",
+        "verdict": "possibly_unnatural",
+        "note": "The phrase “అతని తల నింపుతున్నారా?” is not idiomatic Telugu for “filling his head”; also inserting the English name “Marek” mid‑sentence feels stiff and mixes registers."
+      },
+      {
+        "line_id": "E02-L007",
+        "verdict": "natural",
+        "note": "Straightforward statement; “అతని తల ఇప్పటికే నిండిపోయింది.” is natural in the required register."
+      },
+      {
+        "line_id": "E02-L009",
+        "verdict": "possibly_unnatural",
+        "note": "Verb choice is off – “వినిపిస్తారు” is unnatural for “will hear”; a more natural rendering would be “వింటారు”. The rest of the line is acceptable."
+      },
+      {
+        "line_id": "E02-L010",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L011",
+        "verdict": "possibly_unnatural",
+        "note": "Uses respectful plural verb కోరుకుంటున్నారు despite intimate context where singular informal (కోరుకుంటాడు) is expected."
+      },
+      {
+        "line_id": "E02-L012",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L013",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L015",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L016",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L020",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L025",
+        "verdict": "possibly_unnatural",
+        "note": "Trailing‑off phrase is incomplete; lacks verb after \"మీరు ఎలా\" making it sound cut off and unnatural."
+      },
+      {
+        "line_id": "E02-L026",
+        "verdict": "possibly_unnatural",
+        "note": "Literal translation \"darwaza chadavadam\" (read a gate) is nonsensical in Telugu; phrasing is stiff and mixes informal \"naaku\" with a literal rendering."
+      },
+      {
+        "line_id": "E02-L028",
+        "verdict": "natural",
+        "note": "\"Shanthamga undi, Nanna. Nenu ikkada unna.\" is acceptable for a soft, intimate address to a father in the prescribed register."
+      },
+      {
+        "line_id": "E02-L029",
+        "verdict": "natural",
+        "note": "\"Aame ki hastakshara ki emi teliyadu.\" conveys the meaning naturally using a slightly formal Sanskrit‑derived term, fitting the period style."
+      },
+      {
+        "line_id": "E02-L030",
+        "verdict": "possibly_unnatural",
+        "note": "Metaphor \"patrikalo oka vakyam laga\" is awkward; overall phrasing sounds translated and mixes registers."
+      },
+      {
+        "line_id": "E02-L031",
+        "verdict": "possibly_unnatural",
+        "note": "Second sentence \"Aadani artham meeru\" is ungrammatical and unclear; the imperative \"nilipi\" also mismatches the solemn register."
+      },
+      {
+        "line_id": "E03-L002",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L003",
+        "verdict": "possibly_unnatural",
+        "note": "\"aapada\" means disaster, not tide; translation feels literal and stiff"
+      },
+      {
+        "line_id": "E03-L006",
+        "verdict": "possibly_unnatural",
+        "note": "imperative form should be \"teesukondi\"; current \"teesupondi\" is incorrect"
+      },
+      {
+        "line_id": "E03-L008",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L010",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L011",
+        "verdict": "natural",
+        "note": "address term \"Miss Halloran\" is acceptable as borrowed title; phrasing fits dubbing style"
+      },
+      {
+        "line_id": "E03-L012",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L014",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L017",
+        "verdict": "possibly_unnatural",
+        "note": "Uses informal singular \"నీ\" while the required solemn dubbing register calls for honorific \"మీ\" in this speaker‑listener relationship."
+      },
+      {
+        "line_id": "E03-L018",
+        "verdict": "possibly_unnatural",
+        "note": "Mixes registers (addressing \"మారెక్\" without honorific, literal phrasing) and sounds stilted; a more period‑appropriate phrasing would improve naturalness."
+      },
+      {
+        "line_id": "E03-L021",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L023",
+        "verdict": "possibly_unnatural",
+        "note": "Literal translation \"ధరలతో చూస్తున్నారు\" is awkward; a more idiomatic expression is needed for the metaphor of being priced."
+      },
+      {
+        "line_id": "E03-L024",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L025",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L029",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L030",
+        "verdict": "possibly_unnatural",
+        "note": "Uses English loanword \"సవాల్\" instead of native \"సవాలు\"; feels slightly out of period register."
+      },
+      {
+        "line_id": "E03-L031",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E04-L001",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E04-L002",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E04-L004",
+        "verdict": "possibly_unnatural",
+        "note": "Literal translation of “light the stair”; “సీడీని వెలిగించండి” sounds odd and not how a period‑style speaker would phrase it."
+      },
+      {
+        "line_id": "E04-L006",
+        "verdict": "possibly_unnatural",
+        "note": "Awkward literal rendering of “wet and right, in that order”; phrasing is stiff and not natural Telugu."
+      },
+      {
+        "line_id": "E04-L007",
+        "verdict": "possibly_unnatural",
+        "note": "Metaphorical “father’s water” is rendered literally; the line feels translated and unnatural in the target register."
+      },
+      {
+        "line_id": "E04-L009",
+        "verdict": "natural",
+        "note": "The phrasing is acceptable for a solemn period style; no register issues."
+      },
+      {
+        "line_id": "E04-L011",
+        "verdict": "possibly_unnatural",
+        "note": "\"ట్రాలర్ కాదు\" does not convey the intended meaning (the trawler did not hold). It sounds like a literal denial rather than a statement of failure."
+      },
+      {
+        "line_id": "E04-L013",
+        "verdict": "possibly_unnatural",
+        "note": "\"రెండు జీవించి\" is awkward; a more natural phrasing would be \"రెండు జీవించి ఉన్నారు\". The rest is fine."
+      },
+      {
+        "line_id": "E04-L014",
+        "verdict": "possibly_unnatural",
+        "note": "The sentence is fragmented and contains a typo: \"నాకె చెప్పు\" should be \"నాకు చెప్పు\" and the first clause needs a verb (e.g., \"నా షోల్‌లో మూడు ఉన్నాయి\")."
+      },
+      {
+        "line_id": "E04-L015",
+        "verdict": "natural",
+        "note": "Clear, appropriate informal singular address and natural wording."
+      },
+      {
+        "line_id": "E04-L017",
+        "verdict": "natural",
+        "note": "The sentence is understandable and fits the informal register between Joss and Edda."
+      },
+      {
+        "line_id": "E04-L018",
+        "verdict": "natural",
+        "note": "Simple, natural question with correct informal register."
+      },
+      {
+        "line_id": "E04-L021",
+        "verdict": "natural",
+        "note": "Straightforward statement; phrasing fits period dubbing style."
+      },
+      {
+        "line_id": "E04-L023",
+        "verdict": "possibly_unnatural",
+        "note": "Negative imperative \"ఆపకు\" sounds odd; a more natural phrasing would be \"ఆపకండి\" or \"ఆపవద్దు\". The rest is acceptable."
+      },
+      {
+        "line_id": "E04-L024",
+        "verdict": "natural",
+        "note": "Simple enumeration of numbers; natural."
+      },
+      {
+        "line_id": "E04-L025",
+        "verdict": "possibly_unnatural",
+        "note": "Uses informal singular imperative \"దిగు\"; according to the required register it should be plural honorific (e.g., \"దిగండి\")."
+      },
+      {
+        "line_id": "E04-L027",
+        "verdict": "possibly_unnatural",
+        "note": "Employs singular informal \"నీవు...నిలబెడతావు\"; the period dubbing register calls for second‑person plural honorific forms (\"మీరు...నిలబెడతారు\")."
+      },
+      {
+        "line_id": "E05-L003",
+        "verdict": "natural",
+        "note": "Clear period‑appropriate phrasing; no awkward register mixing."
+      },
+      {
+        "line_id": "E05-L007",
+        "verdict": "natural",
+        "note": "Uses borrowed title as required and respectful second‑person form correctly."
+      },
+      {
+        "line_id": "E05-L009",
+        "verdict": "possibly_unnatural",
+        "note": "Literal translation feels stiff; double honorific \"మిస్ట్రెస్ ... గారు\" and fragment lacks object, not how a speaker would naturally phrase it."
+      },
+      {
+        "line_id": "E05-L010",
+        "verdict": "possibly_unnatural",
+        "note": "First clause \"కేన్ ఇస్తారు\" is a fragment without object; overall sentence mixes fragments and may sound unnatural in period dubbing."
+      },
+      {
+        "line_id": "E05-L026",
+        "verdict": "possibly_unnatural",
+        "note": "Literal translation; 'దీపం కొనాలి' is stiff, and 'నా కోట్లో' mis‑uses 'కోట్' (coat) as 'కోట' (fort). Register is off."
+      },
+      {
+        "line_id": "E05-L027",
+        "verdict": "possibly_unnatural",
+        "note": "Mixes Chinese character 钱 with Telugu, and uses a borrowed noun 'బార్గెమన్' without proper grammar; overall unnatural."
+      },
+      {
+        "line_id": "E05-L029",
+        "verdict": "natural",
+        "note": "Uses proper second‑person plural honorifics and conveys meaning in a straightforward way."
+      },
+      {
+        "line_id": "E05-L031",
+        "verdict": "natural",
+        "note": "Clear, appropriate honorific form; sounds like natural spoken Telugu."
+      },
+      {
+        "line_id": "E05-L032",
+        "verdict": "possibly_unnatural",
+        "note": "Stilted phrasing ('బాధ్యతతో అనుమతించేవారు'), awkward word order, and overly literal rendering of 'buyer' and 'husband' concepts."
+      },
+      {
+        "line_id": "E06-L002",
+        "verdict": "possibly_unnatural",
+        "note": "Literal translation; metaphor ‘water has been honest’ sounds odd in Telugu and feels stiff."
+      },
+      {
+        "line_id": "E06-L004",
+        "verdict": "possibly_unnatural",
+        "note": "Adds unrelated title “మిస్ హల్లొరన్”; phrasing is abrupt and overly literal."
+      },
+      {
+        "line_id": "E06-L006",
+        "verdict": "possibly_unnatural",
+        "note": "Uses ‘నీటిపై దొంగతనం’ which is unnatural for ‘smuggler on the water’; word choice is off."
+      },
+      {
+        "line_id": "E06-L008",
+        "verdict": "possibly_unnatural",
+        "note": "Mis‑translation of ‘charge’; includes name “సిలాస్ వేన్” incorrectly and uses wrong term ‘ఆరోగణ’."
+      },
+      {
+        "line_id": "E06-L021",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E06-L023",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E06-L024",
+        "verdict": "possibly_unnatural",
+        "note": "The phrasing \"వెలిగినట్లే ఉంటుంది\" sounds stiff/translated; a more natural period‑style rendering might be \"దీపం వెలిగేలా ఉంటుంది\" or similar."
+      }
+    ],
+    "meaning": [
+      {
+        "line_id": "E01-L001",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L003",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L004",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L005",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L006",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L007",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L014",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L015",
+        "verdict": "weakened",
+        "reason": "Added polite \"దయచేసి\" which softens the imperative"
+      },
+      {
+        "line_id": "E01-L017",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L021",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L023",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L024",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L025",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L026",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L027",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L029",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E01-L030",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L004",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L006",
+        "verdict": "weakened",
+        "reason": "Changed a declarative accusation into a question and added a name, reducing the force"
+      },
+      {
+        "line_id": "E02-L007",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L009",
+        "verdict": "reversed",
+        "reason": "Agency reversed – Telugu says she will make it heard rather than she will hear it"
+      },
+      {
+        "line_id": "E02-L010",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L011",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L012",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L013",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L015",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L016",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L020",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L025",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L026",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L028",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L029",
+        "verdict": "weakened",
+        "reason": "Cost nuance omitted"
+      },
+      {
+        "line_id": "E02-L030",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E02-L031",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L002",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L003",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L006",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L008",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L010",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L011",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L012",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L014",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L017",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L018",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L021",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L023",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L024",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L025",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L029",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E03-L030",
+        "verdict": "weakened",
+        "reason": "The Telugu omits the word “dare” after “not a”."
+      },
+      {
+        "line_id": "E03-L031",
+        "verdict": "weakened",
+        "reason": "The Telugu drops the “a dare” clause from the English sentence."
+      },
+      {
+        "line_id": "E04-L001",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L002",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L004",
+        "verdict": "missing",
+        "reason": "Incorrect noun; \"సీడీ\" means CD, not stair"
+      },
+      {
+        "line_id": "E04-L006",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L007",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L009",
+        "verdict": "weakened",
+        "reason": "Telugu misinterprets 'Nobody's' as 'not for anyone' instead of 'no one'"
+      },
+      {
+        "line_id": "E04-L011",
+        "verdict": "weakened",
+        "reason": "Telugu omits 'did not' for the trawler, changing the nuance"
+      },
+      {
+        "line_id": "E04-L013",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L014",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L015",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L017",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L018",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L021",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L023",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L024",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L025",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E04-L027",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L003",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L007",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L009",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L010",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L011",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L012",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L014",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L015",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L016",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L017",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L019",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L022",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L026",
+        "verdict": "weakened",
+        "reason": "\"coat\" was mistranslated as \"కోట్లో\" (fort) losing the specific detail"
+      },
+      {
+        "line_id": "E05-L027",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L029",
+        "verdict": "weakened",
+        "reason": "\"starve\" was rendered as \"ఆకలితో చూస్తున్నారు\", implying the listener is hungry rather than the speaker starving"
+      },
+      {
+        "line_id": "E05-L031",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E05-L032",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L002",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L004",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L006",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L008",
+        "verdict": "reversed",
+        "reason": "Added unrelated name 'Silas Vane', altering the original reference."
+      },
+      {
+        "line_id": "E06-L010",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L011",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L012",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L016",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L017",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L018",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L019",
+        "verdict": "weakened",
+        "reason": "Changed imperative \"look at me\" to a question \"will you look at me?\", reducing the force."
+      },
+      {
+        "line_id": "E06-L020",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L021",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L023",
+        "verdict": "same",
+        "reason": ""
+      },
+      {
+        "line_id": "E06-L024",
+        "verdict": "same",
+        "reason": ""
+      }
+    ],
+    "relationship": [
+      {
+        "line_id": "E01-L001",
+        "verdict": "unknown",
+        "evidence": "No relationship rule covers Edda Halloran speaking to any listener in this line; the sheet only defines Edda↔Mistress Caine and Halloran↔Edda."
+      },
+      {
+        "line_id": "E01-L003",
+        "verdict": "unknown",
+        "evidence": "Same as above – the relationship sheet provides no register or address expectations for this speaker‑listener pair."
+      },
+      {
+        "line_id": "E01-L004",
+        "verdict": "consistent",
+        "evidence": "Father uses informal paternal register (నీవు, వచ్చాడు) and addresses Edda by name \"ఎడ్డా\", which matches an expected address term."
+      },
+      {
+        "line_id": "E01-L005",
+        "verdict": "unknown",
+        "evidence": "No applicable relationship entry for Edda speaking here; the sheet does not define her register toward this listener."
+      },
+      {
+        "line_id": "E01-L006",
+        "verdict": "consistent",
+        "evidence": "Father again uses informal paternal register (నీవు ... చేయవద్దు) and, while not using a name, does not introduce any unexpected address term; the register matches the expected informal paternal style."
+      },
+      {
+        "line_id": "E01-L007",
+        "verdict": "unknown",
+        "evidence": "No relationship rule for Edda's line; the sheet lacks guidance for this interaction."
+      },
+      {
+        "line_id": "E01-L014",
+        "verdict": "honorific_dropped",
+        "evidence": "Mistress Caine is expected to use a condescending‑sweet register and address Edda as \"Miss Halloran\" (or \"child\"/\"girl\"). The Telugu line contains no address term at all, losing the required honorific."
+      },
+      {
+        "line_id": "E01-L015",
+        "verdict": "honorific_dropped",
+        "evidence": "Edda should address Mistress Caine with the formal honorific plural and the title \"Mistress Caine\". The Telugu line omits this address, using only a polite request."
+      },
+      {
+        "line_id": "E01-L017",
+        "verdict": "address_mismatch",
+        "evidence": "Joss is speaking to Edda, whose expected address term is \"Edda\". The Telugu line retains the English title \"Mistress\", which belongs to a different relationship on the sheet."
+      },
+      {
+        "line_id": "E01-L021",
+        "verdict": "consistent",
+        "evidence": "Edda uses the honorific \"మీ\" and a formal tone, matching the expected formal, distant register for speaking to Mistress Caine. No address term is required in this short reply."
+      },
+      {
+        "line_id": "E01-L023",
+        "verdict": "consistent",
+        "evidence": "Edda replies with a simple negative \"లేదు.\" without any address term, matching the formal distant register expected for her interaction with Mistress Caine; the verb form is acceptable in this context."
+      },
+      {
+        "line_id": "E01-L024",
+        "verdict": "consistent",
+        "evidence": "Silas uses the expected address \"మిస్ హాలొరన్\" and a neutral verb form, fitting the provoking half‑formal register defined for Silas→Edda."
+      },
+      {
+        "line_id": "E01-L025",
+        "verdict": "consistent",
+        "evidence": "Continuation of Silas's line contains no address term and maintains the same register as the previous segment."
+      },
+      {
+        "line_id": "E01-L026",
+        "verdict": "consistent",
+        "evidence": "Halloran (father) addresses Edda as \"ఎడ్డా, నా అమ్మాయా\" using informal paternal language and the expected address term \"my girl\"."
+      },
+      {
+        "line_id": "E01-L027",
+        "verdict": "consistent",
+        "evidence": "Father’s continuation uses informal singular imperative \"చేయకు\", matching the informal paternal register for father→daughter."
+      },
+      {
+        "line_id": "E01-L029",
+        "verdict": "address_mismatch",
+        "evidence": "Mistress Caine calls herself \"అంటీ\" (Aunt), which is not among the expected address terms (Miss Halloran, child, girl) for Caine→Edda and shifts the register to an informal kinship term."
+      },
+      {
+        "line_id": "E01-L030",
+        "verdict": "consistent",
+        "evidence": "Edda uses honorific plural \"మీకు\" and polite imperative \"పిలవండి\", aligning with the formal distant register required for her speech to Mistress Caine."
+      },
+      {
+        "line_id": "E02-L004",
+        "verdict": "consistent",
+        "evidence": "Telugu uses a plain past verb without honorifics, matching the expected plain familiar register for Joss speaking to Edda; no address term needed."
+      },
+      {
+        "line_id": "E02-L006",
+        "verdict": "unknown",
+        "evidence": "No relationship‑sheet entry defines how Edda should address Joss, so the register and address cannot be validated."
+      },
+      {
+        "line_id": "E02-L007",
+        "verdict": "consistent",
+        "evidence": "Plain statement with no honorifics, fitting the \"plain, familiar\" register expected for Joss speaking to Edda; matches prior line history."
+      },
+      {
+        "line_id": "E02-L009",
+        "verdict": "unknown",
+        "evidence": "The relationship sheet has no row for the Company clerk speaking to Mistress Caine; therefore register and address cannot be checked."
+      },
+      {
+        "line_id": "E02-L010",
+        "verdict": "consistent",
+        "evidence": "Telugu uses informal imperative \"తిను\" and second‑person singular \"నిన్ను\" with the address term \"ప్రియ\" (love), matching the household informal register and expected address term for Delia→Edda."
+      },
+      {
+        "line_id": "E02-L011",
+        "verdict": "unknown",
+        "evidence": "No relationship‑sheet row for Edda Halloran speaking to this listener, so the expected register and address cannot be verified."
+      },
+      {
+        "line_id": "E02-L012",
+        "verdict": "consistent",
+        "evidence": "Telugu uses informal second‑person singular \"నీ\" and ordinary verb form, fitting the household informal register for Delia→Edda; the required address term \"love\" is not mandatory, only exclusive."
+      },
+      {
+        "line_id": "E02-L013",
+        "verdict": "unknown",
+        "evidence": "No relationship‑sheet entry for Edda Halloran to this listener, preventing a register check."
+      },
+      {
+        "line_id": "E02-L015",
+        "verdict": "unknown",
+        "evidence": "Relationship sheet lacks a row for Brother Anselm speaking to Miss Halloran; the line cannot be evaluated against expected register or address."
+      },
+      {
+        "line_id": "E02-L016",
+        "verdict": "unknown",
+        "evidence": "No relationship‑sheet entry for Edda Halloran to this listener, so register compliance cannot be assessed."
+      },
+      {
+        "line_id": "E02-L020",
+        "verdict": "unknown",
+        "evidence": "The line involves \"Father\", which belongs to a different relationship not present in the sheet; also no entry for Edda Halloran to this listener."
+      },
+      {
+        "line_id": "E02-L025",
+        "verdict": "unknown",
+        "evidence": "Relationship sheet does not define Edda Halloran's register toward this listener, so no basis for assessment."
+      },
+      {
+        "line_id": "E02-L026",
+        "verdict": "too_formal",
+        "evidence": "Telugu uses the plural honorific \"Mee\" (second‑person plural) while the sheet expects a plain, familiar register (informal \"Nee\" or no honorific) for Joss → Edda."
+      },
+      {
+        "line_id": "E02-L028",
+        "verdict": "unknown",
+        "evidence": "The sheet contains no entry for Edda Halloran speaking to her father, so the expected register cannot be checked."
+      },
+      {
+        "line_id": "E02-L029",
+        "verdict": "unknown",
+        "evidence": "Joss Marek's voice‑over does not address Edda directly and the sheet only covers Joss → Edda dialogue with address terms; no register can be validated."
+      },
+      {
+        "line_id": "E02-L030",
+        "verdict": "unknown",
+        "evidence": "Edda Halloran is speaking to herself; the relationship sheet does not define self‑address, so no verdict can be given."
+      },
+      {
+        "line_id": "E02-L031",
+        "verdict": "too_formal",
+        "evidence": "Telugu uses the honorific \"meeru\" (second‑person plural) after the address \"Edda\", whereas the expected register for Joss → Edda is plain, familiar without honorifics."
+      },
+      {
+        "line_id": "E03-L002",
+        "verdict": "too_informal",
+        "evidence": "Uses \"Naaku\" (to me) instead of the expected honorific plural \"Meeku\" and lacks honorific verb endings for a formal distant relationship with Mistress Caine."
+      },
+      {
+        "line_id": "E03-L003",
+        "verdict": "address_mismatch",
+        "evidence": "Mistress Caine does not use any of the expected address terms (Miss Halloran, child, girl) when speaking to Edda Halloran."
+      },
+      {
+        "line_id": "E03-L006",
+        "verdict": "address_mismatch",
+        "evidence": "No expected address term (Miss Halloran, child, girl) is used by Mistress Caine toward Edda Halloran."
+      },
+      {
+        "line_id": "E03-L008",
+        "verdict": "address_mismatch",
+        "evidence": "Edda Halloran omits the required \"Mistress Caine\" address term when speaking to her."
+      },
+      {
+        "line_id": "E03-L010",
+        "verdict": "address_mismatch",
+        "evidence": "Edda Halloran addresses \"Silas Vane\" instead of the expected \"Mistress Caine\" for this speaker‑listener pair, violating the address term rule."
+      },
+      {
+        "line_id": "E03-L011",
+        "verdict": "consistent",
+        "evidence": "Silas Vane uses the expected address term \"Miss Halloran\" and appropriate half‑formal register when speaking to Edda Halloran."
+      },
+      {
+        "line_id": "E03-L012",
+        "verdict": "address_mismatch",
+        "evidence": "Mistress Caine does not use any of the expected address terms (Miss Halloran, child, girl) when addressing Edda Halloran."
+      },
+      {
+        "line_id": "E03-L014",
+        "verdict": "consistent",
+        "evidence": "Speaker Joss to Edda, plain familiar register expected; Telugu uses neutral phrasing with no honorifics or address, matching the English and prior usage."
+      },
+      {
+        "line_id": "E03-L017",
+        "verdict": "consistent",
+        "evidence": "Speaker Joss to Edda, plain familiar register; Telugu uses informal singular \"నీ\" which fits a familiar but not intimate tone, and no address term is required."
+      },
+      {
+        "line_id": "E03-L018",
+        "verdict": "unknown",
+        "evidence": "No relationship entry for Edda speaking to Joss; the sheet only defines Joss→Edda and Edda→Mistress Caine, so the register and address expectations cannot be checked."
+      },
+      {
+        "line_id": "E03-L021",
+        "verdict": "unknown",
+        "evidence": "Same as above: no sheet entry for Edda→Joss, so the line cannot be evaluated against expected register or address terms."
+      },
+      {
+        "line_id": "E03-L023",
+        "verdict": "consistent",
+        "evidence": "Speaker Joss (voice‑over) to Edda, plain familiar register; Telugu stays neutral, no address term, matching the English tone and prior lines."
+      },
+      {
+        "line_id": "E03-L024",
+        "verdict": "address_mismatch",
+        "evidence": "Telugu uses the address term \"అంటీ\" (Aunt) which is not predicted for the Edda→Joss pair; the sheet only predicts this slip for Edda→Mistress Caine, so the address is mismatched here."
+      },
+      {
+        "line_id": "E03-L025",
+        "verdict": "consistent",
+        "evidence": "Father uses informal singular 'నీవు' and address term 'నా అమ్మాయి' matching expected_register 'informal, paternal' and expected_address_terms including 'my girl'."
+      },
+      {
+        "line_id": "E03-L029",
+        "verdict": "consistent",
+        "evidence": "Edda speaks without honorifics, using plain first‑person and no address term, fitting the informal paternal register."
+      },
+      {
+        "line_id": "E03-L030",
+        "verdict": "consistent",
+        "evidence": "Father gives an informal imperative 'చెప్పు' and no address term, aligning with the informal paternal register."
+      },
+      {
+        "line_id": "E03-L031",
+        "verdict": "address_mismatch",
+        "evidence": "Edda addresses her father as 'నాన్నా', a title not listed in the relationship sheet for this speaker‑listener pair, causing a mismatch."
+      },
+      {
+        "line_id": "E04-L001",
+        "verdict": "unknown",
+        "evidence": "No relationship entry for Edda Halloran speaking to any listener; the sheet only defines her interaction with Mistress Caine."
+      },
+      {
+        "line_id": "E04-L002",
+        "verdict": "consistent",
+        "evidence": "The Telugu is a simple counting sequence with no honorifics, matching the expected child‑voice, non‑honorific register for Voice of the lamp → Edda."
+      },
+      {
+        "line_id": "E04-L004",
+        "verdict": "consistent",
+        "evidence": "Joss Marek uses a polite imperative (వెలిగించండి) which fits the plain, familiar register expected for Joss → Edda; no unexpected address term is used."
+      },
+      {
+        "line_id": "E04-L006",
+        "verdict": "consistent",
+        "evidence": "The line is a neutral statement about a third party, using standard verb forms appropriate to the plain familiar register for Joss → Edda."
+      },
+      {
+        "line_id": "E04-L007",
+        "verdict": "unknown",
+        "evidence": "The sheet lacks a relationship entry for Edda Halloran addressing the lamp; therefore the register cannot be validated."
+      },
+      {
+        "line_id": "E04-L009",
+        "verdict": "consistent",
+        "evidence": "Neutral statement with no pronouns; matches the formal register expected for Edda speaking to Joss before the first-name shift."
+      },
+      {
+        "line_id": "E04-L011",
+        "verdict": "consistent",
+        "evidence": "Uses informal singular \"నీ\" and no honorifics, fitting the plain‑familiar register Joss should use with Edda."
+      },
+      {
+        "line_id": "E04-L013",
+        "verdict": "consistent",
+        "evidence": "No address term; simple narration fits the plain‑familiar register between Joss and Edda."
+      },
+      {
+        "line_id": "E04-L014",
+        "verdict": "consistent",
+        "evidence": "Addresses Edda by name \"ఎడ్డా\" and uses informal paternal imperative, matching the father‑daughter informal register."
+      },
+      {
+        "line_id": "E04-L015",
+        "verdict": "consistent",
+        "evidence": "Uses \"నీకు\" (to you) informal singular, appropriate for Joss's familiar tone with Edda."
+      },
+      {
+        "line_id": "E04-L017",
+        "verdict": "consistent",
+        "evidence": "No direct address; neutral statement aligns with the familiar register between Joss and Edda."
+      },
+      {
+        "line_id": "E04-L018",
+        "verdict": "consistent",
+        "evidence": "Addresses Joss by first name \"జోస్\", exactly as the episode‑4 shift predicts; register is appropriate."
+      },
+      {
+        "line_id": "E04-L021",
+        "verdict": "unknown",
+        "evidence": "No relationship entry for speaker Edda Halloran and the implied listener; sheet only covers Edda↔Mistress Caine and Voice of the lamp↔Edda."
+      },
+      {
+        "line_id": "E04-L023",
+        "verdict": "unknown",
+        "evidence": "No relationship entry for speaker Edda Halloran and the implied listener; sheet does not define this exchange."
+      },
+      {
+        "line_id": "E04-L024",
+        "verdict": "consistent",
+        "evidence": "Matches expected child voice register: counting phrase, no honorifics, and no address terms as specified for Voice of the lamp → Edda Halloran."
+      },
+      {
+        "line_id": "E04-L025",
+        "verdict": "unknown",
+        "evidence": "No relationship entry for speaker Edda Halloran and the implied listener (the lamp); sheet does not cover this exchange."
+      },
+      {
+        "line_id": "E04-L027",
+        "verdict": "unknown",
+        "evidence": "No relationship entry for speaker Edda Halloran and the implied listener (the lamp); sheet does not cover this exchange."
+      },
+      {
+        "line_id": "E05-L003",
+        "verdict": "unknown",
+        "evidence": "No relationship-sheet entry for Company clerk (shipping office) and any listener; cannot assess register or address consistency."
+      },
+      {
+        "line_id": "E05-L007",
+        "verdict": "unknown",
+        "evidence": "Speaker Edda addresses \"Father Anselm\"; the relationship sheet only covers Edda‑Mistress Caine, so the expected register and address terms are undefined for this exchange."
+      },
+      {
+        "line_id": "E05-L009",
+        "verdict": "unknown",
+        "evidence": "Although the Telugu mentions \"మిస్ట్రెస్ కేన్ గారు\", the line is a statement about Caine, not a direct address. The sheet only defines address usage for Edda‑Mistress Caine, not for third‑person references, so no clear consistency check applies."
+      },
+      {
+        "line_id": "E05-L010",
+        "verdict": "unknown",
+        "evidence": "Speaker Brother Anselm has no corresponding relationship entry; therefore register and honorific expectations cannot be evaluated."
+      },
+      {
+        "line_id": "E05-L011",
+        "verdict": "address_mismatch",
+        "evidence": "Constable Roe addresses Halloran by name with \"Halloran గారు\"; the sheet expects titles like \"Mistress\" or \"the keeper's daughter\" for official register."
+      },
+      {
+        "line_id": "E05-L012",
+        "verdict": "consistent",
+        "evidence": "Halloran (father) calls Edda by her name \"ఎడ్డా\" and uses informal paternal language, matching the expected register and address terms."
+      },
+      {
+        "line_id": "E05-L014",
+        "verdict": "consistent",
+        "evidence": "Edda addresses Silas Vane with his full name and no honorific, exactly as the sheet predicts (cold, full‑name address)."
+      },
+      {
+        "line_id": "E05-L015",
+        "verdict": "consistent",
+        "evidence": "Silas Vane uses the expected address term \"మిస్ హల్లొరాన్\" and a half‑formal provoking tone, fitting the sheet."
+      },
+      {
+        "line_id": "E05-L016",
+        "verdict": "consistent",
+        "evidence": "Edda replies without an address term, maintaining the cold register expected for her dialogue with Silas."
+      },
+      {
+        "line_id": "E05-L017",
+        "verdict": "consistent",
+        "evidence": "Joss Marek speaks plainly to Edda without a direct address term, which aligns with the expected familiar but non‑insolent register."
+      },
+      {
+        "line_id": "E05-L019",
+        "verdict": "consistent",
+        "evidence": "Edda uses \"మిస్ట్రెస్ కేన్ గారు\" with honorific \"గారు\", matching the formal, distant register and expected address term."
+      },
+      {
+        "line_id": "E05-L022",
+        "verdict": "unknown",
+        "evidence": "The relationship sheet has no entry for Edda speaking to her father; therefore the expected register and address terms are undefined."
+      },
+      {
+        "line_id": "E05-L026",
+        "verdict": "consistent",
+        "evidence": "Joss uses plain language without honorifics, matching the expected familiar register for Joss→Edda; no address term needed and delivery tag aligns; prior Joss lines use similar register."
+      },
+      {
+        "line_id": "E05-L027",
+        "verdict": "unknown",
+        "evidence": "No relationship entry for Edda→Joss in the sheet, so the expected register and address terms cannot be verified."
+      },
+      {
+        "line_id": "E05-L029",
+        "verdict": "too_formal",
+        "evidence": "Edda addresses Joss with the honorific plural \"మీరు\" and verb ending \"చూస్తున్నారు\", which is more formal than the plain familiar register expected for this pair."
+      },
+      {
+        "line_id": "E05-L031",
+        "verdict": "too_formal",
+        "evidence": "Same issue as L029: the honorific plural \"మీరు\" makes the line overly formal for the expected familiar register between Edda and Joss."
+      },
+      {
+        "line_id": "E05-L032",
+        "verdict": "too_formal",
+        "evidence": "Joss uses the honorific \"మీ\" (your) when speaking to Edda, exceeding the plain familiar register expected for Joss→Edda; the address term \"ఎడ్డా\" is correct, but pronoun choice is too formal."
+      },
+      {
+        "line_id": "E06-L002",
+        "verdict": "consistent",
+        "evidence": "Telugu uses neutral verb forms and omits a direct address, which is acceptable for a plain, familiar register between Joss and Edda; no unexpected titles appear."
+      },
+      {
+        "line_id": "E06-L004",
+        "verdict": "consistent",
+        "evidence": "The Telugu correctly addresses Edda as \"మిస్ హల్లొరన్\" (Miss Halloran) and uses the honorific \"మీరు\", matching the condescending‑sweet register expected of Mistress Caine."
+      },
+      {
+        "line_id": "E06-L006",
+        "verdict": "consistent",
+        "evidence": "Imperative \"చేయండి\" is a polite/formal form appropriate for Silas's half‑formal, provoking tone; no unexpected address terms are used."
+      },
+      {
+        "line_id": "E06-L008",
+        "verdict": "address_mismatch",
+        "evidence": "The line inserts \"సిలాస్ వేన్\" (Silas Vane), a name not predicted by the relationship sheet, and omits the required address \"Mistress Caine\" with honorific plural."
+      },
+      {
+        "line_id": "E06-L010",
+        "verdict": "consistent",
+        "evidence": "Uses honorific plural \"Meeru\" appropriate for condescending-sweet register; no address term needed but tone matches expected condescension without dropping respect."
+      },
+      {
+        "line_id": "E06-L011",
+        "verdict": "too_informal",
+        "evidence": "Edda addresses Mistress Caine with informal singular \"Nee\" instead of the expected honorific plural (e.g., \"Meeku\") despite the sheet allowing the shift to \"Aunt\" as address term."
+      },
+      {
+        "line_id": "E06-L012",
+        "verdict": "consistent",
+        "evidence": "Mistress Caine uses honorific plural \"Meeru\" and the allowed address term \"pillagaa\" (girl) in a condescending‑sweet tone, matching the expected register."
+      },
+      {
+        "line_id": "E06-L016",
+        "verdict": "consistent",
+        "evidence": "Edda uses honorific plural \"meeru\" and maintains the formal, distant register required for speaking to Mistress Caine."
+      },
+      {
+        "line_id": "E06-L017",
+        "verdict": "consistent",
+        "evidence": "Joss uses informal singular \"Nee\" which fits the plain, familiar register for speaking to Edda; no prohibited address term is used."
+      },
+      {
+        "line_id": "E06-L018",
+        "verdict": "consistent",
+        "evidence": "Edda employs honorific plural \"meeru\" preserving the formal, honorific register expected for Mistress Caine."
+      },
+      {
+        "line_id": "E06-L019",
+        "verdict": "consistent",
+        "evidence": "Father uses paternal informal address \"pillagaa\" (girl) as listed in expected terms; register is informal and paternal as required."
+      },
+      {
+        "line_id": "E06-L020",
+        "verdict": "unknown",
+        "evidence": "The relationship sheet does not define expectations for Edda addressing her father; the address term \"Appa\" is outside the covered speaker‑listener pairs."
+      },
+      {
+        "line_id": "E06-L021",
+        "verdict": "consistent",
+        "evidence": "Child voice counting line with no address terms, matching expected register and address list (none)."
+      },
+      {
+        "line_id": "E06-L023",
+        "verdict": "consistent",
+        "evidence": "Uses expected address \"ఎడ్డా\" and plain familiar imperative, fitting the \"plain, familiar without being insolent\" register."
+      },
+      {
+        "line_id": "E06-L024",
+        "verdict": "address_mismatch",
+        "evidence": "Speaker Edda is expected to address Mistress Caine with formal honorifics and the term \"Mistress Caine\", but the Telugu line contains no address term or honorific plural forms."
+      }
     ]
   },
   "summaries": {
-    "meaning": {
-      "batches_requested": 18,
-      "batches_completed": 18,
-      "lines_judged": 100,
-      "lines_not_judged": 0,
-      "not_judged_line_ids": [],
-      "confidence": "medium confidence, model judgement",
-      "failed_batches": []
-    },
-    "relationship": {
-      "batches_requested": 18,
-      "batches_completed": 18,
-      "lines_judged": 100,
-      "lines_not_judged": 30,
-      "not_judged_line_ids": [
-        "E01-L001",
-        "E01-L003",
-        "E01-L005",
-        "E01-L007",
-        "E02-L006",
-        "E02-L009",
-        "E02-L011",
-        "E02-L013",
-        "E02-L015",
-        "E02-L016",
-        "E02-L020",
-        "E02-L025",
-        "E02-L028",
-        "E02-L029",
-        "E02-L030",
-        "E03-L018",
-        "E03-L021",
-        "E04-L001",
-        "E04-L007",
-        "E04-L021",
-        "E04-L023",
-        "E04-L025",
-        "E04-L027",
-        "E05-L003",
-        "E05-L007",
-        "E05-L009",
-        "E05-L010",
-        "E05-L022",
-        "E05-L027",
-        "E06-L020"
-      ],
-      "confidence": "sheet plus model judgement",
-      "failed_batches": []
-    },
-    "naturalness": {
-      "batches_requested": 18,
-      "batches_completed": 11,
-      "lines_judged": 63,
-      "lines_not_judged": 0,
-      "not_judged_line_ids": [],
-      "confidence": "advisory, low confidence",
-      "failed_batches": [
-        {
-          "batch": "episode-004.txt#S03",
-          "lines": [
-            "E04-L021",
-            "E04-L023",
-            "E04-L024",
-            "E04-L025",
-            "E04-L027"
-          ],
-          "error": "still throttled (429 after 0s of waits) - lower batching.max_lines_per_request, raise provider.rate_limit_wait_seconds, or run this check again later: the free tier caps tokens per day, and a refused batch now costs only that batch"
-        },
-        {
-          "batch": "episode-005.txt#S01",
-          "lines": [
-            "E05-L003",
-            "E05-L007",
-            "E05-L009",
-            "E05-L010"
-          ],
-          "error": "still throttled (429 after 0s of waits) - lower batching.max_lines_per_request, raise provider.rate_limit_wait_seconds, or run this check again later: the free tier caps tokens per day, and a refused batch now costs only that batch"
-        },
-        {
-          "batch": "episode-005.txt#S02",
-          "lines": [
-            "E05-L011",
-            "E05-L012",
-            "E05-L014",
-            "E05-L015",
-            "E05-L016",
-            "E05-L017",
-            "E05-L019",
-            "E05-L022"
-          ],
-          "error": "still throttled (429 after 0s of waits) - lower batching.max_lines_per_request, raise provider.rate_limit_wait_seconds, or run this check again later: the free tier caps tokens per day, and a refused batch now costs only that batch"
-        },
-        {
-          "batch": "episode-005.txt#S03",
-          "lines": [
-            "E05-L026",
-            "E05-L027",
-            "E05-L029",
-            "E05-L031",
-            "E05-L032"
-          ],
-          "error": "still throttled (429 after 0s of waits) - lower batching.max_lines_per_request, raise provider.rate_limit_wait_seconds, or run this check again later: the free tier caps tokens per day, and a refused batch now costs only that batch"
-        },
-        {
-          "batch": "episode-006.txt#S01",
-          "lines": [
-            "E06-L002",
-            "E06-L004",
-            "E06-L006",
-            "E06-L008"
-          ],
-          "error": "still throttled (429 after 0s of waits) - lower batching.max_lines_per_request, raise provider.rate_limit_wait_seconds, or run this check again later: the free tier caps tokens per day, and a refused batch now costs only that batch"
-        },
-        {
-          "batch": "episode-006.txt#S02",
-          "lines": [
-            "E06-L010",
-            "E06-L011",
-            "E06-L012",
-            "E06-L016",
-            "E06-L017",
-            "E06-L018",
-            "E06-L019",
-            "E06-L020"
-          ],
-          "error": "still throttled (429 after 0s of waits) - lower batching.max_lines_per_request, raise provider.rate_limit_wait_seconds, or run this check again later: the free tier caps tokens per day, and a refused batch now costs only that batch"
-        },
-        {
-          "batch": "episode-006.txt#S03",
-          "lines": [
-            "E06-L021",
-            "E06-L023",
-            "E06-L024"
-          ],
-          "error": "still throttled (429 after 0s of waits) - lower batching.max_lines_per_request, raise provider.rate_limit_wait_seconds, or run this check again later: the free tier caps tokens per day, and a refused batch now costs only that batch"
-        }
-      ]
-    },
     "timing": {
       "syllables_per_second": 3.5,
       "margin": 0.15,
@@ -4617,33 +4714,120 @@
       "mixed_script": 2,
       "mixed_min_latin_share": 0.25,
       "note": "zero model calls; this check exists because Step A really did return 20 Latin-script lines out of 100 on the default model and none on the comparison model"
+    },
+    "naturalness": {
+      "batches_requested": 18,
+      "batches_completed": 16,
+      "lines_judged": 84,
+      "lines_not_judged": 0,
+      "not_judged_line_ids": [],
+      "confidence": "advisory, low confidence",
+      "failed_batches": [
+        {
+          "batch": "episode-005.txt#S02",
+          "lines": [
+            "E05-L011",
+            "E05-L012",
+            "E05-L014",
+            "E05-L015",
+            "E05-L016",
+            "E05-L017",
+            "E05-L019",
+            "E05-L022"
+          ],
+          "error": "still throttled (429 after 90s of waits) - lower batching.max_lines_per_request, raise provider.rate_limit_wait_seconds, or run this check again later: the free tier caps tokens per day, and a refused batch now costs only that batch"
+        },
+        {
+          "batch": "episode-006.txt#S02",
+          "lines": [
+            "E06-L010",
+            "E06-L011",
+            "E06-L012",
+            "E06-L016",
+            "E06-L017",
+            "E06-L018",
+            "E06-L019",
+            "E06-L020"
+          ],
+          "error": "still throttled (429 after 90s of waits) - lower batching.max_lines_per_request, raise provider.rate_limit_wait_seconds, or run this check again later: the free tier caps tokens per day, and a refused batch now costs only that batch"
+        }
+      ]
+    },
+    "meaning": {
+      "batches_requested": 18,
+      "batches_completed": 18,
+      "lines_judged": 100,
+      "lines_not_judged": 0,
+      "not_judged_line_ids": [],
+      "confidence": "medium confidence, model judgement",
+      "failed_batches": []
+    },
+    "relationship": {
+      "batches_requested": 18,
+      "batches_completed": 18,
+      "lines_judged": 100,
+      "lines_not_judged": 30,
+      "not_judged_line_ids": [
+        "E01-L001",
+        "E01-L003",
+        "E01-L005",
+        "E01-L007",
+        "E02-L006",
+        "E02-L009",
+        "E02-L011",
+        "E02-L013",
+        "E02-L015",
+        "E02-L016",
+        "E02-L020",
+        "E02-L025",
+        "E02-L028",
+        "E02-L029",
+        "E02-L030",
+        "E03-L018",
+        "E03-L021",
+        "E04-L001",
+        "E04-L007",
+        "E04-L021",
+        "E04-L023",
+        "E04-L025",
+        "E04-L027",
+        "E05-L003",
+        "E05-L007",
+        "E05-L009",
+        "E05-L010",
+        "E05-L022",
+        "E05-L027",
+        "E06-L020"
+      ],
+      "confidence": "sheet plus model judgement",
+      "failed_batches": []
     }
   },
   "errors": [
     {
       "check": "naturalness",
       "partial": true,
-      "error": "7 of 18 batches refused; 63 lines judged, 37 not",
-      "lines_affected": 37,
+      "error": "2 of 18 batches refused; 84 lines judged, 16 not",
+      "lines_affected": 16,
       "note": "the flags below cover only the batches that answered"
     }
   ],
-  "reused_requests": 47,
+  "reused_requests": 0,
   "meta": {
     "lines": 100,
-    "elapsed_seconds": 5.54
+    "elapsed_seconds": 0.01
   },
   "run_log": {
-    "requests_total": 50,
-    "requests_measured": 50,
+    "requests_total": 55,
+    "requests_measured": 55,
     "requests_unmeasured_provenance": 0,
     "by_kind": {
       "meaning": 18,
       "relationship": 18,
-      "naturalness": 14
+      "naturalness": 19
     },
-    "prompt_tokens": 64574,
-    "completion_tokens": 55610,
+    "prompt_tokens": 69143,
+    "completion_tokens": 60126,
     "cost_usd": null,
     "priced": false,
     "models": [
@@ -4667,8 +4851,9 @@
   "merged_from": {
     "label": "structured",
     "checks_kept": [
-      "script",
-      "timing"
+      "meaning",
+      "naturalness",
+      "relationship"
     ],
     "note": "run_log for this label is cumulative across every invocation that wrote its call log, so the merged checks' requests already appear in these totals rather than being counted twice"
   }

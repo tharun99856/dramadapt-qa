@@ -21,6 +21,16 @@ from src.report import write_markdown, write_run_json  # noqa: E402
 from src.console import force_utf8  # noqa: E402
 
 
+def carry_over_errors(current: list[dict], prior: list[dict], reran: set[str], kept: list[str]) -> list[dict]:
+    """A merge keeps the failures of every check it did not just re-run.
+
+    Losing them is how "2 of 18 batches refused" disappears from an artifact while the summary that
+    explains it survives: the report then has no *did not finish* section left to print.
+    """
+    return ([e for e in current if e.get("check") not in set(kept)]
+            + [e for e in prior if e.get("check") not in reran])
+
+
 def main() -> int:
     force_utf8()
     ap = argparse.ArgumentParser()
@@ -72,10 +82,8 @@ def main() -> int:
                 for name, block in (prior.get(key) or {}).items():
                     payload[key].setdefault(name, block)
             payload["checks_run"] = list(checks) + kept
-            payload["errors"] = (
-                [e for e in payload["errors"] if e["check"] not in kept]
-                + [e for e in (prior.get("errors") or []) if e["check"] not in set(checks) | set(kept)]
-            )
+            payload["errors"] = carry_over_errors(payload["errors"], prior.get("errors") or [],
+                                                  set(checks), kept)
             payload["merged_from"] = {"label": args.merge, "checks_kept": kept, "note": (
                 "run_log for this label is cumulative across every invocation that wrote its call log, "
                 "so the merged checks' requests already appear in these totals rather than being counted twice"

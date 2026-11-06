@@ -234,7 +234,7 @@ def write_markdown(payload: dict, lines: list[DialogueLine], path: Path) -> Path
                                if untouched else "every line was flagged"),
     ]
     if untouched:
-        lines_out += ["", f"## Flagged by nothing because nothing read it ({len(untouched)} lines)",
+        lines_out += ["", f"## Not flagged, but not read by every check ({len(untouched)} lines)",
                       "", ", ".join(untouched)]
     lines_out += [
         "",

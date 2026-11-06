@@ -99,11 +99,12 @@ project has a GO/NO-GO gate instead of a demo.
   8 voice-over and 8 off-screen lines, 13 speaker labels resolving to 11 characters.
 - **A stratified 100-line sample**, seed `20261106`, all category minimums met, recorded in
   `results/selection_manifest.json` and `docs/category_audit.md`.
-- **76 self-tests passing** (`tests/run_tests.py`) over windows, chains, akshara counts, scene
+- **80 self-tests passing** (`tests/run_tests.py`) over windows, chains, akshara counts, scene
   batching, script detection, precision/recall, the severity sweep, acceptance-rate arithmetic, that a
   model's refusal is counted as coverage rather than as a finding, that a refused scene does not
-  discard the scenes that answered, and that a report whose lines were never fed to a check cannot
-  print a clean-coverage sentence.
+  discard the scenes that answered, that a report whose lines were never fed to a check cannot
+  print a clean-coverage sentence, and that a `--merge` re-render cannot delete the record that a
+  check was only partially judged.
 - **A working review UI** (`app.py`), exercised end-to-end under Streamlit's own test harness.
 - **Step A run for real, twice.** 100 lines, 18 scene-batched requests per model, one fixed prompt,
   temperature 0, on a free-tier Groq key: `openai/gpt-oss-120b` (34,599 prompt / 21,137 completion
@@ -155,19 +156,22 @@ reviewer. The orchestration, report, human-control model and run log are shared.
 scene; baseline one per scene; meaning, relationship and naturalness one per scene each; timing and
 script form **zero**, because both count things instead of asking about them. Prompt tokens per request,
 measured from the per-request logs in `results/`: unstructured baseline **535**; meaning **1,055**;
-naturalness **1,036**; relationship **1,727**; first pass (Step A) **1,922**. So the generic one-prompt
-control costs about **40%** of what the structured checks cost, and about half of what the cheapest
+naturalness **1,004**; relationship **1,727**; first pass (Step A) **1,922**. So the generic one-prompt
+control costs about **42%** of what the structured checks cost, and about half of what the cheapest
 structured check costs — it is not handed the relationship sheet, the chain instruction, the speaker
 history or the register standard. Any argument that structure pays for itself has to beat that gap, and
 the acceptance rate plus the per-check precision is what decides it. The whole experiment so far cost
-**104 requests, 146,222 prompt and 96,982 completion tokens**, and `null` dollars, because a free tier
+**109 requests, 150,791 prompt and 101,498 completion tokens**, and `null` dollars, because a free tier
 that never billed us should not be reported as if it did.
 
 The binding constraint is budget, not speed: this free tier caps the model at **200,000 tokens per day**
-and a full structured pass costs about **129,000** of them (meaning 35,571 + relationship 54,292 +
-naturalness 38,984 over 18 batches each), so the account affords roughly **1.5 passes a day** - which is
+and a full structured pass costs about **127,000** of them (meaning 35,571 + relationship 54,292 +
+naturalness 37,332 over 18 batches each), so the account affords roughly **1.5 passes a day** - which is
 why the runner replays a batch whose exact prompt is already in the call log rather than paying for it
-twice, and why one refused scene now costs only that scene. Request totals and token totals per phase are
+twice, and why one refused scene now costs only that scene. The cap is a rolling window, not a wall:
+naturalness ended at **84 of 100 lines** because two ordinary 8-line batches refused 530 s and 600 s of
+waiting while 16 others answered and a 73-token probe went through in the same minute. Request totals and
+token totals per phase are
 in `results/run_log.json` and `results/structured_run.json`.
 `docs/public_evidence.md` lists current per-1M prices for both models, so a paid run is extrapolatable
 from the tokens above.

@@ -314,12 +314,34 @@ def test_a_report_without_judged_lines_does_not_claim_a_pass() -> None:
     with tempfile.TemporaryDirectory() as tmp:
         out = Path(tmp) / "r.md"
         text = write_markdown(payload, lines, out).read_text(encoding="utf-8")
-    tail = text.split("## Not flagged")[1]
+    tail = text.split("## Not flagged\n")[1]
+    split = ", but not read by every check"
     check("the pass claim is withheld", "Every line was read by every check" in text, False)
     check("the gap is named", "1 line(s) had no Telugu text" in text, True)
-    check("the unread line is not listed as cleared", "L1" in tail.split("## Flagged by nothing")[0], False)
-    check("the line a check did read is cleared", "L2" in tail.split("## Flagged by nothing")[0], True)
-    check("and appears under never judged", "L1" in tail.split("## Flagged by nothing")[1], True)
+    check("the unread line is not listed as cleared", "L1" in tail.split(split)[0], False)
+    check("the line a check did read is cleared", "L2" in tail.split(split)[0], True)
+    check("and appears under partially read", "L1" in tail.split(split)[1], True)
+
+
+def test_a_merge_keeps_the_failure_of_checks_it_did_not_rerun() -> None:
+    """--merge must not erase "this check was only partially judged"."""
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("run_structured", ROOT / "scripts" / "run_structured.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    carry = module.carry_over_errors
+
+    partial = {"check": "naturalness", "partial": True, "error": "2 of 18 batches refused"}
+    kept = ["meaning", "naturalness", "relationship"]
+    check("a re-render of timing keeps the naturalness refusal",
+          [e["check"] for e in carry([], [partial], {"timing", "script"}, kept)], ["naturalness"])
+    check("re-running the check itself replaces its old error",
+          carry([], [partial], {"naturalness"}, ["meaning"]), [])
+    check("a check re-run this pass drops both copies of its error",
+          carry([partial], [partial], {"naturalness"}, kept), [])
+    check("and an error for a check this run also did not touch survives",
+          len(carry([], [partial, {"check": "meaning", "error": "x"}], {"timing"}, kept)), 2)
 
 
 def main() -> int:

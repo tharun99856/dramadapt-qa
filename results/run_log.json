@@ -10,11 +10,11 @@
     "priced": false,
     "models": []
   },
-  "_updated": "2026-11-06T13:41:18+00:00",
+  "_updated": "2026-11-06T15:00:18+00:00",
   "_aggregate": {
-    "requests_total": 104,
-    "prompt_tokens": 146222,
-    "completion_tokens": 96982,
+    "requests_total": 109,
+    "prompt_tokens": 150791,
+    "completion_tokens": 101498,
     "cost_usd": null
   },
   "dry_run_no_key": {
@@ -140,16 +140,16 @@
     "models": []
   },
   "structured": {
-    "requests_total": 50,
-    "requests_measured": 50,
+    "requests_total": 55,
+    "requests_measured": 55,
     "requests_unmeasured_provenance": 0,
     "by_kind": {
       "meaning": 18,
       "relationship": 18,
-      "naturalness": 14
+      "naturalness": 19
     },
-    "prompt_tokens": 64574,
-    "completion_tokens": 55610,
+    "prompt_tokens": 69143,
+    "completion_tokens": 60126,
     "cost_usd": null,
     "priced": false,
     "models": [
