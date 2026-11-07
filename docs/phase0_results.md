@@ -1,6 +1,6 @@
 # Phase 0 result
 
-Written 2026-11-07T10:35:08+00:00 by `scripts/score.py`. Every figure below is computed from `blind_annotation.csv` (the reviewer's blind annotation) and the two run files.
+Written 2026-11-07T10:48:34+00:00 by `scripts/score.py`. Every figure below is computed from `blind_annotation.csv` (the reviewer's blind annotation) and the two run files.
 
 ## What the reviewer found
 
@@ -52,7 +52,7 @@ Severity sweep, structured:
 |---|---|---|---|---|
 | meaning | 0 | 0 | 0 | None |
 | naturalness | 0 | 0 | 0 | None |
-| relationship | 1 | 4 | 5 | 0.5 |
+| relationship | 3 | 7 | 11 | 0.476 |
 | script | 0 | 0 | 0 | None |
 | timing | 0 | 0 | 0 | None |
 
@@ -79,13 +79,13 @@ To run it for real: `python scripts/run_seeded.py && python scripts/run_structur
 ## Caveats
 
 - seeded errors not measured: no run against the seeded draft exists, so any seeded number in a document is unsupported
-- checks the rule says to drop and the builder decided to keep: relationship (acceptance 5 of 10 on the ten highest-severity flags (1 accept, 4 accept-but-modify, 5 dismiss), against the precision 0.238 that is all the rule measured. The five dismissals name defects rather than noise: two misread the listener (E01-L017, E03-L010 - the English line is addressed to Caine and to Silas, not to whom the check assumed), two fired because the relationship sheet itself is wrong (E03-L031 నాన్నా is the right address for a daughter to her father; E05-L011 a constable using name plus గారు is the natural register), and one is a four-word reply that needs no address term at all (E03-L008). All four accept-but-modify rows give the same reason: Mistress Caine addresses Edda with మీరు where an aunt uses నువ్వు, which the check does not look at, so its own fix - prepend a title - was rejected every time.). The threshold was not moved to match the decision.
+- checks the rule says to drop and the builder decided to keep: relationship (acceptance 10 of 21 (3 accept, 7 accept-but-modify, 11 dismiss) against the precision 0.238 that is all the rule measured. The 11 dismissals fall into five causes, and four of the five are fixable rules rather than model noise: four flags demanded an address term the English line never had (E06-L024, E01-L014, E01-L015, E03-L008 - the reviewer's rule is that adding one puts words in the actor's mouth), two named the wrong listener (E01-L017, E03-L010), two blamed the line for what is wrong in the sheet (E03-L031 నాన్నా is correct for a daughter to her father; E05-L011 a constable's name + గారు is the natural register), one would have changed the meaning (E03-L002: 'Naaku oka gaṇṭa undi' is I have an hour, and the suggested 'Meeku' makes it you have an hour), and two contradict a register rule the sheet does not state (E05-L029, E05-L031 - Edda uses the honorific verb form and మీరు with Joss, while the check demanded నీవు). All seven accept-but-modify rows give the same reason the check cannot see: the register lives in the pronoun and the verb ending, not in the address term.). The threshold was not moved to match the decision.
 
 Checks to drop: relationship (low precision, or the reviewer keeps dismissing them).
 
 Checks the rule names for dropping that the builder decided to keep, with the evidence on each side:
 
-- **relationship** - decided by the builder, on the reviewer's batch 1 of the acceptance pass (the reviewer left the call and asked for the other 17 batches first): acceptance 5 of 10 on the ten highest-severity flags (1 accept, 4 accept-but-modify, 5 dismiss), against the precision 0.238 that is all the rule measured. The five dismissals name defects rather than noise: two misread the listener (E01-L017, E03-L010 - the English line is addressed to Caine and to Silas, not to whom the check assumed), two fired because the relationship sheet itself is wrong (E03-L031 నాన్నా is the right address for a daughter to her father; E05-L011 a constable using name plus గారు is the natural register), and one is a four-word reply that needs no address term at all (E03-L008). All four accept-but-modify rows give the same reason: Mistress Caine addresses Edda with మీరు where an aunt uses నువ్వు, which the check does not look at, so its own fix - prepend a title - was rejected every time.
+- **relationship** - decided by the builder, on the reviewer's acceptance pass over all 21 of this check's flags (2026-11-07): acceptance 10 of 21 (3 accept, 7 accept-but-modify, 11 dismiss) against the precision 0.238 that is all the rule measured. The 11 dismissals fall into five causes, and four of the five are fixable rules rather than model noise: four flags demanded an address term the English line never had (E06-L024, E01-L014, E01-L015, E03-L008 - the reviewer's rule is that adding one puts words in the actor's mouth), two named the wrong listener (E01-L017, E03-L010), two blamed the line for what is wrong in the sheet (E03-L031 నాన్నా is correct for a daughter to her father; E05-L011 a constable's name + గారు is the natural register), one would have changed the meaning (E03-L002: 'Naaku oka gaṇṭa undi' is I have an hour, and the suggested 'Meeku' makes it you have an hour), and two contradict a register rule the sheet does not state (E05-L029, E05-L031 - Edda uses the honorific verb form and మీరు with Joss, while the check demanded నీవు). All seven accept-but-modify rows give the same reason the check cannot see: the register lives in the pronoun and the verb ending, not in the address term.
 
 The threshold itself was not moved to fit this decision.
 

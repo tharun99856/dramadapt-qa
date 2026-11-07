@@ -10,7 +10,8 @@ by `python scripts/make_pdf.py`. Build: `README.md`, code in `src/`, run artifac
 > the model runs are real: Step A, the unstructured baseline control and the structured checks all
 > have token-level logs in `results/`. The human half is now done in part: **the 100-row blind annotation
 > is complete and scored, and the decision it produces is NO-GO.** The reviewer acceptance pass has
-> started and stopped at **10 of 174 flags**, all `relationship`. Still `PENDING` are the other 164
+> covered **21 of 174 flags** - the whole of `relationship`, acceptance 0.476 where its precision is 0.238.
+> Still `PENDING` are the other 153
 > acceptance decisions and the speaking-rate calibration; the register standard is **part signed off** (the
 > Joss-to-Edda address form and the two name spellings are decided, the rest is not). Slots that depend on
 > the open items are marked rather than filled with an estimate, because the estimate would be the one
@@ -111,18 +112,32 @@ gate is good at saying *which lines to re-read* and weak at saying *what is wron
 pre-registered in §9 measures the second thing. The recorded decision stays NO-GO; it is not being relabelled
 after the fact. `results/scores.json`, `docs/phase0_results.md`.
 
-**Then the first ten acceptance decisions disagreed with the precision number, informatively.** The reviewer
-graded the ten highest-severity `relationship` flags: 1 accept, 4 accept-but-modify, 5 dismiss - acceptance 0.5
-where that check's precision is 0.238, which is the one case PRD §9 was written for. The dismissals name the
-defect instead of just rejecting the flag: `E01-L017` and `E03-L010` were judged against the wrong listener (the
-English line is spoken *to* Caine and *to* Silas), `E03-L031` uses `నాన్నా`, which is right for a daughter to her
-father and missing from the sheet, `E05-L011` has a constable use `హల్లొరాన్ గారు`, which the reviewer calls
-natural and the sheet calls wrong, and `E03-L008` is four words that need no address term. All four modified rows
-give one reason the check cannot see: Caine addresses Edda with `మీరు` where an aunt uses `నువ్వు`, so the flag
-was right that the register was off and wrong about the fix every time it offered one. The check is therefore
-kept, not dropped, on 10 of its 21 flags - and because a pre-registered rule should not be quietly reinterpreted,
+**Then the reviewer's acceptance decisions disagreed with the precision number, informatively.** All 21
+`relationship` flags graded: 3 accept, 7 accept-but-modify, 11 dismiss - acceptance 0.476 where precision is
+0.238, which is the one case PRD §9 was written for. The dismissals name the defect instead of just rejecting the
+flag, and they sort into five causes, four of them repairable rules rather than model noise. **Four demanded an
+address term the English line never had** ("Say it once more", "He bought them.", "The lamp stays lit", "The debt
+is mine") - the reviewer's rule is that inserting one puts words in the actor's mouth. **Two named the wrong
+listener**: `E01-L017` is spoken *to* Caine and `E03-L010` *to* Silas, so each was judged against the register
+rules of somebody the line never addressed. **Two blamed the line for what is wrong in the sheet**: `నాన్నా` is
+exactly right for a daughter to her father and is not an expected term, and a constable's `హల్లొరాన్ గారు` is the
+natural register the sheet calls wrong. **Two contradicted a rule nobody had written down**: Edda uses `మీరు` and
+the honorific verb with Joss while the check demanded `నీవు`, reading the signed-off Joss-to-Edda rule backwards.
+And **one would have broken the meaning outright** - on `E03-L002` the model offered "Meeku oka gaṇṭa undi" for
+"I have an hour", which says *you have an hour*; the worst thing a QA gate can do, done confidently. All seven
+accept-but-modify rows give one reason the check cannot see at all: the register lives in the pronoun and the verb
+ending, not in the address term, so it was right that Caine's `మీరు` with Edda is wrong and wrong about the fix
+every time it offered one.
+
+The check is therefore kept, not dropped - and because a pre-registered rule should not be quietly reinterpreted,
 `scripts/score.py` still emits `checks_to_drop: ["relationship"]` while `data/check_overrides.json` records the
-human decision next to it as `checks_retained_by_override`, with the evidence, the n and when to revisit. Entry 28.
+human decision next to it as `checks_retained_by_override`, with the evidence, the n and when to revisit. No
+threshold moved, which is the same discipline that kept `recall_legacy_flagcount` in entry 25. The sheet fixes
+these 21 flags imply are deliberately unpaid so far: editing `data/relationship_sheet.yaml` rewrites the prompt
+prefix that `relationship` and `naturalness` both quote, which entry 26 priced at 18 batches, so the edit goes in
+once after the remaining acceptance batches rather than five times as causes surface. Entries 28 and 29 - one of
+which records that annotation row `A067` was corrected after the flags had been seen, a `corrected_line` only, so
+no metric moves but the sheet is no longer wholly blind.
 
 ## 5. What is built and verified now
 

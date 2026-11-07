@@ -469,6 +469,36 @@ was to *not* apply the sheet fixes yet. Adding `నాన్నా` and the Cain
 `data/relationship_sheet.yaml` rewrites the prompt prefix that naturalness and relationship both quote, and
 entry 26 priced that at 18 full batches. One sheet edit after the acceptance pass, not eleven.
 
+**29. The rest of `relationship` came in, and one cell of the blind sheet was edited after the flags were seen.**
+Batches 2 completed the check: all 21 flags graded, **acceptance 0.476 (3 accept, 7 accept-but-modify, 11
+dismiss)**, dismissal 0.524. Precision still says 0.238 and the pre-registered rule still names the check for
+dropping, so `data/check_overrides.json` now carries the keep decision over the full 21 rather than over 10, and
+the reason is a taxonomy rather than a vibe: of the 11 dismissals, **four demanded an address term that the
+English line never had** ("The lamp stays lit", "Say it once more", "The debt is mine...", "He bought them.") -
+the reviewer's rule is that inserting one puts words in the actor's mouth; **two named the wrong listener**;
+**two blamed the line for what is wrong in the sheet**; **one would have changed the meaning outright** -
+`E03-L002`'s "Naaku oka gaṇṭa undi" is *I have an hour*, and the model's fix "Meeku" makes it *you have an hour*,
+which is the worst kind of suggestion a QA gate can offer because it is confident and it breaks the line; and
+**two contradicted a register rule nobody had written down** - Edda speaks to Joss with the honorific verb form
+and `మీరు`, while the check demanded `నీవు` on the strength of the signed-off Joss-to-Edda rule read in reverse.
+Four of those five causes are rules that can be repaired, which is the argument for keeping the check; the
+pronoun-and-verb finding is the same one entry 28 made, now on 21 flags instead of 10.
+
+Two things that finding now requires, both deliberately deferred. The sheet must state the Edda-to-Joss side of
+the register fork and add `నాన్నా`, and the address-term rule must stop firing where English has no address term.
+Both live in `data/relationship_sheet.yaml` and the relationship prompt, so they re-price relationship and
+naturalness together - roughly 18 + 18 batches, the price entry 26 put on a prefix change. That run happens once,
+after the remaining acceptance batches, not five times as the causes surface.
+
+Third thing, and it is the one that has to be written down rather than quietly fixed: the reviewer noticed that
+annotation row **A067** (`E02-L026`) carried `మీ నాన్న` in its `corrected_line` where the Joss-to-Edda rule says
+`నీ నాన్న`, and directed that single-cell change. It is applied. It changes a `corrected_line`, not a `verdict` or
+an `error_types` value, so no precision or recall figure moves and the derived rate holds at 5.83 akshara/s; but
+the sheet was meant to be filled *before* looking at any flag, and this edit happened after, so
+`data/annotation/blind_annotation.csv` is no longer wholly blind, and one of its 100 rows now knows what the QA
+arm said. Recorded here rather than left in a diff, because a post-hoc edit to a ground-truth file is exactly the
+kind of thing a report should not be able to hide.
+
 ## Small, real, worth writing down
 
 

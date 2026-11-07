@@ -271,24 +271,28 @@ back silently, so "timing 1 of 2 detected" described a draft that never containe
 fixed in `src/metrics.py`, pinned by new tests (109 self-tests), and `results/scores.json` keeps the old reading
 beside the new one as `recall_legacy_flagcount` instead of replacing it quietly.
 
-Two things it still cannot say. The acceptance pass has only just started: **10 of 174 flags are graded**, all
-ten of them `relationship`, and 164 rows in `data/annotation/decisions.csv` are still `pending`, so the four other
-checks have no acceptance number at all. What those ten say is in the next paragraph. And Step E has never been run
-against the seeded draft. The naturalness coverage gap that sat here - 16 lines two batches refused - is closed:
-all 100 lines are now judged, `naturalness` went 40 → 49 flags and the gate's untouched lines 3 → 1, which is
-the only reason the numbers in this section differ from the ones in entry 25. What it cost is in entry 26.
+Two things it still cannot say. The acceptance pass is **21 of 174 flags graded** - all of `relationship`, in two
+batches - and 153 rows in `data/annotation/decisions.csv` are still `pending`, so meaning, script, naturalness and
+timing have no acceptance number at all. And Step E has never been run against the seeded draft. The naturalness
+coverage gap that sat here - 16 lines two batches refused - is closed: all 100 lines are now judged, `naturalness`
+went 40 → 49 flags and the gate's untouched lines 3 → 1, which is the only reason the numbers in this section
+differ from the ones in entry 25. What it cost is in entry 26.
 
-The first ten acceptance decisions, and they are the reviewer's not the scorer's, change the shape of the
-relationship finding. Acceptance **5 of 10** (1 accept, 4 accept-but-modify, 5 dismiss) where precision alone said
-0.238, so `scripts/score.py` still names the check for dropping and `data/check_overrides.json` records the
-decision to keep repairing it instead - the rule's arithmetic and the human call sit in the same output, and the
-threshold was not moved to fit either. The dismissals are not noise: **two misread the listener** (`E01-L017` and
-`E03-L010` are addressed to Caine and to Silas, not to whom the check assumed), **two fired because the sheet itself
-is wrong** (`నాన్నా` is correct for a daughter to her father; a constable's name + `గారు` is the natural register),
-and one is a four-word reply that needs no address term. All four accept-but-modify rows give the same reason, and
-it is a blind spot rather than a mistake: Mistress Caine addresses Edda with `మీరు` where an aunt uses `నువ్వు`, the
-check does not look at pronoun register at all, and every fix it offered ("prepend a title") was rejected.
-Full text in `docs/phase0_results.md`; the failures behind this run are entries 22 to 28.
+The one check that has been graded disagrees with the arithmetic, usefully. Acceptance **10 of 21** (3 accept,
+7 accept-but-modify, 11 dismiss) - 0.476 - where precision alone says 0.238, so `scripts/score.py` still names the
+check for dropping and `data/check_overrides.json` records the decision to keep repairing it, over the full 21,
+beside the rule's own output; the threshold was not moved to fit either. The 11 dismissals sort into five causes
+and four of the five are repairable rules, not model noise: **four demanded an address term the English line never
+had** ("Say it once more", "He bought them." - inserting one puts words in the actor's mouth), **two misread the
+listener** (`E01-L017` and `E03-L010` are spoken *to* Caine and *to* Silas), **two blamed the line for what is
+wrong in the sheet** (`నాన్నా` is correct for a daughter to her father; a constable's name + `గారు` is the natural
+register), **two contradicted a register rule nobody had written down** (Edda uses `మీరు` and the honorific verb
+with Joss, where the check demanded `నీవు`), and **one would have broken the meaning outright**: on `E03-L002` the
+model offered "Meeku oka gaṇṭa undi" for "I have an hour", which says *you have an hour*. That last one is the
+worst thing a QA gate can do, and it is confident about it. All seven accept-but-modify rows give one reason the
+check cannot see at all: the register lives in the pronoun and the verb ending, not in the address term - Caine
+uses `మీరు` with Edda where an aunt uses `నువ్వు`, and every fix it offered was rejected for prepending a title
+instead. Full text in `docs/phase0_results.md`; the failures behind this run are entries 22 to 29.
 
 ## Still gated on the builder
 
@@ -309,10 +313,19 @@ Full text in `docs/phase0_results.md`; the failures behind this run are entries 
   a rate derived from corrected lines makes those lines fit by construction, and the reviewer graded the
   3.5 flag list, not this one, so `results/scores.json` keeps describing the run that was actually annotated.
 - **Step D acceptance pass** in `app.py` - the builder's own approve / edit / dismiss decisions, which is
-  what PRD §9 uses to drop a check. 10 of 174 are in (batch 1 of `relationship`, recorded from
-  `data/annotation/acceptance_batches/2026-11-07_relationship_batch1.tsv` by `scripts/record_acceptance.py`, which
-  refuses to overwrite a flag that already carries a decision). 164 rows are still `pending`: relationship 11,
-  meaning 13, script 22, naturalness 49, timing 69.
+  what PRD §9 uses to drop a check. 21 of 174 are in, and they are the whole of `relationship`, recorded from
+  `data/annotation/acceptance_batches/2026-11-07_relationship_batch{1,2}.tsv` by `scripts/record_acceptance.py`,
+  which refuses to overwrite a flag that already carries a decision. 153 rows are still `pending`: meaning 13,
+  script 22, naturalness 49, timing 69.
+- **The sheet edit that is owed, and not yet paid.** The acceptance pass says `data/relationship_sheet.yaml` needs
+  the Edda-to-Joss side of the register fork, `నాన్నా` as an expected address for a daughter to her father, and a
+  rule that stops demanding an address term the English line never had. Editing that file rewrites the prompt
+  prefix both `relationship` and `naturalness` quote, which entry 26 priced at 18 batches, so it goes in once,
+  after the remaining batches - see entry 29.
+- **One cell of the blind sheet was edited after the flags were seen.** Row `A067` (`E02-L026`) read `మీ నాన్న`
+  where the signed-off Joss-to-Edda rule says `నీ నాన్న`; the reviewer directed the change and it is applied. It
+  touches a `corrected_line`, not a `verdict` or an `error_types`, so no precision or recall figure moves - but
+  the sheet was supposed to be filled before looking at any flag, and saying so is the honest part (entry 29).
 - **Step E seeded errors.** Never run against the seeded draft; the numbers that used to be in
   `results/scores.json` came from the clean run and are withdrawn (entry 25). The report prints the command.
 - **Still open:** first-hand viewing of released Telugu episodes, the rest of the register-standard
