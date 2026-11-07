@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from src import metrics  # noqa: E402
+from src import metrics, sample  # noqa: E402
 from src.batching import scene_batches  # noqa: E402
 from src.flags import make_flag  # noqa: E402
 from src.parser import DialogueLine, assign_windows, clean_text, link_chains, parse_file, norm_time  # noqa: E402
@@ -136,11 +136,52 @@ def test_acceptance() -> None:
 
 
 def test_seeded_recall() -> None:
-    manifest = {"edits": [{"line_id": "L1", "expected_check": "meaning"}, {"line_id": "L2", "expected_check": "timing"}]}
-    flags = [make_flag(line_id="L1", check="meaning", severity="high", verdict="reversed", evidence="e")]
+    manifest = {"edits": [{"line_id": "L1", "expected_check": "meaning"},
+                           {"line_id": "L2", "expected_check": "timing"},
+                           {"line_id": "L3", "expected_check": "meaning"}]}
+    # L1 caught by the right check; L2 not caught at all; L3 caught only by the wrong check.
+    flags = [make_flag(line_id="L1", check="meaning", severity="high", verdict="reversed", evidence="e"),
+             make_flag(line_id="L3", check="timing", severity="high", verdict="over_slot", evidence="e")]
     out = metrics.seeded_recall(manifest, flags)
-    check("seeded meaning detected", out["meaning"]["detected"], 1)
-    check("seeded timing missed", out["timing"]["detected"], 0)
+    check("meaning: one of three caught by the meaning check",
+          (out["meaning"]["seeded"], out["meaning"]["detected_by_expected_check"], out["meaning"]["recall"]),
+          (2, 1, 0.5))
+    check("meaning: two of three had some flag, which is not the same claim",
+          (out["meaning"]["detected_by_any_check"], out["meaning"]["recall_any_check"]), (2, 1.0))
+    check("timing seed missed", out["timing"]["detected_by_expected_check"], 0)
+    check("the wrong-check hit is named rather than buried",
+          [(r["line_id"], tuple(r["fired_instead"])) for r in out["meaning"]["lines"]],
+          [("L3", ("timing",))])
+
+
+def test_recall_counts_the_same_kind_top_and_bottom() -> None:
+    """The submitted numbers once divided flags by flags-plus-instances, which gave the baseline a
+    denominator of 210 against 158 real reviewer issues and printed 0.248 for 0.690."""
+    issues = {"L1": {"meaning", "naturalness", "timing"}, "L2": {"meaning"}}
+    typed = [make_flag(line_id="L1", check="meaning", severity="high", verdict="reversed", evidence="e"),
+             make_flag(line_id="L2", check="meaning", severity="high", verdict="reversed", evidence="e")]
+    res = metrics.score(typed, issues)
+    check("typed arms credit only the type they name", res["instances_found"], 2)
+    check("instances found plus missed equals instances reported",
+          res["instances_found"] + res["missed_human_issues"], res["instances_total"])
+    check("denominator is the reviewer instance count", res["instances_total"], 4)
+    check("typed recall", res["recall"], 0.5)
+    check("typed line level", (res["line_level"]["issue_lines_found"], res["line_level"]["recall"],
+                               res["line_level"]["precision"]), (2, 1.0, 1.0))
+
+    untyped = [make_flag(line_id="L1", check="baseline", severity="high", verdict="awkward", evidence="e"),
+               make_flag(line_id="L2", check="baseline", severity="high", verdict="awkward", evidence="e")]
+    b = metrics.score(untyped, issues)
+    check("one untyped flag credits every type on its line", b["instances_found"], 4)
+    check("untyped recall", b["recall"], 1.0)
+    check("untyped still matches the instance bookkeeping",
+          b["instances_found"] + b["missed_human_issues"], b["instances_total"])
+    check("the old flag-over-mixed-count reading is kept visible, not hidden",
+          (b["recall_legacy_flagcount"], b["legacy_denominator_was"]), (round(2 / 6, 3), 6))
+    both = metrics.per_check(typed, issues)
+    check("per-check reports of-its-own-type recall",
+          (both["meaning"]["type_instances_found"], both["meaning"]["type_instances_total"],
+           both["meaning"]["type_recall"]), (2, 2, 1.0))
 
 
 def test_real_corpus_has_three_chains() -> None:
@@ -342,6 +383,191 @@ def test_a_merge_keeps_the_failure_of_checks_it_did_not_rerun() -> None:
           carry([partial], [partial], {"naturalness"}, kept), [])
     check("and an error for a check this run also did not touch survives",
           len(carry([], [partial, {"check": "meaning", "error": "x"}], {"timing"}, kept)), 2)
+
+
+def test_the_generated_first_pass_reaches_the_records_the_checks_read() -> None:
+    """Step A writes its answer to disk and must also put it back on the lines."""
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("run_qa", ROOT / "scripts" / "run_qa.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+
+    lines = [rec(line_id="E01-L001"), rec(line_id="E01-L002", telugu="ఇప్పటికే ఉంది")]
+    payload = {"lines": [{"line_id": "E01-L001", "telugu": "నాలుగు అడుగుతోంది."},
+                         {"line_id": "E01-L002", "telugu": "   "},
+                         {"line_id": "E01-L999", "telugu": "no such line"}]}
+    check("both records end up with something to read",
+          module.attach_from_payload(lines, payload), 2)
+    check("the generated draft is on the record a check would read",
+          lines[0].telugu, "నాలుగు అడుగుతోంది.")
+    check("a blank answer cannot erase a draft another source already attached",
+          lines[1].telugu, "ఇప్పటికే ఉంది")
+
+
+def test_a_line_no_model_could_read_is_never_sent_to_one() -> None:
+    """Empty Telugu is a coverage gap, not a finding for the model to confirm."""
+    from src.batching import scene_batches
+    from src.pipeline import judgeable_lines
+
+    lines = [rec(line_id="E01-L001", telugu=""), rec(line_id="E01-L002", telugu="   "),
+             rec(line_id="E01-L003", telugu="దుబ్బా."), rec(line_id="E01-L004", telugu="మరో లైన్.")]
+    kept = judgeable_lines(lines)
+    check("whitespace is not a draft", [r.line_id for r in kept], ["E01-L003", "E01-L004"])
+    check("only the readable lines reach a batch", [len(b[1]) for b in scene_batches(kept, 14)], [2])
+    check("a run with nothing attached sends no batch at all",
+          scene_batches(judgeable_lines(lines[:2]), 14), [])
+
+
+def test_the_scorer_finishes_once_the_sheet_is_filled() -> None:
+    """The whole tail of score.py sat behind a guard that had always exited early.
+
+    Line 115 read `s["flags"]`, a name that never existed in the file, and no test could see it because every
+    run to date stopped at the "fill in the sheet" return. A safety guard is also a way to keep code
+    unreachable, so this runs the completed path against fixtures and reads the caveat that line writes.
+    """
+    import csv
+    import importlib.util
+    import json
+    import tempfile
+
+    spec = importlib.util.spec_from_file_location("score_script", ROOT / "scripts" / "score.py")
+    scorer = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(scorer)
+
+    lines, _meta = sample.load_sample()
+    ids = [rec.line_id for rec in lines]
+    fields = ["anon_id", "line_id", "episode", "speaker", "delivery", "slot_seconds", "english",
+              "telugu", "verdict", "error_types", "severity", "corrected_line", "reviewer_confidence"]
+
+    def filled_csv(path):
+        with path.open("w", encoding="utf-8", newline="") as fh:
+            w = csv.DictWriter(fh, fieldnames=fields, lineterminator="\n")
+            w.writeheader()
+            for n, lid in enumerate(ids):
+                bad = n % 4 != 3
+                w.writerow({"anon_id": f"Z{n:03d}", "line_id": lid, "episode": 1, "speaker": "A",
+                            "delivery": "", "slot_seconds": 2.0, "english": "x", "telugu": "తెలుగు",
+                            "verdict": "needs_revision" if bad else "acceptable",
+                            "error_types": "meaning" if bad else "", "severity": "high" if bad else "",
+                            "corrected_line": "", "reviewer_confidence": "high"})
+        return path
+
+    def run(tmp, flags):
+        import contextlib
+        import io
+
+        structured = tmp / "structured.json"
+        structured.write_text(json.dumps({"flags": flags, "model": "fixture", "run_log": {}}), encoding="utf-8")
+        baseline = tmp / "baseline.json"
+        baseline.write_text(json.dumps({"flags": [], "model": "fixture", "run_log": {}}), encoding="utf-8")
+        out, report = tmp / "scores.json", tmp / "report.md"
+        argv = ["score.py", "--annotations", str(filled_csv(tmp / "sheet.csv")),
+                "--structured", str(structured), "--baseline", str(baseline),
+                "--seeded-manifest", str(tmp / "absent.json"), "--seeded-flags", str(tmp / "absent.json"),
+                "--acceptance", str(tmp / "absent.csv"), "--out", str(out), "--report", str(report)]
+        real_argv, sys.argv = sys.argv, argv
+        try:
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                rc = scorer.main()
+        finally:
+            sys.argv = real_argv
+        return rc, json.loads(out.read_text(encoding="utf-8")), report.exists()
+
+    good_flag = [{"flag_id": "E01-L001_meaning", "line_id": ids[0], "check": "meaning",
+                  "severity": "high", "evidence": "", "reason": ""}]
+    with tempfile.TemporaryDirectory() as name:
+        tmp = Path(name)
+        rc, scored, report_written = run(tmp, good_flag)
+        check("a filled sheet reaches the end of the scorer instead of raising", rc, 0)
+        check("the report is written by the same path that computed it", report_written, True)
+        check("the human count is read from the sheet, not assumed", scored["reviewer"]["genuine_issue_lines"],
+              len([n for n in range(len(ids)) if n % 4 != 3]))
+        check("a scored run is a decision, not a crash", scored["decision"] in ("GO", "NO-GO"), True)
+
+    with tempfile.TemporaryDirectory() as name:
+        tmp = Path(name)
+        _rc, quiet, _r = run(tmp, [])
+        check("no flags at all against real human issues is named as a caveat, not printed as a clean run",
+              any("no flags at all" in c for c in quiet["caveats"]), True)
+
+
+def test_seeded_numbers_refuse_the_clean_run() -> None:
+    """A seeded-error recall once came from the unseeded run, because the missing seeded flags
+    file was answered with `or s_flags`. The guard also only looked at the manifest, so nothing
+    in the caveats said the seeded run had never happened. Both halves are pinned here."""
+    import contextlib
+    import csv
+    import importlib.util
+    import io
+    import json
+    import tempfile
+
+    spec = importlib.util.spec_from_file_location("score_script2", ROOT / "scripts" / "score.py")
+    scorer = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(scorer)
+    lines, _meta = sample.load_sample()
+    ids = [rec.line_id for rec in lines]
+
+    fields = ["anon_id", "line_id", "episode", "speaker", "delivery", "slot_seconds", "english",
+              "telugu", "verdict", "error_types", "severity", "corrected_line", "reviewer_confidence"]
+
+    with tempfile.TemporaryDirectory() as name:
+        tmp = Path(name)
+        sheet = tmp / "sheet.csv"
+        with sheet.open("w", encoding="utf-8", newline="") as fh:
+            w = csv.DictWriter(fh, fieldnames=fields, lineterminator="\n")
+            w.writeheader()
+            for n, lid in enumerate(ids):
+                w.writerow({"anon_id": f"Z{n:03d}", "line_id": lid, "episode": 1, "speaker": "A",
+                            "delivery": "", "slot_seconds": 2.0, "english": "x", "telugu": "తెలుగు",
+                            "verdict": "needs_revision", "error_types": "meaning", "severity": "high",
+                            "corrected_line": "", "reviewer_confidence": "high"})
+        structured = tmp / "structured.json"
+        # the clean run does flag the seeded line: exactly the situation that used to fake a hit
+        structured.write_text(json.dumps({"flags": [
+            {"flag_id": "x", "line_id": ids[0], "check": "timing", "severity": "high",
+             "evidence": "", "reason": ""}], "run_log": {}}), encoding="utf-8")
+        baseline = tmp / "baseline.json"
+        baseline.write_text(json.dumps({"flags": [], "run_log": {}}), encoding="utf-8")
+        manifest = tmp / "seeded_manifest.json"
+        manifest.write_text(json.dumps({"edits": [{"line_id": ids[0], "expected_check": "meaning",
+                                                   "op": "negation"}]}), encoding="utf-8")
+        out, report = tmp / "scores.json", tmp / "report.md"
+        argv = ["score.py", "--annotations", str(sheet), "--structured", str(structured),
+                "--baseline", str(baseline), "--seeded-manifest", str(manifest),
+                "--seeded-flags", str(tmp / "structured_seeded_flags.json"),
+                "--acceptance", str(tmp / "absent.csv"), "--out", str(out), "--report", str(report)]
+        real_argv, sys.argv = sys.argv, argv
+        try:
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                rc = scorer.main()
+        finally:
+            sys.argv = real_argv
+        scored = json.loads(out.read_text(encoding="utf-8"))
+        check("the scorer still finishes without the seeded artifact", rc, 0)
+        check("seeded errors say they were not measured", scored["seeded_errors"].get("status"),
+              "not measured")
+        check("and it does not borrow the clean run's flags to look measured",
+              "recall" in json.dumps(scored["seeded_errors"]), False)
+        check("a caveat says so", any("seeded errors not measured" in c for c in scored["caveats"]), True)
+        check("the report prints the refusal rather than a table of invented recalls",
+              "Not measured" in report.read_text(encoding="utf-8"), True)
+
+        # and with the artifact present it is used, with the right check credited only
+        (tmp / "structured_seeded_flags.json").write_text(json.dumps({"flags": [
+            {"flag_id": "y", "line_id": ids[0], "check": "timing", "severity": "high",
+             "evidence": "", "reason": ""}]}), encoding="utf-8")
+        real_argv, sys.argv = sys.argv, argv
+        try:
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                scorer.main()
+        finally:
+            sys.argv = real_argv
+        scored = json.loads(out.read_text(encoding="utf-8"))
+        row = scored["seeded_errors"]["meaning"]
+        check("a wrong-check flag on a seeded line is not counted as that check working",
+              (row["detected_by_expected_check"], row["detected_by_any_check"], row["recall"]), (0, 1, 0.0))
 
 
 def main() -> int:

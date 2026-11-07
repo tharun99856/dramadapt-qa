@@ -1,0 +1,317 @@
+{
+  "provenance": {
+    "method": "api",
+    "provider_base_url": "https://api.groq.com/openai/v1",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0,
+    "generated": "2026-11-06T16:39:41+00:00",
+    "sample_seed": null,
+    "measured": true,
+    "note": "machine first pass - stand-in, not a human localization"
+  },
+  "lines": [
+    {
+      "line_id": "E01-L001",
+      "telugu": "బెడ్ నాలుగు మిమ్మల్ని మళ్లీ అడుగుతోంది.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "Bed four is asking for you again."
+    },
+    {
+      "line_id": "E01-L002",
+      "telugu": "బెడ్ నాలుగు ఎప్పుడూ అడుగుతుంది.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "Bed four always is."
+    },
+    {
+      "line_id": "E01-L003",
+      "telugu": "ఈ రాత్రి మీరు ఆ కాల్స్ తీసుకోవద్దు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.0,
+      "english": "You are not supposed to take those calls tonight."
+    },
+    {
+      "line_id": "E01-L004",
+      "telugu": "అప్పుడు నేను అధికారికంగా ఉండను.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.4,
+      "english": "Then I will be unofficial."
+    },
+    {
+      "line_id": "E01-L005",
+      "telugu": "సర్ మీరు చూసే ముందు డిశ్చార్జ్‌పై తన పేరు పెట్టాడు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "Sir put his name on the discharge before you saw it."
+    },
+    {
+      "line_id": "E01-L006",
+      "telugu": "సర్ విషయాల్లో త్వరగా ఉంటాడు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "Sir is quick about things."
+    },
+    {
+      "line_id": "E01-L007",
+      "telugu": "కెమెరాలు ఉన్న భాగాల్లో ఆయన త్వరగా ఉంటాడు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "He is quick about the parts with cameras."
+    },
+    {
+      "line_id": "E01-L008",
+      "telugu": "మీరు నిజంగా చెప్పదలిచినది చెప్పండి, సన్నీ.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "Say what you actually mean, Sunny."
+    },
+    {
+      "line_id": "E01-L009",
+      "telugu": "అతను మీ నిశ్శబ్దాన్ని సంతకంగా ఉపయోగించాడు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "That he used your silence as a signature."
+    },
+    {
+      "line_id": "E01-L010",
+      "telugu": "నేను ఏదీ సంతకం చేయలేదు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "I did not sign anything."
+    },
+    {
+      "line_id": "E01-L011",
+      "telugu": "ఇంకా కాదు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "Not yet."
+    },
+    {
+      "line_id": "E01-L012",
+      "telugu": "కుటుంబానికి ఇప్పటికే వీల్‌చెయిర్ ర్యాంప్ ఉంది. అది చిత్రమే.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.4,
+      "english": "The family already has the wheelchair ramp. That is the picture."
+    },
+    {
+      "line_id": "E01-L013",
+      "telugu": "కుటుంబానికి ఒక రోగి ఉంది, సార్. ఇది చిత్రము కాదు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "The family has a patient, Sir. Not a picture."
+    },
+    {
+      "line_id": "E01-L014",
+      "telugu": "మేము అందరం దీనిలో ఒకే వైపు ఉన్నాం, డాక్టర్ గారు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "We are all on the same side of this, Doctor."
+    },
+    {
+      "line_id": "E01-L015",
+      "telugu": "అప్పుడు నోట్‌ను నాకు చదవండి.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "Then read me the note."
+    },
+    {
+      "line_id": "E01-L016",
+      "telugu": "మీరు శుక్రవారం బదిలీ అవుతారు. ఇది మీ చివరి ముద్రగా మార్చకండి.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.8,
+      "english": "You transfer out on Friday. Do not make this your last impression."
+    },
+    {
+      "line_id": "E01-L017",
+      "telugu": "అవి నా ఆరంభ అక్షరాలు కాదు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "Those are not my initials."
+    },
+    {
+      "line_id": "E01-L018",
+      "telugu": "వీటిని ఆసుపత్రి కోసం సరిపడా దగ్గరగా ఉన్నాయి.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "They are close enough for a hospital."
+    },
+    {
+      "line_id": "E01-L019",
+      "telugu": "దగ్గరగా ఉండటం, ప్రజలు మరణించే కారణం.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.2,
+      "english": "Close enough is what people die of."
+    },
+    {
+      "line_id": "E01-L020",
+      "telugu": "మీరు దాన్ని సంతకం చేస్తారు, లేక నేను ఇప్పటికే సంతకం చేసినవారిని కనుగొంటాను.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "You will sign it, or I will find someone who has."
+    },
+    {
+      "line_id": "E01-L021",
+      "telugu": "అప్పుడు మీరు ఇప్పటికే దాన్ని సంతకం చేశారు.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "Then you have already signed it."
+    },
+    {
+      "line_id": "E01-L022",
+      "telugu": "అది ఏమని అర్థం?",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "What does that mean?"
+    },
+    {
+      "line_id": "E01-L023",
+      "telugu": "మీరు తప్పు వ్యక్తిని ధైర్యంగా ఉండమని అడిగారు...",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.8,
+      "english": "That you asked the wrong person to be brave ..."
+    },
+    {
+      "line_id": "E01-L024",
+      "telugu": "... మీ చివరి రాత్రిలో.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 1.6,
+      "english": "... on your last night."
+    },
+    {
+      "line_id": "E01-L025",
+      "telugu": "మీ ఇద్దరూ, నా కార్యాలయం, సోమవారం.",
+      "script_detected": "TELUGU",
+      "is_telugu": true,
+      "slot_seconds": 2.4,
+      "english": "Both of you, my office, Monday."
+    },
+    {
+      "line_id": "E01-L026",
+      "telugu": "Meeru sarigga sign chesina.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 1.8,
+      "english": "You could have just signed."
+    },
+    {
+      "line_id": "E01-L027",
+      "telugu": "Nenu chesanu. Idi chala chinna padam.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 1.8,
+      "english": "I could have. It is a very short word."
+    },
+    {
+      "line_id": "E01-L028",
+      "telugu": "Appudu meeru enduku raayaledu?",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 1.8,
+      "english": "Then why did you not write it?"
+    },
+    {
+      "line_id": "E01-L029",
+      "telugu": "Endukante, oka vadu raayakunda undali.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 2.4,
+      "english": "Because somebody has to be the one who did not."
+    },
+    {
+      "line_id": "E01-L030",
+      "telugu": "Aparna.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 1.6,
+      "english": "Aparna."
+    },
+    {
+      "line_id": "E01-L031",
+      "telugu": "Idi ikkada vadakandi.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 1.6,
+      "english": "Don't use that here."
+    },
+    {
+      "line_id": "E01-L032",
+      "telugu": "Kameralu kosam stairwell lo evaru levaru.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 1.8,
+      "english": "Nobody is in a stairwell for the cameras."
+    },
+    {
+      "line_id": "E01-L033",
+      "telugu": "Meeru raatri lo nannu nijam cheppadaniki anumatam ichina rendu vyakti lo rendu.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 2.2,
+      "english": "You are the second person tonight who has told me where I am allowed to be honest."
+    },
+    {
+      "line_id": "E01-L034",
+      "telugu": "Nenu kooda aakhiri ga untanu.",
+      "script_detected": "LATIN",
+      "is_telugu": false,
+      "slot_seconds": 1.6,
+      "english": "I will be last."
+    }
+  ],
+  "errors": [],
+  "coverage": {
+    "requested": 34,
+    "returned": 34,
+    "not_telugu_script": [
+      "E01-L026",
+      "E01-L027",
+      "E01-L028",
+      "E01-L029",
+      "E01-L030",
+      "E01-L031",
+      "E01-L032",
+      "E01-L033",
+      "E01-L034"
+    ]
+  },
+  "run_log": {
+    "requests_total": 3,
+    "requests_measured": 3,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {
+      "first_pass": 3
+    },
+    "prompt_tokens": 4812,
+    "completion_tokens": 3789,
+    "cost_usd": null,
+    "priced": false,
+    "models": [
+      "openai/gpt-oss-120b"
+    ]
+  }
+}

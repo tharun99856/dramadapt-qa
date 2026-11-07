@@ -1,101 +1,101 @@
 anon_id,line_id,episode,speaker,delivery,slot_seconds,english,telugu,verdict,error_types,severity,corrected_line,reviewer_confidence
-A001,E03-L012,3,Mistress Caine,sharp,2.8,You are not worth a seal. Take her away.,Meeru seal ki kooda layakaledu. Aameyi teesukondi.,,,,,
-A002,E01-L003,1,Edda Halloran,firm,1.4,I set it down an hour ago.,నేను దాన్ని ఒక గంటకు ముందు పెట్టాను.,,,,,
-A003,E05-L016,5,Edda Halloran,cutting,1.4,Two years and still no.,"రెండు సంవత్సరాలు, ఇంకా కాదు.",,,,,
-A004,E06-L016,6,Edda Halloran,careful,2.6,"If I put my name on it, what are you then?","Nenu naa peru adhi meeda pettina, meeru appudu emi?",,,,,
-A005,E01-L029,1,Mistress Caine,cutting,1.8,Aunt. That is what you called me at Christmastide.,అంటీ. మీరు క్రిస్మస్ కాలంలో నన్ను అంతే పిలిచారు.,,,,,
-A006,E05-L031,5,Edda Halloran,breaking,2.0,Then why did you not say so?,అప్పుడు మీరు ఎందుకు చెప్పలేదు?,,,,,
-A007,E06-L021,6,Voice of the lamp,"V.O., a child, one count only",1.6,— thirteen.,— పదమూడు.,,,,,
-A008,E04-L015,4,Joss Marek,tired,1.2,I'll say it any way you need.,నీకు అవసరమైన విధంగా నేను చెప్పుతాను.,,,,,
-A009,E03-L010,3,Edda Halloran,low,3.4,"What do you want, Silas, out of a dead man's paper?","Silas Vane, mruthyu vyakti patra nundi meeru emi korukuntunnaru?",,,,,
-A010,E01-L004,1,Halloran (Edda's father),afraid,2.4,Caine came again while you slept.,"ఎడ్డా, కెయిన్ మళ్లీ నీవు నిద్రిస్తున్నప్పుడు వచ్చాడు.",,,,,
-A011,E01-L023,1,Edda Halloran,still,1.2,No.,లేదు.,,,,,
-A012,E02-L015,2,Brother Anselm,measured,4.2,Miss Halloran. The company offers charity for the keeper's winter.,"మిస్ హల్లొరాన్, కంపెనీ కీపర్ శీతాకాలానికి దానం అందిస్తోంది.",,,,,
-A013,E02-L004,2,Joss Marek,dry,1.4,Ticket burnt with the ship.,టికెట్ నౌకతో కాలిపోయింది.,,,,,
-A014,E01-L025,1,Silas Vane,"same, leaning in",1.8,... until the price is right.,... ధర సరైనంత వరకు.,,,,,
-A015,E03-L023,3,Joss Marek,"quiet, mostly to himself",2.8,She does not know she is being priced and not courted.,"ఆమెకి తెలియదు, ఆమెను ధరలతో చూస్తున్నారు, ప్రేమతో కాదు.",,,,,
-A016,E01-L007,1,Edda Halloran,careful,2.0,What paper?,ఏ పత్రం?,,,,,
-A017,E03-L030,3,Halloran (Edda's father),"same, urgent",1.8,"Say it as a promise, not a ...","దాన్ని వాగ్దానంగా చెప్పు, సవాల్‌గా కాదు—",,,,,
-A018,E03-L003,3,Mistress Caine,dry,2.4,You have the tide. It is less.,Mee daggara aapada undi. Adi takkuva.,,,,,
-A019,E04-L023,4,Edda Halloran,small,3.6,My father put me up here at nine and said count and don't stop.,"నా తండ్రి నన్ను తొమ్మిదేళ్ల వయస్సులో ఇక్కడ పెట్టి, లెక్కించు, ఆపకు అని చెప్పారు.",,,,,
-A020,E06-L011,6,Edda Halloran,"fixed, then soft",2.8,Aunt. You were always family. Just not kind.,Aunt. Nee eppudu kutumbam laanti vunnavu. Kani dayava ledu.,,,,,
-A021,E02-L013,2,Edda Halloran,quiet,1.4,That is the same thing.,అది అదే విషయం.,,,,,
-A022,E05-L019,5,Edda Halloran,fixed,1.8,"In your harbour, Mistress Caine.","మీ నౌకాశ్రయంలో, మిస్ట్రెస్ కేన్ గారు.",,,,,
-A023,E03-L018,3,Edda Halloran,measured,3.8,Then tell me what a '61 inquiry letter costs a keeper's daughter.,"మారెక్, ‘61 విచారణ లేఖ ఒక కీపర్ కుమార్తెకు ఎంత ఖర్చవుతుందో చెప్పండి.",,,,,
-A024,E04-L011,4,Joss Marek,gasping,2.2,Your bar held. The trawler did not.,నీ బార్ నిలిచింది. ట్రాలర్ కాదు.,,,,,
-A025,E03-L002,3,Edda Halloran,controlled,2.2,"I have an hour, Mistress Caine.","Naaku oka gaṇṭa undi, Mistress Caine.",,,,,
-A026,E04-L014,4,Halloran (Edda's father),broken,2.0,Three on my shoal. Say it to me.,"ఎడ్డా, నా షోల్‌లో మూడు. నాకె చెప్పు.",,,,,
-A027,E05-L012,5,Halloran (Edda's father),"upright, dying",3.2,I bought them back. There's a man who remembers buying them.,"ఎడ్డా, నేను వాటిని తిరిగి కొనుగోలు చేశాను. వాటిని కొనుగోలు చేసిన ఒక మనిషి గుర్తు పెట్టుకున్నాడు.",,,,,
-A028,E02-L006,2,Edda Halloran,accusing,1.6,So it is you filling his head.,"అలా అయితే, మీరు, Marek, అతని తల నింపుతున్నారా?",,,,,
-A029,E03-L008,3,Edda Halloran,still,1.2,He bought them.,Avaadu vatini konnaadu.,,,,,
-A030,E01-L024,1,Silas Vane,smiling,1.6,She always says no ...,"మిస్ హాలొరన్, ఆమె ఎప్పుడూ 'లేదు' అంటుంది...",,,,,
-A031,E02-L030,2,Edda Halloran,to herself,3.8,He called me 'she' like I was a clause in the paper.,"Adi nannu 'aame' ani pilichadu, nenu patrikalo oka vakyam laga.",,,,,
-A032,E02-L009,2,"Company clerk (Caine's man, grey coat)",pleased,2.2,Mistress Caine will hear of this.,Mistress Caine దీనిని వినిపిస్తారు.,,,,,
-A033,E06-L024,6,Edda Halloran,"steady, first line of the season, last line too",2.2,The lamp stays lit.,దీపం వెలిగినట్లే ఉంటుంది.,,,,,
-A034,E01-L030,1,Edda Halloran,not moving,1.2,Call it what you like.,మీకు నచ్చినట్లుగా పిలవండి.,,,,,
-A035,E01-L001,1,Edda Halloran,steady,2.2,The lamp stays lit.,దీపం వెలిగేలా ఉంది.,,,,,
-A036,E03-L021,3,Edda Halloran,afraid of it,1.4,Not tonight.,ఈ రాత్రి కాదు.,,,,,
-A037,E01-L027,1,Halloran (Edda's father),"same, urgent",2.2,... sign nothing tonight.,... ఈ రాత్రి ఏదీ సంతకం చేయకు.,,,,,
-A038,E05-L003,5,"Company clerk (shipping office, grey beard)",interested now,3.8,That one was written off before it sank.,ఆది మునిగే ముందు వదిలివేయబడింది.,,,,,
-A039,E05-L027,5,Edda Halloran,not believing,1.8,A bargeman with Caine's money.,కెయిన్‌的钱తో ఒక బార్గెమన్.,,,,,
-A040,E04-L004,4,Joss Marek,off-screen,2.2,LIGHT THE STAIR! Somebody light the stair!,సీడీని వెలిగించండి! ఎవరో సీడీని వెలిగించండి!,,,,,
-A041,E01-L026,1,Halloran (Edda's father),desperate,1.8,"Edda, my girl, do not ...","ఎడ్డా, నా అమ్మాయా, చేయవద్దు...",,,,,
-A042,E05-L029,5,Edda Halloran,"small, to the fire",1.8,Nine months you watched me starve.,తొమ్మిది నెలలుగా మీరు నన్ను ఆకలితో చూస్తున్నారు.,,,,,
-A043,E04-L007,4,Edda Halloran,"to the lamp, begging",3.6,"Turn to him. Turn to him, he is my father's water.","తిరుగు అతనికి. తిరుగు అతనికి, అతను నా తండ్రి నీరు.",,,,,
-A044,E03-L031,3,Edda Halloran,finishing it,1.8,"... a dare. I hear you, Father.","నేను వినుతున్నాను, నాన్నా.",,,,,
-A045,E01-L014,1,Mistress Caine,businesslike,4.2,"The debt is mine, the deed is mine, the winter is mine.","బాకీ నా, ఒప్పందం నా, శీతాకాలం నా.",,,,,
-A046,E04-L002,4,Voice of the lamp,"V.O., a child",2.6,"One, two, three, four —","ఒకటి, రెండు, మూడు, నాలుగు —",,,,,
-A047,E06-L020,6,Edda Halloran,"to her father, breaking",3.0,"I'm looking, Father. I'm looking.","Nenu choostunnanu, Appa. Nenu choostunnanu.",,,,,
-A048,E03-L024,3,Edda Halloran,to the rain,2.4,Aunt would have said that nicer.,"అంటీ, అది మరింత బాగుగా చెప్పేవారు.",,,,,
-A049,E02-L016,2,Edda Halloran,cold,1.6,Charity from Caine.,కేన్ నుండి దానం.,,,,,
-A050,E03-L014,3,Joss Marek,off-screen,2.2,Someone did. From the stair.,ఎవరో చేశారు. మెట్ల నుండి.,,,,,
-A051,E04-L027,4,Edda Halloran,"tender, terrified",3.8,"If you touch my father's lamp you'll be standing in it, not beside it.","నీవు నా తండ్రి దీపాన్ని తాకితే, దాని పక్కన కాదు, దానిలోనే నిలబెడతావు.",,,,,
-A052,E06-L019,6,Halloran (Edda's father),"below, on the stair, upright",3.8,"Edda. Lass. I am standing on my own stair again, look at me.","Edda, pillagaa. Nenu naa swantam poddalu meeda mari inka nilabadutunnanu, naa pai choosthavo.",,,,,
-A053,E04-L013,4,Joss Marek,not stopping,3.6,"Two alive, three gone, and the boy's still on my deck.","రెండు జీవించి, మూడు వెళ్లిపోయారు, బాలుడు ఇంకా నా డెక్క్‌పై ఉన్నాడు.",,,,,
-A054,E04-L021,4,Edda Halloran,flat,1.4,It isn't alone.,ఇది ఒంటరిగా లేదు.,,,,,
-A055,E06-L023,6,Joss Marek,"from the water, last line of the season",3.2,"Light the stair, Edda. There's three boats coming home.","కాంతి వెలిగించు, ఎడ్డా. మూడు పడవలు ఇంటికి వస్తున్నాయి.",,,,,
-A056,E03-L025,3,Halloran (Edda's father),clear,3.2,"You went to the house. My girl, why did you go?","నీవు ఇంటికి వెళ్లావు, నా అమ్మాయి. ఎందుకు వెళ్లావు?",,,,,
-A057,E06-L002,6,Joss Marek,"up, coat clean",3.8,Then I'll read it to the water. The water's been honest longer.,అప్పుడు నేను దాన్ని నీటికి చదివిస్తాను. నీరు ఎక్కువ కాలంగా నిజాయితీగా ఉంది.,,,,,
-A058,E05-L007,5,Edda Halloran,Testing him,2.8,Father Anselm. Is this your ledger too?,ఫాదర్ యాన్సెల్మ్ గారు. ఇది మీ లెడ్జర్ కూడా?,,,,,
-A059,E04-L017,4,Joss Marek,unashamed,2.2,He's the one who can't sleep after.,అతను తర్వాత నిద్రపోని వాడు.,,,,,
-A060,E02-L025,2,Edda Halloran,shaken,1.2,... how did you ...,... మీరు ఎలా ...,,,,,
-A061,E05-L015,5,Silas Vane,mock-hurt,2.2,Still the betrothed? Two years and still—,"మిస్ హల్లొరాన్, ఇంకా నిశ్చితార్థి? రెండు సంవత్సరాలు గడిచినా—",,,,,
-A062,E02-L031,2,Joss Marek,"off-screen, far",2.2,"Lock the gate, Edda. It is you he means.","Darwaza nilipi, Edda. Aadani artham meeru.",,,,,
-A063,E04-L018,4,Edda Halloran,"the name, first time",1.4,Joss — the coat. Whose?,జోస్ — కోట్. ఎవరి?,,,,,
-A064,E06-L004,6,Mistress Caine,white,2.8,You bought my paper. With my money.,"మిస్ హల్లొరన్, మీరు నా పత్రికను కొనుగోలు చేశారు. నా డబ్బుతో.",,,,,
-A065,E01-L015,1,Edda Halloran,low,1.4,Say it once more.,"దయచేసి, మళ్ళీ ఒకసారి చెప్పండి.",,,,,
-A066,E05-L014,5,Edda Halloran,in front of her father,2.2,"Step off the stair, Silas Vane.","సిలాస్ వేన్, మెట్లు దిగు.",,,,,
-A067,E02-L026,2,Joss Marek,not proud,2.8,Your father taught me to read a gate in '61.,Mee thandri naaku 61 lo darwaza chadavadam nerpindi.,,,,,
-A068,E04-L025,4,Edda Halloran,"to it, gentle",1.4,That's enough. Go down.,ఇది సరిపోతుంది. దిగు.,,,,,
-A069,E04-L024,4,Voice of the lamp,"V.O., a child",2.6,"— nine, ten, eleven, twelve —","— తొమ్మిది, పది, పదకొండు, పన్నెండు —",,,,,
-A070,E05-L026,5,Joss Marek,"at the door, not coming in",3.6,"Then the lamp wants buying, and I have the money in my coat.","అప్పుడు దీపం కొనాలి, నా కోట్లో డబ్బు ఉంది.",,,,,
-A071,E01-L005,1,Edda Halloran,cold,1.6,She always comes when I sleep.,ఆమె నేను నిద్రిస్తున్నప్పుడు ఎప్పుడూ వస్తుంది.,,,,,
-A072,E04-L006,4,Joss Marek,"flat, calm, certain",2.8,"Then he'll be wet and right, in that order.","అప్పుడు అతను తడిగా, సరైనవాడిగా ఉంటుంది, ఆ క్రమంలో.",,,,,
-A073,E02-L011,2,Edda Halloran,raw,1.4,He wants the lamp.,అతను దీపాన్ని కోరుకుంటున్నారు.,,,,,
-A074,E05-L022,5,Edda Halloran,"to the man she calls Father, then the man she calls Father",1.8,"Father, hold on. Father Anselm, hold him.","నాన్న, పట్టుకో. ఫాదర్ ఆంసెల్మ్ గారు, అతనిని పట్టుకో.",,,,,
-A075,E02-L028,2,Edda Halloran,"to her father, soft",1.8,"Hush now, Father. I am here.","Shanthamga undi, Nanna. Nenu ikkada unna.",,,,,
-A076,E05-L009,5,Edda Halloran,low,1.6,And Caine gives.,మరియు మిస్ట్రెస్ కేన్ గారు ఇస్తారు.,,,,,
-A077,E02-L010,2,Delia,kind,2.8,"Eat, love. He will want you standing.","తిను, ప్రియ. అతను నిన్ను నిలబడి ఉండాలని కోరుతాడు.",,,,,
-A078,E03-L017,3,Joss Marek,short,1.2,Your light is my work.,నీ వెలుగు నా పని.,,,,,
-A079,E02-L012,2,Delia,careful,3.2,He wants your father off the rock before the spring.,అతను నీ తండ్రిని వసంతానికి ముందు రాయిపై నుంచి తొలగించాలని కోరుకుంటున్నాడు.,,,,,
-A080,E03-L006,3,Mistress Caine,amused,1.8,Carry it. I will watch.,Adi teesukondi. Nenu choostanu.,,,,,
-A081,E06-L006,6,Silas Vane,shouting,2.6,Arrest him! He's a smuggler on the water!,అతనిని అరెస్టు చేయండి! అతను నీటిపై దొంగతనం చేస్తున్నాడు!,,,,,
-A082,E04-L001,4,Edda Halloran,shouting to herself,2.6,Keep it turning. Keep it turning.,తిరుగుతూ ఉండు. తిరుగుతూ ఉండు.,,,,,
-A083,E06-L010,6,Mistress Caine,"last, quiet",3.4,You have made an enemy of the only family you had left.,Meeru mee kaligina okka kutumbamni shatru ga marchaaru.,,,,,
-A084,E06-L018,6,Edda Halloran,afraid of it,2.4,That is not a small thing to be offered.,"Adhi icchadam ki chinna vishayam kaadu, meeru.",,,,,
-A085,E01-L017,1,Joss Marek,off-screen,2.8,"Tell that to the tide, Mistress.","ఆ మాటను జలానికి చెప్పండి, Mistress.",,,,,
-A086,E06-L012,6,Mistress Caine,going,1.6,"Keep your lamp, girl.","Meeru mee lampu neeku pettukondi, pillagaa.",,,,,
-A087,E05-L010,5,Brother Anselm,final,3.4,"Caine gives, I keep your father breathing, and you keep silent.","కేన్ ఇస్తారు, నేను మీ తండ్రి శ్వాసను నిలుపుతాను, మీరు నిశ్శబ్దంగా ఉండండి.",,,,,
-A088,E01-L021,1,Edda Halloran,ice,1.2,By your authority. Yes.,మీ అధికారంతో. అవును.,,,,,
-A089,E06-L008,6,Edda Halloran,from the lamp stair,2.4,"On the charge of my father, then.","అప్పుడు నా తండ్రి ఆరోపణపై, సిలాస్ వేన్.",,,,,
-A090,E02-L020,2,Edda Halloran,flat,1.8,Father does not sign. That is the answer.,తండ్రి సంతకం చేయడు. అది సమాధానం.,,,,,
-A091,E02-L029,2,Joss Marek,"later, from the quay",2.8,She has no idea what a signature costs.,Aame ki hastakshara ki emi teliyadu.,,,,,
-A092,E03-L011,3,Silas Vane,final,3.2,Your name in my bed and my seal on that lamp.,"Miss Halloran, mee peru naa bed lo undi, alage aa lamp meeda naa seal.",,,,,
-A093,E05-L017,5,Joss Marek,through the crowd,3.2,Say the '61 price out loud and see whose name it has.,"‘61 ధరను పెద్దగా చెప్పి, దాని పేరు ఎవరికో చూడండి.",,,,,
-A094,E06-L017,6,Joss Marek,the truth,2.6,The bargeman who keeps your light burning.,Nee deepam neeti pettina bargeman.,,,,,
-A095,E02-L007,2,Joss Marek,tired,1.4,His head was full already.,అతని తల ఇప్పటికే నిండిపోయింది.,,,,,
-A096,E01-L006,1,Halloran (Edda's father),pleading,3.4,Promise me you will not sign her paper.,"వాగ్దానం చేయి, నీవు ఆమె పత్రాన్ని సంతకం చేయవద్దు.",,,,,
-A097,E04-L009,4,Edda Halloran,"steady, a lie",1.8,Nobody's. The bar held.,ఎవరికి కూడా కాదు. బార్ నిలిచింది.,,,,,
-A098,E03-L029,3,Edda Halloran,breaking,1.8,I will not let them take it.,నేను వాళ్లు దాన్ని తీసుకెళ్లనివ్వను.,,,,,
-A099,E05-L032,5,Joss Marek,"honest, ugly",3.6,Because if I was your buyer you'd have let me be your husband out of duty.,"ఎడ్డా, నేను మీ కొనుగోలుదారుడైతే, మీరు నన్ను మీ భర్తగా బాధ్యతతో అనుమతించేవారు.",,,,,
-A100,E05-L011,5,Constable Roe,formal,3.6,Halloran. You will come with me for the sale of king's stores.,"హల్లొరాన్ గారు, మీరు రాజు నిల్వల విక్రయానికి నాతో రావాలి.",,,,,
+A001,E03-L012,3,Mistress Caine,sharp,2.8,You are not worth a seal. Take her away.,Meeru seal ki kooda layakaledu. Aameyi teesukondi.,needs_revision,script;relationship;naturalness,high,నువ్వు సీల్‌కి కూడా అర్హురాలివి కాదు. ఆమెను తీసుకెళ్‌ళండి.,high
+A002,E01-L003,1,Edda Halloran,firm,1.4,I set it down an hour ago.,నేను దాన్ని ఒక గంటకు ముందు పెట్టాను.,needs_revision,timing,medium,గంట క్రితమే కింద పెట్టాను.,medium
+A003,E05-L016,5,Edda Halloran,cutting,1.4,Two years and still no.,"రెండు సంవత్సరాలు, ఇంకా కాదు.",needs_revision,timing,medium,రెండేళ్‌లయినా ఇంకా కాదు.,medium
+A004,E06-L016,6,Edda Halloran,careful,2.6,"If I put my name on it, what are you then?","Nenu naa peru adhi meeda pettina, meeru appudu emi?",needs_revision,script;naturalness,high,"నా పేరు పెడితే, మరి మీరేమవుతారు?",high
+A005,E01-L029,1,Mistress Caine,cutting,1.8,Aunt. That is what you called me at Christmastide.,అంటీ. మీరు క్రిస్మస్ కాలంలో నన్ను అంతే పిలిచారు.,needs_revision,meaning;relationship;naturalness;timing,medium,అత్తా. క్రిస్మస్‌కి అలాగే పిలిచావు.,medium
+A006,E05-L031,5,Edda Halloran,breaking,2.0,Then why did you not say so?,అప్పుడు మీరు ఎందుకు చెప్పలేదు?,acceptable,,,మరి మీరెందుకు చెప్పలేదు?,medium
+A007,E06-L021,6,Voice of the lamp,"V.O., a child, one count only",1.6,— thirteen.,— పదమూడు.,acceptable,,,,high
+A008,E04-L015,4,Joss Marek,tired,1.2,I'll say it any way you need.,నీకు అవసరమైన విధంగా నేను చెప్పుతాను.,needs_revision,naturalness;timing,low,ఎలా కావాలంటే అలా చెప్తా.,medium
+A009,E03-L010,3,Edda Halloran,low,3.4,"What do you want, Silas, out of a dead man's paper?","Silas Vane, mruthyu vyakti patra nundi meeru emi korukuntunnaru?",needs_revision,script;meaning;naturalness,high,"సైలస్, చనిపోయినవాడి కాగితం నుంచి మీకేం కావాలి?",high
+A010,E01-L004,1,Halloran (Edda's father),afraid,2.4,Caine came again while you slept.,"ఎడ్డా, కెయిన్ మళ్లీ నీవు నిద్రిస్తున్నప్పుడు వచ్చాడు.",needs_revision,meaning;naturalness;timing,medium,నువ్వు నిద్రపోతుంటే కేన్ మళ్‌ళీ వచ్చింది.,medium
+A011,E01-L023,1,Edda Halloran,still,1.2,No.,లేదు.,acceptable,,,,medium
+A012,E02-L015,2,Brother Anselm,measured,4.2,Miss Halloran. The company offers charity for the keeper's winter.,"మిస్ హల్లొరాన్, కంపెనీ కీపర్ శీతాకాలానికి దానం అందిస్తోంది.",acceptable,,,,medium
+A013,E02-L004,2,Joss Marek,dry,1.4,Ticket burnt with the ship.,టికెట్ నౌకతో కాలిపోయింది.,needs_revision,naturalness,low,టికెట్ ఓడతో కాలిపోయింది.,medium
+A014,E01-L025,1,Silas Vane,"same, leaning in",1.8,... until the price is right.,... ధర సరైనంత వరకు.,needs_revision,naturalness,low,... ధర కుదిరేవరకు.,medium
+A015,E03-L023,3,Joss Marek,"quiet, mostly to himself",2.8,She does not know she is being priced and not courted.,"ఆమెకి తెలియదు, ఆమెను ధరలతో చూస్తున్నారు, ప్రేమతో కాదు.",needs_revision,meaning;naturalness;timing,medium,"ఆమెకు తెలీదు, తనకు వెల కడుతున్నారు, ప్రేమించట్లేదు.",medium
+A016,E01-L007,1,Edda Halloran,careful,2.0,What paper?,ఏ పత్రం?,acceptable,,,,low
+A017,E03-L030,3,Halloran (Edda's father),"same, urgent",1.8,"Say it as a promise, not a ...","దాన్ని వాగ్దానంగా చెప్పు, సవాల్‌గా కాదు—",acceptable,,,,low
+A018,E03-L003,3,Mistress Caine,dry,2.4,You have the tide. It is less.,Mee daggara aapada undi. Adi takkuva.,needs_revision,meaning;script;relationship,high,ఆటుపోటు నీ చేతిలో ఉంది. కానీ అది తగ్గుతోంది.,medium
+A019,E04-L023,4,Edda Halloran,small,3.6,My father put me up here at nine and said count and don't stop.,"నా తండ్రి నన్ను తొమ్మిదేళ్ల వయస్సులో ఇక్కడ పెట్టి, లెక్కించు, ఆపకు అని చెప్పారు.",needs_revision,naturalness;timing,medium,"తొమ్మిదేళ్లప్పుడు నాన్న నన్ను ఇక్కడ పెట్టి, ""లెక్కపెట్టు, ఆపకు"" అన్నారు.",medium
+A020,E06-L011,6,Edda Halloran,"fixed, then soft",2.8,Aunt. You were always family. Just not kind.,Aunt. Nee eppudu kutumbam laanti vunnavu. Kani dayava ledu.,needs_revision,script;naturalness;relationship,high,అత్తా. మీరెప్పుడూ కుటుంబమే. కానీ దయ లేదు.,high
+A021,E02-L013,2,Edda Halloran,quiet,1.4,That is the same thing.,అది అదే విషయం.,needs_revision,naturalness,low,అదీ ఇదీ ఒకటే.,medium
+A022,E05-L019,5,Edda Halloran,fixed,1.8,"In your harbour, Mistress Caine.","మీ నౌకాశ్రయంలో, మిస్ట్రెస్ కేన్ గారు.",needs_revision,naturalness;timing,low,"మీ రేవులో, మిస్ట్రెస్ కేన్.",medium
+A023,E03-L018,3,Edda Halloran,measured,3.8,Then tell me what a '61 inquiry letter costs a keeper's daughter.,"మారెక్, ‘61 విచారణ లేఖ ఒక కీపర్ కుమార్తెకు ఎంత ఖర్చవుతుందో చెప్పండి.",needs_revision,meaning;naturalness,medium,అయితే ‘61 విచారణ లేఖ కీపర్ కూతురికి ఎంత పడుతుందో చెప్పండి.,low
+A024,E04-L011,4,Joss Marek,gasping,2.2,Your bar held. The trawler did not.,నీ బార్ నిలిచింది. ట్రాలర్ కాదు.,needs_revision,meaning,high,నీ ఇసుకతిన్నె నిలిచింది. ట్రాలర్ నిలవలేదు.,medium
+A025,E03-L002,3,Edda Halloran,controlled,2.2,"I have an hour, Mistress Caine.","Naaku oka gaṇṭa undi, Mistress Caine.",needs_revision,script,high,"నాకు ఒక గంట ఉంది, మిస్ట్రెస్ కేన్.",high
+A026,E04-L014,4,Halloran (Edda's father),broken,2.0,Three on my shoal. Say it to me.,"ఎడ్డా, నా షోల్‌లో మూడు. నాకె చెప్పు.",needs_revision,naturalness;timing,medium,నా దిబ్బ దగ్గర ముగ్గురు. నాకు చెప్పు.,medium
+A027,E05-L012,5,Halloran (Edda's father),"upright, dying",3.2,I bought them back. There's a man who remembers buying them.,"ఎడ్డా, నేను వాటిని తిరిగి కొనుగోలు చేశాను. వాటిని కొనుగోలు చేసిన ఒక మనిషి గుర్తు పెట్టుకున్నాడు.",needs_revision,naturalness;timing,medium,నేను వాటిని తిరిగి కొన్నాను. కొన్నవాడికి ఇంకా గుర్తుంది.,medium
+A028,E02-L006,2,Edda Halloran,accusing,1.6,So it is you filling his head.,"అలా అయితే, మీరు, Marek, అతని తల నింపుతున్నారా?",needs_revision,script;meaning;naturalness,medium,అంటే అతని బుర్రలో ఇవన్నీ నింపుతున్నది మీరే.,medium
+A029,E03-L008,3,Edda Halloran,still,1.2,He bought them.,Avaadu vatini konnaadu.,needs_revision,script;naturalness,high,అతను వాటిని కొన్నాడు.,high
+A030,E01-L024,1,Silas Vane,smiling,1.6,She always says no ...,"మిస్ హాలొరన్, ఆమె ఎప్పుడూ 'లేదు' అంటుంది...",needs_revision,meaning;timing,medium,ఆమె ఎప్పుడూ కాదంటుంది...,medium
+A031,E02-L030,2,Edda Halloran,to herself,3.8,He called me 'she' like I was a clause in the paper.,"Adi nannu 'aame' ani pilichadu, nenu patrikalo oka vakyam laga.",needs_revision,script;meaning;naturalness,high,"అతను నన్ను 'ఆమె' అన్నాడు, కాగితంలో ఏదో క్లాజ్ లాగా.",medium
+A032,E02-L009,2,"Company clerk (Caine's man, grey coat)",pleased,2.2,Mistress Caine will hear of this.,Mistress Caine దీనిని వినిపిస్తారు.,needs_revision,script;meaning,medium,ఈ విషయం మిస్ట్రెస్ కేన్‌కి తెలుస్తుంది.,high
+A033,E06-L024,6,Edda Halloran,"steady, first line of the season, last line too",2.2,The lamp stays lit.,దీపం వెలిగినట్లే ఉంటుంది.,needs_revision,meaning;naturalness,medium,దీపం వెలుగుతూనే ఉంటుంది.,medium
+A034,E01-L030,1,Edda Halloran,not moving,1.2,Call it what you like.,మీకు నచ్చినట్లుగా పిలవండి.,needs_revision,timing;naturalness,low,ఏమైనా అనుకోండి.,medium
+A035,E01-L001,1,Edda Halloran,steady,2.2,The lamp stays lit.,దీపం వెలిగేలా ఉంది.,needs_revision,meaning,medium,దీపం వెలుగుతూనే ఉంటుంది.,medium
+A036,E03-L021,3,Edda Halloran,afraid of it,1.4,Not tonight.,ఈ రాత్రి కాదు.,acceptable,,,,low
+A037,E01-L027,1,Halloran (Edda's father),"same, urgent",2.2,... sign nothing tonight.,... ఈ రాత్రి ఏదీ సంతకం చేయకు.,acceptable,,,,medium
+A038,E05-L003,5,"Company clerk (shipping office, grey beard)",interested now,3.8,That one was written off before it sank.,ఆది మునిగే ముందు వదిలివేయబడింది.,needs_revision,meaning;naturalness,medium,అది మునగకముందే లెక్కల్లోంచి తీసేశారు.,medium
+A039,E05-L027,5,Edda Halloran,not believing,1.8,A bargeman with Caine's money.,కెయిన్‌的钱తో ఒక బార్గెమన్.,needs_revision,script;naturalness,high,కేన్ డబ్బున్న ఒక బార్జివాడు.,high
+A040,E04-L004,4,Joss Marek,off-screen,2.2,LIGHT THE STAIR! Somebody light the stair!,సీడీని వెలిగించండి! ఎవరో సీడీని వెలిగించండి!,needs_revision,meaning;naturalness,high,"మెట్లకు దీపం పెట్టండి! ఎవరైనా, మెట్లకు దీపం!",high
+A041,E01-L026,1,Halloran (Edda's father),desperate,1.8,"Edda, my girl, do not ...","ఎడ్డా, నా అమ్మాయా, చేయవద్దు...",needs_revision,naturalness,medium,"ఎడ్డా, తల్లీ, వద్దు...",medium
+A042,E05-L029,5,Edda Halloran,"small, to the fire",1.8,Nine months you watched me starve.,తొమ్మిది నెలలుగా మీరు నన్ను ఆకలితో చూస్తున్నారు.,needs_revision,meaning;timing,medium,తొమ్మిది నెలలు నేను పస్తులుంటే చూశారు.,medium
+A043,E04-L007,4,Edda Halloran,"to the lamp, begging",3.6,"Turn to him. Turn to him, he is my father's water.","తిరుగు అతనికి. తిరుగు అతనికి, అతను నా తండ్రి నీరు.",needs_revision,meaning;naturalness,medium,"అతని వైపు తిరుగు. అతని వైపు తిరుగు, అతను మా నాన్న నీళ్లవాడు.",low
+A044,E03-L031,3,Edda Halloran,finishing it,1.8,"... a dare. I hear you, Father.","నేను వినుతున్నాను, నాన్నా.",needs_revision,meaning;naturalness,high,"...సవాలు. వింటున్నా, నాన్నా.",high
+A045,E01-L014,1,Mistress Caine,businesslike,4.2,"The debt is mine, the deed is mine, the winter is mine.","బాకీ నా, ఒప్పందం నా, శీతాకాలం నా.",needs_revision,meaning;naturalness,high,"బాకీ నాది, పత్రం నాది, శీతాకాలం నాది.",high
+A046,E04-L002,4,Voice of the lamp,"V.O., a child",2.6,"One, two, three, four —","ఒకటి, రెండు, మూడు, నాలుగు —",acceptable,,,,high
+A047,E06-L020,6,Edda Halloran,"to her father, breaking",3.0,"I'm looking, Father. I'm looking.","Nenu choostunnanu, Appa. Nenu choostunnanu.",needs_revision,script;naturalness,high,చూస్తున్నా నాన్నా. చూస్తున్నా.,high
+A048,E03-L024,3,Edda Halloran,to the rain,2.4,Aunt would have said that nicer.,"అంటీ, అది మరింత బాగుగా చెప్పేవారు.",needs_revision,meaning;naturalness,medium,అత్త అయితే ఇంకా బాగా చెప్పేది.,medium
+A049,E02-L016,2,Edda Halloran,cold,1.6,Charity from Caine.,కేన్ నుండి దానం.,acceptable,,,,medium
+A050,E03-L014,3,Joss Marek,off-screen,2.2,Someone did. From the stair.,ఎవరో చేశారు. మెట్ల నుండి.,needs_revision,meaning,low,ఎవరో వెలిగించారు. మెట్ల మీద నుంచి.,low
+A051,E04-L027,4,Edda Halloran,"tender, terrified",3.8,"If you touch my father's lamp you'll be standing in it, not beside it.","నీవు నా తండ్రి దీపాన్ని తాకితే, దాని పక్కన కాదు, దానిలోనే నిలబెడతావు.",needs_revision,meaning;relationship;naturalness,high,"మా నాన్న దీపం ముట్టుకుంటే, దాని పక్కన కాదు, అందులోనే నిలబడతారు.",medium
+A052,E06-L019,6,Halloran (Edda's father),"below, on the stair, upright",3.8,"Edda. Lass. I am standing on my own stair again, look at me.","Edda, pillagaa. Nenu naa swantam poddalu meeda mari inka nilabadutunnanu, naa pai choosthavo.",needs_revision,script;meaning;naturalness,high,"ఎడ్డా. తల్లీ. నా మెట్ల మీద నేనే మళ్ళీ నిలబడ్డాను, నన్ను చూడు.",high
+A053,E04-L013,4,Joss Marek,not stopping,3.6,"Two alive, three gone, and the boy's still on my deck.","రెండు జీవించి, మూడు వెళ్లిపోయారు, బాలుడు ఇంకా నా డెక్క్‌పై ఉన్నాడు.",needs_revision,meaning;naturalness,medium,"ఇద్దరు బతికారు, ముగ్గురు పోయారు, పిల్లాడు ఇంకా నా డెక్ మీదే ఉన్నాడు.",medium
+A054,E04-L021,4,Edda Halloran,flat,1.4,It isn't alone.,ఇది ఒంటరిగా లేదు.,acceptable,,,అది ఒంటరి కాదు.,medium
+A055,E06-L023,6,Joss Marek,"from the water, last line of the season",3.2,"Light the stair, Edda. There's three boats coming home.","కాంతి వెలిగించు, ఎడ్డా. మూడు పడవలు ఇంటికి వస్తున్నాయి.",needs_revision,meaning,high,"మెట్లకు దీపం వెలిగించు, ఎడ్డా. మూడు పడవలు ఇంటికి వస్తున్నాయి.",high
+A056,E03-L025,3,Halloran (Edda's father),clear,3.2,"You went to the house. My girl, why did you go?","నీవు ఇంటికి వెళ్లావు, నా అమ్మాయి. ఎందుకు వెళ్లావు?",needs_revision,naturalness,low,"నువ్వు ఆ ఇంటికి వెళ్ళావు. తల్లీ, ఎందుకు వెళ్ళావు?",medium
+A057,E06-L002,6,Joss Marek,"up, coat clean",3.8,Then I'll read it to the water. The water's been honest longer.,అప్పుడు నేను దాన్ని నీటికి చదివిస్తాను. నీరు ఎక్కువ కాలంగా నిజాయితీగా ఉంది.,needs_revision,meaning;naturalness,medium,అయితే నేనే నీళ్లకు చదివి వినిపిస్తా. నీళ్లు చాలా కాలంగా నిజాయితీగానే ఉన్నాయి.,high
+A058,E05-L007,5,Edda Halloran,Testing him,2.8,Father Anselm. Is this your ledger too?,ఫాదర్ యాన్సెల్మ్ గారు. ఇది మీ లెడ్జర్ కూడా?,needs_revision,naturalness,low,ఫాదర్ ఆన్సెల్మ్. ఇది కూడా మీ లెడ్జరేనా?,low
+A059,E04-L017,4,Joss Marek,unashamed,2.2,He's the one who can't sleep after.,అతను తర్వాత నిద్రపోని వాడు.,needs_revision,meaning,low,ఆ తర్వాత నిద్ర పట్టనిది అతనికే.,medium
+A060,E02-L025,2,Edda Halloran,shaken,1.2,... how did you ...,... మీరు ఎలా ...,acceptable,,,,high
+A061,E05-L015,5,Silas Vane,mock-hurt,2.2,Still the betrothed? Two years and still—,"మిస్ హల్లొరాన్, ఇంకా నిశ్చితార్థి? రెండు సంవత్సరాలు గడిచినా—",needs_revision,naturalness;timing,low,ఇంకా నిశ్చితార్థమేనా? రెండేళ్లయినా ఇంకా—,medium
+A062,E02-L031,2,Joss Marek,"off-screen, far",2.2,"Lock the gate, Edda. It is you he means.","Darwaza nilipi, Edda. Aadani artham meeru.",needs_revision,script;meaning;naturalness,high,"గేటుకు తాళం వెయ్, ఎడ్డా. అతని ఉద్దేశం నువ్వే.",high
+A063,E04-L018,4,Edda Halloran,"the name, first time",1.4,Joss — the coat. Whose?,జోస్ — కోట్. ఎవరి?,acceptable,,,,medium
+A064,E06-L004,6,Mistress Caine,white,2.8,You bought my paper. With my money.,"మిస్ హల్లొరన్, మీరు నా పత్రికను కొనుగోలు చేశారు. నా డబ్బుతో.",needs_revision,meaning;relationship;naturalness,high,నువ్వు నా కాగితం కొన్నావు. నా డబ్బుతోనే.,high
+A065,E01-L015,1,Edda Halloran,low,1.4,Say it once more.,"దయచేసి, మళ్ళీ ఒకసారి చెప్పండి.",needs_revision,naturalness,low,ఇంకోసారి చెప్పండి.,low
+A066,E05-L014,5,Edda Halloran,in front of her father,2.2,"Step off the stair, Silas Vane.","సిలాస్ వేన్, మెట్లు దిగు.",needs_revision,relationship,medium,"సైలస్ వేన్, మెట్లు దిగండి.",medium
+A067,E02-L026,2,Joss Marek,not proud,2.8,Your father taught me to read a gate in '61.,Mee thandri naaku 61 lo darwaza chadavadam nerpindi.,needs_revision,script;meaning,high,మీ నాన్న నాకు ‘61లో గేటును చదవడం నేర్పాడు.,medium
+A068,E04-L025,4,Edda Halloran,"to it, gentle",1.4,That's enough. Go down.,ఇది సరిపోతుంది. దిగు.,needs_revision,naturalness,low,చాలు. కిందికి దిగు.,medium
+A069,E04-L024,4,Voice of the lamp,"V.O., a child",2.6,"— nine, ten, eleven, twelve —","— తొమ్మిది, పది, పదకొండు, పన్నెండు —",acceptable,,,,high
+A070,E05-L026,5,Joss Marek,"at the door, not coming in",3.6,"Then the lamp wants buying, and I have the money in my coat.","అప్పుడు దీపం కొనాలి, నా కోట్లో డబ్బు ఉంది.",acceptable,,,,medium
+A071,E01-L005,1,Edda Halloran,cold,1.6,She always comes when I sleep.,ఆమె నేను నిద్రిస్తున్నప్పుడు ఎప్పుడూ వస్తుంది.,needs_revision,naturalness;timing,medium,నేను నిద్రపోయినప్పుడే ఆమె వస్తుంది.,medium
+A072,E04-L006,4,Joss Marek,"flat, calm, certain",2.8,"Then he'll be wet and right, in that order.","అప్పుడు అతను తడిగా, సరైనవాడిగా ఉంటుంది, ఆ క్రమంలో.",needs_revision,meaning;naturalness,medium,"అయితే అతను ముందు తడుస్తాడు, తర్వాత అతనే సరైనవాడు.",medium
+A073,E02-L011,2,Edda Halloran,raw,1.4,He wants the lamp.,అతను దీపాన్ని కోరుకుంటున్నారు.,needs_revision,naturalness,low,అతనికి దీపం కావాలి.,medium
+A074,E05-L022,5,Edda Halloran,"to the man she calls Father, then the man she calls Father",1.8,"Father, hold on. Father Anselm, hold him.","నాన్న, పట్టుకో. ఫాదర్ ఆంసెల్మ్ గారు, అతనిని పట్టుకో.",needs_revision,meaning;relationship,medium,"నాన్నా, తట్టుకో. ఫాదర్ ఆన్సెల్మ్, అతన్ని పట్టుకోండి.",medium
+A075,E02-L028,2,Edda Halloran,"to her father, soft",1.8,"Hush now, Father. I am here.","Shanthamga undi, Nanna. Nenu ikkada unna.",needs_revision,script;meaning,high,"ష్, నాన్నా. నేనిక్కడే ఉన్నా.",high
+A076,E05-L009,5,Edda Halloran,low,1.6,And Caine gives.,మరియు మిస్ట్రెస్ కేన్ గారు ఇస్తారు.,needs_revision,naturalness;timing,low,కేన్ ఇస్తుంది మరి.,medium
+A077,E02-L010,2,Delia,kind,2.8,"Eat, love. He will want you standing.","తిను, ప్రియ. అతను నిన్ను నిలబడి ఉండాలని కోరుతాడు.",needs_revision,naturalness,low,"తిను, తల్లీ. నువ్వు నిలబడి ఉండాలని అతని కోరిక.",medium
+A078,E03-L017,3,Joss Marek,short,1.2,Your light is my work.,నీ వెలుగు నా పని.,acceptable,,,,medium
+A079,E02-L012,2,Delia,careful,3.2,He wants your father off the rock before the spring.,అతను నీ తండ్రిని వసంతానికి ముందు రాయిపై నుంచి తొలగించాలని కోరుకుంటున్నాడు.,needs_revision,naturalness;timing,medium,వసంతానికి ముందే నీ నాన్న ఆ రాయి మీద ఉండకూడదని అతని కోరిక.,medium
+A080,E03-L006,3,Mistress Caine,amused,1.8,Carry it. I will watch.,Adi teesukondi. Nenu choostanu.,needs_revision,script;meaning;relationship,medium,మోసుకెళ్ళు. నేను చూస్తా.,medium
+A081,E06-L006,6,Silas Vane,shouting,2.6,Arrest him! He's a smuggler on the water!,అతనిని అరెస్టు చేయండి! అతను నీటిపై దొంగతనం చేస్తున్నాడు!,needs_revision,meaning,high,వాణ్ణి అరెస్టు చేయండి! వాడు సముద్రం మీద స్మగ్లర్!,medium
+A082,E04-L001,4,Edda Halloran,shouting to herself,2.6,Keep it turning. Keep it turning.,తిరుగుతూ ఉండు. తిరుగుతూ ఉండు.,needs_revision,meaning,medium,తిప్పుతూనే ఉండు. తిప్పుతూనే ఉండు.,medium
+A083,E06-L010,6,Mistress Caine,"last, quiet",3.4,You have made an enemy of the only family you had left.,Meeru mee kaligina okka kutumbamni shatru ga marchaaru.,needs_revision,script;relationship;naturalness,high,నువ్వు మిగిలిన ఒక్క కుటుంబాన్ని శత్రువుని చేసుకున్నావు.,high
+A084,E06-L018,6,Edda Halloran,afraid of it,2.4,That is not a small thing to be offered.,"Adhi icchadam ki chinna vishayam kaadu, meeru.",needs_revision,script;naturalness,medium,ఇలా ఇవ్వడం చిన్న విషయమేం కాదు.,medium
+A085,E01-L017,1,Joss Marek,off-screen,2.8,"Tell that to the tide, Mistress.","ఆ మాటను జలానికి చెప్పండి, Mistress.",needs_revision,meaning;script,medium,"ఆ మాట ఆటుపోటుకు చెప్పండి, మిస్ట్రెస్.",medium
+A086,E06-L012,6,Mistress Caine,going,1.6,"Keep your lamp, girl.","Meeru mee lampu neeku pettukondi, pillagaa.",needs_revision,script;meaning;relationship,high,"నీ దీపం నీ దగ్గరే ఉంచుకో, పిల్లా.",high
+A087,E05-L010,5,Brother Anselm,final,3.4,"Caine gives, I keep your father breathing, and you keep silent.","కేన్ ఇస్తారు, నేను మీ తండ్రి శ్వాసను నిలుపుతాను, మీరు నిశ్శబ్దంగా ఉండండి.",acceptable,,,,medium
+A088,E01-L021,1,Edda Halloran,ice,1.2,By your authority. Yes.,మీ అధికారంతో. అవును.,acceptable,,,,high
+A089,E06-L008,6,Edda Halloran,from the lamp stair,2.4,"On the charge of my father, then.","అప్పుడు నా తండ్రి ఆరోపణపై, సిలాస్ వేన్.",needs_revision,meaning;naturalness,medium,అయితే మా నాన్న బాధ్యత మీద.,low
+A090,E02-L020,2,Edda Halloran,flat,1.8,Father does not sign. That is the answer.,తండ్రి సంతకం చేయడు. అది సమాధానం.,needs_revision,naturalness,low,నాన్న సంతకం చేయడు. అదే నా జవాబు.,medium
+A091,E02-L029,2,Joss Marek,"later, from the quay",2.8,She has no idea what a signature costs.,Aame ki hastakshara ki emi teliyadu.,needs_revision,script;meaning;naturalness,high,ఆమెకు సంతకం ఖరీదు ఏంటో తెలీదు.,medium
+A092,E03-L011,3,Silas Vane,final,3.2,Your name in my bed and my seal on that lamp.,"Miss Halloran, mee peru naa bed lo undi, alage aa lamp meeda naa seal.",needs_revision,script;meaning;timing,high,"మీ పేరు నా పడకలో, ఆ దీపం మీద నా ముద్ర.",medium
+A093,E05-L017,5,Joss Marek,through the crowd,3.2,Say the '61 price out loud and see whose name it has.,"‘61 ధరను పెద్దగా చెప్పి, దాని పేరు ఎవరికో చూడండి.",needs_revision,meaning;naturalness,medium,"‘61 ధర బిగ్గరగా చెప్పి చూడండి, అది ఎవరి పేరు మీద ఉందో.",medium
+A094,E06-L017,6,Joss Marek,the truth,2.6,The bargeman who keeps your light burning.,Nee deepam neeti pettina bargeman.,needs_revision,script;meaning,high,నీ దీపం వెలిగేలా చూసే బార్జివాడు.,medium
+A095,E02-L007,2,Joss Marek,tired,1.4,His head was full already.,అతని తల ఇప్పటికే నిండిపోయింది.,needs_revision,meaning;naturalness,low,అతని బుర్ర అప్పటికే నిండిపోయింది.,medium
+A096,E01-L006,1,Halloran (Edda's father),pleading,3.4,Promise me you will not sign her paper.,"వాగ్దానం చేయి, నీవు ఆమె పత్రాన్ని సంతకం చేయవద్దు.",needs_revision,naturalness,medium,"మాటివ్వు, ఆమె కాగితం మీద సంతకం పెట్టనని.",medium
+A097,E04-L009,4,Edda Halloran,"steady, a lie",1.8,Nobody's. The bar held.,ఎవరికి కూడా కాదు. బార్ నిలిచింది.,needs_revision,meaning;naturalness,medium,ఎవరిదీ కాదు. ఇసుకతిన్నె నిలిచింది.,medium
+A098,E03-L029,3,Edda Halloran,breaking,1.8,I will not let them take it.,నేను వాళ్లు దాన్ని తీసుకెళ్లనివ్వను.,acceptable,,,,low
+A099,E05-L032,5,Joss Marek,"honest, ugly",3.6,Because if I was your buyer you'd have let me be your husband out of duty.,"ఎడ్డా, నేను మీ కొనుగోలుదారుడైతే, మీరు నన్ను మీ భర్తగా బాధ్యతతో అనుమతించేవారు.",needs_revision,meaning;naturalness;timing,medium,"ఎందుకంటే నేను నీ కొనుగోలుదారుణ్ణైతే, బాధ్యత కొద్దీ నన్ను భర్తగా ఒప్పుకునేదానివి.",medium
+A100,E05-L011,5,Constable Roe,formal,3.6,Halloran. You will come with me for the sale of king's stores.,"హల్లొరాన్ గారు, మీరు రాజు నిల్వల విక్రయానికి నాతో రావాలి.",needs_revision,naturalness,low,"హల్లొరాన్ గారూ, రాజుగారి సరుకుల అమ్మకం విషయంలో మీరు నాతో రావాలి.",medium

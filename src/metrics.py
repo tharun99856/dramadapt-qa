@@ -48,66 +48,116 @@ def _matches(flag_type: str, human_types: set[str]) -> bool:
 
 
 def score(flags: list[dict], issues: dict[str, set[str]], chains: dict[str, list[str]] | None = None) -> dict:
-    """Precision/recall for one system's flag list."""
+    """Precision/recall for one system's flag list.
+
+    Recall here is instance-based on purpose. The first version of this function divided a flag
+    count by a flag count plus an instance count, which made the two arms uncomparable: the
+    baseline names no error type, so its `tp + fn` came to 210 against 158 real reviewer
+    instances and its recall read 0.248 when it actually touches 0.690 of the sheet. Numerator
+    and denominator are now the same kind of thing - distinct reviewer (line, type) instances -
+    and `line_level` is reported next to it because "will the director see this line" is the
+    operational question and "did it name the type" is not.
+    """
     chains = chains or {}
     flagged_ids = {f["line_id"] for f in flags}
+    all_instances = {(lid, t) for lid, ts in issues.items() for t in ts}
     tp = fp = 0
     tp_lines: list[str] = []
     fp_lines: list[str] = []
     chain_helps = 0
+    credited: set[tuple[str, str]] = set()
     for flag in flags:
         line_id = flag["line_id"]
         ftype = CHECK_TO_TYPE.get(flag["check"], flag["check"])
-        direct = line_id in issues and _matches(ftype, issues[line_id])
-        partner = False
+        human = issues.get(line_id)
+        direct = bool(human) and _matches(ftype, human or set())
+        partner: str | None = None
         if not direct and flag["check"] in ("meaning", "relationship"):
             for cid, members in chains.items():
                 if line_id in members:
-                    if any(other in issues and _matches(ftype, issues[other]) for other in members if other != line_id):
-                        partner = True
+                    hit = next((o for o in members if o != line_id and o in issues
+                                and _matches(ftype, issues[o])), None)
+                    if hit:
+                        partner = hit
                         break
         if direct or partner:
             tp += 1
             tp_lines.append(line_id)
             if partner:
                 chain_helps += 1
+                human = issues.get(partner)
+                line_id = partner
+            if human:
+                if ftype == "baseline":
+                    credited.update((line_id, t) for t in human)
+                elif ftype in human:
+                    credited.add((line_id, ftype))
         else:
             fp += 1
             fp_lines.append(line_id)
 
-    fn_lines: list[tuple[str, str]] = []
+    uncredited = all_instances - credited
+    fn = len(uncredited)
+    found = len(credited)
+    issue_lines = set(issues)
+    lines_found = len(flagged_ids & issue_lines)
+    precision = tp / (tp + fp) if (tp + fp) else None
+    recall = found / len(all_instances) if all_instances else None
+    # kept only so the change is auditable against the previously submitted numbers
+    legacy_fn = 0
     for line_id, types in issues.items():
         if line_id in flagged_ids:
-            for ftype in types:
-                if not any(f["line_id"] == line_id and CHECK_TO_TYPE.get(f["check"], f["check"]) == ftype for f in flags):
-                    fn_lines.append((line_id, ftype))
+            legacy_fn += sum(1 for ftype in types
+                             if not any(f["line_id"] == line_id
+                                        and CHECK_TO_TYPE.get(f["check"], f["check"]) == ftype for f in flags))
         else:
-            for ftype in types:
-                fn_lines.append((line_id, ftype))
-
-    fn = len(fn_lines)
-    precision = tp / (tp + fp) if (tp + fp) else None
-    recall = tp / (tp + fn) if (tp + fn) else None
+            legacy_fn += len(types)
+    legacy_denom = tp + legacy_fn
     return {
         "flags": len(flags),
         "lines_flagged": len(flagged_ids),
         "true_positive_flags": tp,
         "false_positive_flags": fp,
+        "instances_found": found,
+        "instances_total": len(all_instances),
         "missed_human_issues": fn,
         "precision": round(precision, 3) if precision is not None else None,
         "recall": round(recall, 3) if recall is not None else None,
+        "recall_note": "instances credited / reviewer instances; numerator and denominator are the same kind",
+        "recall_legacy_flagcount": round(tp / legacy_denom, 3) if legacy_denom else None,
+        "legacy_denominator_was": legacy_denom,
+        "line_level": {
+            "issue_lines_found": lines_found,
+            "issue_lines_total": len(issue_lines),
+            "recall": round(lines_found / len(issue_lines), 3) if issue_lines else None,
+            "precision": round(lines_found / len(flagged_ids), 3) if flagged_ids else None,
+        },
         "tp_line_ids": sorted(set(tp_lines)),
         "fp_line_ids": sorted(set(fp_lines)),
-        "missed": sorted(fn_lines),
+        "missed": sorted(uncredited),
+        "credited_instances": sorted(credited),
         "flags_rescued_by_chain_matching": chain_helps,
     }
 
 
 def per_check(flags: list[dict], issues: dict[str, set[str]], chains=None) -> dict:
+    """Per-check scores.
+
+    Plain `recall` is measured against every reviewer instance so the checks stay comparable with
+    the overall figure, which makes a check that is near perfect at its own job look weak. So
+    `type_recall` comes with it: of the instances the reviewer labelled with this type, how many
+    did this check's flags credit.
+    """
     out = {}
     for check in sorted({f["check"] for f in flags}):
         subset = [f for f in flags if f["check"] == check]
-        out[check] = score(subset, issues, chains)
+        res = score(subset, issues, chains)
+        n_type = sum(1 for lid, ts in issues.items() for t in ts if t == check)
+        of_type = sum(1 for _lid, t in res["credited_instances"] if t == check)
+        res["type_instances_total"] = n_type
+        res["type_instances_found"] = of_type
+        res["type_recall"] = round(of_type / n_type, 3) if n_type else None
+        out[check] = res
     return out
 
 
@@ -162,17 +212,33 @@ def acceptance_rates(decisions: dict[tuple[str, str], dict]) -> dict:
 
 
 def seeded_recall(seed_manifest: dict, flags: list[dict]) -> dict:
-    """Did the check fire on the lines we deliberately broke? By type only."""
+    """Did the check that was supposed to catch a seeded error actually catch it?
+
+    The first version counted a seeded line as detected if *any* flag landed on it, which let a
+    meaning seed score as a hit when only the timing check spoke. Both readings are reported now,
+    because the gap between them is itself a result.
+    """
     out: dict[str, dict] = {}
     for edit in seed_manifest.get("edits", []):
         expected = edit["expected_check"]
-        row = out.setdefault(expected, {"seeded": 0, "detected": 0, "by_check": {}})
+        row = out.setdefault(expected, {"seeded": 0, "detected_by_expected_check": 0,
+                                        "detected_by_any_check": 0, "by_check": {}, "lines": []})
         row["seeded"] += 1
         hits = [f for f in flags if f["line_id"] == edit["line_id"]]
+        right = [f for f in hits if f["check"] == expected]
         if hits:
-            row["detected"] += 1
+            row["detected_by_any_check"] += 1
             for f in hits:
                 row["by_check"][f["check"]] = row["by_check"].get(f["check"], 0) + 1
+        if right:
+            row["detected_by_expected_check"] += 1
+        else:
+            row["lines"].append({"line_id": edit["line_id"], "op": edit.get("op"),
+                                 "fired_instead": sorted({f["check"] for f in hits})})
     for row in out.values():
-        row["recall"] = round(row["detected"] / row["seeded"], 3) if row["seeded"] else None
+        row["recall"] = (round(row["detected_by_expected_check"] / row["seeded"], 3)
+                         if row["seeded"] else None)
+        row["recall_any_check"] = (round(row["detected_by_any_check"] / row["seeded"], 3)
+                                   if row["seeded"] else None)
+        row["lines"] = sorted(row["lines"], key=lambda r: r["line_id"])
     return out

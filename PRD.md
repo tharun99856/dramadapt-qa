@@ -57,7 +57,7 @@ Chosen, not assigned. The brief asks for the reasoning, so here it is, with the 
 1. **It is the step the industry itself says is still human.** Kuku's stated position is AI at every step of microdrama production but creative input needing heavy human involvement, and 60% of Indian media and entertainment CXOs name quality and consistency as the blocker for multi-language content at scale. Problem 1 optimises *selection* of moments from content that is already finished. This problem attacks the step where the labour actually is: someone fluent reading every localized line before voice generation exists.
 2. **The errors here are the irreversible kind.** A wrong promo pick costs one underperforming ad and can be replaced the same afternoon. A threat that became a request in translation, a daughter using the wrong register to her father, or a line that needs twice its slot is discovered after the voices exist - and, if the timing is wrong, after the picture is locked. Same money spent, opposite recoverability.
 3. **One person can evaluate it honestly, which is not true of the alternatives.** Problem 2 needs statute-accurate answers checked by a lawyer; a wrong answer hurts a stranger in real distress, and a solo student without legal access cannot verify correctness without becoming the liability. Problem 1's ground truth is ad performance and retention data we do not have. This problem's ground truth is Telugu, which the builder reads natively: 100 lines annotated blind is a number we can stand behind, and the timing check is arithmetic rather than opinion.
-4. **It re-runs on any input, including at the interview.** Problem 3's input pack is optional, so everything here is our own screenplay and our own model calls. `scripts/run_qa.py --input <file or folder>` takes a show nobody has seen before and produces the same artifacts, priced from the run log. The rerun is demonstrated, not described: on a second original episode the parser read 34 lines with 0 unparsed blocks and the report said plainly that nothing was judged (`results/new_input_rehearsal_*`), and on the full corpus with the real draft attached it raised 91 flags - 69 timing at the provisional 3.5 akshara/s, 22 script form - at zero requests (`results/qa_rehearsal_*`). The three LLM checks on genuinely unseen input are the one part still to run against a live model, because that part costs tokens. Nothing in the submission depends on material we cannot publish.
+4. **It re-runs on any input, including at the interview.** Problem 3's input pack is optional, so everything here is our own screenplay and our own model calls. `scripts/run_qa.py --input <file or folder>` takes a show nobody has seen before and produces the same artifacts, priced from the run log. The rerun is demonstrated, not described. On a second original screenplay the parser read 34 lines with 0 unparsed blocks; Step A then produced a first pass for all 34 at 3 requests, 4,812 prompt and 3,789 completion tokens, and 9 of them came back in Latin script; the two checks that need no model then ran over that draft at zero requests and raised 33 flags - 24 timing (median slot ratio 2.34, 92% of what it could read past tight + 15%) and 9 script form (`results/new_input_code_*`, `results/new_input_rehearsal_*`). On the full corpus with the real draft attached the same zero-request path raised 91 flags (`results/qa_rehearsal_*`). The three LLM checks have produced no valid finding on genuinely unseen input: the one attempt that got model answers was voided by the attach bug in failure log entry 21. Nothing in the submission depends on material we cannot publish.
 
 **What would change our mind:** if the blind annotation says the first-pass Telugu is basically fine, then a four-check gate is shortlisting noise and the honest answer is "keep the timing check, drop the rest". That is why §6 gates Phase 1 on Phase 0 instead of on enthusiasm.
 
@@ -184,19 +184,23 @@ JSON of the full run (inputs, prompts, raw model responses, flags, editor action
 | Structured QA: script form | **zero** — pure Python |
 
 The v1 figure of "3–4 calls per line, ~300–400 calls" is gone. What the experiment actually spent, read
-out of `results/run_log.json` after the real runs: **109 requests in total, 150,791 prompt tokens and
-101,498 completion tokens** - Step A 18 requests per model (34,599/21,137 and 37,416/5,245), the baseline
-control 18 (9,633/14,990), the structured pass 55 (69,143/60,126, of which 16 of the final 18 naturalness
-batches came back from the call log rather than the network). That is 55 requests for 100 lines of
-structured QA - 18 per check, not 300-400 - and cost is `null` rather than a price because the tier never
-billed us. The two-page doc quotes the same file.
+out of `results/run_log.json` after the real runs: **134 requests in total, 181,911 prompt tokens and
+129,851 completion tokens** - Step A 18 requests per model (34,599/21,137 and 37,416/5,245), the baseline
+control 18 (9,633/14,990), the structured pass 73 (88,128/80,891, which is naturalness paid for twice -
+19 requests for the pass that stopped at 84 lines and 18 for the pass that finished it), and 7 on the
+unseen episode: 3 for its own
+Step A (4,812/3,789) plus 4 for an LLM-check pass that had to be thrown away (7,323/3,799) because the
+generated draft was never attached to the run, which is failure log entry 21. That is 18 requests per LLM
+check for 100
+lines of structured QA - not 300-400 - and cost is `null` rather than a price because the
+tier never billed us. The aggregate includes wasted calls on purpose: it is what the account spent. The two-page doc quotes the same file.
 
 **Budget and resumption.** A free-tier key caps this model at 200,000 tokens per day and a full structured
-pass spends about 127,000 of them, so the design assumes a run can be interrupted: waits obey
+pass spends about 130,000 of them, so the design assumes a run can be interrupted: waits obey
 the provider's `retry-after` within `provider.max_wait_seconds_per_batch`, a refused scene keeps the
 scenes that answered and is reported as *partially judged*, and a batch whose exact prompt is already in
 the label's call log is replayed rather than re-requested (`--fresh` to force the request). Cost is
-therefore never paid twice for the same answer, and "run it again" is affordable on the day's budget.
+therefore not paid twice for the same **prompt text** - which is a weaker promise than it sounds, see below.
 
 What the cap actually feels like is worth recording, because it is not a wall. Finishing naturalness this
 afternoon: 16 of 18 batches were replayed or answered, and two 8-line batches - the median size, not the
@@ -204,9 +208,16 @@ largest - returned `still throttled (429 after 530s of waits)` and `(429 after 6
 73-token probe in the same window succeeded. A retry of just those two with the wait ceiling lowered to
 90 s failed both again and spent nothing, because the other 16 came from the log. So the budget frees
 token by token as the window rolls: whether a batch answers depends on when you ask, not how big it is.
-The measured consequence is in the artifact - naturalness judged **84 of 100 lines**, the report saying
+The measured consequence was in the artifact - naturalness judged **84 of 100 lines**, the report saying
 "2 of 18 batches refused; 84 lines judged, 16 not" and listing those 16 under *sat in a batch the model
 never answered*, and 16 of the 18 naturalness batches never needing a second payment.
+
+That gap is now closed: naturalness was re-run on 2026-11-07 and judges **100 of 100 lines**, 49 flags
+where the partial pass reported 40. What it cost is the caveat on the paragraph above. The replay key is
+the prompt *text*, and the naturalness prompt quotes the register standard - signing two decisions off
+changed one bracketed prefix, so all 18 batches looked new and the run reported `reused 0` for
+18,985 prompt and 20,765 completion tokens. Editing `data/relationship_sheet.yaml` silently re-prices
+naturalness and relationship; entry 26.
 
 **Human gate.** The human stays the final gate. The tool shortlists risky lines so editors read fewer lines, not zero.
 
@@ -253,23 +264,28 @@ Checked against §14 as of 6 November 2026. The detail lives in `README.md` and 
 | Deliverable | State |
 |---|---|
 | Original test data, 184 lines, hard cases included | done, `data/screenplay/` |
-| Second original screenplay, one episode, unseen by the pipeline | done, `data/new_show_demo/` - rehearsed through the gate at zero requests (`results/new_input_rehearsal_*`); no LLM check has run on it yet |
+| Second original screenplay, one episode, unseen by the pipeline | done, `data/new_show_demo/` - parsed, given its own Step A first pass at 3 requests, and checked by `timing` and `script` at zero requests: 33 flags (`results/new_input_code_*`). No LLM check has produced a valid finding on it yet |
 | Parser + six acceptance tests + format-drift fixture | done, all pass |
 | Corpus statistics replacing the pack-derived ones | done, `docs/corpus_statistics.md` |
 | Stratified 100-line sample, seed recorded, minimums met | done, seed `20261106` |
 | Five checks + baseline control, scene-batched, run log | done and **run against a live model**; tokens measured, cost `null` because the tier is free |
 | Step A first-pass Telugu, two models | done, 18 requests each, 100/100 coverage, 20 lines returned without Telugu script on the default model |
 | Baseline control (Step C) | done: 18 requests, 9,633 prompt / 14,990 completion tokens, 58 problems reported |
-| Structured run (Step C) | done: meaning, relationship and script form complete over all 100 lines; naturalness judged **84 of 100** and reported as partially judged - two 8-line batches stayed `429` through 530 s and 600 s of waiting and the 16 that answered were kept. Timing ran on the same 100 lines but only at a **provisional 3.5 akshara/s passed on the command line** (69 flags, 82% of measured lines over their slot by more than 15%); with `config.yaml` still at `syllables_per_second: null` the check refuses to guess, so that list is a rehearsal of the arithmetic, not a calibrated finding |
-| New-input rerun path | `scripts/run_qa.py --input <file or folder>`; `--merge` re-prices one check without paying for the others; a batch already in the call log is replayed instead of re-requested, and `--fresh` forces a real request. Rehearsed twice at zero requests, artifacts on disk; the LLM half on unseen input waits for a token-budget day |
-| Self-tests | 80 passing, plus `tests/run_ui_test.py` driving the UI under `AppTest` |
-| Review UI with approve / edit / dismiss | done, exercised under `AppTest` |
-| Two-page doc | drafted, `docs/solution_two_pager.md`, with `PENDING` slots where the human numbers belong |
-| Failure log | 20 numbered entries, six of them found only after a real key was wired in |
-| Rate calibration (open item) | **not done** - needs the builder to time ten lines aloud |
-| Step B blind annotation | **not done** - the builder's own judgement; `data/annotation/blind_annotation.csv` is generated, current with the live draft, and empty |
-| Step D scoring, acceptance pass and the GO/NO-GO | **not done** - blocked on Step B, not on tooling |
+| Structured run (Step C) | done: all five checks complete over all 100 lines - naturalness initially judged **84 of 100** and reported as partially judged (two 8-line batches stayed `429` through 530 s and 600 s of waiting and the 16 that answered were kept), then re-run on 2026-11-07 to **100 of 100**, 49 flags where the partial pass had 40. Timing ran on the same 100 lines but only at a **provisional 3.5 akshara/s passed on the command line** (69 flags, 82% of measured lines over their slot by more than 15%); with `config.yaml` still at `syllables_per_second: null` the check refuses to guess, so that list is a rehearsal of the arithmetic, not a calibrated finding |
+| New-input rerun path | `scripts/run_qa.py --input <file or folder>`; `--merge` re-prices one check without paying for the others; a batch already in the call log is replayed instead of re-requested, and `--fresh` forces a real request. Rehearsed at zero requests and then run for real on unseen input, artifacts on disk; the LLM half still has no valid result there, and a run of it spends about a third of a day's token budget |
+| Self-tests | 109 passing, plus `tests/run_ui_test.py` driving the UI under `AppTest`. Two of the new ones exist because of entry 25: they feed the metric functions shapes the bug could not hide in |
+| Review UI with approve / edit / dismiss | done, exercised under `AppTest`. The earlier warning that the edit path could re-fire in a loop was wrong and is retracted: `apply_decisions` in `src/report.py:59-61` sets `edited = True` whenever an edited suggestion is non-empty, and `app.py:185` tests it |
+| Two-page doc | **done, and two pages.** `docs/solution_two_pages.md` is the submitted text, `docs/DramAdapt_QA_solution.pdf` the export, `scripts/make_pdf.py` the build (it fails rather than emitting a third page). `docs/solution_two_pager.md` is kept as the expanded companion every figure in it points back to |
+| Failure log | 26 numbered entries, seven of them found only after a real key was wired in; entry 22 is the assistant fabricating ten rows of the human evaluation, entry 24 is what Step D said when it finally ran, entry 25 is the two ways the scorer flattered the wrong arm and reported a seeded run that never happened, entry 26 is what closing the naturalness coverage gap actually cost |
+| Rate calibration (open item) | **not done** - needs the builder to time ten lines aloud into `data/calibration_readings.csv`, whose `seconds_read_aloud` column is still empty |
+| Register standard | **part signed off, 2026-11-07.** The reviewer set the Joss-to-Edda address to నువ్వు in every episode and fixed the name spellings at కేన్ and హల్లొరాన్; both are recorded in `data/relationship_sheet.yaml` as `reviewer_decisions` and printed into `docs/phase0_results.md` from that file, not pasted. The rest of `draft_paragraph` is still unconfirmed against the episodes, and the Step A draft column was deliberately not rewritten - see entry 22's rule about not editing evidence |
+| Step E seeded errors | **not measured.** `results/structured_seeded_flags.json` has never existed; the numbers previously printed in `results/scores.json` came from the clean run and are withdrawn. The manifest has 9 edits and the command to run them is in the report |
+| Step B blind annotation | **done** - 100/100 rows graded, 81 `needs_revision`, 19 `acceptable`, 83 own-Telugu rewrites. Rows 61-70 were re-annotated on 2026-11-07 after entry 22, and every one of the 100 rows is now audited as shown-verbatim-from-the-file (`scratch/audit_rows_shown.py`, 100/100). Provenance, stated because it changes the weight: the batches were recorded in a chat session and a share of the grades were reviewed from an AI draft rather than written first by the reviewer, so this is human-reviewed AI-suggested annotation, not independent human annotation, and no inter-rater claim is made |
+| Step D scoring and the GO/NO-GO | **done, and it is NO-GO** - `results/scores.json`, `docs/phase0_results.md`, re-scored 2026-11-07 after the naturalness re-run. Structured 0.506 flag precision over 174 flags, 86/158 reviewer issues credited, 80/81 issue lines touched at 0.879 line precision; baseline control 0.897 over 58 flags, 109/158 issues, 52/81 lines. The comparison criterion fails because no severity cut of the structured arm reaches the baseline's typed-flag precision (high-only: 0.536). Recall is now instance-based; the withdrawn flag-over-mixed-count values are kept in the artifact as `recall_legacy_flagcount` (entry 25) |
+| Step D acceptance pass | **not done** - the builder's own approve/dismiss decisions in `app.py`; until they exist, PRD §9's rule for dropping a check cannot be applied and `checks_to_drop: ["relationship"]` is arithmetic, not a decision |
 | Walkthrough video | not done |
 
 `scripts/score.py` refuses to run on an unfilled annotation sheet, so nothing in §6 can be marked
-complete by an accident of tooling.
+complete by an accident of tooling. That guard worked, and it also cost us: everything below it was
+unreachable for the whole build, including one line with a name that had never existed (entry 23). The
+scorer only compiled into real behaviour once the hundredth verdict was in.

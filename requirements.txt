@@ -1,0 +1,8 @@
+# Python 3.13. Everything else is standard library.
+# The QA checks themselves need none of these except PyYAML (sheets and config) and openai (the LLM
+# checks); streamlit and pandas are only for the review UI. Groq is called through the OpenAI-compatible
+# client, so no groq-sdk.
+streamlit==1.58.0
+pandas==3.0.2
+PyYAML==6.0.3
+openai==2.31.0

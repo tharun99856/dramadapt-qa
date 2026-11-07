@@ -22,6 +22,17 @@ ROOT = Path(__file__).resolve().parents[1]
 ALL_CHECKS = ("meaning", "relationship", "timing", "naturalness", "script")
 
 
+def judgeable_lines(lines: list[DialogueLine]) -> list[DialogueLine]:
+    """Lines that actually have a Telugu draft, which is not every line a caller passes in.
+
+    A line with nothing to read is not a finding waiting to be confirmed. Asked to judge one anyway,
+    a model returns a confident "the Telugu is missing" at high severity for a draft that was never
+    attached to the run. That is a coverage gap wearing the clothes of a flag, and the report has no
+    way to tell the two apart afterwards.
+    """
+    return [rec for rec in lines if (rec.telugu or "").strip()]
+
+
 def register_standard() -> str:
     sheet = relationship.relationship_sheet()
     block = sheet.get("telugu_register_standard", {}) or {}
@@ -68,7 +79,7 @@ def run_structured(lines: list[DialogueLine], checks=ALL_CHECKS, *, cfg_path=Non
     log = RunLog(phase, pricing=pricing)
     per_request, token_cap = config_mod.batch_caps(cfg)
     per_request = max_lines_per_request or per_request
-    batches = scene_batches(lines, per_request, token_cap)
+    batches = scene_batches(judgeable_lines(lines), per_request, token_cap)
     llm = LLM(cfg, log, model=model, reuse=reuse) if set(checks) - {"timing", "script"} else None
     margin = float(cfg["telugu"].get("over_tight_margin", 0.15))
     rate = rate_override or config_mod.syllables_per_second(cfg)
@@ -142,7 +153,8 @@ def run_baseline_control(lines: list[DialogueLine], *, cfg_path=None, model: str
     cfg = config_mod.load(cfg_path)
     log = RunLog("baseline", pricing=cfg.get("pricing", {}) or {})
     per_request = max_lines_per_request or int(cfg.get("batching", {}).get("max_lines_per_request", 14))
-    batches = scene_batches(lines, per_request)
+    # Same rule as the structured side, so the two arms read the same input.
+    batches = scene_batches(judgeable_lines(lines), per_request)
     llm = LLM(cfg, log, model=model)
     started = time.time()
     errors: list[dict] = []

@@ -31,13 +31,25 @@ from src.report import write_markdown, write_run_json  # noqa: E402
 from src.console import force_utf8  # noqa: E402
 
 
-def attach_telugu(lines, telugu_file: Path):
-    payload = json.loads(Path(telugu_file).read_text(encoding="utf-8"))
+def attach_from_payload(lines, payload) -> int:
+    """Put a generated or supplied Telugu draft back onto the records every check reads.
+
+    Step A used to write its answers to disk and stop there. The checks then saw an empty Telugu
+    field on lines that had just been translated: timing and script reported nothing to read, and
+    the meaning check called 14 of them "missing" at high severity. Only overwrite where there is
+    something to write, so a partial draft cannot blank out a line another source already filled.
+    """
     items = payload.get("lines") if isinstance(payload, dict) else payload
     by_id = {str(i["line_id"]): str(i.get("telugu", "")).strip() for i in items or [] if i.get("line_id")}
     for rec in lines:
-        rec.telugu = by_id.get(rec.line_id, "")
-    matched = sum(1 for rec in lines if rec.telugu)
+        if text := by_id.get(rec.line_id, ""):
+            rec.telugu = text
+    return sum(1 for rec in lines if rec.telugu)
+
+
+def attach_telugu(lines, telugu_file: Path):
+    payload = json.loads(Path(telugu_file).read_text(encoding="utf-8"))
+    matched = attach_from_payload(lines, payload)
     provenance = payload.get("provenance") if isinstance(payload, dict) else None
     return matched, provenance
 
@@ -100,13 +112,15 @@ def main() -> int:
             telugu_file = None
         else:
             print("no --telugu draft: running Step A to produce a machine first pass ...")
-            payload = translate(parsed.records, cfg, args.model, Path(telugu_file), f"{ap_label}_first_pass",
-                                None, seed=None, reuse=not args.fresh)
-            cov = payload["coverage"]
-            logt = payload["run_log"]
+            fp = translate(parsed.records, cfg, args.model, Path(telugu_file), f"{ap_label}_first_pass",
+                           None, seed=None, reuse=not args.fresh)
+            cov = fp["coverage"]
+            logt = fp["run_log"]
             print(f"step A: {cov['returned']}/{cov['requested']} lines | requests {logt['requests_total']} "
                   f"prompt {logt['prompt_tokens']} completion {logt['completion_tokens']} "
-                  f"| model {payload['provenance']['model']}")
+                  f"| model {fp['provenance']['model']}")
+            matched = attach_from_payload(parsed.records, fp)
+            print(f"telugu attached from step A: {matched}/{len(parsed.records)} lines")
             if cov.get("not_telugu_script"):
                 print(f"  {len(cov['not_telugu_script'])} lines came back with no Telugu letters "
                       f"(the script check flags these)")

@@ -1,15 +1,19 @@
 # DramAdapt QA — pre-dubbing quality gate for localized microdrama
 
-**Two-page solution summary. 6 November 2026.** Build: `README.md`, code in `src/`, run artifacts in
+**Two-page solution summary. 7 November 2026.** Tharun Rathod, roll number 23115034, branch EE, IIT
+Roorkee - Kuku AI Generalist Assignment, Problem 3. **This file is the expanded companion**; the document
+that is submitted is the two-page `docs/solution_two_pages.md`, exported to `docs/DramAdapt_QA_solution.pdf`
+by `python scripts/make_pdf.py`. Build: `README.md`, code in `src/`, run artifacts in
 `results/`, measured statistics in `docs/`. Companion: `PRD.md` (v2) and its addendum.
 
 > **Status of the numbers below.** The prototype and the validation harness are built and tested, and
 > the model runs are real: Step A, the unstructured baseline control and the structured checks all
-> have token-level logs in `results/`. What is **not** done is the human half - Step B blind
-> annotation, the acceptance pass, the speaking-rate calibration and therefore the GO/NO-GO decision.
-> Every slot that depends on them is marked `PENDING` rather than filled with an estimate, because the
-> estimate would be the one number this project exists to measure. Nothing here is a result until it
-> has a file behind it.
+> have token-level logs in `results/`. The human half is now done in part: **the 100-row blind annotation
+> is complete and scored, and the decision it produces is NO-GO.** Still `PENDING` are the reviewer
+> acceptance pass and the speaking-rate calibration; the register standard is **part signed off** (the
+> Joss-to-Edda address form and the two name spellings are decided, the rest is not). Slots that depend on
+> the open items are marked rather than filled with an estimate, because the estimate would be the one
+> number this project exists to measure. Nothing here is a result until it has a file behind it.
 
 ## 1. Problem
 
@@ -28,9 +32,14 @@ Verified industry evidence, all independent of any confidential material:
 - Kuku offers content in Hindi, Tamil, Telugu, Malayalam, Kannada and Bengali. A competitor
   (KadhaiShorts, Tamil) was reported as still exploring dubbing and language adaptation.
 
-The stronger evidence is ours to produce: **the natural error rate a native Telugu reviewer finds in a
-first-pass AI localization of an original screenplay**, measured in Phase 0 Step B. That number is
-`PENDING`, and it is the reason Phase 0 exists rather than a demo.
+The stronger evidence is ours to produce, and it is now measured: a native Telugu reviewer graded **81 of the
+100 sampled lines as `needs_revision`** in a first-pass AI localization of an original screenplay, 19 as
+acceptable, with their own Telugu for 83 of the 100. What that number is and is not: the 100 come from a
+184-line screenplay and were drawn **stratified**, with minimums for short slots, address shifts, threats and
+split sentences, so this is the error rate inside a deliberately risk-enriched sample and not a natural rate
+for an unselected episode. It is one reviewer, one language, no inter-rater agreement, and the grades were
+recorded after review of AI-drafted suggestions rather than written independently (see Disclosures). Full sheet
+at `data/annotation/blind_annotation.csv`, arithmetic at `results/scores.json`.
 
 ## 2. What it is, and what it is not
 
@@ -51,7 +60,7 @@ lines.
 |---|---|---|
 | Meaning preservation | LLM per scene; verdict `same / weakened / strengthened / reversed / missing` + one-line reason | A generic prompt averages this away. Split-sentence chains are judged as whole sentences, because Telugu is verb-final |
 | Relationship & address | Python rules narrow which lines to ask about; LLM judges the Telugu against a relationship sheet the editor confirms | Honorific systems cannot be find-and-replaced. A register shift the sheet does not predict is a flag |
-| Timing | **Python only, zero model calls.** akshara count ÷ speaking rate, against the line's own slot and the gap to the next line | Deterministic, free, and reproducible; validated against hand-timed readings |
+| Timing | **Python only, zero model calls.** akshara count ÷ speaking rate, against the line's own slot and the gap to the next line | Deterministic, free, and reproducible. The speaking rate is still a provisional 3.5 akshara/s override: `data/calibration_readings.csv` has its ten lines listed and `seconds_read_aloud` empty, so this is calibrated arithmetic waiting for hand-timed readings, not a validated rate |
 | Cultural naturalness | LLM, **advisory only** - "possibly unnatural, human review recommended" | Never a score or a percentage. Reported and priced separately because it is the weakest check |
 | Script form | **Python only, zero model calls.** Counts Unicode letters per line | Added after the live first pass returned 20 of 100 lines as Telugu words in Latin letters. A model sees a correct Telugu sentence there; a dubbing artist sees nothing readable |
 
@@ -77,13 +86,29 @@ Chosen, not assigned - and the brief asks for the reasoning, so it is written do
   lines annotated blind is a real number, and the timing check is arithmetic.
 - **It re-runs on anything.** `scripts/run_qa.py --input <file or folder>` takes a show nobody has
   seen and produces the same artifacts, priced from the run log - which is what the interview asks for.
-  The rerun has been rehearsed on a second original episode and on the full corpus at zero requests
-  (`results/new_input_rehearsal_*`, `results/qa_rehearsal_*`); the three LLM checks on unseen input are
-  the part still waiting on a token-budget day.
+  On a second original screenplay the parser read 34 lines with 0 unparsed blocks, Step A translated all
+  34 for 3 requests, and the two checks that need no model raised 33 flags at zero requests
+  (`results/new_input_code_*`). The three LLM checks there are still waiting on a token-budget day, and
+  their one attempt was voided by the bug in failure log entry 21.
 
-The alternative I would accept: if blind annotation says the first-pass Telugu is basically fine, this
-should shrink to the timing check alone and stop pretending to need four LLM calls. That is why the
-project has a GO/NO-GO gate instead of a demo.
+The alternative I said I would accept: if blind annotation says the first-pass Telugu is basically fine, this
+should shrink to the timing check alone and stop pretending to need four LLM calls. That is why the project
+has a GO/NO-GO gate instead of a demo. **It ran, and the answer was two-edged.** The premise for shrinking
+failed - 81 of 100 lines are not basically fine - but the gate still returned **NO-GO**, because the
+structured arm has to beat the unstructured control at similar precision on *typed* flags and it does not:
+structured **0.506** flag precision over 174 flags against the control's **0.897** over 58, with no severity
+cut of the structured arm reaching 0.897 (the best cut, high-severity only, reaches 0.536).
+
+Where the failure actually sits became clear only after the arithmetic was fixed (failure log entry 25). On
+issues, the control credits 109 of the reviewer's 158 and the structured arm 86. On lines, it is the other way
+round: the structured arm put a flag on **80 of the 81** lines the reviewer marked, at 0.879 precision on the
+lines it touched, while the control touched 52 of 81 at 0.897. One line, `E05-L003`, no check touched at all.
+Per type, `script` found 22 of the reviewer's 24
+with zero false positives and no model call, `timing` found 18 of 19, `naturalness` 31 of 58, `relationship`
+5 of 11 and `meaning` 10 of 46. So the honest sentence is not "decomposition does not work": it is that this
+gate is good at saying *which lines to re-read* and weak at saying *what is wrong with them*, and the criterion
+pre-registered in §9 measures the second thing. The recorded decision stays NO-GO; it is not being relabelled
+after the fact. `results/scores.json`, `docs/phase0_results.md`.
 
 ## 5. What is built and verified now
 
@@ -99,12 +124,14 @@ project has a GO/NO-GO gate instead of a demo.
   8 voice-over and 8 off-screen lines, 13 speaker labels resolving to 11 characters.
 - **A stratified 100-line sample**, seed `20261106`, all category minimums met, recorded in
   `results/selection_manifest.json` and `docs/category_audit.md`.
-- **80 self-tests passing** (`tests/run_tests.py`) over windows, chains, akshara counts, scene
+- **109 self-tests passing** (`tests/run_tests.py`) over windows, chains, akshara counts, scene
   batching, script detection, precision/recall, the severity sweep, acceptance-rate arithmetic, that a
   model's refusal is counted as coverage rather than as a finding, that a refused scene does not
   discard the scenes that answered, that a report whose lines were never fed to a check cannot
-  print a clean-coverage sentence, and that a `--merge` re-render cannot delete the record that a
-  check was only partially judged.
+  print a clean-coverage sentence, that a generated draft reaches the records the checks read, and that a
+  `--merge` re-render cannot delete the record that a
+  check was only partially judged, that a recall numerator and its denominator count the same kind of thing
+  for both arms, and that a missing seeded artifact is refused instead of quietly scored against the clean run.
 - **A working review UI** (`app.py`), exercised end-to-end under Streamlit's own test harness.
 - **Step A run for real, twice.** 100 lines, 18 scene-batched requests per model, one fixed prompt,
   temperature 0, on a free-tier Groq key: `openai/gpt-oss-120b` (34,599 prompt / 21,137 completion
@@ -138,6 +165,26 @@ For `I set it down an hour ago.` - a 1.4 s slot - the default model returned
 output *looks* wrong. Only measuring it shows it, which is the whole argument for a timing check that
 runs in plain Python and costs nothing.
 
+The worst failure was in the evaluation layer, and it is why the numbers above carry a re-annotation. While
+presenting the blind sheet in blocks, the assistant fabricated the entire content of block 7: ten English
+lines and ten Telugu drafts that exist in no file in this repository, shown as sheet rows A061-A070. The
+reviewer graded them in good faith, and their verdicts landed on ten real rows they had never seen. It
+surfaced 30 rows later, when a `corrected_line` could not describe its own English column; the check that
+proved it is mechanical - re-read the transcript and test, per row, whether that row's real fields ever
+appeared in anything shown. **90 of 100 passed; those ten failed.** The answers were cleared rather than
+patched, because a severity earned on an invented sentence transfers to nothing, and kept at
+`scratch/ghost_block7_answers.json`; the block was re-graded from the file through a presenter script that
+reads the CSV, so row content cannot come from memory again. Three sheet-wide claims built from those ghost
+rows are withdrawn, including the two examples that were going to argue nothing checks whether a Telugu word
+exists - that limitation is now an argument with no evidenced row, and is not presented as a finding.
+`docs/failure_log.md` entry 22, with entry 23 for the scorer that then crashed on the first run its own guard
+had ever allowed, and entry 25 for the two things that only came out when the arithmetic was re-derived by hand
+after the reviewer asked whether the sheet could be trusted: a recall formula whose denominator counted 210
+things for a 158-issue sheet, which understated our own control arm, and a seeded-error block that had been
+reading the *unseeded* run's flags all along because one artifact was missing and `or s_flags` answered for it.
+Both made the submission look better than the evidence did, and neither was caught by the 91 tests that existed,
+because each one fed the functions shapes the bug could not appear in.
+
 A second one, because it is the kind of failure a submission normally hides: the builder asked for
 `llama-3.1-8b-instant`, and that model was retired from Groq's free tier on 2026-08-16. It returned
 404 `model_not_found`, and it is not in the account's model list. We could not benchmark the model
@@ -156,22 +203,27 @@ reviewer. The orchestration, report, human-control model and run log are shared.
 scene; baseline one per scene; meaning, relationship and naturalness one per scene each; timing and
 script form **zero**, because both count things instead of asking about them. Prompt tokens per request,
 measured from the per-request logs in `results/`: unstructured baseline **535**; meaning **1,055**;
-naturalness **1,004**; relationship **1,727**; first pass (Step A) **1,922**. So the generic one-prompt
+naturalness **1,055**; relationship **1,727**; first pass (Step A) **1,922**. So the generic one-prompt
 control costs about **42%** of what the structured checks cost, and about half of what the cheapest
 structured check costs — it is not handed the relationship sheet, the chain instruction, the speaker
 history or the register standard. Any argument that structure pays for itself has to beat that gap, and
 the acceptance rate plus the per-check precision is what decides it. The whole experiment so far cost
-**109 requests, 150,791 prompt and 101,498 completion tokens**, and `null` dollars, because a free tier
-that never billed us should not be reported as if it did.
+**134 requests, 181,911 prompt and 129,851 completion tokens**, and `null` dollars, because a free tier
+that never billed us should not be reported as if it did. Seven of those requests bought findings we then
+threw away (failure log entry 21) and eighteen bought a coverage gap closed at full price (entry 26); the
+total is left to include both.
 
 The binding constraint is budget, not speed: this free tier caps the model at **200,000 tokens per day**
-and a full structured pass costs about **127,000** of them (meaning 35,571 + relationship 54,292 +
-naturalness 37,332 over 18 batches each), so the account affords roughly **1.5 passes a day** - which is
+and a full structured pass costs about **130,000** of them (meaning 35,571 + relationship 54,292 +
+naturalness 39,750 over 18 batches each), so the account affords roughly **1.5 passes a day** - which is
 why the runner replays a batch whose exact prompt is already in the call log rather than paying for it
 twice, and why one refused scene now costs only that scene. The cap is a rolling window, not a wall:
-naturalness ended at **84 of 100 lines** because two ordinary 8-line batches refused 530 s and 600 s of
-waiting while 16 others answered and a 73-token probe went through in the same minute. Request totals and
-token totals per phase are
+naturalness first ended at **84 of 100 lines** because two ordinary 8-line batches refused 530 s and 600 s
+of waiting while 16 others answered and a 73-token probe went through in the same minute. Re-running it the
+next day closed that gap - **100 of 100 lines judged, 49 flags where the partial pass had 40** - and it is
+worth recording what that cost, because the replay did not save us: signing the register standard had
+changed one bracketed prefix inside the naturalness prompt, so none of the 18 batches matched the log and
+all 18 were paid for again. Request totals and token totals per phase are
 in `results/run_log.json` and `results/structured_run.json`.
 `docs/public_evidence.md` lists current per-1M prices for both models, so a paid run is extrapolatable
 from the tokens above.
@@ -183,9 +235,13 @@ alphabet and a model ignoring a constraint it was handed; and, found by running 
 reading it, `AppTest` raising `StreamlitDuplicateElementKey` because two different timing problems on
 one line had been given one id - which would have silently overwritten an editor's decision.
 
-**Disclosures.** One evaluator (the builder, native-level Telugu), so no inter-rater agreement is
-claimed; 100 lines; one language pair; two model families, because one provider account does not offer
-the model the assignment names as its example; test data is an original screenplay rather than any
+**Disclosures.** One Telugu evaluator (the builder, native-level), so no inter-rater agreement is claimed; and
+their verdicts, which are the whole human half of this result, were recorded in batches inside a chat session
+with an AI assistant, where a share of the grades and rewrites were drafted by the assistant and then reviewed,
+changed or accepted by the reviewer. Every row carries the reviewer's approval, so the judgement on the sheet is
+the reviewer's, but it is human-reviewed AI-suggested annotation rather than independent human annotation and
+must not be read as the latter; 100 lines; one language pair; two model families, because one provider account
+does not offer the model the assignment names as its example; test data is an original screenplay rather than any
 production localization; and the Phase 0 result set is not yet complete. Two timing statistics in the
 addendum were measured once from Kuku's confidential input pack and are **struck from this document**,
 replaced by our own corpus numbers above.

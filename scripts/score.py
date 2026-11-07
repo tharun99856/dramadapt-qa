@@ -40,6 +40,7 @@ def main() -> int:
     ap.add_argument("--seeded-flags", default=str(ROOT / "results" / "structured_seeded_flags.json"))
     ap.add_argument("--acceptance", default=str(ACCEPTANCE_CSV))
     ap.add_argument("--out", default=str(ROOT / "results" / "scores.json"))
+    ap.add_argument("--report", default=str(ROOT / "docs" / "phase0_results.md"))
     args = ap.parse_args()
 
     annotations = load_annotations(Path(args.annotations))
@@ -83,13 +84,31 @@ def main() -> int:
 
     seeded = {}
     seed_manifest = load_json(Path(args.seeded_manifest))
-    seeded_flags = load_json(Path(args.seeded_flags))
+    seeded_flags_path = Path(args.seeded_flags)
+    seeded_flags = load_json(seeded_flags_path)
     if seed_manifest.get("edits"):
-        seeded = metrics.seeded_recall(seed_manifest, seeded_flags.get("flags", []) or s_flags)
+        # This used to fall back to the clean run's flags. That scored the seeded lines against a
+        # draft that never contained the seeded errors and printed 1.0 recalls, so it now refuses.
+        if seeded_flags.get("flags"):
+            seeded = metrics.seeded_recall(seed_manifest, seeded_flags["flags"])
+        else:
+            seeded = {
+                "status": "not measured",
+                "reason": f"{seeded_flags_path.name} does not exist, so nothing here was run against "
+                          f"the seeded draft. The {len(seed_manifest['edits'])} edits in "
+                          f"{Path(args.seeded_manifest).name} were never scored.",
+                "command": "python scripts/run_seeded.py && python scripts/run_structured.py "
+                           "--telugu-file data/telugu/first_pass_seeded.json --label structured_seeded",
+            }
 
     thresholds = {
         "genuine_issues_at_least_10": {"value": genuine, "pass": genuine >= 10},
-        "structured_recall_at_least_0_5": {"value": s_score["recall"], "pass": (s_score["recall"] or 0) >= 0.5},
+        "structured_recall_at_least_0_5": {
+            "value": s_score["recall"],
+            "basis": "reviewer (line, type) instances credited / instances the reviewer reported",
+            "value_legacy_flagcount": s_score["recall_legacy_flagcount"],
+            "pass": (s_score["recall"] or 0) >= 0.5,
+        },
         "structured_beats_baseline_at_similar_precision": {
             "baseline_precision": b_score["precision"],
             "baseline_recall": b_score["recall"],
@@ -102,6 +121,18 @@ def main() -> int:
                                                      "pass": "naturalness" in s_per_check},
         "acceptance_rate_available": {"checks_with_decisions": sorted(acceptance), "pass": bool(acceptance)},
     }
+    thresholds["line_level_reported"] = {
+        "structured": s_score["line_level"], "baseline": b_score["line_level"], "pass": True,
+        "note": "did the system put any flag on a line the reviewer marked, and how many of the "
+                "lines it touched were ones the reviewer marked - the operational reading",
+    }
+    thresholds["instance_coverage_reported"] = {
+        "structured": f"{s_score['instances_found']}/{s_score['instances_total']}",
+        "baseline": f"{b_score['instances_found']}/{b_score['instances_total']}",
+        "pass": True,
+        "note": "one untyped baseline flag credits every type the reviewer named on that line, so "
+                "the baseline leads on this row while flagging fewer issue lines",
+    }
     core = ["genuine_issues_at_least_10", "structured_recall_at_least_0_5",
             "structured_beats_baseline_at_similar_precision"]
     decision = "GO" if all(thresholds[k]["pass"] for k in core) else "NO-GO"
@@ -112,13 +143,18 @@ def main() -> int:
         caveats.append("at least one check failed to complete, so its lines were not judged")
     if not seed_manifest.get("edits"):
         caveats.append("seeded-error run not done")
-    if s["flags"] == 0 and genuine:
+    elif seeded.get("status") == "not measured":
+        caveats.append("seeded errors not measured: no run against the seeded draft exists, "
+                       "so any seeded number in a document is unsupported")
+    if s_score["flags"] == 0 and genuine:
         caveats.append("structured QA produced no flags at all against "
                        f"{genuine} human-confirmed issues")
     dropped = [check for check, res in s_per_check.items()
                if (res["precision"] is not None and res["precision"] < 0.25) or
                (acceptance.get(check, {}).get("acceptance_rate") is not None
                 and acceptance[check]["acceptance_rate"] < 0.2)]
+
+    reviewer_std = _register_standard()
 
     out = {
         "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -127,18 +163,35 @@ def main() -> int:
             "annotated_lines": len(annotations),
             "structured_file": Path(args.structured).name,
             "baseline_file": Path(args.baseline).name,
-            "structured_model": structured.get("model"),
-            "baseline_model": baseline.get("model"),
+            "structured_model": structured.get("model")
+                                or (structured.get("run_log") or {}).get("models"),
+            "baseline_model": baseline.get("model")
+                              or (baseline.get("run_log") or {}).get("models"),
             "sample_seed": meta.get("seed"),
             "telugu_provenance": meta.get("telugu_provenance"),
             "structured_run_log": structured.get("run_log"),
             "baseline_run_log": baseline.get("run_log"),
+            "seeded_flags_file": (seeded_flags_path.name if seeded_flags.get("flags") else None),
         },
         "reviewer": {
             "genuine_issue_lines": genuine,
             "issue_types": _type_counts(issues),
             "ambiguous_verdict_rows": metrics.ambiguous(annotations),
-            "note": "one evaluator, one language, 100 lines - no inter-rater agreement is claimed",
+            "note": (
+                "one Telugu evaluator (the builder), one language, 100 lines. No inter-rater "
+                "agreement is claimed. Provenance of these verdicts, stated plainly because it "
+                "affects how much weight they carry: they were recorded in ten batches in a chat "
+                "session with an AI assistant, and a share of them were recorded against a grade "
+                "the assistant drafted and the reviewer then reviewed, changed or accepted. The "
+                "reviewer approved every row, so the judgement on the sheet is the reviewer's, but "
+                "this is human-reviewed AI-suggested annotation, not independent human annotation, "
+                "and it must not be described as that. One block (rows 61-70) was first graded "
+                "against ten lines the assistant invented and has been re-graded against the file; "
+                "see docs/failure_log.md entry 22."
+            ),
+            "address_rule": reviewer_std["address_rule"],
+            "name_spellings": reviewer_std["name_spellings"],
+            "register_standard_status": reviewer_std["status"],
         },
         "structured": {"overall": s_score, "per_check": s_per_check, "severity_sweep": sweep_s,
                        "errors": structured.get("errors", [])},
@@ -154,16 +207,40 @@ def main() -> int:
     }
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
-    (ROOT / "docs" / "phase0_results.md").write_text(render(out, lines), encoding="utf-8")
+    report_path = Path(args.report)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(render(out, lines), encoding="utf-8")
 
     print(f"genuine issues found by the reviewer: {genuine}/100")
     print(f"structured: precision {s_score['precision']} recall {s_score['recall']} "
-          f"({s_score['flags']} flags, {s_score['false_positive_flags']} false)")
-    print(f"baseline  : precision {b_score['precision']} recall {b_score['recall']} ({b_score['flags']} flags)")
+          f"({s_score['instances_found']}/{s_score['instances_total']} instances, "
+          f"{s_score['line_level']['issue_lines_found']}/{s_score['line_level']['issue_lines_total']} lines, "
+          f"{s_score['flags']} flags, {s_score['false_positive_flags']} false)")
+    print(f"baseline  : precision {b_score['precision']} recall {b_score['recall']} "
+          f"({b_score['instances_found']}/{b_score['instances_total']} instances, "
+          f"{b_score['line_level']['issue_lines_found']}/{b_score['line_level']['issue_lines_total']} lines, "
+          f"{b_score['flags']} flags)")
     print(f"structured at baseline precision: {beats}")
     print(f"decision: {decision}   checks to drop: {dropped or 'none'}")
-    print(f"wrote {Path(args.out).name} and docs/phase0_results.md")
+    print(f"wrote {Path(args.out).name} and {report_path.name}")
     return 0
+
+
+def _register_standard() -> dict:
+    """The reviewer's sign-off decisions, read from the sheet the relationship check also reads.
+
+    These are printed into the generated report from data rather than pasted by hand, because a
+    hand-written line in docs/phase0_results.md is deleted by the next run of this script.
+    """
+    from src.corpus import relationship_sheet
+
+    block = relationship_sheet().get("telugu_register_standard") or {}
+    decided = [d for d in (block.get("reviewer_decisions") or []) if isinstance(d, dict)]
+    by_id = {d.get("id"): d for d in decided}
+    spellings = {k: v for d in decided for k, v in d.items() if k in ("caine", "halloran")}
+    return {"address_rule": (by_id.get("joss_addresses_edda") or {}).get("report_sentence", ""),
+            "name_spellings": spellings,
+            "status": block.get("status", "")}
 
 
 def _decisions(path: Path) -> dict:
@@ -202,22 +279,48 @@ def render(out: dict, lines) -> str:
         "",
         f"- Lines needing revision: **{out['reviewer']['genuine_issue_lines']} of {out['inputs']['annotated_lines']}**",
         f"- Issue types: " + ", ".join(f"{k}={v}" for k, v in sorted(out["reviewer"]["issue_types"].items())),
-        f"- Evaluator: one native Telugu reviewer (the builder). No inter-rater agreement is claimed.",
+        f"- Evaluator: {out['reviewer']['note']}",
+        "",
+        "## Reviewer standard, as decided (data/relationship_sheet.yaml, read at run time)",
+        "",
+        f"- Status: {out['reviewer']['register_standard_status']}",
+        f"- {out['reviewer']['address_rule']}",
+        "- Name spellings: " + ", ".join(f"{k}={v}" for k, v in sorted(out["reviewer"]["name_spellings"].items())),
+        "- The Step A draft column keeps its own variants on purpose: it is byte-identical to "
+        "`data/telugu/first_pass.json`, and saved flags quote it, three of them `script` flags that "
+        "exist only because the draft left a name in Latin script. Normalising it there would break "
+        "that evidence, so the standard is recorded as a decision, not written over the output.",
         "",
         "## The two systems on identical inputs",
         "",
-        "| system | flags | precision | recall | false positives | missed |",
-        "|---|---|---|---|---|---|",
-        f"| DramAdapt structured | {s['flags']} | {s['precision']} | {s['recall']} | {s['false_positive_flags']} | {s['missed_human_issues']} |",
-        f"| generic single-prompt baseline | {b['flags']} | {b['precision']} | {b['recall']} | {b['false_positive_flags']} | {b['missed_human_issues']} |",
+        "Two readings are given because they answer different questions. Instance coverage asks how "
+        "much of what the reviewer found each system named; line level asks whether the system put a "
+        "flag on a line the reviewer marked, which is what a dubbing director actually experiences.",
+        "",
+        "| system | flags | precision | instances credited | recall (instances) | issue lines found | line recall | line precision | false positives |",
+        "|---|---|---|---|---|---|---|---|---|",
+        f"| DramAdapt structured | {s['flags']} | {s['precision']} | {s['instances_found']}/{s['instances_total']} "
+        f"| {s['recall']} | {s['line_level']['issue_lines_found']}/{s['line_level']['issue_lines_total']} "
+        f"| {s['line_level']['recall']} | {s['line_level']['precision']} | {s['false_positive_flags']} |",
+        f"| generic single-prompt baseline | {b['flags']} | {b['precision']} | {b['instances_found']}/{b['instances_total']} "
+        f"| {b['recall']} | {b['line_level']['issue_lines_found']}/{b['line_level']['issue_lines_total']} "
+        f"| {b['line_level']['recall']} | {b['line_level']['precision']} | {b['false_positive_flags']} |",
+        "",
+        f"Recall here is instances credited over instances reported. The figure previously submitted as "
+        f"\"recall\" divided a flag count by a mixed denominator and read {s['recall_legacy_flagcount']} "
+        f"for structured and {b['recall_legacy_flagcount']} for baseline against a true instance count of "
+        f"{s['instances_total']}; both arms' old denominators ({s['legacy_denominator_was']} and "
+        f"{b['legacy_denominator_was']}) counted something other than reviewer issues.",
         "",
         "## Per check",
         "",
-        "| check | flags | precision | recall | false positives |",
-        "|---|---|---|---|---|",
+        "| check | flags | precision | of its own type | type recall | overall recall | false positives |",
+        "|---|---|---|---|---|---|---|",
     ]
     for check, res in out["structured"]["per_check"].items():
-        head.append(f"| {check} | {res['flags']} | {res['precision']} | {res['recall']} | {res['false_positive_flags']} |")
+        head.append(f"| {check} | {res['flags']} | {res['precision']} | "
+                    f"{res.get('type_instances_found', '?')}/{res.get('type_instances_total', '?')} "
+                    f"| {res.get('type_recall')} | {res['recall']} | {res['false_positive_flags']} |")
     head += [
         "",
         "## Comparison at similar precision",
@@ -245,12 +348,21 @@ def render(out: dict, lines) -> str:
                  "whether a flag is *useful*, not just whether it fires - fill in the acceptance sheet and re-run.",
                  "", "Sheet: `python scripts/make_acceptance_sheet.py`"]
     head += ["", "## Seeded errors (separate from the main result)", ""]
-    if out["seeded_errors"]:
-        head += ["| expected check | seeded | detected | recall | which checks fired |", "|---|---|---|---|---|"]
-        for check, row in out["seeded_errors"].items():
-            head.append(f"| {check} | {row['seeded']} | {row['detected']} | {row['recall']} | "
+    seeded = out["seeded_errors"]
+    if seeded.get("status") == "not measured":
+        head += [f"**Not measured.** {seeded['reason']}", "",
+                 f"To run it for real: `{seeded['command']}`", ""]
+    elif seeded:
+        head += [f"From `{out['inputs']['seeded_flags_file']}`.", "",
+                 "| expected check | seeded | caught by that check | recall (that check) "
+                 "| caught by any check | which checks fired |", "|---|---|---|---|---|---|"]
+        for check, row in seeded.items():
+            head.append(f"| {check} | {row['seeded']} | {row['detected_by_expected_check']} | "
+                        f"{row['recall']} | {row['detected_by_any_check']} | "
                         + ", ".join(f"{k}={v}" for k, v in row["by_check"].items()) + " |")
-        head += ["", "Seeded errors are blunter than real ones. They measure detection, not product value."]
+        head += ["", "Seeded errors are blunter than real ones. They measure detection, not product value.",
+                 "The two recall columns differ on purpose: a flag from the wrong check is not the "
+                 "check working, it is the line being noisy."]
     else:
         head.append("No seeded run recorded yet.")
     head += ["", "## Thresholds and decision", ""]

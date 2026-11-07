@@ -3,8 +3,31 @@
 # The relationship check reads this file; it never invents an expected register on its own.
 
 telugu_register_standard:
-  status: DRAFT - needs the builder's sign-off (addendum open item 3)
+  status: PART-SIGNED-OFF - two decisions are the reviewer's own (see reviewer_decisions);
+    the rest of draft_paragraph is still unconfirmed against the episodes
   decision: preserve the period setting; period-appropriate Telugu in the style of dubbing
+  reviewer_decisions:
+    - id: joss_addresses_edda
+      decided: "2026-11-07"
+      report_sentence: >-
+        Joss Marek addresses Edda Halloran with the singular informal నువ్వు in every episode,
+        because he is a rough bargeman speaking to a young woman he is close to - the reviewer's
+        decision of 2026-11-07, which supersedes the draft note limiting the informal form to
+        episode 4 onward.
+      settles: the fork left open by annotation rows A062 and A099, where the same line could be
+        read as నువ్వు or మీరు
+      effect_on_checks: Edda-to-Joss address is unchanged (formal until the screenplay marks the
+        first-name shift); only the Joss-to-Edda expectation changes
+    - id: name_spellings
+      decided: "2026-11-07"
+      caine: కేన్
+      halloran: హల్లొరాన్
+      note: >-
+        These are the reviewer's own spellings and already hold across all 83 corrected_line
+        values, so no reviewer text needed changing. The Step A draft keeps its variants: కెయిన్
+        twice, Latin Caine twice, హాలొరన్ and హల్లొరన్ once each, Latin Halloran once. That column
+        is byte-identical to data/telugu/first_pass.json and 23 saved flags quote it, three of them
+        script flags that exist only because the draft left the name in Latin script.
   draft_paragraph: >-
     Target is a solemn, dubbing-era Telugu register: second-person plural honorific forms
     (meeku / vaaru / gaaRu verb endings) between Edda and Mistress Caine, Silas Vane,
@@ -87,7 +110,9 @@ relationships:
     episodes: 1-6
     expected_register: plain, familiar without being insolent
     expected_address_terms: ["Edda"]
-    confirmed: false
+    expected_telugu_address: నువ్వు
+    confirmed: true
+    confirmed_by: reviewer decision 2026-11-07, recorded under telugu_register_standard
 
   - speaker: Delia
     listener: Edda Halloran

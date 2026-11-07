@@ -10,11 +10,11 @@
     "priced": false,
     "models": []
   },
-  "_updated": "2026-11-06T15:00:18+00:00",
+  "_updated": "2026-11-07T07:56:03+00:00",
   "_aggregate": {
-    "requests_total": 109,
-    "prompt_tokens": 150791,
-    "completion_tokens": 101498,
+    "requests_total": 134,
+    "prompt_tokens": 181911,
+    "completion_tokens": 129851,
     "cost_usd": null
   },
   "dry_run_no_key": {
@@ -140,16 +140,16 @@
     "models": []
   },
   "structured": {
-    "requests_total": 55,
-    "requests_measured": 55,
+    "requests_total": 73,
+    "requests_measured": 73,
     "requests_unmeasured_provenance": 0,
     "by_kind": {
       "meaning": 18,
       "relationship": 18,
-      "naturalness": 19
+      "naturalness": 37
     },
-    "prompt_tokens": 69143,
-    "completion_tokens": 60126,
+    "prompt_tokens": 88128,
+    "completion_tokens": 80891,
     "cost_usd": null,
     "priced": false,
     "models": [
@@ -168,6 +168,49 @@
     "models": []
   },
   "qa_rehearsal": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "new_input_live_first_pass": {
+    "requests_total": 3,
+    "requests_measured": 3,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {
+      "first_pass": 3
+    },
+    "prompt_tokens": 4812,
+    "completion_tokens": 3789,
+    "cost_usd": null,
+    "priced": false,
+    "models": [
+      "openai/gpt-oss-120b"
+    ]
+  },
+  "new_input_live": {
+    "requests_total": 4,
+    "requests_measured": 4,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {
+      "meaning": 1,
+      "relationship": 2,
+      "naturalness": 1
+    },
+    "prompt_tokens": 7323,
+    "completion_tokens": 3799,
+    "cost_usd": null,
+    "priced": false,
+    "models": [
+      "openai/gpt-oss-120b"
+    ]
+  },
+  "new_input_code": {
     "requests_total": 0,
     "requests_measured": 0,
     "requests_unmeasured_provenance": 0,

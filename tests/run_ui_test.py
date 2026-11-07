@@ -67,6 +67,20 @@ def main() -> int:
             elif decisions.exists():
                 decisions.unlink()
 
+    import app as app_module
+
+    messages: list[str] = []
+
+    def read_only():
+        raise OSError("errno 30: Read-only file system")
+
+    check("a failed write is reported instead of raised",
+          app_module.attempt_write("record that decision", read_only, messages.append), (False, None))
+    check("and the reader is told what to do about it",
+          ("Read-only" in messages[0], "Export" in messages[0]), (True, True))
+    check("a successful write passes its value through",
+          app_module.attempt_write("write the report", lambda: "path", messages.append), (True, "path"))
+
     print(f"run under test: {label} ({len(flags)} flags)")
     print(f"{len(PASS)} passed, {len(FAIL)} failed")
     for f in FAIL:

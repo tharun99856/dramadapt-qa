@@ -77,6 +77,18 @@ def save_decision(flag: dict, status: str, edited: str) -> None:
             writer.writerow({col: rows[key].get(col, "") for col in FLAG_COLUMNS})
 
 
+def attempt_write(action: str, fn, report) -> tuple[bool, object]:
+    """A hosted demo usually has a read-only filesystem, and a saved editor decision is not the
+    place to discover that with a traceback. Returns (ok, value); `report` gets the explanation."""
+    try:
+        return True, fn()
+    except OSError as exc:
+        report(f"Could not {action}: {exc}. This filesystem is read-only, so the change lives only in "
+               "this browser session - use the Export panel to download the file and keep decisions "
+               "locally, where they can be committed.")
+        return False, None
+
+
 def main() -> None:
     st.set_page_config(page_title="DramAdapt QA", layout="wide")
     st.title("DramAdapt QA - pre-dubbing quality gate")
@@ -171,9 +183,14 @@ def main() -> None:
             edited = st.text_input("edited correction", value=flag.get("suggestion", "") if current == "edited" else "",
                                    key=f"{flag['flag_id']}_edit")
             if choice != current or (choice == "edited" and edited and not flag.get("edited")):
-                save_decision(flag, choice, edited if choice == "edited" else "")
-                st.toast(f"{flag['flag_id']} -> {choice}")
-                st.rerun()
+                ok, _ = attempt_write(
+                    f"record {flag['flag_id']} as {choice}",
+                    lambda f=flag, c=choice, e=(edited if choice == "edited" else ""):
+                        save_decision(f, c, e),
+                    st.error)
+                if ok:
+                    st.toast(f"{flag['flag_id']} -> {choice}")
+                    st.rerun()
             if flag.get("editor_action_ts"):
                 st.caption(f"last editor action: {flag['editor_action_ts']}")
 
@@ -188,9 +205,11 @@ def main() -> None:
             edited = st.data_editor(df, hide_index=True, width="stretch",
                                     column_config={"confirmed": st.column_config.CheckboxColumn("confirmed")})
             if st.button("Save confirmations"):
-                write_sheet_edits(edited.to_dict("records"))
-                st.success("saved data/relationship_sheet_edits.csv (the YAML sheet itself is untouched)")
-                st.rerun()
+                ok, _ = attempt_write("save the sheet confirmations",
+                                      lambda: write_sheet_edits(edited.to_dict("records")), st.error)
+                if ok:
+                    st.success("saved data/relationship_sheet_edits.csv (the YAML sheet itself is untouched)")
+                    st.rerun()
         else:
             st.write("no rows in data/relationship_sheet.yaml")
         block = sheet.get("telugu_register_standard", {})
@@ -199,9 +218,11 @@ def main() -> None:
         status = st.text_input("status", block.get("status", ""))
         para = st.text_area("register standard", block.get("draft_paragraph", ""), height=180)
         if st.button("Sign off / save register standard"):
-            sign_off_register_standard(para, status)
-            st.success("saved data/register_standard_override.json")
-            st.rerun()
+            ok, _ = attempt_write("save the register standard",
+                                  lambda: sign_off_register_standard(para, status), st.error)
+            if ok:
+                st.success("saved data/register_standard_override.json")
+                st.rerun()
 
     with st.expander("Run checks now"):
         checks = st.multiselect("checks", list(ALL_CHECKS), default=list(ALL_CHECKS))
@@ -225,11 +246,17 @@ def main() -> None:
         st.download_button("decisions CSV", DECISIONS.read_text(encoding="utf-8")
                            if DECISIONS.exists() else "", file_name="decisions.csv", mime="text/csv")
         if st.button("Write Markdown report from this run"):
-            path = write_markdown(payload, lines, RESULTS / f"{label}_report.md")
-            st.success(f"wrote {path.relative_to(ROOT)}")
+            ok, path = attempt_write("write the report file",
+                                     lambda: write_markdown(payload, lines, RESULTS / f"{label}_report.md"),
+                                     st.error)
+            if ok:
+                st.success(f"wrote {path.relative_to(ROOT)}")
         if st.button("Write run JSON (with counts)"):
-            path = write_run_json(payload, RESULTS / f"{label}_run.json")
-            st.success(f"wrote {path.relative_to(ROOT)}")
+            ok, path = attempt_write("write the run JSON",
+                                     lambda: write_run_json(payload, RESULTS / f"{label}_run.json"),
+                                     st.error)
+            if ok:
+                st.success(f"wrote {path.relative_to(ROOT)}")
 
 
 def write_payload_ui(payload: dict) -> Path:

@@ -1,7 +1,7 @@
 {
-  "generated": "2026-11-06T15:00:18+00:00",
+  "generated": "2026-11-07T07:56:03+00:00",
   "phase": "structured",
-  "model": null,
+  "model": "openai/gpt-oss-120b",
   "source": {
     "telugu_file": "data\\telugu\\first_pass.json",
     "telugu_provenance": {
@@ -18,51 +18,533 @@
   },
   "batching": {
     "batches": 18,
-    "requests": 55
+    "requests": 73
   },
   "run_log": {
-    "requests_total": 55,
-    "requests_measured": 55,
+    "requests_total": 73,
+    "requests_measured": 73,
     "requests_unmeasured_provenance": 0,
     "by_kind": {
       "meaning": 18,
       "relationship": 18,
-      "naturalness": 19
+      "naturalness": 37
     },
-    "prompt_tokens": 69143,
-    "completion_tokens": 60126,
+    "prompt_tokens": 88128,
+    "completion_tokens": 80891,
     "cost_usd": null,
     "priced": false,
     "models": [
       "openai/gpt-oss-120b"
     ]
   },
-  "errors": [
-    {
-      "check": "naturalness",
-      "partial": true,
-      "error": "2 of 18 batches refused; 84 lines judged, 16 not",
-      "lines_affected": 16,
-      "note": "the flags below cover only the batches that answered"
-    }
-  ],
+  "errors": [],
   "counts": {
     "lines": 100,
-    "flags": 165,
+    "flags": 174,
     "by_check": {
+      "naturalness": 49,
       "timing": 69,
       "script": 22,
-      "naturalness": 40,
       "meaning": 13,
       "relationship": 21
     },
     "by_severity": {
+      "low": 49,
       "high": 84,
-      "medium": 41,
-      "low": 40
+      "medium": 41
     }
   },
   "flags": [
+    {
+      "line_id": "E01-L001",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"దీపం వెలిగేలా ఉంది\" sounds stilted; a more natural phrasing would be \"దీపం వెలిగి ఉంటుంది\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L003",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Word order is awkward; native speakers would say \"నీవు నిద్రిస్తున్నప్పుడు కెయిన్ మళ్లీ వచ్చాడు\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L014",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal, choppy repetition; sounds like word‑for‑word translation rather than period‑style Telugu. Could be smoothed (e.g., \"బాకీ కూడా నా, ఒప్పందం కూడా నా, శీతాకాలం కూడా నా\").",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L015",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Adds \"దయచేసి\" which isn’t in the source and uses redundant \"మళ్ళీ ఒకసారి\". Also lacks the required honorific address to Mistress (e.g., \"Mistress Caine గారు, మళ్ళీ చెప్పండి\").",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L017",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"జలానికి\" is a literal translation of \"tide\" and feels unnatural; the English address \"Mistress\" is left untranslated and not given the proper honorific (e.g., \"Mistress Caine గారు\").",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L024",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Adds address \"మిస్ హాలొరన్\" which is not in the English line, creating a mismatch and sounding forced",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E01-L029",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"అంతే పిలిచారు\" is awkward; a more natural phrasing would be \"అలా పిలిచారు\". The opening \"అంటీ\" is informal but quoted, still feels off in the solemn register",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L004",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal translation; missing connective like \"కలిసి\" makes it sound stiff and not how a speaker would naturally phrase it.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L006",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Uses polite \"మీరు\" instead of the expected informal/contemptuous \"నీవు\" for Edda‑Marek, inserts English name mid‑sentence, and feels like a word‑for‑word rendering.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L009",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Verb form \"వినిపిస్తారు\" is unnatural; a native speaker would say \"వింటారు\". The overall phrasing sounds translated rather than natural Telugu.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L011",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Verb form uses plural respectful \"కోరుకుంటున్నారు\" for a singular male subject; should be \"కోరుకుంటున్నాడు\" to match register.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L012",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Phrase \"రాయిపై\" is awkward; more natural would be \"రాయి మీద\". Overall sentence feels stiff.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L026",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal translation of 'read a gate' ('darwaza chadavadam') is nonsensical in Telugu; phrasing is stiff.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L028",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "'Shanthamga undi' sounds odd for 'Hush now'; missing polite verb ending; should be 'శాంతంగా ఉండండి, నాన్న'.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L029",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Double 'ki' ('hastakshara ki emi teliyadu') feels clunky; a more natural phrasing would be 'ఆమెకు హస్తాక్షరము గురించి ఏమి తెలియదు'.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E02-L031",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Second sentence 'Aadani artham meeru' is ungrammatical and unclear; a natural rendering would be 'అతను మీను ఉద్దేశిస్తున్నాడు'.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E03-L003",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"aapada\" means disaster, not tide; word choice is incorrect for the intended meaning",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E03-L010",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Awkward phrasing \"mruthyu vyakti patra\"; a more natural expression would be \"mruthyu vyakti yokka patra\"",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E03-L018",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal translation feels stiff; mixing English name, quotation and Telugu phrasing; word order and honorifics are off for period dialogue.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E03-L023",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Awkward rendering of “priced”; “ధరలతో చూస్తున్నారు” is not idiomatic, making the line sound translated.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E03-L030",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Uses English loan \"సవాల్\" and phrasing feels stiff for period setting; could be more natural like \"దాన్ని వాగ్దానంగా చెప్పు, సవాల్‌గా కాదు\" is awkward.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L004",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"సీడీ\" is not the Telugu word for stair; the term sounds like the English abbreviation for CD. Use a proper word like \"సీడీ\"->\"సీడీ\"? (e.g., \"మెట్లు\" or \"సీడీ\"?) Also the phrasing feels literal.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L006",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal translation is stiff; \"తడిగా, సరైనవాడిగా\" sounds unnatural in Telugu and the ordering clause \"ఆ క్రమంలో\" feels forced.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L007",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Metaphorical \"నా తండ్రి నీరు\" is not idiomatic Telugu; the whole line sounds translated rather than something a native speaker would say.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L009",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "First sentence \"ఎవరికి కూడా కాదు\" is a literal, stiff translation and sounds unnatural; a natural rendering would be \"ఎవరూ లేరు\". The rest is okay but overall feels translated.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L011",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"ట్రాలర్ కాదు\" is awkward; a native speaker would say \"ట్రాలర్ నిలిచలేదు\". The rest is acceptable but the phrasing is not natural.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L013",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"రెండు జీవించి\" is incomplete and sounds stilted; a natural form would be \"రెండు జీవించి ఉన్నారు\". Otherwise the sentence is understandable.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L014",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Typo \"నాకె\" should be \"నాకు\", and \"షోల్\" (shoal) is an odd loan word; the whole line mixes registers and feels translated.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L023",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Awkward imperative forms (\"ఆపకు\" is not idiomatic) and slightly stiff phrasing; should use more natural verb forms like \"ఆపకండి\".",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E04-L027",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Register issue: uses singular informal \"నీవు\" and verb ending \"నిలబెడతావు\" where plural honorific would be expected in this context; phrasing feels stiff.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L009",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal translation adds \"మిస్ట్రెస్\" and formal \"గారు\"; mixes registers and feels stiff for a short clause.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L010",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"కేన్ ఇస్తారు\" sounds overly formal and literal; the clause sequence feels like a word‑for‑word translation rather than natural speech.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L012",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"గుర్తు పెట్టుకున్నాడు\" sounds stilted; a more natural phrasing would be \"గుర్తు ఉంది\" or similar.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L014",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Uses singular informal imperative \"దిగు\"; should use plural honorific form like \"దిగండి\" for the required solemn register.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L015",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Missing the required honorific (e.g., \"మీరు\") and the phrasing \"ఇంకా నిశ్చితార్థి?\" is awkward; a more natural line would be \"ఇంకా నిశ్చితార్థిగా ఉన్నారా?\"",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L016",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "No honorific address to Silas; the line feels abrupt and deviates from the formal register expected.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L022",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Mixes English title \"Father\" with Telugu honorific \"గారు\" and sounds stiff; a cleaner version would be \"ఫాదర్ ఆంసెల్మ్, అతనిని పట్టుకో.\"",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L026",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal phrasing; \"కోట్\" for coat sounds odd and may be taken as \"fort\"; overall stiff translation.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L027",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Mixes Chinese character with Telugu and lacks a verb; phrasing is unnatural.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L029",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Word order is awkward (\"మీరు నన్ను ఆకలితో చూస్తున్నారు\"); still literal but not how a Telugu speaker would naturally say it.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E05-L032",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Uses plural honorific \"మీ\" where singular informal is required for Joss‑Edda; phrasing \"బాధ్యతతో అనుమతించేవారు\" is awkward.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L002",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Literal translation; \"నీటికి చదివిస్తాను\" and \"నీరు నిజాయితీగా ఉంది\" sound stiff and unnatural in Telugu.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L004",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Adds wrong name \"మిస్ హల్లొరన్\" and the phrasing is overly formal; the line feels translated rather than natural speech.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L008",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Phrase \"నా తండ్రి ఆరోపణపై\" is awkward and the stray \"సిలాస్ వేన్\" is out of place; overall translation feels stiff.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L011",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Uses informal \"Nee\" instead of honorific \"Meeru\" for a non‑intimate address and the phrase \"dayava ledu\" sounds awkward; register mismatch.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L012",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Redundant pronouns (Meeru ... neeku) and mixed register; a more natural phrasing would be \"Mee lampu pettukondi, pillagaa.\"",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L018",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Unnecessary \"meeru\" at the end and slightly awkward construction; a smoother version would be \"Adhi icchadam chinna vishayam kaadu.\"",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L019",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "Clunky and redundant wording; the phrase \"poddalu meeda mari inka nilabadutunnanu\" is unnatural and the overall sentence order feels stilted.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
+    {
+      "line_id": "E06-L023",
+      "check": "naturalness",
+      "severity": "low",
+      "verdict": "possibly_unnatural",
+      "evidence": "\"కాంతి వెలిగించు\" is a literal translation of \"Light the stair\" and sounds odd in Telugu; a more natural phrasing would be \"సీడీకి వెలుగు పెట్టు\" or similar. The rest is fine.",
+      "suggestion": "",
+      "status": "pending",
+      "note": "advisory only, low confidence: human review recommended"
+    },
     {
       "line_id": "E04-L015",
       "check": "timing",
@@ -974,406 +1456,6 @@
       "note": "transliteration is readable to a language model and unreadable to a voice artist; the timing check cannot measure it either"
     },
     {
-      "line_id": "E01-L004",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Word order feels stiff; more natural would be “నీవు నిద్రిస్తున్నప్పుడు కెయిన్ మళ్లీ వచ్చాడు.”",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L005",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Sentence order is awkward; native speakers would say “నేను నిద్రిస్తున్నప్పుడు ఆమె ఎప్పుడూ వస్తుంది.”",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L014",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Literal word‑for‑word rendering; \"బాకీ\" is not the usual term for \"debt\" and the phrase sounds stiff for a period businesslike line.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L015",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Adds \"దయచేసి\" which makes it overly polite for a low‑tone command; the original tone is more abrupt.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L017",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "\"జలానికి\" means \"to water\" not \"to the tide\"; the idiom is rendered inaccurately and sounds unnatural in period Telugu.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L024",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Uses English title \"మిస్ హాలొరన్\"; should employ second‑person plural honorific (e.g., \"మీకు\"/\"వారు\") to match the prescribed solemn Telugu register.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L026",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Verb form \"చేయవద్దు\" is formal; father‑daughter intimacy calls for informal singular imperative like \"చేయకు\".",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E01-L029",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Address term \"అంటీ\" is an Indian kinship word; period‑appropriate dubbing should keep the English title or use a respectful honorific, not a familial term.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L006",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "The phrase “అతని తల నింపుతున్నారా?” is not idiomatic Telugu for “filling his head”; also inserting the English name “Marek” mid‑sentence feels stiff and mixes registers.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L009",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Verb choice is off – “వినిపిస్తారు” is unnatural for “will hear”; a more natural rendering would be “వింటారు”. The rest of the line is acceptable.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L011",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Uses respectful plural verb కోరుకుంటున్నారు despite intimate context where singular informal (కోరుకుంటాడు) is expected.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L025",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Trailing‑off phrase is incomplete; lacks verb after \"మీరు ఎలా\" making it sound cut off and unnatural.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L026",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Literal translation \"darwaza chadavadam\" (read a gate) is nonsensical in Telugu; phrasing is stiff and mixes informal \"naaku\" with a literal rendering.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L030",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Metaphor \"patrikalo oka vakyam laga\" is awkward; overall phrasing sounds translated and mixes registers.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E02-L031",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Second sentence \"Aadani artham meeru\" is ungrammatical and unclear; the imperative \"nilipi\" also mismatches the solemn register.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E03-L003",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "\"aapada\" means disaster, not tide; translation feels literal and stiff",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E03-L006",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "imperative form should be \"teesukondi\"; current \"teesupondi\" is incorrect",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E03-L017",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Uses informal singular \"నీ\" while the required solemn dubbing register calls for honorific \"మీ\" in this speaker‑listener relationship.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E03-L018",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Mixes registers (addressing \"మారెక్\" without honorific, literal phrasing) and sounds stilted; a more period‑appropriate phrasing would improve naturalness.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E03-L023",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Literal translation \"ధరలతో చూస్తున్నారు\" is awkward; a more idiomatic expression is needed for the metaphor of being priced.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E03-L030",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Uses English loanword \"సవాల్\" instead of native \"సవాలు\"; feels slightly out of period register.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L004",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Literal translation of “light the stair”; “సీడీని వెలిగించండి” sounds odd and not how a period‑style speaker would phrase it.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L006",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Awkward literal rendering of “wet and right, in that order”; phrasing is stiff and not natural Telugu.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L007",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Metaphorical “father’s water” is rendered literally; the line feels translated and unnatural in the target register.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L011",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "\"ట్రాలర్ కాదు\" does not convey the intended meaning (the trawler did not hold). It sounds like a literal denial rather than a statement of failure.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L013",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "\"రెండు జీవించి\" is awkward; a more natural phrasing would be \"రెండు జీవించి ఉన్నారు\". The rest is fine.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L014",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "The sentence is fragmented and contains a typo: \"నాకె చెప్పు\" should be \"నాకు చెప్పు\" and the first clause needs a verb (e.g., \"నా షోల్‌లో మూడు ఉన్నాయి\").",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L023",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Negative imperative \"ఆపకు\" sounds odd; a more natural phrasing would be \"ఆపకండి\" or \"ఆపవద్దు\". The rest is acceptable.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L025",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Uses informal singular imperative \"దిగు\"; according to the required register it should be plural honorific (e.g., \"దిగండి\").",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E04-L027",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Employs singular informal \"నీవు...నిలబెడతావు\"; the period dubbing register calls for second‑person plural honorific forms (\"మీరు...నిలబెడతారు\").",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E05-L009",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Literal translation feels stiff; double honorific \"మిస్ట్రెస్ ... గారు\" and fragment lacks object, not how a speaker would naturally phrase it.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E05-L010",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "First clause \"కేన్ ఇస్తారు\" is a fragment without object; overall sentence mixes fragments and may sound unnatural in period dubbing.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E05-L026",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Literal translation; 'దీపం కొనాలి' is stiff, and 'నా కోట్లో' mis‑uses 'కోట్' (coat) as 'కోట' (fort). Register is off.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E05-L027",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Mixes Chinese character 钱 with Telugu, and uses a borrowed noun 'బార్గెమన్' without proper grammar; overall unnatural.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E05-L032",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Stilted phrasing ('బాధ్యతతో అనుమతించేవారు'), awkward word order, and overly literal rendering of 'buyer' and 'husband' concepts.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E06-L002",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Literal translation; metaphor ‘water has been honest’ sounds odd in Telugu and feels stiff.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E06-L004",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Adds unrelated title “మిస్ హల్లొరన్”; phrasing is abrupt and overly literal.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E06-L006",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Uses ‘నీటిపై దొంగతనం’ which is unnatural for ‘smuggler on the water’; word choice is off.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E06-L008",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "Mis‑translation of ‘charge’; includes name “సిలాస్ వేన్” incorrectly and uses wrong term ‘ఆరోగణ’.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
-      "line_id": "E06-L024",
-      "check": "naturalness",
-      "severity": "low",
-      "verdict": "possibly_unnatural",
-      "evidence": "The phrasing \"వెలిగినట్లే ఉంటుంది\" sounds stiff/translated; a more natural period‑style rendering might be \"దీపం వెలిగేలా ఉంటుంది\" or similar.",
-      "suggestion": "",
-      "status": "pending",
-      "note": "advisory only, low confidence: human review recommended"
-    },
-    {
       "line_id": "E01-L015",
       "check": "meaning",
       "severity": "medium",
@@ -1715,6 +1797,508 @@
     }
   ],
   "verdicts": {
+    "naturalness": [
+      {
+        "line_id": "E01-L001",
+        "verdict": "possibly_unnatural",
+        "note": "\"దీపం వెలిగేలా ఉంది\" sounds stilted; a more natural phrasing would be \"దీపం వెలిగి ఉంటుంది\"."
+      },
+      {
+        "line_id": "E01-L003",
+        "verdict": "possibly_unnatural",
+        "note": "Word order is awkward; native speakers would say \"నీవు నిద్రిస్తున్నప్పుడు కెయిన్ మళ్లీ వచ్చాడు\"."
+      },
+      {
+        "line_id": "E01-L004",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E01-L005",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E01-L006",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E01-L007",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E01-L014",
+        "verdict": "possibly_unnatural",
+        "note": "Literal, choppy repetition; sounds like word‑for‑word translation rather than period‑style Telugu. Could be smoothed (e.g., \"బాకీ కూడా నా, ఒప్పందం కూడా నా, శీతాకాలం కూడా నా\")."
+      },
+      {
+        "line_id": "E01-L015",
+        "verdict": "possibly_unnatural",
+        "note": "Adds \"దయచేసి\" which isn’t in the source and uses redundant \"మళ్ళీ ఒకసారి\". Also lacks the required honorific address to Mistress (e.g., \"Mistress Caine గారు, మళ్ళీ చెప్పండి\")."
+      },
+      {
+        "line_id": "E01-L017",
+        "verdict": "possibly_unnatural",
+        "note": "\"జలానికి\" is a literal translation of \"tide\" and feels unnatural; the English address \"Mistress\" is left untranslated and not given the proper honorific (e.g., \"Mistress Caine గారు\")."
+      },
+      {
+        "line_id": "E01-L021",
+        "verdict": "natural",
+        "note": "Appropriate formal register; \"మీ అధికారంతో\" and \"అవును\" fit the solemn dubbing style."
+      },
+      {
+        "line_id": "E01-L023",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E01-L024",
+        "verdict": "possibly_unnatural",
+        "note": "Adds address \"మిస్ హాలొరన్\" which is not in the English line, creating a mismatch and sounding forced"
+      },
+      {
+        "line_id": "E01-L025",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E01-L026",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E01-L027",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E01-L029",
+        "verdict": "possibly_unnatural",
+        "note": "\"అంతే పిలిచారు\" is awkward; a more natural phrasing would be \"అలా పిలిచారు\". The opening \"అంటీ\" is informal but quoted, still feels off in the solemn register"
+      },
+      {
+        "line_id": "E01-L030",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L004",
+        "verdict": "possibly_unnatural",
+        "note": "Literal translation; missing connective like \"కలిసి\" makes it sound stiff and not how a speaker would naturally phrase it."
+      },
+      {
+        "line_id": "E02-L006",
+        "verdict": "possibly_unnatural",
+        "note": "Uses polite \"మీరు\" instead of the expected informal/contemptuous \"నీవు\" for Edda‑Marek, inserts English name mid‑sentence, and feels like a word‑for‑word rendering."
+      },
+      {
+        "line_id": "E02-L007",
+        "verdict": "natural",
+        "note": "Clear, idiomatic phrasing; appropriate register for a simple statement."
+      },
+      {
+        "line_id": "E02-L009",
+        "verdict": "possibly_unnatural",
+        "note": "Verb form \"వినిపిస్తారు\" is unnatural; a native speaker would say \"వింటారు\". The overall phrasing sounds translated rather than natural Telugu."
+      },
+      {
+        "line_id": "E02-L010",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L011",
+        "verdict": "possibly_unnatural",
+        "note": "Verb form uses plural respectful \"కోరుకుంటున్నారు\" for a singular male subject; should be \"కోరుకుంటున్నాడు\" to match register."
+      },
+      {
+        "line_id": "E02-L012",
+        "verdict": "possibly_unnatural",
+        "note": "Phrase \"రాయిపై\" is awkward; more natural would be \"రాయి మీద\". Overall sentence feels stiff."
+      },
+      {
+        "line_id": "E02-L013",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L015",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L016",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L020",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E02-L025",
+        "verdict": "natural",
+        "note": "Fragment fits trailing‑off style; honorific 'మీరు' appropriate."
+      },
+      {
+        "line_id": "E02-L026",
+        "verdict": "possibly_unnatural",
+        "note": "Literal translation of 'read a gate' ('darwaza chadavadam') is nonsensical in Telugu; phrasing is stiff."
+      },
+      {
+        "line_id": "E02-L028",
+        "verdict": "possibly_unnatural",
+        "note": "'Shanthamga undi' sounds odd for 'Hush now'; missing polite verb ending; should be 'శాంతంగా ఉండండి, నాన్న'."
+      },
+      {
+        "line_id": "E02-L029",
+        "verdict": "possibly_unnatural",
+        "note": "Double 'ki' ('hastakshara ki emi teliyadu') feels clunky; a more natural phrasing would be 'ఆమెకు హస్తాక్షరము గురించి ఏమి తెలియదు'."
+      },
+      {
+        "line_id": "E02-L030",
+        "verdict": "natural",
+        "note": "Literary tone fits period dubbing; phrasing is acceptable."
+      },
+      {
+        "line_id": "E02-L031",
+        "verdict": "possibly_unnatural",
+        "note": "Second sentence 'Aadani artham meeru' is ungrammatical and unclear; a natural rendering would be 'అతను మీను ఉద్దేశిస్తున్నాడు'."
+      },
+      {
+        "line_id": "E03-L002",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L003",
+        "verdict": "possibly_unnatural",
+        "note": "\"aapada\" means disaster, not tide; word choice is incorrect for the intended meaning"
+      },
+      {
+        "line_id": "E03-L006",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L008",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L010",
+        "verdict": "possibly_unnatural",
+        "note": "Awkward phrasing \"mruthyu vyakti patra\"; a more natural expression would be \"mruthyu vyakti yokka patra\""
+      },
+      {
+        "line_id": "E03-L011",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L012",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L014",
+        "verdict": "natural",
+        "note": "Straight, period‑appropriate phrasing; fits off‑screen remark."
+      },
+      {
+        "line_id": "E03-L017",
+        "verdict": "natural",
+        "note": "Concise poetic line; matches solemn dubbing register."
+      },
+      {
+        "line_id": "E03-L018",
+        "verdict": "possibly_unnatural",
+        "note": "Literal translation feels stiff; mixing English name, quotation and Telugu phrasing; word order and honorifics are off for period dialogue."
+      },
+      {
+        "line_id": "E03-L021",
+        "verdict": "natural",
+        "note": "Simple denial; natural in spoken Telugu."
+      },
+      {
+        "line_id": "E03-L023",
+        "verdict": "possibly_unnatural",
+        "note": "Awkward rendering of “priced”; “ధరలతో చూస్తున్నారు” is not idiomatic, making the line sound translated."
+      },
+      {
+        "line_id": "E03-L024",
+        "verdict": "natural",
+        "note": "Natural colloquial expression for “Aunt would have said that nicer.”"
+      },
+      {
+        "line_id": "E03-L025",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L029",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E03-L030",
+        "verdict": "possibly_unnatural",
+        "note": "Uses English loan \"సవాల్\" and phrasing feels stiff for period setting; could be more natural like \"దాన్ని వాగ్దానంగా చెప్పు, సవాల్‌గా కాదు\" is awkward."
+      },
+      {
+        "line_id": "E03-L031",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E04-L001",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E04-L002",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E04-L004",
+        "verdict": "possibly_unnatural",
+        "note": "\"సీడీ\" is not the Telugu word for stair; the term sounds like the English abbreviation for CD. Use a proper word like \"సీడీ\"->\"సీడీ\"? (e.g., \"మెట్లు\" or \"సీడీ\"?) Also the phrasing feels literal."
+      },
+      {
+        "line_id": "E04-L006",
+        "verdict": "possibly_unnatural",
+        "note": "Literal translation is stiff; \"తడిగా, సరైనవాడిగా\" sounds unnatural in Telugu and the ordering clause \"ఆ క్రమంలో\" feels forced."
+      },
+      {
+        "line_id": "E04-L007",
+        "verdict": "possibly_unnatural",
+        "note": "Metaphorical \"నా తండ్రి నీరు\" is not idiomatic Telugu; the whole line sounds translated rather than something a native speaker would say."
+      },
+      {
+        "line_id": "E04-L009",
+        "verdict": "possibly_unnatural",
+        "note": "First sentence \"ఎవరికి కూడా కాదు\" is a literal, stiff translation and sounds unnatural; a natural rendering would be \"ఎవరూ లేరు\". The rest is okay but overall feels translated."
+      },
+      {
+        "line_id": "E04-L011",
+        "verdict": "possibly_unnatural",
+        "note": "\"ట్రాలర్ కాదు\" is awkward; a native speaker would say \"ట్రాలర్ నిలిచలేదు\". The rest is acceptable but the phrasing is not natural."
+      },
+      {
+        "line_id": "E04-L013",
+        "verdict": "possibly_unnatural",
+        "note": "\"రెండు జీవించి\" is incomplete and sounds stilted; a natural form would be \"రెండు జీవించి ఉన్నారు\". Otherwise the sentence is understandable."
+      },
+      {
+        "line_id": "E04-L014",
+        "verdict": "possibly_unnatural",
+        "note": "Typo \"నాకె\" should be \"నాకు\", and \"షోల్\" (shoal) is an odd loan word; the whole line mixes registers and feels translated."
+      },
+      {
+        "line_id": "E04-L015",
+        "verdict": "natural",
+        "note": "Clear, informal singular phrasing appropriate for Joss‑Edda relationship; sounds natural in dubbing‑era Telugu."
+      },
+      {
+        "line_id": "E04-L017",
+        "verdict": "natural",
+        "note": "The sentence is idiomatic and fits the informal register; sounds like something a person would say."
+      },
+      {
+        "line_id": "E04-L018",
+        "verdict": "natural",
+        "note": "Simple, direct question \"ఎవరి?\" with the borrowed word \"కోట్\" is acceptable and natural for the context."
+      },
+      {
+        "line_id": "E04-L021",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E04-L023",
+        "verdict": "possibly_unnatural",
+        "note": "Awkward imperative forms (\"ఆపకు\" is not idiomatic) and slightly stiff phrasing; should use more natural verb forms like \"ఆపకండి\"."
+      },
+      {
+        "line_id": "E04-L024",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E04-L025",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E04-L027",
+        "verdict": "possibly_unnatural",
+        "note": "Register issue: uses singular informal \"నీవు\" and verb ending \"నిలబెడతావు\" where plural honorific would be expected in this context; phrasing feels stiff."
+      },
+      {
+        "line_id": "E05-L003",
+        "verdict": "natural",
+        "note": "Clear, period‑appropriate phrasing; sounds like something a clerk would say."
+      },
+      {
+        "line_id": "E05-L007",
+        "verdict": "natural",
+        "note": "Uses English title with Telugu honorific as prescribed; the question feels natural."
+      },
+      {
+        "line_id": "E05-L009",
+        "verdict": "possibly_unnatural",
+        "note": "Literal translation adds \"మిస్ట్రెస్\" and formal \"గారు\"; mixes registers and feels stiff for a short clause."
+      },
+      {
+        "line_id": "E05-L010",
+        "verdict": "possibly_unnatural",
+        "note": "\"కేన్ ఇస్తారు\" sounds overly formal and literal; the clause sequence feels like a word‑for‑word translation rather than natural speech."
+      },
+      {
+        "line_id": "E05-L011",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E05-L012",
+        "verdict": "possibly_unnatural",
+        "note": "\"గుర్తు పెట్టుకున్నాడు\" sounds stilted; a more natural phrasing would be \"గుర్తు ఉంది\" or similar."
+      },
+      {
+        "line_id": "E05-L014",
+        "verdict": "possibly_unnatural",
+        "note": "Uses singular informal imperative \"దిగు\"; should use plural honorific form like \"దిగండి\" for the required solemn register."
+      },
+      {
+        "line_id": "E05-L015",
+        "verdict": "possibly_unnatural",
+        "note": "Missing the required honorific (e.g., \"మీరు\") and the phrasing \"ఇంకా నిశ్చితార్థి?\" is awkward; a more natural line would be \"ఇంకా నిశ్చితార్థిగా ఉన్నారా?\""
+      },
+      {
+        "line_id": "E05-L016",
+        "verdict": "possibly_unnatural",
+        "note": "No honorific address to Silas; the line feels abrupt and deviates from the formal register expected."
+      },
+      {
+        "line_id": "E05-L017",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E05-L019",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E05-L022",
+        "verdict": "possibly_unnatural",
+        "note": "Mixes English title \"Father\" with Telugu honorific \"గారు\" and sounds stiff; a cleaner version would be \"ఫాదర్ ఆంసెల్మ్, అతనిని పట్టుకో.\""
+      },
+      {
+        "line_id": "E05-L026",
+        "verdict": "possibly_unnatural",
+        "note": "Literal phrasing; \"కోట్\" for coat sounds odd and may be taken as \"fort\"; overall stiff translation."
+      },
+      {
+        "line_id": "E05-L027",
+        "verdict": "possibly_unnatural",
+        "note": "Mixes Chinese character with Telugu and lacks a verb; phrasing is unnatural."
+      },
+      {
+        "line_id": "E05-L029",
+        "verdict": "possibly_unnatural",
+        "note": "Word order is awkward (\"మీరు నన్ను ఆకలితో చూస్తున్నారు\"); still literal but not how a Telugu speaker would naturally say it."
+      },
+      {
+        "line_id": "E05-L031",
+        "verdict": "natural",
+        "note": "Clear, appropriate honorific and natural phrasing."
+      },
+      {
+        "line_id": "E05-L032",
+        "verdict": "possibly_unnatural",
+        "note": "Uses plural honorific \"మీ\" where singular informal is required for Joss‑Edda; phrasing \"బాధ్యతతో అనుమతించేవారు\" is awkward."
+      },
+      {
+        "line_id": "E06-L002",
+        "verdict": "possibly_unnatural",
+        "note": "Literal translation; \"నీటికి చదివిస్తాను\" and \"నీరు నిజాయితీగా ఉంది\" sound stiff and unnatural in Telugu."
+      },
+      {
+        "line_id": "E06-L004",
+        "verdict": "possibly_unnatural",
+        "note": "Adds wrong name \"మిస్ హల్లొరన్\" and the phrasing is overly formal; the line feels translated rather than natural speech."
+      },
+      {
+        "line_id": "E06-L006",
+        "verdict": "natural",
+        "note": "Straightforward command and description; fits shouting register and uses appropriate Telugu."
+      },
+      {
+        "line_id": "E06-L008",
+        "verdict": "possibly_unnatural",
+        "note": "Phrase \"నా తండ్రి ఆరోపణపై\" is awkward and the stray \"సిలాస్ వేన్\" is out of place; overall translation feels stiff."
+      },
+      {
+        "line_id": "E06-L010",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E06-L011",
+        "verdict": "possibly_unnatural",
+        "note": "Uses informal \"Nee\" instead of honorific \"Meeru\" for a non‑intimate address and the phrase \"dayava ledu\" sounds awkward; register mismatch."
+      },
+      {
+        "line_id": "E06-L012",
+        "verdict": "possibly_unnatural",
+        "note": "Redundant pronouns (Meeru ... neeku) and mixed register; a more natural phrasing would be \"Mee lampu pettukondi, pillagaa.\""
+      },
+      {
+        "line_id": "E06-L016",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E06-L017",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E06-L018",
+        "verdict": "possibly_unnatural",
+        "note": "Unnecessary \"meeru\" at the end and slightly awkward construction; a smoother version would be \"Adhi icchadam chinna vishayam kaadu.\""
+      },
+      {
+        "line_id": "E06-L019",
+        "verdict": "possibly_unnatural",
+        "note": "Clunky and redundant wording; the phrase \"poddalu meeda mari inka nilabadutunnanu\" is unnatural and the overall sentence order feels stilted."
+      },
+      {
+        "line_id": "E06-L020",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E06-L021",
+        "verdict": "natural",
+        "note": ""
+      },
+      {
+        "line_id": "E06-L023",
+        "verdict": "possibly_unnatural",
+        "note": "\"కాంతి వెలిగించు\" is a literal translation of \"Light the stair\" and sounds odd in Telugu; a more natural phrasing would be \"సీడీకి వెలుగు పెట్టు\" or similar. The rest is fine."
+      },
+      {
+        "line_id": "E06-L024",
+        "verdict": "natural",
+        "note": ""
+      }
+    ],
     "timing": [
       {
         "line_id": "E01-L001",
@@ -3039,428 +3623,6 @@
         "latin_words": 3
       }
     ],
-    "naturalness": [
-      {
-        "line_id": "E01-L001",
-        "verdict": "natural",
-        "note": "Straightforward description; phrasing fits period dubbing style."
-      },
-      {
-        "line_id": "E01-L003",
-        "verdict": "natural",
-        "note": "Clear and idiomatic; “ఒక గంటకు ముందు” is acceptable in formal speech."
-      },
-      {
-        "line_id": "E01-L004",
-        "verdict": "possibly_unnatural",
-        "note": "Word order feels stiff; more natural would be “నీవు నిద్రిస్తున్నప్పుడు కెయిన్ మళ్లీ వచ్చాడు.”"
-      },
-      {
-        "line_id": "E01-L005",
-        "verdict": "possibly_unnatural",
-        "note": "Sentence order is awkward; native speakers would say “నేను నిద్రిస్తున్నప్పుడు ఆమె ఎప్పుడూ వస్తుంది.”"
-      },
-      {
-        "line_id": "E01-L006",
-        "verdict": "natural",
-        "note": "Appropriate informal address and phrasing for a pleading father‑daughter exchange."
-      },
-      {
-        "line_id": "E01-L007",
-        "verdict": "natural",
-        "note": "Simple interrogative, fits casual speech."
-      },
-      {
-        "line_id": "E01-L014",
-        "verdict": "possibly_unnatural",
-        "note": "Literal word‑for‑word rendering; \"బాకీ\" is not the usual term for \"debt\" and the phrase sounds stiff for a period businesslike line."
-      },
-      {
-        "line_id": "E01-L015",
-        "verdict": "possibly_unnatural",
-        "note": "Adds \"దయచేసి\" which makes it overly polite for a low‑tone command; the original tone is more abrupt."
-      },
-      {
-        "line_id": "E01-L017",
-        "verdict": "possibly_unnatural",
-        "note": "\"జలానికి\" means \"to water\" not \"to the tide\"; the idiom is rendered inaccurately and sounds unnatural in period Telugu."
-      },
-      {
-        "line_id": "E01-L021",
-        "verdict": "natural",
-        "note": "Concise, uses appropriate honorific \"మీ\" and fits the solemn dubbing register."
-      },
-      {
-        "line_id": "E01-L023",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E01-L024",
-        "verdict": "possibly_unnatural",
-        "note": "Uses English title \"మిస్ హాలొరన్\"; should employ second‑person plural honorific (e.g., \"మీకు\"/\"వారు\") to match the prescribed solemn Telugu register."
-      },
-      {
-        "line_id": "E01-L025",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E01-L026",
-        "verdict": "possibly_unnatural",
-        "note": "Verb form \"చేయవద్దు\" is formal; father‑daughter intimacy calls for informal singular imperative like \"చేయకు\"."
-      },
-      {
-        "line_id": "E01-L027",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E01-L029",
-        "verdict": "possibly_unnatural",
-        "note": "Address term \"అంటీ\" is an Indian kinship word; period‑appropriate dubbing should keep the English title or use a respectful honorific, not a familial term."
-      },
-      {
-        "line_id": "E01-L030",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L004",
-        "verdict": "natural",
-        "note": "The sentence is grammatically correct and fits the solemn dubbing register; “టికెట్ నౌకతో కాలిపోయింది.” sounds like a plausible period line."
-      },
-      {
-        "line_id": "E02-L006",
-        "verdict": "possibly_unnatural",
-        "note": "The phrase “అతని తల నింపుతున్నారా?” is not idiomatic Telugu for “filling his head”; also inserting the English name “Marek” mid‑sentence feels stiff and mixes registers."
-      },
-      {
-        "line_id": "E02-L007",
-        "verdict": "natural",
-        "note": "Straightforward statement; “అతని తల ఇప్పటికే నిండిపోయింది.” is natural in the required register."
-      },
-      {
-        "line_id": "E02-L009",
-        "verdict": "possibly_unnatural",
-        "note": "Verb choice is off – “వినిపిస్తారు” is unnatural for “will hear”; a more natural rendering would be “వింటారు”. The rest of the line is acceptable."
-      },
-      {
-        "line_id": "E02-L010",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L011",
-        "verdict": "possibly_unnatural",
-        "note": "Uses respectful plural verb కోరుకుంటున్నారు despite intimate context where singular informal (కోరుకుంటాడు) is expected."
-      },
-      {
-        "line_id": "E02-L012",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L013",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L015",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L016",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L020",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E02-L025",
-        "verdict": "possibly_unnatural",
-        "note": "Trailing‑off phrase is incomplete; lacks verb after \"మీరు ఎలా\" making it sound cut off and unnatural."
-      },
-      {
-        "line_id": "E02-L026",
-        "verdict": "possibly_unnatural",
-        "note": "Literal translation \"darwaza chadavadam\" (read a gate) is nonsensical in Telugu; phrasing is stiff and mixes informal \"naaku\" with a literal rendering."
-      },
-      {
-        "line_id": "E02-L028",
-        "verdict": "natural",
-        "note": "\"Shanthamga undi, Nanna. Nenu ikkada unna.\" is acceptable for a soft, intimate address to a father in the prescribed register."
-      },
-      {
-        "line_id": "E02-L029",
-        "verdict": "natural",
-        "note": "\"Aame ki hastakshara ki emi teliyadu.\" conveys the meaning naturally using a slightly formal Sanskrit‑derived term, fitting the period style."
-      },
-      {
-        "line_id": "E02-L030",
-        "verdict": "possibly_unnatural",
-        "note": "Metaphor \"patrikalo oka vakyam laga\" is awkward; overall phrasing sounds translated and mixes registers."
-      },
-      {
-        "line_id": "E02-L031",
-        "verdict": "possibly_unnatural",
-        "note": "Second sentence \"Aadani artham meeru\" is ungrammatical and unclear; the imperative \"nilipi\" also mismatches the solemn register."
-      },
-      {
-        "line_id": "E03-L002",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L003",
-        "verdict": "possibly_unnatural",
-        "note": "\"aapada\" means disaster, not tide; translation feels literal and stiff"
-      },
-      {
-        "line_id": "E03-L006",
-        "verdict": "possibly_unnatural",
-        "note": "imperative form should be \"teesukondi\"; current \"teesupondi\" is incorrect"
-      },
-      {
-        "line_id": "E03-L008",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L010",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L011",
-        "verdict": "natural",
-        "note": "address term \"Miss Halloran\" is acceptable as borrowed title; phrasing fits dubbing style"
-      },
-      {
-        "line_id": "E03-L012",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L014",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L017",
-        "verdict": "possibly_unnatural",
-        "note": "Uses informal singular \"నీ\" while the required solemn dubbing register calls for honorific \"మీ\" in this speaker‑listener relationship."
-      },
-      {
-        "line_id": "E03-L018",
-        "verdict": "possibly_unnatural",
-        "note": "Mixes registers (addressing \"మారెక్\" without honorific, literal phrasing) and sounds stilted; a more period‑appropriate phrasing would improve naturalness."
-      },
-      {
-        "line_id": "E03-L021",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L023",
-        "verdict": "possibly_unnatural",
-        "note": "Literal translation \"ధరలతో చూస్తున్నారు\" is awkward; a more idiomatic expression is needed for the metaphor of being priced."
-      },
-      {
-        "line_id": "E03-L024",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L025",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L029",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E03-L030",
-        "verdict": "possibly_unnatural",
-        "note": "Uses English loanword \"సవాల్\" instead of native \"సవాలు\"; feels slightly out of period register."
-      },
-      {
-        "line_id": "E03-L031",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E04-L001",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E04-L002",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E04-L004",
-        "verdict": "possibly_unnatural",
-        "note": "Literal translation of “light the stair”; “సీడీని వెలిగించండి” sounds odd and not how a period‑style speaker would phrase it."
-      },
-      {
-        "line_id": "E04-L006",
-        "verdict": "possibly_unnatural",
-        "note": "Awkward literal rendering of “wet and right, in that order”; phrasing is stiff and not natural Telugu."
-      },
-      {
-        "line_id": "E04-L007",
-        "verdict": "possibly_unnatural",
-        "note": "Metaphorical “father’s water” is rendered literally; the line feels translated and unnatural in the target register."
-      },
-      {
-        "line_id": "E04-L009",
-        "verdict": "natural",
-        "note": "The phrasing is acceptable for a solemn period style; no register issues."
-      },
-      {
-        "line_id": "E04-L011",
-        "verdict": "possibly_unnatural",
-        "note": "\"ట్రాలర్ కాదు\" does not convey the intended meaning (the trawler did not hold). It sounds like a literal denial rather than a statement of failure."
-      },
-      {
-        "line_id": "E04-L013",
-        "verdict": "possibly_unnatural",
-        "note": "\"రెండు జీవించి\" is awkward; a more natural phrasing would be \"రెండు జీవించి ఉన్నారు\". The rest is fine."
-      },
-      {
-        "line_id": "E04-L014",
-        "verdict": "possibly_unnatural",
-        "note": "The sentence is fragmented and contains a typo: \"నాకె చెప్పు\" should be \"నాకు చెప్పు\" and the first clause needs a verb (e.g., \"నా షోల్‌లో మూడు ఉన్నాయి\")."
-      },
-      {
-        "line_id": "E04-L015",
-        "verdict": "natural",
-        "note": "Clear, appropriate informal singular address and natural wording."
-      },
-      {
-        "line_id": "E04-L017",
-        "verdict": "natural",
-        "note": "The sentence is understandable and fits the informal register between Joss and Edda."
-      },
-      {
-        "line_id": "E04-L018",
-        "verdict": "natural",
-        "note": "Simple, natural question with correct informal register."
-      },
-      {
-        "line_id": "E04-L021",
-        "verdict": "natural",
-        "note": "Straightforward statement; phrasing fits period dubbing style."
-      },
-      {
-        "line_id": "E04-L023",
-        "verdict": "possibly_unnatural",
-        "note": "Negative imperative \"ఆపకు\" sounds odd; a more natural phrasing would be \"ఆపకండి\" or \"ఆపవద్దు\". The rest is acceptable."
-      },
-      {
-        "line_id": "E04-L024",
-        "verdict": "natural",
-        "note": "Simple enumeration of numbers; natural."
-      },
-      {
-        "line_id": "E04-L025",
-        "verdict": "possibly_unnatural",
-        "note": "Uses informal singular imperative \"దిగు\"; according to the required register it should be plural honorific (e.g., \"దిగండి\")."
-      },
-      {
-        "line_id": "E04-L027",
-        "verdict": "possibly_unnatural",
-        "note": "Employs singular informal \"నీవు...నిలబెడతావు\"; the period dubbing register calls for second‑person plural honorific forms (\"మీరు...నిలబెడతారు\")."
-      },
-      {
-        "line_id": "E05-L003",
-        "verdict": "natural",
-        "note": "Clear period‑appropriate phrasing; no awkward register mixing."
-      },
-      {
-        "line_id": "E05-L007",
-        "verdict": "natural",
-        "note": "Uses borrowed title as required and respectful second‑person form correctly."
-      },
-      {
-        "line_id": "E05-L009",
-        "verdict": "possibly_unnatural",
-        "note": "Literal translation feels stiff; double honorific \"మిస్ట్రెస్ ... గారు\" and fragment lacks object, not how a speaker would naturally phrase it."
-      },
-      {
-        "line_id": "E05-L010",
-        "verdict": "possibly_unnatural",
-        "note": "First clause \"కేన్ ఇస్తారు\" is a fragment without object; overall sentence mixes fragments and may sound unnatural in period dubbing."
-      },
-      {
-        "line_id": "E05-L026",
-        "verdict": "possibly_unnatural",
-        "note": "Literal translation; 'దీపం కొనాలి' is stiff, and 'నా కోట్లో' mis‑uses 'కోట్' (coat) as 'కోట' (fort). Register is off."
-      },
-      {
-        "line_id": "E05-L027",
-        "verdict": "possibly_unnatural",
-        "note": "Mixes Chinese character 钱 with Telugu, and uses a borrowed noun 'బార్గెమన్' without proper grammar; overall unnatural."
-      },
-      {
-        "line_id": "E05-L029",
-        "verdict": "natural",
-        "note": "Uses proper second‑person plural honorifics and conveys meaning in a straightforward way."
-      },
-      {
-        "line_id": "E05-L031",
-        "verdict": "natural",
-        "note": "Clear, appropriate honorific form; sounds like natural spoken Telugu."
-      },
-      {
-        "line_id": "E05-L032",
-        "verdict": "possibly_unnatural",
-        "note": "Stilted phrasing ('బాధ్యతతో అనుమతించేవారు'), awkward word order, and overly literal rendering of 'buyer' and 'husband' concepts."
-      },
-      {
-        "line_id": "E06-L002",
-        "verdict": "possibly_unnatural",
-        "note": "Literal translation; metaphor ‘water has been honest’ sounds odd in Telugu and feels stiff."
-      },
-      {
-        "line_id": "E06-L004",
-        "verdict": "possibly_unnatural",
-        "note": "Adds unrelated title “మిస్ హల్లొరన్”; phrasing is abrupt and overly literal."
-      },
-      {
-        "line_id": "E06-L006",
-        "verdict": "possibly_unnatural",
-        "note": "Uses ‘నీటిపై దొంగతనం’ which is unnatural for ‘smuggler on the water’; word choice is off."
-      },
-      {
-        "line_id": "E06-L008",
-        "verdict": "possibly_unnatural",
-        "note": "Mis‑translation of ‘charge’; includes name “సిలాస్ వేన్” incorrectly and uses wrong term ‘ఆరోగణ’."
-      },
-      {
-        "line_id": "E06-L021",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E06-L023",
-        "verdict": "natural",
-        "note": ""
-      },
-      {
-        "line_id": "E06-L024",
-        "verdict": "possibly_unnatural",
-        "note": "The phrasing \"వెలిగినట్లే ఉంటుంది\" sounds stiff/translated; a more natural period‑style rendering might be \"దీపం వెలిగేలా ఉంటుంది\" or similar."
-      }
-    ],
     "meaning": [
       {
         "line_id": "E01-L001",
@@ -4467,6 +4629,15 @@
     ]
   },
   "summaries": {
+    "naturalness": {
+      "batches_requested": 18,
+      "batches_completed": 18,
+      "lines_judged": 100,
+      "lines_not_judged": 0,
+      "not_judged_line_ids": [],
+      "confidence": "advisory, low confidence",
+      "failed_batches": []
+    },
     "timing": {
       "syllables_per_second": 3.5,
       "margin": 0.15,
@@ -4574,44 +4745,6 @@
       "mixed_script": 2,
       "mixed_min_latin_share": 0.25,
       "note": "zero model calls; this check exists because Step A really did return 20 Latin-script lines out of 100 on the default model and none on the comparison model"
-    },
-    "naturalness": {
-      "batches_requested": 18,
-      "batches_completed": 16,
-      "lines_judged": 84,
-      "lines_not_judged": 0,
-      "not_judged_line_ids": [],
-      "confidence": "advisory, low confidence",
-      "failed_batches": [
-        {
-          "batch": "episode-005.txt#S02",
-          "lines": [
-            "E05-L011",
-            "E05-L012",
-            "E05-L014",
-            "E05-L015",
-            "E05-L016",
-            "E05-L017",
-            "E05-L019",
-            "E05-L022"
-          ],
-          "error": "still throttled (429 after 90s of waits) - lower batching.max_lines_per_request, raise provider.rate_limit_wait_seconds, or run this check again later: the free tier caps tokens per day, and a refused batch now costs only that batch"
-        },
-        {
-          "batch": "episode-006.txt#S02",
-          "lines": [
-            "E06-L010",
-            "E06-L011",
-            "E06-L012",
-            "E06-L016",
-            "E06-L017",
-            "E06-L018",
-            "E06-L019",
-            "E06-L020"
-          ],
-          "error": "still throttled (429 after 90s of waits) - lower batching.max_lines_per_request, raise provider.rate_limit_wait_seconds, or run this check again later: the free tier caps tokens per day, and a refused batch now costs only that batch"
-        }
-      ]
     },
     "meaning": {
       "batches_requested": 18,
