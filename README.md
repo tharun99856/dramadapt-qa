@@ -17,10 +17,23 @@ Companion docs: `PRD.md` (requirements and the Phase 0 experiment), `PRD_ADDENDU
 `docs/failure_log.md` (what went wrong during the build) and `docs/author_record.md` (what the author did,
 decided, withdrew and left open).
 
+**What to read, in order.**
+
+1. **`docs/DramAdapt_QA_solution.pdf` - the submitted deliverable.** Two pages, and every number in it names the
+   file it came from. Its source is `docs/solution_two_pages.md`, and `python scripts/make_pdf.py` rebuilds it and
+   fails if the result grows past two pages.
+2. **https://dramadapt-app.streamlit.app/** - the live prototype, showing the real 174-flag run with the editor's
+   approve / edit / dismiss pass on top of it.
+3. This README - how to run the gate end to end, and the file-by-file index in "File structure" below.
+4. `results/` - the raw outputs folder the brief asks for: every prompt, every raw response, the flags, and the
+   measured token totals in `results/run_log.json`.
+5. `docs/phase0_results.md` and `docs/failure_log.md` - what the validation said, and what broke on the way.
+
 **Submitted by:** Tharun Rathod, roll number 23115034, branch EE, IIT Roorkee. Kuku AI Generalist
 Assignment, Problem 3 (find your own problem). Solo author.
 
-Repository: https://github.com/tharun99856/dramadapt-qa. The API key is not in it and never will be -
+Repository: https://github.com/tharun99856/dramadapt-qa. Prototype: https://dramadapt-app.streamlit.app/.
+The API key is not in it and never will be -
 `src/config.py` reads `GROQ_API_KEY` from the environment or from a git-ignored `.env` in this folder,
 and `.env.example` documents both. Without a key the tool still runs: `--checks timing,script` and
 `--skip-step-a` need no model at all, which is how the new-input path is rehearsed.
@@ -138,6 +151,9 @@ python scripts/make_pdf.py
 The UI is a single `app.py` at the repo root with a pinned `requirements.txt`, which is all Streamlit
 Community Cloud needs. Roughly five minutes, and the URL it gives you is the prototype link the brief asks for.
 
+**Done on 7 Nov 2026: https://dramadapt-app.streamlit.app/** (repo `tharun99856/dramadapt-qa`, branch `master`,
+main file `app.py`). The steps below are what produced it, kept so the link can be rebuilt if it dies.
+
 1. https://share.streamlit.io (or streamlit.cloud), sign in with the GitHub account that owns
    `tharun99856/dramadapt-qa`.
 2. **New app** → Repository `tharun99856/dramadapt-qa`, Main file path `app.py`,
@@ -156,9 +172,44 @@ there do not survive a redeploy - use **Export → decisions CSV** to keep them,
 `data/annotation/decisions.csv` locally. And the free community tier sleeps when nobody is on it, so the
 first load after a gap takes a few seconds.
 
-## What each part does
+## File structure
 
-| Path | Role |
+125 tracked files. **The submitted deliverable is `docs/DramAdapt_QA_solution.pdf`**; everything else exists so a
+reader can check a line of it. Nothing needed to re-run the gate is missing from the repository.
+
+### Root
+
+| File | What it is |
+|---|---|
+| `README.md` | this file: what the gate does, how to run it end to end, where every number lives |
+| `PRD.md` | requirements, the Phase 0 design, and §9 with the thresholds and the drop rule fixed *before* the run |
+| `PRD_ADDENDUM_format_and_sample.md` | the screenplay input format, the window definitions and the sample plan |
+| `app.py` | the Streamlit UI: the 174 flags, approve / edit / dismiss per flag, the register-sheet confirmation, CSV and report exports |
+| `config.yaml` | everything that legitimately changes between runs: provider, model, `api_key_env: GROQ_API_KEY`, windows, and `syllables_per_second: null` until the rate is hand-timed |
+| `requirements.txt` | four pinned packages (streamlit, pandas, PyYAML, openai); the rest is standard library |
+| `.env.example` | the key template. `.env`, `.api_key` and `.streamlit/secrets.toml` are git-ignored and carry no key in this repo |
+| `.gitignore` | the three key files, the Kuku input pack by name pattern, and the local scratch and build directories |
+| `.streamlit/config.toml` | only what a hosted demo needs; everything a viewer sees is in `app.py` |
+
+### `docs/` - what a reviewer reads
+
+| File | What it is |
+|---|---|
+| `DramAdapt_QA_solution.pdf` | **the submitted two-page solution doc.** Built, not hand-written |
+| `solution_two_pages.md` | its source, so the PDF is reproducible |
+| `solution_two_pager.md` | the expanded companion: the same claims with the full reasoning |
+| `author_record.md` | what was the author's alone, what the assistant and models did, what was withdrawn |
+| `failure_log.md` | 30 numbered entries of what actually broke, with dates and how each was found |
+| `phase0_results.md` | the scored Phase 0 result, rendered from `results/scores.json` |
+| `phase0_results_timing_derived583.md` | the same scoring with timing re-priced at the derived rate |
+| `category_audit.md` | whether the 100-line sample met its category minimums |
+| `corpus_statistics.md` | slot, gap and delivery numbers measured from our own screenplay |
+| `public_evidence.md` | the public sources for the problem statement; anything marked `UNVERIFIED` is not quotable |
+| `model_probe.md` | the three models tried on Telugu and why `openai/gpt-oss-120b` was chosen |
+
+### `src/` - the gate
+
+| File | What it is |
 |---|---|
 | `src/parser.py` | pack-block screenplay format in, per-line records out. Tolerant of en dashes and small drift; never drops a block without reporting it |
 | `src/corpus.py` | category rules, relationship sheet plus the editor overlay, context per line |
@@ -168,9 +219,80 @@ first load after a gap takes a few seconds.
 | `src/pipeline.py` | runs a chosen subset of checks and returns flags, per-line verdicts, summaries and honest errors |
 | `src/report.py` | stable flag ids, editor decisions, run JSON, Markdown report |
 | `src/metrics.py` | precision/recall per check, severity sweep, comparison at similar precision, acceptance rate, seeded recall |
-| `src/runlog.py` | every request logged with tokens; cost only when `config.yaml` has prices |
-| `app.py` | approve / edit / dismiss per flag, relationship sheet confirmation, exports |
-| `docs/solution_two_pages.md` → `scripts/make_pdf.py` | the two-page doc that is actually submitted, and the build that fails if it grows past two pages |
+| `src/runlog.py` | every request logged with tokens; cost only when `config.yaml` has prices. Anything not measured is written `measured: false` |
+| `src/llm.py` | the OpenAI-compatible client, JSON validation and one retry. Malformed output is an error, never a silent pass |
+| `src/prompting.py` | the prompts the three LLM checks share, including the register-sheet prefix and the `DRAFT - needs the builder's sign-off` warning |
+| `src/flags.py` | the flag record every check returns; it holds no numeric model confidence, by PRD §8 |
+| `src/sample.py` | loads the Phase 0 sample as parsed lines with the first-pass Telugu attached |
+| `src/config.py` | reads `config.yaml`, resolves the key from environment / `.env` / `.api_key`, and refuses to guess a calibration |
+| `src/console.py` | `force_utf8()`, the first statement in every `main()` on Windows |
+
+### `scripts/` - in run order
+
+| Script | What it is |
+|---|---|
+| `parse_corpus.py` | screenplay to `data/parsed/`, plus the validation report that proves nothing was dropped |
+| `corpus_stats.py` | the numbers in `docs/corpus_statistics.md` |
+| `select_sample.py` | the stratified 100-line sample, seed recorded in `results/selection_manifest.json` |
+| `make_blind_sheet.py` | `data/annotation/blind_annotation.csv` in randomized order, with no QA output visible |
+| `run_first_pass.py` | Step A: the machine Telugu draft, stored untouched |
+| `run_baseline.py` | Step C: the generic single-prompt control |
+| `run_structured.py` | Step C: the five checks. `--merge LABEL` re-prices one check without re-paying the others |
+| `run_seeded.py` | Step E: injects the known errors from `data/seed_ops.yaml`. The checks have never been run on the result |
+| `score.py` | Step D: precision/recall, the comparison at similar precision, acceptance rate, `checks_to_drop`, GO/NO-GO |
+| `make_acceptance_sheet.py` | the 174-row acceptance sheet, every status `pending` |
+| `record_acceptance.py` | writes a reviewer batch file into `decisions.csv`, and refuses to overwrite a flag that already carries a decision |
+| `derive_rate.py` | bounds the speaking rate from text already in the repo, labels it derived, and writes `calibration_derived.json`, never `calibration.json` |
+| `calibrate_rate.py` | turns the hand-timed `data/calibration_readings.csv` into `data/calibration.json` once those seconds exist |
+| `run_qa.py` | the whole gate on a screenplay nobody has seen: `--input <file or folder>`, with or without `--telugu` |
+| `make_pdf.py` | the submitted PDF, with the two-page guard and the type-size search |
+
+### `data/` - inputs, rules and the human record
+
+| Path | What it is |
+|---|---|
+| `screenplay/episode-001..006.txt` | the original 6-episode test screenplay, 184 dialogue lines, written by the author |
+| `new_show_demo/episode-001.txt` | a second original episode the pipeline had never seen, for the rerun demo |
+| `parsed/` | `corpus.csv`, `corpus.json`, `stats.json` and `validation_report.md`: the parse output and its audit |
+| `alias_map.yaml` | speaker label as written to canonical character |
+| `category_rules.yaml` | the transparent rules behind the sample categories |
+| `selection_plan.yaml` | target 100 lines and the category minimums |
+| `relationship_sheet.yaml` | the register and address sheet, part signed off. Saved flags quote the machine draft byte-for-byte, so repairs are deferred to one edit |
+| `seed_ops.yaml` | the Step E error fragments |
+| `format_drift_fixture.txt` | a screenplay in a drifted format, used by the parser tests |
+| `telugu/` | `first_pass.json` (Step A from the API, `openai/gpt-oss-120b`, the draft that was annotated), `first_pass_alt.json` (the same draft from the comparison model `qwen/qwen3.8-27b`), `first_pass_seeded.json` (Step E input), `new_input_live.json` (the unseen episode's draft), `step_a_raw_response.json` (an earlier in-session draft imported with `--from-file` so it claims no tokens, kept as returned and unedited) |
+| `annotation/` | `blind_annotation.csv` the ground truth (81 `needs_revision`, 19 acceptable, 83 rewrites), `blind_order.json` the randomization, `sample_lines.csv` / `.json` the lines behind it, `decisions.csv` all 174 flags with their status (34 decided), `acceptance_batches/` the three reviewer batch files with the reasons, `blind_annotation_README.md` how the sheet was filled |
+| `calibration_readings.csv` | the ten lines to time by hand; `seconds_read_aloud` is still empty, which is why the rate is derived and not measured |
+| `calibration_derived.json` | the derived bound (5.83 akshara/s), labelled derived |
+| `check_overrides.json` | the human decision that keeps `relationship`, recorded beside the rule that drops it |
+
+### `results/` - the raw outputs folder
+
+| Artifact | What it is |
+|---|---|
+| `structured_flags.json`, `structured_run.json`, `structured_calls.jsonl`, `structured_report.md` | the scored run: 174 flags, every prompt and raw response, tokens request by request |
+| `baseline_flags.json`, `baseline_run.json`, `baseline_calls.jsonl` | the generic control: 58 flags at 0.897 precision |
+| `scores.json` | every headline number, with the withdrawn reading kept beside it as `recall_legacy_flagcount` |
+| `run_log.json` | measured request and token totals for the whole experiment: 134 requests, 181,911 prompt, 129,851 completion, `null` dollars |
+| `timing_derived583_*` and `scores_timing_derived583.json` | timing re-priced at the derived rate: 142 flags, 37 of them timing, decision unchanged |
+| `demo_timing_uncalibrated_*` | timing alone over the 100-line sample at the provisional 3.5 (69 flags), which is what the UI demo shows |
+| `qa_rehearsal_*` | the two no-model checks over all six episodes: 91 flags |
+| `new_input_rehearsal_*` | the unseen episode with no draft at all: 0 flags, and it says so rather than calling the lines clean |
+| `new_input_code_*` | the unseen episode with the draft Step A generated for it, through the no-model checks: 33 flags |
+| `seeded_manifest.json` | the nine edits Step E would use. `structured_seeded_flags.json` does not exist, so nothing is scored against them |
+| `selection_manifest.json` | the sample seed and the category minimums |
+
+### `tests/`
+
+| File | What it is |
+|---|---|
+| `run_tests.py` | 109 self-tests: windows, chains, akshara counts, batching, metrics, report ids |
+| `run_ui_test.py` | 11 checks that drive the actual UI through `streamlit.testing.v1.AppTest` |
+| `fixtures/telugu_stub.json` | a Telugu draft for the tests, so they need no key and no network |
+
+Not in the repository on purpose: `.env`, `.api_key`, `.streamlit/secrets.toml` (the key never goes in a repo
+file), `scratch/`, `build/`, `__pycache__/`, and Kuku's confidential input pack, which `.gitignore` excludes by
+name pattern so a stray copy cannot be added by accident.
 
 ## Honesty rules the code enforces
 
