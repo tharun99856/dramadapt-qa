@@ -1,0 +1,14 @@
+flag_id	status	edited_suggestion	reason
+E02-L009_meaning	modify	ఈ విషయం మిస్ట్రెస్ కేన్‌కి తెలుస్తుంది.	The flag is right that the agency is reversed, but its fix "దీనిని వింటారు" keeps the Latin "Mistress Caine" and the wrong shape; the line needs the Telugu-script title and an impersonal construction.
+E04-L004_meaning	modify	మెట్లకు దీపం పెట్టండి! ఎవరైనా, మెట్లకు దీపం!	Right that "సీడీ" is a CD, not a stair. "మెట్టును వెలిగించండి" fixes the noun and still says the wrong thing: you light a stair with lamps, you do not light a stair as an object, and the second imperative is dropped.
+E06-L008_meaning	modify	అయితే మా నాన్న బాధ్యత మీద.	Right that the name "సిలాస్ వేన్" does not belong. The fix only deletes it; the "on the charge of" sense still needs "బాధ్యత మీద", and the connective should be "అయితే". Same text as the relationship flag on this line.
+E01-L015_meaning	accept		The one flag where the offered fix is fine as given. "దయచేసి" softens a low, quiet imperative, so dropping it is right.
+E02-L006_meaning	modify	అంటే అతని బుర్రలో ఇవన్నీ నింపుతున్నది మీరే.	Right that a declarative accusation became a question and a name was added. The fix keeps "మీరు ... నింపుతున్నారు", which is the wrong register and loses the accusation's stress on "you".
+E02-L029_meaning	modify	ఆమెకు సంతకం ఖరీదు ఏంటో తెలీదు.	Right that the cost nuance is dropped, but the fix "Aame ki hastakshara ki daam emi teliyadu" is still Latin script, so it would fail the script check on the way to fixing the meaning check.
+E03-L030_meaning	dismiss		The flag is wrong. The draft already has "సవాల్‌గా" for "dare", so nothing is omitted, and the offered "ధైర్యంగా" means "boldly", which would change the line. Matches the A017 verdict of acceptable.
+E03-L031_meaning	modify	...సవాలు. వింటున్నా, నాన్నా.	Right that the "a dare" clause is dropped. The fix "ధైర్యంగా" means "boldly", not "a dare".
+E04-L009_meaning	modify	ఎవరిదీ కాదు. ఇసుకతిన్నె నిలిచింది.	Right that "Nobody's" was read as "not for anyone", but "ఎవరూ కాదు" means "no one isn't", which flips the sense again. "bar" here is a sandbar, so it needs "ఇసుకతిన్నె".
+E04-L011_meaning	modify	నీ ఇసుకతిన్నె నిలిచింది. ట్రాలర్ నిలవలేదు.	Right that "did not" is flattened, but the offered "నిలిచలేదు" is a typo for "నిలవలేదు", and the same sandbar correction applies.
+E05-L026_meaning	dismiss		"నా కోట్లో డబ్బు ఉంది" reads fine as "money in my coat"; no fort is being read here. Matches the A070 verdict of acceptable.
+E05-L029_meaning	modify	తొమ్మిది నెలలు నేను పస్తులుంటే చూశారు.	Right that the draft implies the listener is hungry. The fix "ఆకలితో మిగిల్చారు" does not say starving, and keeps the మీరు register this speaker does not use here.
+E06-L019_meaning	modify	నన్ను చూడు.	Right that the imperative became a question. The A052 rewrite is longer than this flag needs, because the rest of the line is a separate clause; "నన్ను చూడు" carries the "look at me" part.

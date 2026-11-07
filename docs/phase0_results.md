@@ -1,6 +1,6 @@
 # Phase 0 result
 
-Written 2026-11-07T10:48:34+00:00 by `scripts/score.py`. Every figure below is computed from `blind_annotation.csv` (the reviewer's blind annotation) and the two run files.
+Written 2026-11-07T12:26:56+00:00 by `scripts/score.py`. Every figure below is computed from `blind_annotation.csv` (the reviewer's blind annotation) and the two run files.
 
 ## What the reviewer found
 
@@ -50,7 +50,7 @@ Severity sweep, structured:
 
 | check | accept | accept-but-modify | dismiss | acceptance rate |
 |---|---|---|---|---|
-| meaning | 0 | 0 | 0 | None |
+| meaning | 1 | 10 | 2 | 0.846 |
 | naturalness | 0 | 0 | 0 | None |
 | relationship | 3 | 7 | 11 | 0.476 |
 | script | 0 | 0 | 0 | None |

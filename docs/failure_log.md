@@ -290,7 +290,7 @@ is that no row content can now come from the assistant's memory.
 
 Consequences that have to travel with the submission. `scratch/annotation_consistency_notes.md` had promoted
 three of these ghost rows into sheet-wide claims, and all three are withdrawn in that file: the two
-non-words said to have slipped past the `script` check at rows 62 and 65 (`బందర్\u200cగాళ్లలో`, `బందరు` - drafts
+non-words said to have slipped past the `script` check at rows 62 and 65 (`బందర్‌గాళ్లలో`, `బందరు` - drafts
 that were never generated), the `క్లాజ్` consistency said to repeat at row 70, and the two register rows said to
 be Mistress Caine speaking to Edda and to the boy at 63 and 69, whose real speakers are Edda Halloran and the
 Voice of the lamp. The sharpest loss is the first of those: **the "no check asks whether a Telugu word exists"
@@ -483,6 +483,38 @@ which is the worst kind of suggestion a QA gate can offer because it is confiden
 and `మీరు`, while the check demanded `నీవు` on the strength of the signed-off Joss-to-Edda rule read in reverse.
 Four of those five causes are rules that can be repaired, which is the argument for keeping the check; the
 pronoun-and-verb finding is the same one entry 28 made, now on 21 flags instead of 10.
+
+**30. `meaning` came in at 0.846 acceptance, the same number as its precision, and they are not the same rows.**
+The check's whole flag set (13) went through in one batch: **1 accept, 10 accept-but-modify, 2 dismiss**, so
+acceptance 0.846 against a precision the scorer also reports as 0.846 (11 of 13). The coincidence is a coincidence.
+The scorer's two meaning false positives are `E01-L015` and `E05-L026`; the reviewer dismissed `E03-L030` and
+`E05-L026`. They agree on one of two.
+
+The disagreement has a name, and it is in my own code. `E03-L030` is the first half of a sentence split across two
+speakers, and `src/metrics.py` credits a `meaning` or `relationship` flag on a fragment when its chain partner
+carries a meaning instance - because the checks are told to judge whole sentences, so a correct judgement about
+the sentence should not be scored as a wrong flag about the fragment. The reviewer read the fragment on its own and
+said it was fine: the draft already has `సవాల్‌గా` for "a dare", so nothing is omitted there. The flag's own
+suggestion makes it worse - it replaces `సవాల్‌గా` with **`ధైర్యంగా`, which means "boldly"**. So the chain rule
+and the reviewer disagree about which line the flag belongs to, and on this row the reviewer is also right about
+the Telugu. The rescue is kept (it is the honest treatment of a verb-final split sentence) and it is now visible in
+`flags_rescued_by_chain_matching` rather than only in the code.
+
+The other half of the batch is more useful than the number. **Ten of the 13 flags named the right defect and the
+wrong fix**, and the fix defects come in four kinds, all of them checked against `results/structured_flags.json`
+before being written here: the suggestion is still in Latin letters (`E02-L029` → `Aame ki hastakshara ki daam emi
+teliyadu.`, which would fail the script check on its way to fixing the meaning check); the suggestion has a typo
+(`E04-L011` → `నిలిచలేదు`, for `నిలవలేదు`, and reads "bar" as a pub rather than a sandbar); the suggestion picks a
+word that means something else (`ధైర్యంగా` again, on `E03-L031`); and the suggestion is in the wrong register for
+the speaker (`E02-L006`, `E05-L029`). Meanwhile the one flag accepted outright, `E01-L015`, sits on a line the
+sheet labels `naturalness` and not `meaning` - a scorer false positive the reviewer found useful.
+
+**Why it matters:** meaning's weakness is in the suggestion layer, not the detection layer, and a metric that only
+scores the detection cannot see that. It also means acceptance and precision are answering different questions on
+the same rows, so neither number should be used to correct the other. n = 13, one reviewer, one batch; the rule in
+PRD §9 keeps `meaning` (0.846 is above the 0.2 drop threshold) and the overall NO-GO is unaffected, because that
+decision is the baseline comparison, not the acceptance pass. Sheet:
+`data/annotation/acceptance_batches/2026-11-07_meaning_batch1.tsv`.
 
 Two things that finding now requires, both deliberately deferred. The sheet must state the Edda-to-Joss side of
 the register fork and add `నాన్నా`, and the address-term rule must stop firing where English has no address term.

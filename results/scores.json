@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-07T10:48:34+00:00",
+  "generated": "2026-11-07T12:26:56+00:00",
   "inputs": {
     "annotations": "blind_annotation.csv",
     "annotated_lines": 100,
@@ -5438,14 +5438,14 @@
   },
   "acceptance_rate": {
     "meaning": {
-      "accept": 0,
-      "accept_but_modify": 0,
-      "dismiss": 0,
-      "pending": 13,
-      "decisions_recorded": 0,
-      "acceptance_rate": null,
-      "modify_share": null,
-      "dismissal_rate": null
+      "accept": 1,
+      "accept_but_modify": 10,
+      "dismiss": 2,
+      "pending": 0,
+      "decisions_recorded": 13,
+      "acceptance_rate": 0.846,
+      "modify_share": 0.769,
+      "dismissal_rate": 0.154
     },
     "naturalness": {
       "accept": 0,

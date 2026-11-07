@@ -10,8 +10,9 @@ by `python scripts/make_pdf.py`. Build: `README.md`, code in `src/`, run artifac
 > the model runs are real: Step A, the unstructured baseline control and the structured checks all
 > have token-level logs in `results/`. The human half is now done in part: **the 100-row blind annotation
 > is complete and scored, and the decision it produces is NO-GO.** The reviewer acceptance pass has
-> covered **21 of 174 flags** - the whole of `relationship`, acceptance 0.476 where its precision is 0.238.
-> Still `PENDING` are the other 153
+> covered **34 of 174 flags** - the whole of `relationship` (acceptance 0.476 where its precision is 0.238) and
+> the whole of `meaning` (0.846, the same figure as its precision, on different rows).
+> Still `PENDING` are the other 140
 > acceptance decisions and the speaking-rate calibration; the register standard is **part signed off** (the
 > Joss-to-Edda address form and the two name spellings are decided, the rest is not). Slots that depend on
 > the open items are marked rather than filled with an estimate, because the estimate would be the one
@@ -138,6 +139,24 @@ prefix that `relationship` and `naturalness` both quote, which entry 26 priced a
 once after the remaining acceptance batches rather than five times as causes surface. Entries 28 and 29 - one of
 which records that annotation row `A067` was corrected after the flags had been seen, a `corrected_line` only, so
 no metric moves but the sheet is no longer wholly blind.
+
+**`meaning` then landed on the same number as its precision, and the two still disagree.** All 13 flags graded in
+one batch: 1 accept, 10 accept-but-modify, 2 dismiss - acceptance **0.846**, and the scorer's precision for the
+check is 0.846 too (11 of 13). That is arithmetic coincidence, not corroboration, because they are not the same
+rows: the scorer's two false positives are `E01-L015` and `E05-L026`, the reviewer dismissed `E03-L030` and
+`E05-L026`. The one row they disagree about is my chain rule doing what it was built to do - `src/metrics.py`
+credits a `meaning` flag on a split-sentence fragment when the partner line carries the instance, and `E03-L030` is
+the fragment the sheet grades `acceptable` on its own. The reviewer's reason is checkable: the draft already says
+`సవాల్‌గా` for "a dare", and the flag's suggestion replaces it with `ధైర్యంగా`, which means *boldly*.
+
+The useful finding is where meaning is weak. Ten of 13 flags named the right defect and the wrong correction, in
+four kinds: a correction still in Latin letters (`E02-L029` - it would fail the `script` check on the way to fixing
+the meaning check), a typo (`నిలిచలేదు` for `నిలవలేదు`, `E04-L011`, which also reads "bar" as a pub rather than a
+sandbar), a word that means something else (`ధైర్యంగా` again, on `E03-L031`), and a correction in the wrong register
+for the speaker (`E02-L006`, `E05-L029`). The one flag accepted outright, `E01-L015`, sits on a line the sheet
+labels `naturalness` rather than `meaning` - a scorer false positive the reviewer found useful. So meaning's problem
+is the suggestion layer, which neither precision nor recall measures, and acceptance and precision should not be
+used to correct each other. Entry 30.
 
 ## 5. What is built and verified now
 

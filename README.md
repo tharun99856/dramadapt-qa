@@ -12,8 +12,10 @@ prototype runnable without access to a real localization pipeline. It is labelle
 does not auto-approve anything.
 
 Companion docs: `PRD.md` (requirements and the Phase 0 experiment), `PRD_ADDENDUM_format_and_sample.md`
-(parser rules and window definitions), `docs/solution_two_pager.md` (the submission doc),
-`docs/failure_log.md` (what went wrong during the build).
+(parser rules and window definitions), `docs/solution_two_pages.md` (the submitted two-page doc, exported to
+`docs/DramAdapt_QA_solution.pdf`), `docs/solution_two_pager.md` (its expanded companion),
+`docs/failure_log.md` (what went wrong during the build) and `docs/author_record.md` (what the author did,
+decided, withdrew and left open).
 
 **Submitted by:** Tharun Rathod, roll number 23115034, branch EE, IIT Roorkee. Kuku AI Generalist
 Assignment, Problem 3 (find your own problem). Solo author.
@@ -271,14 +273,15 @@ back silently, so "timing 1 of 2 detected" described a draft that never containe
 fixed in `src/metrics.py`, pinned by new tests (109 self-tests), and `results/scores.json` keeps the old reading
 beside the new one as `recall_legacy_flagcount` instead of replacing it quietly.
 
-Two things it still cannot say. The acceptance pass is **21 of 174 flags graded** - all of `relationship`, in two
-batches - and 153 rows in `data/annotation/decisions.csv` are still `pending`, so meaning, script, naturalness and
-timing have no acceptance number at all. And Step E has never been run against the seeded draft. The naturalness
+Two things it still cannot say. The acceptance pass is **34 of 174 flags graded** - the whole of `relationship`
+(21, two batches) and the whole of `meaning` (13, one batch) - and 140 rows in `data/annotation/decisions.csv` are
+still `pending`, so script, naturalness and timing have no acceptance number at all. And Step E has never been run
+against the seeded draft. The naturalness
 coverage gap that sat here - 16 lines two batches refused - is closed: all 100 lines are now judged, `naturalness`
 went 40 → 49 flags and the gate's untouched lines 3 → 1, which is the only reason the numbers in this section
 differ from the ones in entry 25. What it cost is in entry 26.
 
-The one check that has been graded disagrees with the arithmetic, usefully. Acceptance **10 of 21** (3 accept,
+Both graded checks disagree with the arithmetic, in opposite directions. `relationship`: acceptance **10 of 21** (3 accept,
 7 accept-but-modify, 11 dismiss) - 0.476 - where precision alone says 0.238, so `scripts/score.py` still names the
 check for dropping and `data/check_overrides.json` records the decision to keep repairing it, over the full 21,
 beside the rule's own output; the threshold was not moved to fit either. The 11 dismissals sort into five causes
@@ -292,7 +295,19 @@ model offered "Meeku oka gaṇṭa undi" for "I have an hour", which says *you h
 worst thing a QA gate can do, and it is confident about it. All seven accept-but-modify rows give one reason the
 check cannot see at all: the register lives in the pronoun and the verb ending, not in the address term - Caine
 uses `మీరు` with Edda where an aunt uses `నువ్వు`, and every fix it offered was rejected for prepending a title
-instead. Full text in `docs/phase0_results.md`; the failures behind this run are entries 22 to 29.
+instead.
+
+`meaning`: acceptance **11 of 13** (1 accept, 10 accept-but-modify, 2 dismiss) - 0.846 - and the scorer's precision
+for the same check is also 0.846 (11 of 13 flags), which is a coincidence and not a cross-check. The two rows each
+side calls wrong are not the same two rows: the scorer says `E01-L015` and `E05-L026`, the reviewer dismissed
+`E03-L030` and `E05-L026`. The split is my own chain rule - `src/metrics.py` credits a flag on a split-sentence
+fragment when its partner line carries the instance, and `E03-L030` is the fragment the reviewer graded
+`acceptable` on its own. What the batch really shows is that meaning's defect sits in the suggestion layer: ten of
+13 flags named the right problem and a wrong fix, in four kinds - a fix still in Latin letters (`E02-L029`), a typo
+(`నిలిచలేదు` for `నిలవలేదు`, `E04-L011`), a word that means something else (`ధైర్యంగా` is "boldly", not "a dare"),
+and a fix in the wrong register for the speaker (`E02-L006`, `E05-L029`). The one flag accepted outright,
+`E01-L015`, is a scorer false positive the reviewer found useful. Full text in `docs/phase0_results.md`; the
+failures behind this run are entries 22 to 30.
 
 ## Still gated on the builder
 
@@ -313,9 +328,10 @@ instead. Full text in `docs/phase0_results.md`; the failures behind this run are
   a rate derived from corrected lines makes those lines fit by construction, and the reviewer graded the
   3.5 flag list, not this one, so `results/scores.json` keeps describing the run that was actually annotated.
 - **Step D acceptance pass** in `app.py` - the builder's own approve / edit / dismiss decisions, which is
-  what PRD §9 uses to drop a check. 21 of 174 are in, and they are the whole of `relationship`, recorded from
-  `data/annotation/acceptance_batches/2026-11-07_relationship_batch{1,2}.tsv` by `scripts/record_acceptance.py`,
-  which refuses to overwrite a flag that already carries a decision. 153 rows are still `pending`: meaning 13,
+  what PRD §9 uses to drop a check. 34 of 174 are in: the whole of `relationship` and the whole of `meaning`,
+  recorded from `data/annotation/acceptance_batches/2026-11-07_relationship_batch{1,2}.tsv` and
+  `2026-11-07_meaning_batch1.tsv` by `scripts/record_acceptance.py`,
+  which refuses to overwrite a flag that already carries a decision. 140 rows are still `pending`:
   script 22, naturalness 49, timing 69.
 - **The sheet edit that is owed, and not yet paid.** The acceptance pass says `data/relationship_sheet.yaml` needs
   the Edda-to-Joss side of the register fork, `నాన్నా` as an expected address for a daughter to her father, and a
