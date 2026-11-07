@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render the submitted two-page solution doc to PDF.
 
-    python scripts/make_pdf.py            # writes docs/DramAdapt_QA_solution.pdf
+    python scripts/make_pdf.py            # writes DramAdapt_QA_solution.pdf at the repository root
     python scripts/make_pdf.py --keep     # leave build/two_pages.html behind
 
 Needs pandoc and Chrome (or Chromium) on PATH; both are already used by the build. The page budget is
@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "docs" / "solution_two_pages.md"
 STYLE = ROOT / "build" / "print_style.html"
 PAGE = ROOT / "build" / "two_pages.html"
-OUT = ROOT / "docs" / "DramAdapt_QA_solution.pdf"
+OUT = ROOT / "DramAdapt_QA_solution.pdf"
 MAX_PAGES = 2
 
 

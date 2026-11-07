@@ -84,7 +84,9 @@ direction: if the checks still find this many problems at that size, the problem
 140 of 174 acceptance decisions (script 22, naturalness 49, timing 69); the ten hand-timed seconds that would turn
 the derived rate into a measured one; Step E; the `relationship_sheet.yaml` repairs, deferred on purpose because
 editing that file rewrites the prompt prefix two checks quote, which entry 26 priced at 18 re-paid batches. The
-hosted prototype link and the walkthrough are mine to publish and are not in this repo yet.
+hosted prototype link (https://dramadapt-app.streamlit.app/) and the walkthrough
+(`DramAdapt_QA_walkthrough.mp4`, 2 min 36 s, silent with burned-in captions) are both published now, in
+the repository root and on the deployed app.
 
 **Time spent is not recorded here on purpose.** The git history is squashed to 10 commits on two dates and no
 timer was kept, so any figure I wrote would be invented. Fill it in from your own notes if the submission needs

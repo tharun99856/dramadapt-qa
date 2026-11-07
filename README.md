@@ -13,21 +13,25 @@ does not auto-approve anything.
 
 Companion docs: `PRD.md` (requirements and the Phase 0 experiment), `PRD_ADDENDUM_format_and_sample.md`
 (parser rules and window definitions), `docs/solution_two_pages.md` (the submitted two-page doc, exported to
-`docs/DramAdapt_QA_solution.pdf`), `docs/solution_two_pager.md` (its expanded companion),
+`DramAdapt_QA_solution.pdf` in this folder), `docs/solution_two_pager.md` (its expanded companion),
 `docs/failure_log.md` (what went wrong during the build) and `docs/author_record.md` (what the author did,
 decided, withdrew and left open).
 
 **What to read, in order.**
 
-1. **`docs/DramAdapt_QA_solution.pdf` - the submitted deliverable.** Two pages, and every number in it names the
-   file it came from. Its source is `docs/solution_two_pages.md`, and `python scripts/make_pdf.py` rebuilds it and
-   fails if the result grows past two pages.
-2. **https://dramadapt-app.streamlit.app/** - the live prototype, showing the real 174-flag run with the editor's
+1. **`DramAdapt_QA_solution.pdf` - the submitted deliverable, in this folder, not in `docs/`.** Two pages, and
+   every number in it names the file it came from. Its source is `docs/solution_two_pages.md`, and
+   `python scripts/make_pdf.py` rebuilds it and fails if the result grows past two pages.
+2. **`DramAdapt_QA_walkthrough.mp4` - the optional walkthrough, also in this folder.** 2 min 36 s, 15 steps,
+   captured from the live hosted app with a caption on every frame explaining what is on screen. Silent, so it
+   can be voiced over without re-rendering. `scripts/capture_walkthrough.py` and `scripts/make_walkthrough.py`
+   rebuild it; the capture only opens expanders and scrolls, so making it spends no model calls.
+3. **https://dramadapt-app.streamlit.app/** - the live prototype, showing the real 174-flag run with the editor's
    approve / edit / dismiss pass on top of it.
-3. This README - how to run the gate end to end, and the file-by-file index in "File structure" below.
-4. `results/` - the raw outputs folder the brief asks for: every prompt, every raw response, the flags, and the
+4. This README - how to run the gate end to end, and the file-by-file index in "File structure" below.
+5. `results/` - the raw outputs folder the brief asks for: every prompt, every raw response, the flags, and the
    measured token totals in `results/run_log.json`.
-5. `docs/phase0_results.md` and `docs/failure_log.md` - what the validation said, and what broke on the way.
+6. `docs/phase0_results.md` and `docs/failure_log.md` - what the validation said, and what broke on the way.
 
 **Submitted by:** Tharun Rathod, roll number 23115034, branch EE, IIT Roorkee. Kuku AI Generalist
 Assignment, Problem 3 (find your own problem). Solo author.
@@ -172,15 +176,35 @@ there do not survive a redeploy - use **Export → decisions CSV** to keep them,
 `data/annotation/decisions.csv` locally. And the free community tier sleeps when nobody is on it, so the
 first load after a gap takes a few seconds.
 
+## The walkthrough video
+
+**`DramAdapt_QA_walkthrough.mp4`, in this folder, next to the PDF.** 2 min 36 s, 15 steps, captured from
+the live hosted app rather than a local checkout, so what is on screen is what a reviewer gets from the link.
+It is silent and every frame carries a step chip and a caption explaining what is on screen, which means it can
+be played muted in a review queue or voiced over later without re-rendering anything.
+
+The steps, in order: the claim on one line, what the page does, why Telugu, why not Hindi, the summary numbers,
+how to read them, the anatomy of one flag, the editor action, then one flag each from the register, script and
+timing checks, the relationship sheet, the sidebar inputs, the run-checks panel and the export panel. It ends on
+what is still open and on the NO-GO verdict.
+
+To rebuild it: `python scripts/capture_walkthrough.py` (needs `selenium` and a local Chrome; writes PNGs and a
+manifest into the git-ignored `scratch/walkthrough/`), then `python scripts/make_walkthrough.py` (needs `pillow`
+and `imageio-ffmpeg`; writes the MP4 here). The capture only opens expanders and scrolls the page, so making the
+video spends no model calls, writes no editor decisions, and never presses the button that would.
+
 ## File structure
 
-125 tracked files. **The submitted deliverable is `docs/DramAdapt_QA_solution.pdf`**; everything else exists so a
+128 tracked files. **The two submitted deliverables sit in this folder, not in `docs/`: the doc is
+`DramAdapt_QA_solution.pdf` and the walkthrough is `DramAdapt_QA_walkthrough.mp4`**; everything else exists so a
 reader can check a line of it. Nothing needed to re-run the gate is missing from the repository.
 
 ### Root
 
 | File | What it is |
 |---|---|
+| `DramAdapt_QA_solution.pdf` | **the submitted two-page solution doc.** Built from `docs/solution_two_pages.md`, not hand-written. 2 pages, 152 KB |
+| `DramAdapt_QA_walkthrough.mp4` | **the optional walkthrough.** 2 min 36 s, 15 captioned steps, captured from the live hosted app, silent so it can be voiced over. 4.5 MB |
 | `README.md` | this file: what the gate does, how to run it end to end, where every number lives |
 | `PRD.md` | requirements, the Phase 0 design, and §9 with the thresholds and the drop rule fixed *before* the run |
 | `PRD_ADDENDUM_format_and_sample.md` | the screenplay input format, the window definitions and the sample plan |
@@ -195,8 +219,7 @@ reader can check a line of it. Nothing needed to re-run the gate is missing from
 
 | File | What it is |
 |---|---|
-| `DramAdapt_QA_solution.pdf` | **the submitted two-page solution doc.** Built, not hand-written |
-| `solution_two_pages.md` | its source, so the PDF is reproducible |
+| `solution_two_pages.md` | the source of `DramAdapt_QA_solution.pdf` in the repository root, so the PDF is reproducible |
 | `solution_two_pager.md` | the expanded companion: the same claims with the full reasoning |
 | `author_record.md` | what was the author's alone, what the assistant and models did, what was withdrawn |
 | `failure_log.md` | 30 numbered entries of what actually broke, with dates and how each was found |
@@ -246,6 +269,8 @@ reader can check a line of it. Nothing needed to re-run the gate is missing from
 | `calibrate_rate.py` | turns the hand-timed `data/calibration_readings.csv` into `data/calibration.json` once those seconds exist |
 | `run_qa.py` | the whole gate on a screenplay nobody has seen: `--input <file or folder>`, with or without `--telugu` |
 | `make_pdf.py` | the submitted PDF, with the two-page guard and the type-size search |
+| `capture_walkthrough.py` | optional, for the video only: drives the hosted app in headless Chrome and saves one PNG per step. Opens expanders and scrolls, never clicks, so it spends no model calls and writes no decisions. Needs `selenium` plus a local Chrome, neither of which the gate itself uses |
+| `make_walkthrough.py` | optional, for the video only: burns the step chip and caption onto those PNGs and writes `DramAdapt_QA_walkthrough.mp4` here in the root. Needs `pillow` and `imageio-ffmpeg` (the latter carries the ffmpeg binary, so no separate install) |
 
 ### `data/` - inputs, rules and the human record
 
@@ -466,8 +491,9 @@ failures behind this run are entries 22 to 30.
   the sheet was supposed to be filled before looking at any flag, and saying so is the honest part (entry 29).
 - **Step E seeded errors.** Never run against the seeded draft; the numbers that used to be in
   `results/scores.json` came from the clean run and are withdrawn (entry 25). The report prints the command.
-- **Still open:** first-hand viewing of released Telugu episodes, the rest of the register-standard
+- **Still open:** first-hand viewing of released Telugu episodes and the rest of the register-standard
   sign-off (the two name spellings and the Joss-to-Edda address are decided as of 2026-11-07 and recorded in
-  `data/relationship_sheet.yaml`), the **hosted prototype link** and the walkthrough. The two-page doc is done:
-  `docs/solution_two_pages.md`, exported by `python scripts/make_pdf.py` to
-  `docs/DramAdapt_QA_solution.pdf` (2 pages, and the script refuses to emit more).
+  `data/relationship_sheet.yaml`). The two-page doc is done: `docs/solution_two_pages.md`, exported by
+  `python scripts/make_pdf.py` to `DramAdapt_QA_solution.pdf` at the repository root (2 pages, and the script
+  refuses to emit more). The **hosted prototype** is live at https://dramadapt-app.streamlit.app/ and the
+  **walkthrough** is `DramAdapt_QA_walkthrough.mp4`, also at the repository root.

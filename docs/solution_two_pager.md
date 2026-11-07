@@ -2,7 +2,8 @@
 
 **Two-page solution summary. 7 November 2026.** Tharun Rathod, roll number 23115034, branch EE, IIT
 Roorkee - Kuku AI Generalist Assignment, Problem 3. **This file is the expanded companion**; the document
-that is submitted is the two-page `docs/solution_two_pages.md`, exported to `docs/DramAdapt_QA_solution.pdf`
+that is submitted is the two-page `docs/solution_two_pages.md`, exported to `DramAdapt_QA_solution.pdf`
+at the repository root
 by `python scripts/make_pdf.py`. Build: `README.md`, code in `src/`, run artifacts in
 `results/`, measured statistics in `docs/`. Companion: `PRD.md` (v2) and its addendum.
 
