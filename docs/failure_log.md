@@ -443,6 +443,32 @@ reviewer annotated the 3.5 list, so `results/scores.json` keeps describing the r
 this one sits beside it as `results/scores_timing_derived583.json`. The ten hand-timed seconds are still the
 only thing that can close this.
 
+**28. The first real acceptance batch says the check the arithmetic wanted to drop is the one worth fixing.**
+Ten `relationship` flags, the ten highest-severity ones, graded by the reviewer: 1 accept, 4 accept-but-modify,
+5 dismiss. Acceptance 0.5 where precision is 0.238, which is the first time in this project the two metrics of
+PRD §9 disagree, and they disagree for a reason worth writing down rather than a reason worth averaging out.
+
+The dismissals are not "the model hedged". **Two are wrong listeners**: `E01-L017` ("Tell that to the tide,
+Mistress") is addressed to Caine, and `E03-L010` is addressed to Silas, so the check was judging each line
+against the register rules of somebody the line was never spoken to. **Two are the sheet being wrong, not the
+line**: `E03-L031` uses `నాన్నా`, which is exactly right for a daughter to her father and simply is not in
+`expected_address_terms`, and `E05-L011` has a constable say `హల్లొరాన్ గారు`, which the reviewer calls natural
+where the sheet expects a title. **One is a rule applied to nothing**: `E03-L008` is "He bought them.", a
+four-word reply that needs no address term in Telugu. And all four accept-but-modify rows give the *same*
+reason, which the check never looks at: Mistress Caine addresses Edda with `మీరు` where an aunt uses `నువ్వు`,
+so the flag was right that the register was wrong and wrong about what to do about it every single time - it
+proposed prepending a title, and the reviewer replaced four whole lines instead.
+
+Two decisions followed, and both were made to keep the two kinds of statement separate. The builder kept the
+check rather than dropping it, on 10 of 21 flags, with the other 17 batches explicitly allowed to change it -
+so `scripts/score.py` still emits `checks_to_drop: ["relationship"]` from the pre-registered thresholds and
+`data/check_overrides.json` now carries the human decision beside it as `checks_retained_by_override`, with
+evidence, who decided, the n and when to revisit. Nothing moves a threshold to fit a conclusion, which is the
+same discipline that kept `recall_legacy_flagcount` in entry 25 instead of overwriting it. The other decision
+was to *not* apply the sheet fixes yet. Adding `నాన్నా` and the Caine→Edda pronoun register to
+`data/relationship_sheet.yaml` rewrites the prompt prefix that naturalness and relationship both quote, and
+entry 26 priced that at 18 full batches. One sheet edit after the acceptance pass, not eleven.
+
 ## Small, real, worth writing down
 
 

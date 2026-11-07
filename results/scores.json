@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-07T07:59:01+00:00",
+  "generated": "2026-11-07T10:35:08+00:00",
   "inputs": {
     "annotations": "blind_annotation.csv",
     "annotated_lines": 100,
@@ -56,8 +56,8 @@
     "genuine_issue_lines": 81,
     "issue_types": {
       "relationship": 11,
-      "naturalness": 58,
       "script": 24,
+      "naturalness": 58,
       "timing": 19,
       "meaning": 46
     },
@@ -5436,7 +5436,58 @@
       }
     ]
   },
-  "acceptance_rate": {},
+  "acceptance_rate": {
+    "meaning": {
+      "accept": 0,
+      "accept_but_modify": 0,
+      "dismiss": 0,
+      "pending": 13,
+      "decisions_recorded": 0,
+      "acceptance_rate": null,
+      "modify_share": null,
+      "dismissal_rate": null
+    },
+    "naturalness": {
+      "accept": 0,
+      "accept_but_modify": 0,
+      "dismiss": 0,
+      "pending": 49,
+      "decisions_recorded": 0,
+      "acceptance_rate": null,
+      "modify_share": null,
+      "dismissal_rate": null
+    },
+    "relationship": {
+      "accept": 1,
+      "accept_but_modify": 4,
+      "dismiss": 5,
+      "pending": 11,
+      "decisions_recorded": 10,
+      "acceptance_rate": 0.5,
+      "modify_share": 0.4,
+      "dismissal_rate": 0.5
+    },
+    "script": {
+      "accept": 0,
+      "accept_but_modify": 0,
+      "dismiss": 0,
+      "pending": 22,
+      "decisions_recorded": 0,
+      "acceptance_rate": null,
+      "modify_share": null,
+      "dismissal_rate": null
+    },
+    "timing": {
+      "accept": 0,
+      "accept_but_modify": 0,
+      "dismiss": 0,
+      "pending": 69,
+      "decisions_recorded": 0,
+      "acceptance_rate": null,
+      "modify_share": null,
+      "dismissal_rate": null
+    }
+  },
   "seeded_errors": {
     "status": "not measured",
     "reason": "structured_seeded_flags.json does not exist, so nothing here was run against the seeded draft. The 9 edits in seeded_manifest.json were never scored.",
@@ -5493,8 +5544,14 @@
       "pass": true
     },
     "acceptance_rate_available": {
-      "checks_with_decisions": [],
-      "pass": false
+      "checks_with_decisions": [
+        "meaning",
+        "naturalness",
+        "relationship",
+        "script",
+        "timing"
+      ],
+      "pass": true
     },
     "line_level_reported": {
       "structured": {
@@ -5521,10 +5578,20 @@
   },
   "decision": "NO-GO",
   "caveats": [
-    "acceptance rate not measured: no decisions recorded yet",
-    "seeded errors not measured: no run against the seeded draft exists, so any seeded number in a document is unsupported"
+    "seeded errors not measured: no run against the seeded draft exists, so any seeded number in a document is unsupported",
+    "checks the rule says to drop and the builder decided to keep: relationship (acceptance 5 of 10 on the ten highest-severity flags (1 accept, 4 accept-but-modify, 5 dismiss), against the precision 0.238 that is all the rule measured. The five dismissals name defects rather than noise: two misread the listener (E01-L017, E03-L010 - the English line is addressed to Caine and to Silas, not to whom the check assumed), two fired because the relationship sheet itself is wrong (E03-L031 నాన్నా is the right address for a daughter to her father; E05-L011 a constable using name plus గారు is the natural register), and one is a four-word reply that needs no address term at all (E03-L008). All four accept-but-modify rows give the same reason: Mistress Caine addresses Edda with మీరు where an aunt uses నువ్వు, which the check does not look at, so its own fix - prepend a title - was rejected every time.). The threshold was not moved to match the decision."
   ],
   "checks_to_drop": [
     "relationship"
+  ],
+  "checks_retained_by_override": [
+    {
+      "check": "relationship",
+      "decided_by": "the builder, on the reviewer's batch 1 of the acceptance pass (the reviewer left the call and asked for the other 17 batches first)",
+      "decided_on": "2026-11-07",
+      "evidence": "acceptance 5 of 10 on the ten highest-severity flags (1 accept, 4 accept-but-modify, 5 dismiss), against the precision 0.238 that is all the rule measured. The five dismissals name defects rather than noise: two misread the listener (E01-L017, E03-L010 - the English line is addressed to Caine and to Silas, not to whom the check assumed), two fired because the relationship sheet itself is wrong (E03-L031 నాన్నా is the right address for a daughter to her father; E05-L011 a constable using name plus గారు is the natural register), and one is a four-word reply that needs no address term at all (E03-L008). All four accept-but-modify rows give the same reason: Mistress Caine addresses Edda with మీరు where an aunt uses నువ్వు, which the check does not look at, so its own fix - prepend a title - was rejected every time.",
+      "n": "10 of the check's 21 flags",
+      "revisit_when": "the other 11 relationship flags are graded, and the timing and naturalness batches with it"
+    }
   ]
 }

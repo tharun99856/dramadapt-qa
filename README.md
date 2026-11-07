@@ -88,7 +88,10 @@ python scripts/run_structured.py --checks timing,script --rate 4.2 --merge struc
 
 # 8. Step D: scoring, the comparison at similar precision, acceptance rate, GO/NO-GO
 python scripts/make_acceptance_sheet.py --flags results/structured_flags.json
-#    ... record accept / accept-but-modify / dismiss per flag, or use the UI ...
+#    ... record accept / accept-but-modify / dismiss per flag, in the UI or in batch files:
+python scripts/record_acceptance.py data/annotation/acceptance_batches/2026-11-07_relationship_batch1.tsv
+#    ... a check the rule drops that the builder keeps goes in data/check_overrides.json; both stay
+#        in scores.json, and no threshold moves to fit a decision (entry 28)
 python scripts/score.py
 
 # 9. Step E: seeded errors, reported separately by type
@@ -268,13 +271,24 @@ back silently, so "timing 1 of 2 detected" described a draft that never containe
 fixed in `src/metrics.py`, pinned by new tests (109 self-tests), and `results/scores.json` keeps the old reading
 beside the new one as `recall_legacy_flagcount` instead of replacing it quietly.
 
-Two things it still cannot say. The acceptance pass has not been run, so `checks_to_drop: ["relationship"]` is
-arithmetic rather than the decision PRD §9 asks for; checked directly, 0 of that check's 16 false positives are
-refusals, so the number rests on precision alone and not on the model hedging. And Step E has never been run
+Two things it still cannot say. The acceptance pass has only just started: **10 of 174 flags are graded**, all
+ten of them `relationship`, and 164 rows in `data/annotation/decisions.csv` are still `pending`, so the four other
+checks have no acceptance number at all. What those ten say is in the next paragraph. And Step E has never been run
 against the seeded draft. The naturalness coverage gap that sat here - 16 lines two batches refused - is closed:
 all 100 lines are now judged, `naturalness` went 40 → 49 flags and the gate's untouched lines 3 → 1, which is
 the only reason the numbers in this section differ from the ones in entry 25. What it cost is in entry 26.
-Full text in `docs/phase0_results.md`; the failures behind this run are entries 22 to 26.
+
+The first ten acceptance decisions, and they are the reviewer's not the scorer's, change the shape of the
+relationship finding. Acceptance **5 of 10** (1 accept, 4 accept-but-modify, 5 dismiss) where precision alone said
+0.238, so `scripts/score.py` still names the check for dropping and `data/check_overrides.json` records the
+decision to keep repairing it instead - the rule's arithmetic and the human call sit in the same output, and the
+threshold was not moved to fit either. The dismissals are not noise: **two misread the listener** (`E01-L017` and
+`E03-L010` are addressed to Caine and to Silas, not to whom the check assumed), **two fired because the sheet itself
+is wrong** (`నాన్నా` is correct for a daughter to her father; a constable's name + `గారు` is the natural register),
+and one is a four-word reply that needs no address term. All four accept-but-modify rows give the same reason, and
+it is a blind spot rather than a mistake: Mistress Caine addresses Edda with `మీరు` where an aunt uses `నువ్వు`, the
+check does not look at pronoun register at all, and every fix it offered ("prepend a title") was rejected.
+Full text in `docs/phase0_results.md`; the failures behind this run are entries 22 to 28.
 
 ## Still gated on the builder
 
@@ -295,7 +309,10 @@ Full text in `docs/phase0_results.md`; the failures behind this run are entries 
   a rate derived from corrected lines makes those lines fit by construction, and the reviewer graded the
   3.5 flag list, not this one, so `results/scores.json` keeps describing the run that was actually annotated.
 - **Step D acceptance pass** in `app.py` - the builder's own approve / edit / dismiss decisions, which is
-  what PRD §9 uses to drop a check. Until they exist, `checks_to_drop: ["relationship"]` is arithmetic.
+  what PRD §9 uses to drop a check. 10 of 174 are in (batch 1 of `relationship`, recorded from
+  `data/annotation/acceptance_batches/2026-11-07_relationship_batch1.tsv` by `scripts/record_acceptance.py`, which
+  refuses to overwrite a flag that already carries a decision). 164 rows are still `pending`: relationship 11,
+  meaning 13, script 22, naturalness 49, timing 69.
 - **Step E seeded errors.** Never run against the seeded draft; the numbers that used to be in
   `results/scores.json` came from the clean run and are withdrawn (entry 25). The report prints the command.
 - **Still open:** first-hand viewing of released Telugu episodes, the rest of the register-standard

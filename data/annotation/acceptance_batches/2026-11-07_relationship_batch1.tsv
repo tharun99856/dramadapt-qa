@@ -1,0 +1,11 @@
+flag_id	status	edited_suggestion	reason
+E01-L017_relationship	dismiss		The English says "Mistress", so the listener is Caine, not Edda. The flag misread who is being spoken to. The Latin "Mistress" is a real script problem, but the script check already catches it.
+E01-L029_relationship	modify	అత్తా. క్రిస్మస్‌కి నన్ను అలాగే పిలిచావు.	Caine addresses Edda with మీరు, which is the wrong register for an aunt speaking to her niece. The flag is right that something is wrong; prepending "Miss Halloran" is the wrong fix, the real fix is switching to నువ్వు.
+E03-L003_relationship	modify	నీ చేతిలో ఆటుపోటు ఉంది. కానీ అది తగ్గుతోంది.	Caine addresses Edda with మీరు, wrong register for aunt to niece. Flag right, proposed fix wrong.
+E03-L006_relationship	modify	మోసుకెళ్ళు. నేను చూస్తా.	Caine addresses Edda with మీరు, wrong register for aunt to niece. Flag right, proposed fix wrong.
+E03-L008_relationship	dismiss		A short reply does not need "Mistress Caine" added. The real problems on this line are script and naturalness.
+E03-L010_relationship	dismiss		The line is addressed to Silas, not Caine, so the flag has the wrong listener.
+E03-L012_relationship	modify	నువ్వు సీల్‌కి కూడా అర్హురాలివి కాదు. ఆమెను తీసుకెళ్ళండి.	Caine addresses Edda with మీరు, wrong register for aunt to niece. Flag right, proposed fix wrong.
+E03-L024_relationship	accept		"అంటీ" makes Aunt a direct address, but she is being talked about, so a neutral reference is right.
+E03-L031_relationship	dismiss		"నాన్నా" is the right address for Edda to her father. The fix is to add it to the relationship sheet, not remove it from the line.
+E05-L011_relationship	dismiss		A constable using name plus గారు is natural, and "Mistress Halloran" would be less so.

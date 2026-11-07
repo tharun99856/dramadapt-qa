@@ -1,0 +1,10 @@
+[
+  {
+    "check": "relationship",
+    "decided_by": "the builder, on the reviewer's batch 1 of the acceptance pass (the reviewer left the call and asked for the other 17 batches first)",
+    "decided_on": "2026-11-07",
+    "evidence": "acceptance 5 of 10 on the ten highest-severity flags (1 accept, 4 accept-but-modify, 5 dismiss), against the precision 0.238 that is all the rule measured. The five dismissals name defects rather than noise: two misread the listener (E01-L017, E03-L010 - the English line is addressed to Caine and to Silas, not to whom the check assumed), two fired because the relationship sheet itself is wrong (E03-L031 నాన్నా is the right address for a daughter to her father; E05-L011 a constable using name plus గారు is the natural register), and one is a four-word reply that needs no address term at all (E03-L008). All four accept-but-modify rows give the same reason: Mistress Caine addresses Edda with మీరు where an aunt uses నువ్వు, which the check does not look at, so its own fix - prepend a title - was rejected every time.",
+    "n": "10 of the check's 21 flags",
+    "revisit_when": "the other 11 relationship flags are graded, and the timing and naturalness batches with it"
+  }
+]

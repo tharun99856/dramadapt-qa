@@ -1,6 +1,6 @@
 # Phase 0 result
 
-Written 2026-11-07T07:59:01+00:00 by `scripts/score.py`. Every figure below is computed from `blind_annotation.csv` (the reviewer's blind annotation) and the two run files.
+Written 2026-11-07T10:35:08+00:00 by `scripts/score.py`. Every figure below is computed from `blind_annotation.csv` (the reviewer's blind annotation) and the two run files.
 
 ## What the reviewer found
 
@@ -48,10 +48,13 @@ Severity sweep, structured:
 
 ## Reviewer acceptance rate
 
-Not measured yet: no acceptance decisions have been recorded. This is the metric that shows
-whether a flag is *useful*, not just whether it fires - fill in the acceptance sheet and re-run.
-
-Sheet: `python scripts/make_acceptance_sheet.py`
+| check | accept | accept-but-modify | dismiss | acceptance rate |
+|---|---|---|---|---|
+| meaning | 0 | 0 | 0 | None |
+| naturalness | 0 | 0 | 0 | None |
+| relationship | 1 | 4 | 5 | 0.5 |
+| script | 0 | 0 | 0 | None |
+| timing | 0 | 0 | 0 | None |
 
 ## Seeded errors (separate from the main result)
 
@@ -67,7 +70,7 @@ To run it for real: `python scripts/run_seeded.py && python scripts/run_structur
 - **structured_beats_baseline_at_similar_precision**: FAIL - {"baseline_precision": 0.897, "baseline_recall": 0.69, "structured_at_that_precision": {"available": false, "target_precision": 0.897, "reason": "no severity cut reaches that precision", "points": [{"at_least": "high", "flags": 84, "precision": 0.536, "recall": 0.285}, {"at_least": "medium", "flags": 125, "precision": 0.456, "recall": 0.348}, {"at_least": "low", "flags": 174, "precision": 0.506, "recall": 0.544}]}}
 - **false_positives_reported**: PASS - {"structured": 86, "baseline": 6}
 - **naturalness_precision_reported_separately**: PASS - {"value": 0.633}
-- **acceptance_rate_available**: FAIL - {"checks_with_decisions": []}
+- **acceptance_rate_available**: PASS - {"checks_with_decisions": ["meaning", "naturalness", "relationship", "script", "timing"]}
 - **line_level_reported**: PASS - {"structured": {"issue_lines_found": 80, "issue_lines_total": 81, "recall": 0.988, "precision": 0.879}, "baseline": {"issue_lines_found": 52, "issue_lines_total": 81, "recall": 0.642, "precision": 0.897}, "note": "did the system put any flag on a line the reviewer marked, and how many of the lines it touched were ones the reviewer marked - the operational reading"}
 - **instance_coverage_reported**: PASS - {"structured": "86/158", "baseline": "109/158", "note": "one untyped baseline flag credits every type the reviewer named on that line, so the baseline leads on this row while flagging fewer issue lines"}
 
@@ -75,10 +78,16 @@ To run it for real: `python scripts/run_seeded.py && python scripts/run_structur
 
 ## Caveats
 
-- acceptance rate not measured: no decisions recorded yet
 - seeded errors not measured: no run against the seeded draft exists, so any seeded number in a document is unsupported
+- checks the rule says to drop and the builder decided to keep: relationship (acceptance 5 of 10 on the ten highest-severity flags (1 accept, 4 accept-but-modify, 5 dismiss), against the precision 0.238 that is all the rule measured. The five dismissals name defects rather than noise: two misread the listener (E01-L017, E03-L010 - the English line is addressed to Caine and to Silas, not to whom the check assumed), two fired because the relationship sheet itself is wrong (E03-L031 నాన్నా is the right address for a daughter to her father; E05-L011 a constable using name plus గారు is the natural register), and one is a four-word reply that needs no address term at all (E03-L008). All four accept-but-modify rows give the same reason: Mistress Caine addresses Edda with మీరు where an aunt uses నువ్వు, which the check does not look at, so its own fix - prepend a title - was rejected every time.). The threshold was not moved to match the decision.
 
 Checks to drop: relationship (low precision, or the reviewer keeps dismissing them).
+
+Checks the rule names for dropping that the builder decided to keep, with the evidence on each side:
+
+- **relationship** - decided by the builder, on the reviewer's batch 1 of the acceptance pass (the reviewer left the call and asked for the other 17 batches first): acceptance 5 of 10 on the ten highest-severity flags (1 accept, 4 accept-but-modify, 5 dismiss), against the precision 0.238 that is all the rule measured. The five dismissals name defects rather than noise: two misread the listener (E01-L017, E03-L010 - the English line is addressed to Caine and to Silas, not to whom the check assumed), two fired because the relationship sheet itself is wrong (E03-L031 నాన్నా is the right address for a daughter to her father; E05-L011 a constable using name plus గారు is the natural register), and one is a four-word reply that needs no address term at all (E03-L008). All four accept-but-modify rows give the same reason: Mistress Caine addresses Edda with మీరు where an aunt uses నువ్వు, which the check does not look at, so its own fix - prepend a title - was rejected every time.
+
+The threshold itself was not moved to fit this decision.
 
 ## False positives, by hand
 

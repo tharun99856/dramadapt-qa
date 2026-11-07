@@ -9,8 +9,9 @@ by `python scripts/make_pdf.py`. Build: `README.md`, code in `src/`, run artifac
 > **Status of the numbers below.** The prototype and the validation harness are built and tested, and
 > the model runs are real: Step A, the unstructured baseline control and the structured checks all
 > have token-level logs in `results/`. The human half is now done in part: **the 100-row blind annotation
-> is complete and scored, and the decision it produces is NO-GO.** Still `PENDING` are the reviewer
-> acceptance pass and the speaking-rate calibration; the register standard is **part signed off** (the
+> is complete and scored, and the decision it produces is NO-GO.** The reviewer acceptance pass has
+> started and stopped at **10 of 174 flags**, all `relationship`. Still `PENDING` are the other 164
+> acceptance decisions and the speaking-rate calibration; the register standard is **part signed off** (the
 > Joss-to-Edda address form and the two name spellings are decided, the rest is not). Slots that depend on
 > the open items are marked rather than filled with an estimate, because the estimate would be the one
 > number this project exists to measure. Nothing here is a result until it has a file behind it.
@@ -109,6 +110,19 @@ with zero false positives and no model call, `timing` found 18 of 19, `naturalne
 gate is good at saying *which lines to re-read* and weak at saying *what is wrong with them*, and the criterion
 pre-registered in §9 measures the second thing. The recorded decision stays NO-GO; it is not being relabelled
 after the fact. `results/scores.json`, `docs/phase0_results.md`.
+
+**Then the first ten acceptance decisions disagreed with the precision number, informatively.** The reviewer
+graded the ten highest-severity `relationship` flags: 1 accept, 4 accept-but-modify, 5 dismiss - acceptance 0.5
+where that check's precision is 0.238, which is the one case PRD §9 was written for. The dismissals name the
+defect instead of just rejecting the flag: `E01-L017` and `E03-L010` were judged against the wrong listener (the
+English line is spoken *to* Caine and *to* Silas), `E03-L031` uses `నాన్నా`, which is right for a daughter to her
+father and missing from the sheet, `E05-L011` has a constable use `హల్లొరాన్ గారు`, which the reviewer calls
+natural and the sheet calls wrong, and `E03-L008` is four words that need no address term. All four modified rows
+give one reason the check cannot see: Caine addresses Edda with `మీరు` where an aunt uses `నువ్వు`, so the flag
+was right that the register was off and wrong about the fix every time it offered one. The check is therefore
+kept, not dropped, on 10 of its 21 flags - and because a pre-registered rule should not be quietly reinterpreted,
+`scripts/score.py` still emits `checks_to_drop: ["relationship"]` while `data/check_overrides.json` records the
+human decision next to it as `checks_retained_by_override`, with the evidence, the n and when to revisit. Entry 28.
 
 ## 5. What is built and verified now
 

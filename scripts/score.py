@@ -39,6 +39,7 @@ def main() -> int:
     ap.add_argument("--seeded-manifest", default=str(ROOT / "results" / "seeded_manifest.json"))
     ap.add_argument("--seeded-flags", default=str(ROOT / "results" / "structured_seeded_flags.json"))
     ap.add_argument("--acceptance", default=str(ACCEPTANCE_CSV))
+    ap.add_argument("--overrides", default=str(ROOT / "data" / "check_overrides.json"))
     ap.add_argument("--out", default=str(ROOT / "results" / "scores.json"))
     ap.add_argument("--report", default=str(ROOT / "docs" / "phase0_results.md"))
     args = ap.parse_args()
@@ -154,6 +155,15 @@ def main() -> int:
                (acceptance.get(check, {}).get("acceptance_rate") is not None
                 and acceptance[check]["acceptance_rate"] < 0.2)]
 
+    # A pre-registered rule and a human decision are different kinds of thing, so both stay in the
+    # output. Overrides never edit `dropped`: they sit beside it, with the reason and the n.
+    overrides = [o for o in _overrides(Path(args.overrides)) if o["check"] in dropped]
+    if overrides:
+        caveats.append(
+            "checks the rule says to drop and the builder decided to keep: "
+            + "; ".join(f"{o['check']} ({o['evidence']})" for o in overrides)
+            + ". The threshold was not moved to match the decision.")
+
     reviewer_std = _register_standard()
 
     out = {
@@ -204,6 +214,7 @@ def main() -> int:
         "decision": decision,
         "caveats": caveats,
         "checks_to_drop": dropped,
+        "checks_retained_by_override": overrides,
     }
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -224,6 +235,21 @@ def main() -> int:
     print(f"decision: {decision}   checks to drop: {dropped or 'none'}")
     print(f"wrote {Path(args.out).name} and {report_path.name}")
     return 0
+
+
+def _overrides(path: Path) -> list[dict]:
+    """Decisions to keep a check the rule would drop. Data, not prose, so the reason is attributable.
+
+    Each entry needs `check`, `evidence` and `decided_by`. A run with no such file simply has no
+    overrides, which is the honest default: silence is not a decision to keep.
+    """
+    if not path.exists():
+        return []
+    entries = json.loads(path.read_text(encoding="utf-8"))
+    bad = [e for e in entries if not {"check", "evidence", "decided_by"} <= set(e)]
+    if bad:
+        sys.exit(f"{path.name}: every override needs check, evidence and decided_by")
+    return entries
 
 
 def _register_standard() -> dict:
@@ -373,6 +399,12 @@ def render(out: dict, lines) -> str:
         head += ["## Caveats", ""] + [f"- {c}" for c in out["caveats"]] + [""]
     if out["checks_to_drop"]:
         head += [f"Checks to drop: {', '.join(out['checks_to_drop'])} (low precision, or the reviewer keeps dismissing them).", ""]
+    if out.get("checks_retained_by_override"):
+        head += ["Checks the rule names for dropping that the builder decided to keep, with the "
+                 "evidence on each side:", ""]
+        for o in out["checks_retained_by_override"]:
+            head += [f"- **{o['check']}** - decided by {o['decided_by']}: {o['evidence']}"]
+        head += ["", "The threshold itself was not moved to fit this decision.", ""]
     if out["structured"]["errors"] or out["baseline"]["errors"]:
         head += ["## Runs that failed rather than came out clean", ""]
         for err in out["structured"]["errors"] + out["baseline"]["errors"]:
