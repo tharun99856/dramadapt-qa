@@ -60,7 +60,7 @@ lines.
 |---|---|---|
 | Meaning preservation | LLM per scene; verdict `same / weakened / strengthened / reversed / missing` + one-line reason | A generic prompt averages this away. Split-sentence chains are judged as whole sentences, because Telugu is verb-final |
 | Relationship & address | Python rules narrow which lines to ask about; LLM judges the Telugu against a relationship sheet the editor confirms | Honorific systems cannot be find-and-replaced. A register shift the sheet does not predict is a flag |
-| Timing | **Python only, zero model calls.** akshara count ÷ speaking rate, against the line's own slot and the gap to the next line | Deterministic, free, and reproducible. The speaking rate is still a provisional 3.5 akshara/s override: `data/calibration_readings.csv` has its ten lines listed and `seconds_read_aloud` empty, so this is calibrated arithmetic waiting for hand-timed readings, not a validated rate |
+| Timing | **Python only, zero model calls.** akshara count ÷ speaking rate, against the line's own slot and the gap to the next line | Deterministic, free, and reproducible. The speaking rate is still a provisional 3.5 akshara/s override: `data/calibration_readings.csv` has its ten lines listed and `seconds_read_aloud` empty, so this is calibrated arithmetic waiting for hand-timed readings, not a validated rate. `scripts/derive_rate.py` puts a derived bound on it (5.83 from the reviewer's own corrected lines, not measured) and re-prices the check for free; see §7 |
 | Cultural naturalness | LLM, **advisory only** - "possibly unnatural, human review recommended" | Never a score or a percentage. Reported and priced separately because it is the weakest check |
 | Script form | **Python only, zero model calls.** Counts Unicode letters per line | Added after the live first pass returned 20 of 100 lines as Telugu words in Latin letters. A model sees a correct Telugu sentence there; a dubbing artist sees nothing readable |
 
@@ -142,11 +142,15 @@ after the fact. `results/scores.json`, `docs/phase0_results.md`.
   in Latin letters** - e.g. `Meeru seal ki kooda layakaledu.` - which no translation prompt flags,
   because to a language model that *is* Telugu. This created check 5. (2) At a provisional
   3.5 akshara/s the timing check shortlists most of the draft - 69 flags over 66 of the 80 lines it
-  could read, 82% of them past slot + 15% - so the first useful number is not the
+  could read, 82% of them past slot × 1.15 - so the first useful number is not the
   flag count but the overrun distribution: the report prints the median estimate/slot ratio and the
-  share of lines over slot + 15% beside the count, because a check that flags everything selects
-  nothing. Both readings are still open - the rate is uncalibrated, or a machine first pass really
-  does overrun Telugu slots structurally - and the second would be the most useful thing here.
+  share of lines over slot × 1.15 beside the count, because a check that flags everything selects
+  nothing. The rate is now bounded rather than only guessed: `scripts/derive_rate.py` divides the
+  reviewer's own corrected lines by their slots and gets **5.83 akshara/s** (n=83) where the draft's
+  text demands 6.11. Re-pricing timing at 5.83 costs no model calls and cuts the flags 69 → 37 and
+  the false positives 50 → 20, while losing 2 of 19 true timing instances. That is a sensitivity
+  check, not a calibration - the reviewer graded the 3.5 list - and it is recorded as derived in
+  `data/calibration_derived.json`, a file the config loader is not allowed to read.
   `PENDING` the builder's ten hand-timed readings. (3) **The relationship check's 51 flags were 21
   problems and 30 refusals.** The prompt offers `unknown` as a verdict, the code mapped anything it did
   not recognise to a low-severity flag, and 59% of that check's output was the model saying it had no

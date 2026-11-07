@@ -1,0 +1,79 @@
+{
+  "provenance": "DERIVED from data/annotation/blind_annotation.csv, not measured from a speaker",
+  "not_the_same_as": "data/calibration.json (hand-timed readings; does not exist yet)",
+  "circularity": "a rate derived from the reviewer's corrected lines makes those lines fit by construction; it may judge the draft, not the corrections",
+  "required_rate_corrected_lines": {
+    "n": 83,
+    "median": 5.83,
+    "q1": 5.0,
+    "q3": 7.39,
+    "p90": 8.21,
+    "max": 11.25
+  },
+  "required_rate_draft": {
+    "n": 79,
+    "median": 6.11,
+    "q1": 4.63,
+    "q3": 7.98,
+    "p90": 9.69,
+    "max": 14.17
+  },
+  "measured_rate_hand_timed": null,
+  "hand_timed_readings_filled": 0,
+  "interim_rate_akshara_per_second": 5.83,
+  "rate_sweep": {
+    "3.0": {
+      "flags": 76,
+      "lines_flagged": 73,
+      "lines_checked": 80,
+      "overlaps_next_line": 52,
+      "over_slot": 21,
+      "chain_over_slot": 3
+    },
+    "3.5": {
+      "flags": 69,
+      "lines_flagged": 66,
+      "lines_checked": 80,
+      "overlaps_next_line": 49,
+      "over_slot": 17,
+      "chain_over_slot": 3
+    },
+    "4.0": {
+      "flags": 64,
+      "lines_flagged": 61,
+      "lines_checked": 80,
+      "overlaps_next_line": 40,
+      "over_slot": 21,
+      "chain_over_slot": 3
+    },
+    "5.0": {
+      "flags": 49,
+      "lines_flagged": 47,
+      "lines_checked": 80,
+      "over_slot": 21,
+      "overlaps_next_line": 26,
+      "chain_over_slot": 2
+    },
+    "6.0": {
+      "flags": 34,
+      "lines_flagged": 34,
+      "lines_checked": 80,
+      "over_slot": 18,
+      "overlaps_next_line": 16
+    },
+    "6.5": {
+      "flags": 28,
+      "lines_flagged": 28,
+      "lines_checked": 80,
+      "over_slot": 17,
+      "overlaps_next_line": 11
+    },
+    "7.0": {
+      "flags": 20,
+      "lines_flagged": 20,
+      "lines_checked": 80,
+      "over_slot": 12,
+      "overlaps_next_line": 8
+    }
+  }
+}

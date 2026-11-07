@@ -1,0 +1,5530 @@
+{
+  "generated": "2026-11-07T10:24:00+00:00",
+  "inputs": {
+    "annotations": "blind_annotation.csv",
+    "annotated_lines": 100,
+    "structured_file": "timing_derived583_flags.json",
+    "baseline_file": "baseline_flags.json",
+    "structured_model": [],
+    "baseline_model": "openai/gpt-oss-120b",
+    "sample_seed": 20261106,
+    "telugu_provenance": {
+      "method": "api",
+      "provider_base_url": "https://api.groq.com/openai/v1",
+      "model": "openai/gpt-oss-120b",
+      "temperature": 0,
+      "generated": "2026-11-06T12:23:57+00:00",
+      "sample_seed": 20261106,
+      "measured": true,
+      "note": "machine first pass - stand-in, not a human localization"
+    },
+    "structured_run_log": {
+      "requests_total": 0,
+      "requests_measured": 0,
+      "requests_unmeasured_provenance": 0,
+      "by_kind": {},
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "cost_usd": null,
+      "priced": false,
+      "models": []
+    },
+    "baseline_run_log": {
+      "requests_total": 18,
+      "requests_measured": 18,
+      "requests_unmeasured_provenance": 0,
+      "by_kind": {
+        "baseline": 18
+      },
+      "prompt_tokens": 9633,
+      "completion_tokens": 14990,
+      "cost_usd": null,
+      "priced": false,
+      "models": [
+        "openai/gpt-oss-120b"
+      ]
+    },
+    "seeded_flags_file": null
+  },
+  "reviewer": {
+    "genuine_issue_lines": 81,
+    "issue_types": {
+      "relationship": 11,
+      "script": 24,
+      "naturalness": 58,
+      "timing": 19,
+      "meaning": 46
+    },
+    "ambiguous_verdict_rows": [],
+    "note": "one Telugu evaluator (the builder), one language, 100 lines. No inter-rater agreement is claimed. Provenance of these verdicts, stated plainly because it affects how much weight they carry: they were recorded in ten batches in a chat session with an AI assistant, and a share of them were recorded against a grade the assistant drafted and the reviewer then reviewed, changed or accepted. The reviewer approved every row, so the judgement on the sheet is the reviewer's, but this is human-reviewed AI-suggested annotation, not independent human annotation, and it must not be described as that. One block (rows 61-70) was first graded against ten lines the assistant invented and has been re-graded against the file; see docs/failure_log.md entry 22.",
+    "address_rule": "Joss Marek addresses Edda Halloran with the singular informal నువ్వు in every episode, because he is a rough bargeman speaking to a young woman he is close to - the reviewer's decision of 2026-11-07, which supersedes the draft note limiting the informal form to episode 4 onward.",
+    "name_spellings": {
+      "caine": "కేన్",
+      "halloran": "హల్లొరాన్"
+    },
+    "register_standard_status": "PART-SIGNED-OFF - two decisions are the reviewer's own (see reviewer_decisions); the rest of draft_paragraph is still unconfirmed against the episodes"
+  },
+  "structured": {
+    "overall": {
+      "flags": 142,
+      "lines_flagged": 74,
+      "true_positive_flags": 86,
+      "false_positive_flags": 56,
+      "instances_found": 84,
+      "instances_total": 158,
+      "missed_human_issues": 74,
+      "precision": 0.606,
+      "recall": 0.532,
+      "recall_note": "instances credited / reviewer instances; numerator and denominator are the same kind",
+      "recall_legacy_flagcount": 0.537,
+      "legacy_denominator_was": 160,
+      "line_level": {
+        "issue_lines_found": 68,
+        "issue_lines_total": 81,
+        "recall": 0.84,
+        "precision": 0.919
+      },
+      "tp_line_ids": [
+        "E01-L003",
+        "E01-L004",
+        "E01-L005",
+        "E01-L014",
+        "E01-L015",
+        "E01-L017",
+        "E01-L024",
+        "E01-L029",
+        "E01-L030",
+        "E02-L004",
+        "E02-L006",
+        "E02-L009",
+        "E02-L011",
+        "E02-L012",
+        "E02-L026",
+        "E02-L028",
+        "E02-L029",
+        "E02-L030",
+        "E02-L031",
+        "E03-L002",
+        "E03-L003",
+        "E03-L006",
+        "E03-L008",
+        "E03-L010",
+        "E03-L011",
+        "E03-L012",
+        "E03-L018",
+        "E03-L023",
+        "E03-L030",
+        "E03-L031",
+        "E04-L004",
+        "E04-L006",
+        "E04-L007",
+        "E04-L009",
+        "E04-L011",
+        "E04-L013",
+        "E04-L014",
+        "E04-L015",
+        "E04-L023",
+        "E04-L027",
+        "E05-L009",
+        "E05-L012",
+        "E05-L015",
+        "E05-L016",
+        "E05-L027",
+        "E05-L029",
+        "E05-L032",
+        "E06-L002",
+        "E06-L004",
+        "E06-L008",
+        "E06-L010",
+        "E06-L011",
+        "E06-L012",
+        "E06-L016",
+        "E06-L017",
+        "E06-L018",
+        "E06-L019",
+        "E06-L020"
+      ],
+      "fp_line_ids": [
+        "E01-L001",
+        "E01-L003",
+        "E01-L014",
+        "E01-L015",
+        "E01-L017",
+        "E01-L021",
+        "E01-L024",
+        "E02-L004",
+        "E02-L006",
+        "E02-L007",
+        "E02-L009",
+        "E02-L010",
+        "E02-L011",
+        "E02-L020",
+        "E02-L026",
+        "E02-L028",
+        "E02-L031",
+        "E03-L002",
+        "E03-L003",
+        "E03-L008",
+        "E03-L010",
+        "E03-L018",
+        "E03-L024",
+        "E03-L029",
+        "E03-L030",
+        "E03-L031",
+        "E04-L004",
+        "E04-L006",
+        "E04-L009",
+        "E04-L011",
+        "E04-L027",
+        "E05-L010",
+        "E05-L011",
+        "E05-L014",
+        "E05-L016",
+        "E05-L022",
+        "E05-L026",
+        "E05-L029",
+        "E05-L031",
+        "E05-L032",
+        "E06-L002",
+        "E06-L004",
+        "E06-L006",
+        "E06-L008",
+        "E06-L012",
+        "E06-L023",
+        "E06-L024"
+      ],
+      "missed": [
+        [
+          "E01-L001",
+          "meaning"
+        ],
+        [
+          "E01-L004",
+          "meaning"
+        ],
+        [
+          "E01-L004",
+          "naturalness"
+        ],
+        [
+          "E01-L005",
+          "naturalness"
+        ],
+        [
+          "E01-L006",
+          "naturalness"
+        ],
+        [
+          "E01-L014",
+          "meaning"
+        ],
+        [
+          "E01-L017",
+          "meaning"
+        ],
+        [
+          "E01-L024",
+          "meaning"
+        ],
+        [
+          "E01-L025",
+          "naturalness"
+        ],
+        [
+          "E01-L026",
+          "naturalness"
+        ],
+        [
+          "E01-L029",
+          "meaning"
+        ],
+        [
+          "E01-L030",
+          "naturalness"
+        ],
+        [
+          "E02-L006",
+          "script"
+        ],
+        [
+          "E02-L007",
+          "meaning"
+        ],
+        [
+          "E02-L007",
+          "naturalness"
+        ],
+        [
+          "E02-L010",
+          "naturalness"
+        ],
+        [
+          "E02-L013",
+          "naturalness"
+        ],
+        [
+          "E02-L020",
+          "naturalness"
+        ],
+        [
+          "E02-L026",
+          "meaning"
+        ],
+        [
+          "E02-L028",
+          "meaning"
+        ],
+        [
+          "E02-L030",
+          "meaning"
+        ],
+        [
+          "E02-L030",
+          "naturalness"
+        ],
+        [
+          "E02-L031",
+          "meaning"
+        ],
+        [
+          "E03-L003",
+          "meaning"
+        ],
+        [
+          "E03-L006",
+          "meaning"
+        ],
+        [
+          "E03-L008",
+          "naturalness"
+        ],
+        [
+          "E03-L010",
+          "meaning"
+        ],
+        [
+          "E03-L011",
+          "meaning"
+        ],
+        [
+          "E03-L011",
+          "timing"
+        ],
+        [
+          "E03-L012",
+          "naturalness"
+        ],
+        [
+          "E03-L014",
+          "meaning"
+        ],
+        [
+          "E03-L018",
+          "meaning"
+        ],
+        [
+          "E03-L023",
+          "meaning"
+        ],
+        [
+          "E03-L024",
+          "meaning"
+        ],
+        [
+          "E03-L024",
+          "naturalness"
+        ],
+        [
+          "E03-L025",
+          "naturalness"
+        ],
+        [
+          "E03-L031",
+          "naturalness"
+        ],
+        [
+          "E04-L001",
+          "meaning"
+        ],
+        [
+          "E04-L006",
+          "meaning"
+        ],
+        [
+          "E04-L007",
+          "meaning"
+        ],
+        [
+          "E04-L013",
+          "meaning"
+        ],
+        [
+          "E04-L014",
+          "timing"
+        ],
+        [
+          "E04-L015",
+          "naturalness"
+        ],
+        [
+          "E04-L017",
+          "meaning"
+        ],
+        [
+          "E04-L025",
+          "naturalness"
+        ],
+        [
+          "E04-L027",
+          "meaning"
+        ],
+        [
+          "E04-L027",
+          "relationship"
+        ],
+        [
+          "E05-L003",
+          "meaning"
+        ],
+        [
+          "E05-L003",
+          "naturalness"
+        ],
+        [
+          "E05-L007",
+          "naturalness"
+        ],
+        [
+          "E05-L011",
+          "naturalness"
+        ],
+        [
+          "E05-L014",
+          "relationship"
+        ],
+        [
+          "E05-L017",
+          "meaning"
+        ],
+        [
+          "E05-L017",
+          "naturalness"
+        ],
+        [
+          "E05-L019",
+          "naturalness"
+        ],
+        [
+          "E05-L019",
+          "timing"
+        ],
+        [
+          "E05-L022",
+          "meaning"
+        ],
+        [
+          "E05-L022",
+          "relationship"
+        ],
+        [
+          "E05-L027",
+          "script"
+        ],
+        [
+          "E05-L032",
+          "meaning"
+        ],
+        [
+          "E06-L002",
+          "meaning"
+        ],
+        [
+          "E06-L004",
+          "meaning"
+        ],
+        [
+          "E06-L004",
+          "relationship"
+        ],
+        [
+          "E06-L006",
+          "meaning"
+        ],
+        [
+          "E06-L010",
+          "naturalness"
+        ],
+        [
+          "E06-L010",
+          "relationship"
+        ],
+        [
+          "E06-L012",
+          "meaning"
+        ],
+        [
+          "E06-L012",
+          "relationship"
+        ],
+        [
+          "E06-L016",
+          "naturalness"
+        ],
+        [
+          "E06-L017",
+          "meaning"
+        ],
+        [
+          "E06-L020",
+          "naturalness"
+        ],
+        [
+          "E06-L023",
+          "meaning"
+        ],
+        [
+          "E06-L024",
+          "meaning"
+        ],
+        [
+          "E06-L024",
+          "naturalness"
+        ]
+      ],
+      "credited_instances": [
+        [
+          "E01-L003",
+          "timing"
+        ],
+        [
+          "E01-L004",
+          "timing"
+        ],
+        [
+          "E01-L005",
+          "timing"
+        ],
+        [
+          "E01-L014",
+          "naturalness"
+        ],
+        [
+          "E01-L015",
+          "naturalness"
+        ],
+        [
+          "E01-L017",
+          "script"
+        ],
+        [
+          "E01-L024",
+          "timing"
+        ],
+        [
+          "E01-L029",
+          "naturalness"
+        ],
+        [
+          "E01-L029",
+          "relationship"
+        ],
+        [
+          "E01-L029",
+          "timing"
+        ],
+        [
+          "E01-L030",
+          "timing"
+        ],
+        [
+          "E02-L004",
+          "naturalness"
+        ],
+        [
+          "E02-L006",
+          "meaning"
+        ],
+        [
+          "E02-L006",
+          "naturalness"
+        ],
+        [
+          "E02-L009",
+          "meaning"
+        ],
+        [
+          "E02-L009",
+          "script"
+        ],
+        [
+          "E02-L011",
+          "naturalness"
+        ],
+        [
+          "E02-L012",
+          "naturalness"
+        ],
+        [
+          "E02-L012",
+          "timing"
+        ],
+        [
+          "E02-L026",
+          "script"
+        ],
+        [
+          "E02-L028",
+          "script"
+        ],
+        [
+          "E02-L029",
+          "meaning"
+        ],
+        [
+          "E02-L029",
+          "naturalness"
+        ],
+        [
+          "E02-L029",
+          "script"
+        ],
+        [
+          "E02-L030",
+          "script"
+        ],
+        [
+          "E02-L031",
+          "naturalness"
+        ],
+        [
+          "E02-L031",
+          "script"
+        ],
+        [
+          "E03-L002",
+          "script"
+        ],
+        [
+          "E03-L003",
+          "relationship"
+        ],
+        [
+          "E03-L003",
+          "script"
+        ],
+        [
+          "E03-L006",
+          "relationship"
+        ],
+        [
+          "E03-L006",
+          "script"
+        ],
+        [
+          "E03-L008",
+          "script"
+        ],
+        [
+          "E03-L010",
+          "naturalness"
+        ],
+        [
+          "E03-L010",
+          "script"
+        ],
+        [
+          "E03-L011",
+          "script"
+        ],
+        [
+          "E03-L012",
+          "relationship"
+        ],
+        [
+          "E03-L012",
+          "script"
+        ],
+        [
+          "E03-L018",
+          "naturalness"
+        ],
+        [
+          "E03-L023",
+          "naturalness"
+        ],
+        [
+          "E03-L023",
+          "timing"
+        ],
+        [
+          "E03-L031",
+          "meaning"
+        ],
+        [
+          "E04-L004",
+          "meaning"
+        ],
+        [
+          "E04-L004",
+          "naturalness"
+        ],
+        [
+          "E04-L006",
+          "naturalness"
+        ],
+        [
+          "E04-L007",
+          "naturalness"
+        ],
+        [
+          "E04-L009",
+          "meaning"
+        ],
+        [
+          "E04-L009",
+          "naturalness"
+        ],
+        [
+          "E04-L011",
+          "meaning"
+        ],
+        [
+          "E04-L013",
+          "naturalness"
+        ],
+        [
+          "E04-L014",
+          "naturalness"
+        ],
+        [
+          "E04-L015",
+          "timing"
+        ],
+        [
+          "E04-L023",
+          "naturalness"
+        ],
+        [
+          "E04-L023",
+          "timing"
+        ],
+        [
+          "E04-L027",
+          "naturalness"
+        ],
+        [
+          "E05-L009",
+          "naturalness"
+        ],
+        [
+          "E05-L009",
+          "timing"
+        ],
+        [
+          "E05-L012",
+          "naturalness"
+        ],
+        [
+          "E05-L012",
+          "timing"
+        ],
+        [
+          "E05-L015",
+          "naturalness"
+        ],
+        [
+          "E05-L015",
+          "timing"
+        ],
+        [
+          "E05-L016",
+          "timing"
+        ],
+        [
+          "E05-L027",
+          "naturalness"
+        ],
+        [
+          "E05-L029",
+          "meaning"
+        ],
+        [
+          "E05-L029",
+          "timing"
+        ],
+        [
+          "E05-L032",
+          "naturalness"
+        ],
+        [
+          "E05-L032",
+          "timing"
+        ],
+        [
+          "E06-L002",
+          "naturalness"
+        ],
+        [
+          "E06-L004",
+          "naturalness"
+        ],
+        [
+          "E06-L008",
+          "meaning"
+        ],
+        [
+          "E06-L008",
+          "naturalness"
+        ],
+        [
+          "E06-L010",
+          "script"
+        ],
+        [
+          "E06-L011",
+          "naturalness"
+        ],
+        [
+          "E06-L011",
+          "relationship"
+        ],
+        [
+          "E06-L011",
+          "script"
+        ],
+        [
+          "E06-L012",
+          "script"
+        ],
+        [
+          "E06-L016",
+          "script"
+        ],
+        [
+          "E06-L017",
+          "script"
+        ],
+        [
+          "E06-L018",
+          "naturalness"
+        ],
+        [
+          "E06-L018",
+          "script"
+        ],
+        [
+          "E06-L019",
+          "meaning"
+        ],
+        [
+          "E06-L019",
+          "naturalness"
+        ],
+        [
+          "E06-L019",
+          "script"
+        ],
+        [
+          "E06-L020",
+          "script"
+        ]
+      ],
+      "flags_rescued_by_chain_matching": 1
+    },
+    "per_check": {
+      "meaning": {
+        "flags": 13,
+        "lines_flagged": 13,
+        "true_positive_flags": 11,
+        "false_positive_flags": 2,
+        "instances_found": 10,
+        "instances_total": 158,
+        "missed_human_issues": 148,
+        "precision": 0.846,
+        "recall": 0.063,
+        "recall_note": "instances credited / reviewer instances; numerator and denominator are the same kind",
+        "recall_legacy_flagcount": 0.069,
+        "legacy_denominator_was": 159,
+        "line_level": {
+          "issue_lines_found": 11,
+          "issue_lines_total": 81,
+          "recall": 0.136,
+          "precision": 0.846
+        },
+        "tp_line_ids": [
+          "E02-L006",
+          "E02-L009",
+          "E02-L029",
+          "E03-L030",
+          "E03-L031",
+          "E04-L004",
+          "E04-L009",
+          "E04-L011",
+          "E05-L029",
+          "E06-L008",
+          "E06-L019"
+        ],
+        "fp_line_ids": [
+          "E01-L015",
+          "E05-L026"
+        ],
+        "missed": [
+          [
+            "E01-L001",
+            "meaning"
+          ],
+          [
+            "E01-L003",
+            "timing"
+          ],
+          [
+            "E01-L004",
+            "meaning"
+          ],
+          [
+            "E01-L004",
+            "naturalness"
+          ],
+          [
+            "E01-L004",
+            "timing"
+          ],
+          [
+            "E01-L005",
+            "naturalness"
+          ],
+          [
+            "E01-L005",
+            "timing"
+          ],
+          [
+            "E01-L006",
+            "naturalness"
+          ],
+          [
+            "E01-L014",
+            "meaning"
+          ],
+          [
+            "E01-L014",
+            "naturalness"
+          ],
+          [
+            "E01-L015",
+            "naturalness"
+          ],
+          [
+            "E01-L017",
+            "meaning"
+          ],
+          [
+            "E01-L017",
+            "script"
+          ],
+          [
+            "E01-L024",
+            "meaning"
+          ],
+          [
+            "E01-L024",
+            "timing"
+          ],
+          [
+            "E01-L025",
+            "naturalness"
+          ],
+          [
+            "E01-L026",
+            "naturalness"
+          ],
+          [
+            "E01-L029",
+            "meaning"
+          ],
+          [
+            "E01-L029",
+            "naturalness"
+          ],
+          [
+            "E01-L029",
+            "relationship"
+          ],
+          [
+            "E01-L029",
+            "timing"
+          ],
+          [
+            "E01-L030",
+            "naturalness"
+          ],
+          [
+            "E01-L030",
+            "timing"
+          ],
+          [
+            "E02-L004",
+            "naturalness"
+          ],
+          [
+            "E02-L006",
+            "naturalness"
+          ],
+          [
+            "E02-L006",
+            "script"
+          ],
+          [
+            "E02-L007",
+            "meaning"
+          ],
+          [
+            "E02-L007",
+            "naturalness"
+          ],
+          [
+            "E02-L009",
+            "script"
+          ],
+          [
+            "E02-L010",
+            "naturalness"
+          ],
+          [
+            "E02-L011",
+            "naturalness"
+          ],
+          [
+            "E02-L012",
+            "naturalness"
+          ],
+          [
+            "E02-L012",
+            "timing"
+          ],
+          [
+            "E02-L013",
+            "naturalness"
+          ],
+          [
+            "E02-L020",
+            "naturalness"
+          ],
+          [
+            "E02-L026",
+            "meaning"
+          ],
+          [
+            "E02-L026",
+            "script"
+          ],
+          [
+            "E02-L028",
+            "meaning"
+          ],
+          [
+            "E02-L028",
+            "script"
+          ],
+          [
+            "E02-L029",
+            "naturalness"
+          ],
+          [
+            "E02-L029",
+            "script"
+          ],
+          [
+            "E02-L030",
+            "meaning"
+          ],
+          [
+            "E02-L030",
+            "naturalness"
+          ],
+          [
+            "E02-L030",
+            "script"
+          ],
+          [
+            "E02-L031",
+            "meaning"
+          ],
+          [
+            "E02-L031",
+            "naturalness"
+          ],
+          [
+            "E02-L031",
+            "script"
+          ],
+          [
+            "E03-L002",
+            "script"
+          ],
+          [
+            "E03-L003",
+            "meaning"
+          ],
+          [
+            "E03-L003",
+            "relationship"
+          ],
+          [
+            "E03-L003",
+            "script"
+          ],
+          [
+            "E03-L006",
+            "meaning"
+          ],
+          [
+            "E03-L006",
+            "relationship"
+          ],
+          [
+            "E03-L006",
+            "script"
+          ],
+          [
+            "E03-L008",
+            "naturalness"
+          ],
+          [
+            "E03-L008",
+            "script"
+          ],
+          [
+            "E03-L010",
+            "meaning"
+          ],
+          [
+            "E03-L010",
+            "naturalness"
+          ],
+          [
+            "E03-L010",
+            "script"
+          ],
+          [
+            "E03-L011",
+            "meaning"
+          ],
+          [
+            "E03-L011",
+            "script"
+          ],
+          [
+            "E03-L011",
+            "timing"
+          ],
+          [
+            "E03-L012",
+            "naturalness"
+          ],
+          [
+            "E03-L012",
+            "relationship"
+          ],
+          [
+            "E03-L012",
+            "script"
+          ],
+          [
+            "E03-L014",
+            "meaning"
+          ],
+          [
+            "E03-L018",
+            "meaning"
+          ],
+          [
+            "E03-L018",
+            "naturalness"
+          ],
+          [
+            "E03-L023",
+            "meaning"
+          ],
+          [
+            "E03-L023",
+            "naturalness"
+          ],
+          [
+            "E03-L023",
+            "timing"
+          ],
+          [
+            "E03-L024",
+            "meaning"
+          ],
+          [
+            "E03-L024",
+            "naturalness"
+          ],
+          [
+            "E03-L025",
+            "naturalness"
+          ],
+          [
+            "E03-L031",
+            "naturalness"
+          ],
+          [
+            "E04-L001",
+            "meaning"
+          ],
+          [
+            "E04-L004",
+            "naturalness"
+          ],
+          [
+            "E04-L006",
+            "meaning"
+          ],
+          [
+            "E04-L006",
+            "naturalness"
+          ],
+          [
+            "E04-L007",
+            "meaning"
+          ],
+          [
+            "E04-L007",
+            "naturalness"
+          ],
+          [
+            "E04-L009",
+            "naturalness"
+          ],
+          [
+            "E04-L013",
+            "meaning"
+          ],
+          [
+            "E04-L013",
+            "naturalness"
+          ],
+          [
+            "E04-L014",
+            "naturalness"
+          ],
+          [
+            "E04-L014",
+            "timing"
+          ],
+          [
+            "E04-L015",
+            "naturalness"
+          ],
+          [
+            "E04-L015",
+            "timing"
+          ],
+          [
+            "E04-L017",
+            "meaning"
+          ],
+          [
+            "E04-L023",
+            "naturalness"
+          ],
+          [
+            "E04-L023",
+            "timing"
+          ],
+          [
+            "E04-L025",
+            "naturalness"
+          ],
+          [
+            "E04-L027",
+            "meaning"
+          ],
+          [
+            "E04-L027",
+            "naturalness"
+          ],
+          [
+            "E04-L027",
+            "relationship"
+          ],
+          [
+            "E05-L003",
+            "meaning"
+          ],
+          [
+            "E05-L003",
+            "naturalness"
+          ],
+          [
+            "E05-L007",
+            "naturalness"
+          ],
+          [
+            "E05-L009",
+            "naturalness"
+          ],
+          [
+            "E05-L009",
+            "timing"
+          ],
+          [
+            "E05-L011",
+            "naturalness"
+          ],
+          [
+            "E05-L012",
+            "naturalness"
+          ],
+          [
+            "E05-L012",
+            "timing"
+          ],
+          [
+            "E05-L014",
+            "relationship"
+          ],
+          [
+            "E05-L015",
+            "naturalness"
+          ],
+          [
+            "E05-L015",
+            "timing"
+          ],
+          [
+            "E05-L016",
+            "timing"
+          ],
+          [
+            "E05-L017",
+            "meaning"
+          ],
+          [
+            "E05-L017",
+            "naturalness"
+          ],
+          [
+            "E05-L019",
+            "naturalness"
+          ],
+          [
+            "E05-L019",
+            "timing"
+          ],
+          [
+            "E05-L022",
+            "meaning"
+          ],
+          [
+            "E05-L022",
+            "relationship"
+          ],
+          [
+            "E05-L027",
+            "naturalness"
+          ],
+          [
+            "E05-L027",
+            "script"
+          ],
+          [
+            "E05-L029",
+            "timing"
+          ],
+          [
+            "E05-L032",
+            "meaning"
+          ],
+          [
+            "E05-L032",
+            "naturalness"
+          ],
+          [
+            "E05-L032",
+            "timing"
+          ],
+          [
+            "E06-L002",
+            "meaning"
+          ],
+          [
+            "E06-L002",
+            "naturalness"
+          ],
+          [
+            "E06-L004",
+            "meaning"
+          ],
+          [
+            "E06-L004",
+            "naturalness"
+          ],
+          [
+            "E06-L004",
+            "relationship"
+          ],
+          [
+            "E06-L006",
+            "meaning"
+          ],
+          [
+            "E06-L008",
+            "naturalness"
+          ],
+          [
+            "E06-L010",
+            "naturalness"
+          ],
+          [
+            "E06-L010",
+            "relationship"
+          ],
+          [
+            "E06-L010",
+            "script"
+          ],
+          [
+            "E06-L011",
+            "naturalness"
+          ],
+          [
+            "E06-L011",
+            "relationship"
+          ],
+          [
+            "E06-L011",
+            "script"
+          ],
+          [
+            "E06-L012",
+            "meaning"
+          ],
+          [
+            "E06-L012",
+            "relationship"
+          ],
+          [
+            "E06-L012",
+            "script"
+          ],
+          [
+            "E06-L016",
+            "naturalness"
+          ],
+          [
+            "E06-L016",
+            "script"
+          ],
+          [
+            "E06-L017",
+            "meaning"
+          ],
+          [
+            "E06-L017",
+            "script"
+          ],
+          [
+            "E06-L018",
+            "naturalness"
+          ],
+          [
+            "E06-L018",
+            "script"
+          ],
+          [
+            "E06-L019",
+            "naturalness"
+          ],
+          [
+            "E06-L019",
+            "script"
+          ],
+          [
+            "E06-L020",
+            "naturalness"
+          ],
+          [
+            "E06-L020",
+            "script"
+          ],
+          [
+            "E06-L023",
+            "meaning"
+          ],
+          [
+            "E06-L024",
+            "meaning"
+          ],
+          [
+            "E06-L024",
+            "naturalness"
+          ]
+        ],
+        "credited_instances": [
+          [
+            "E02-L006",
+            "meaning"
+          ],
+          [
+            "E02-L009",
+            "meaning"
+          ],
+          [
+            "E02-L029",
+            "meaning"
+          ],
+          [
+            "E03-L031",
+            "meaning"
+          ],
+          [
+            "E04-L004",
+            "meaning"
+          ],
+          [
+            "E04-L009",
+            "meaning"
+          ],
+          [
+            "E04-L011",
+            "meaning"
+          ],
+          [
+            "E05-L029",
+            "meaning"
+          ],
+          [
+            "E06-L008",
+            "meaning"
+          ],
+          [
+            "E06-L019",
+            "meaning"
+          ]
+        ],
+        "flags_rescued_by_chain_matching": 1,
+        "type_instances_total": 46,
+        "type_instances_found": 10,
+        "type_recall": 0.217
+      },
+      "naturalness": {
+        "flags": 49,
+        "lines_flagged": 49,
+        "true_positive_flags": 31,
+        "false_positive_flags": 18,
+        "instances_found": 31,
+        "instances_total": 158,
+        "missed_human_issues": 127,
+        "precision": 0.633,
+        "recall": 0.196,
+        "recall_note": "instances credited / reviewer instances; numerator and denominator are the same kind",
+        "recall_legacy_flagcount": 0.196,
+        "legacy_denominator_was": 158,
+        "line_level": {
+          "issue_lines_found": 46,
+          "issue_lines_total": 81,
+          "recall": 0.568,
+          "precision": 0.939
+        },
+        "tp_line_ids": [
+          "E01-L014",
+          "E01-L015",
+          "E01-L029",
+          "E02-L004",
+          "E02-L006",
+          "E02-L011",
+          "E02-L012",
+          "E02-L029",
+          "E02-L031",
+          "E03-L010",
+          "E03-L018",
+          "E03-L023",
+          "E04-L004",
+          "E04-L006",
+          "E04-L007",
+          "E04-L009",
+          "E04-L013",
+          "E04-L014",
+          "E04-L023",
+          "E04-L027",
+          "E05-L009",
+          "E05-L012",
+          "E05-L015",
+          "E05-L027",
+          "E05-L032",
+          "E06-L002",
+          "E06-L004",
+          "E06-L008",
+          "E06-L011",
+          "E06-L018",
+          "E06-L019"
+        ],
+        "fp_line_ids": [
+          "E01-L001",
+          "E01-L003",
+          "E01-L017",
+          "E01-L024",
+          "E02-L009",
+          "E02-L026",
+          "E02-L028",
+          "E03-L003",
+          "E03-L030",
+          "E04-L011",
+          "E05-L010",
+          "E05-L014",
+          "E05-L016",
+          "E05-L022",
+          "E05-L026",
+          "E05-L029",
+          "E06-L012",
+          "E06-L023"
+        ],
+        "missed": [
+          [
+            "E01-L001",
+            "meaning"
+          ],
+          [
+            "E01-L003",
+            "timing"
+          ],
+          [
+            "E01-L004",
+            "meaning"
+          ],
+          [
+            "E01-L004",
+            "naturalness"
+          ],
+          [
+            "E01-L004",
+            "timing"
+          ],
+          [
+            "E01-L005",
+            "naturalness"
+          ],
+          [
+            "E01-L005",
+            "timing"
+          ],
+          [
+            "E01-L006",
+            "naturalness"
+          ],
+          [
+            "E01-L014",
+            "meaning"
+          ],
+          [
+            "E01-L017",
+            "meaning"
+          ],
+          [
+            "E01-L017",
+            "script"
+          ],
+          [
+            "E01-L024",
+            "meaning"
+          ],
+          [
+            "E01-L024",
+            "timing"
+          ],
+          [
+            "E01-L025",
+            "naturalness"
+          ],
+          [
+            "E01-L026",
+            "naturalness"
+          ],
+          [
+            "E01-L029",
+            "meaning"
+          ],
+          [
+            "E01-L029",
+            "relationship"
+          ],
+          [
+            "E01-L029",
+            "timing"
+          ],
+          [
+            "E01-L030",
+            "naturalness"
+          ],
+          [
+            "E01-L030",
+            "timing"
+          ],
+          [
+            "E02-L006",
+            "meaning"
+          ],
+          [
+            "E02-L006",
+            "script"
+          ],
+          [
+            "E02-L007",
+            "meaning"
+          ],
+          [
+            "E02-L007",
+            "naturalness"
+          ],
+          [
+            "E02-L009",
+            "meaning"
+          ],
+          [
+            "E02-L009",
+            "script"
+          ],
+          [
+            "E02-L010",
+            "naturalness"
+          ],
+          [
+            "E02-L012",
+            "timing"
+          ],
+          [
+            "E02-L013",
+            "naturalness"
+          ],
+          [
+            "E02-L020",
+            "naturalness"
+          ],
+          [
+            "E02-L026",
+            "meaning"
+          ],
+          [
+            "E02-L026",
+            "script"
+          ],
+          [
+            "E02-L028",
+            "meaning"
+          ],
+          [
+            "E02-L028",
+            "script"
+          ],
+          [
+            "E02-L029",
+            "meaning"
+          ],
+          [
+            "E02-L029",
+            "script"
+          ],
+          [
+            "E02-L030",
+            "meaning"
+          ],
+          [
+            "E02-L030",
+            "naturalness"
+          ],
+          [
+            "E02-L030",
+            "script"
+          ],
+          [
+            "E02-L031",
+            "meaning"
+          ],
+          [
+            "E02-L031",
+            "script"
+          ],
+          [
+            "E03-L002",
+            "script"
+          ],
+          [
+            "E03-L003",
+            "meaning"
+          ],
+          [
+            "E03-L003",
+            "relationship"
+          ],
+          [
+            "E03-L003",
+            "script"
+          ],
+          [
+            "E03-L006",
+            "meaning"
+          ],
+          [
+            "E03-L006",
+            "relationship"
+          ],
+          [
+            "E03-L006",
+            "script"
+          ],
+          [
+            "E03-L008",
+            "naturalness"
+          ],
+          [
+            "E03-L008",
+            "script"
+          ],
+          [
+            "E03-L010",
+            "meaning"
+          ],
+          [
+            "E03-L010",
+            "script"
+          ],
+          [
+            "E03-L011",
+            "meaning"
+          ],
+          [
+            "E03-L011",
+            "script"
+          ],
+          [
+            "E03-L011",
+            "timing"
+          ],
+          [
+            "E03-L012",
+            "naturalness"
+          ],
+          [
+            "E03-L012",
+            "relationship"
+          ],
+          [
+            "E03-L012",
+            "script"
+          ],
+          [
+            "E03-L014",
+            "meaning"
+          ],
+          [
+            "E03-L018",
+            "meaning"
+          ],
+          [
+            "E03-L023",
+            "meaning"
+          ],
+          [
+            "E03-L023",
+            "timing"
+          ],
+          [
+            "E03-L024",
+            "meaning"
+          ],
+          [
+            "E03-L024",
+            "naturalness"
+          ],
+          [
+            "E03-L025",
+            "naturalness"
+          ],
+          [
+            "E03-L031",
+            "meaning"
+          ],
+          [
+            "E03-L031",
+            "naturalness"
+          ],
+          [
+            "E04-L001",
+            "meaning"
+          ],
+          [
+            "E04-L004",
+            "meaning"
+          ],
+          [
+            "E04-L006",
+            "meaning"
+          ],
+          [
+            "E04-L007",
+            "meaning"
+          ],
+          [
+            "E04-L009",
+            "meaning"
+          ],
+          [
+            "E04-L011",
+            "meaning"
+          ],
+          [
+            "E04-L013",
+            "meaning"
+          ],
+          [
+            "E04-L014",
+            "timing"
+          ],
+          [
+            "E04-L015",
+            "naturalness"
+          ],
+          [
+            "E04-L015",
+            "timing"
+          ],
+          [
+            "E04-L017",
+            "meaning"
+          ],
+          [
+            "E04-L023",
+            "timing"
+          ],
+          [
+            "E04-L025",
+            "naturalness"
+          ],
+          [
+            "E04-L027",
+            "meaning"
+          ],
+          [
+            "E04-L027",
+            "relationship"
+          ],
+          [
+            "E05-L003",
+            "meaning"
+          ],
+          [
+            "E05-L003",
+            "naturalness"
+          ],
+          [
+            "E05-L007",
+            "naturalness"
+          ],
+          [
+            "E05-L009",
+            "timing"
+          ],
+          [
+            "E05-L011",
+            "naturalness"
+          ],
+          [
+            "E05-L012",
+            "timing"
+          ],
+          [
+            "E05-L014",
+            "relationship"
+          ],
+          [
+            "E05-L015",
+            "timing"
+          ],
+          [
+            "E05-L016",
+            "timing"
+          ],
+          [
+            "E05-L017",
+            "meaning"
+          ],
+          [
+            "E05-L017",
+            "naturalness"
+          ],
+          [
+            "E05-L019",
+            "naturalness"
+          ],
+          [
+            "E05-L019",
+            "timing"
+          ],
+          [
+            "E05-L022",
+            "meaning"
+          ],
+          [
+            "E05-L022",
+            "relationship"
+          ],
+          [
+            "E05-L027",
+            "script"
+          ],
+          [
+            "E05-L029",
+            "meaning"
+          ],
+          [
+            "E05-L029",
+            "timing"
+          ],
+          [
+            "E05-L032",
+            "meaning"
+          ],
+          [
+            "E05-L032",
+            "timing"
+          ],
+          [
+            "E06-L002",
+            "meaning"
+          ],
+          [
+            "E06-L004",
+            "meaning"
+          ],
+          [
+            "E06-L004",
+            "relationship"
+          ],
+          [
+            "E06-L006",
+            "meaning"
+          ],
+          [
+            "E06-L008",
+            "meaning"
+          ],
+          [
+            "E06-L010",
+            "naturalness"
+          ],
+          [
+            "E06-L010",
+            "relationship"
+          ],
+          [
+            "E06-L010",
+            "script"
+          ],
+          [
+            "E06-L011",
+            "relationship"
+          ],
+          [
+            "E06-L011",
+            "script"
+          ],
+          [
+            "E06-L012",
+            "meaning"
+          ],
+          [
+            "E06-L012",
+            "relationship"
+          ],
+          [
+            "E06-L012",
+            "script"
+          ],
+          [
+            "E06-L016",
+            "naturalness"
+          ],
+          [
+            "E06-L016",
+            "script"
+          ],
+          [
+            "E06-L017",
+            "meaning"
+          ],
+          [
+            "E06-L017",
+            "script"
+          ],
+          [
+            "E06-L018",
+            "script"
+          ],
+          [
+            "E06-L019",
+            "meaning"
+          ],
+          [
+            "E06-L019",
+            "script"
+          ],
+          [
+            "E06-L020",
+            "naturalness"
+          ],
+          [
+            "E06-L020",
+            "script"
+          ],
+          [
+            "E06-L023",
+            "meaning"
+          ],
+          [
+            "E06-L024",
+            "meaning"
+          ],
+          [
+            "E06-L024",
+            "naturalness"
+          ]
+        ],
+        "credited_instances": [
+          [
+            "E01-L014",
+            "naturalness"
+          ],
+          [
+            "E01-L015",
+            "naturalness"
+          ],
+          [
+            "E01-L029",
+            "naturalness"
+          ],
+          [
+            "E02-L004",
+            "naturalness"
+          ],
+          [
+            "E02-L006",
+            "naturalness"
+          ],
+          [
+            "E02-L011",
+            "naturalness"
+          ],
+          [
+            "E02-L012",
+            "naturalness"
+          ],
+          [
+            "E02-L029",
+            "naturalness"
+          ],
+          [
+            "E02-L031",
+            "naturalness"
+          ],
+          [
+            "E03-L010",
+            "naturalness"
+          ],
+          [
+            "E03-L018",
+            "naturalness"
+          ],
+          [
+            "E03-L023",
+            "naturalness"
+          ],
+          [
+            "E04-L004",
+            "naturalness"
+          ],
+          [
+            "E04-L006",
+            "naturalness"
+          ],
+          [
+            "E04-L007",
+            "naturalness"
+          ],
+          [
+            "E04-L009",
+            "naturalness"
+          ],
+          [
+            "E04-L013",
+            "naturalness"
+          ],
+          [
+            "E04-L014",
+            "naturalness"
+          ],
+          [
+            "E04-L023",
+            "naturalness"
+          ],
+          [
+            "E04-L027",
+            "naturalness"
+          ],
+          [
+            "E05-L009",
+            "naturalness"
+          ],
+          [
+            "E05-L012",
+            "naturalness"
+          ],
+          [
+            "E05-L015",
+            "naturalness"
+          ],
+          [
+            "E05-L027",
+            "naturalness"
+          ],
+          [
+            "E05-L032",
+            "naturalness"
+          ],
+          [
+            "E06-L002",
+            "naturalness"
+          ],
+          [
+            "E06-L004",
+            "naturalness"
+          ],
+          [
+            "E06-L008",
+            "naturalness"
+          ],
+          [
+            "E06-L011",
+            "naturalness"
+          ],
+          [
+            "E06-L018",
+            "naturalness"
+          ],
+          [
+            "E06-L019",
+            "naturalness"
+          ]
+        ],
+        "flags_rescued_by_chain_matching": 0,
+        "type_instances_total": 58,
+        "type_instances_found": 31,
+        "type_recall": 0.534
+      },
+      "relationship": {
+        "flags": 21,
+        "lines_flagged": 21,
+        "true_positive_flags": 5,
+        "false_positive_flags": 16,
+        "instances_found": 5,
+        "instances_total": 158,
+        "missed_human_issues": 153,
+        "precision": 0.238,
+        "recall": 0.032,
+        "recall_note": "instances credited / reviewer instances; numerator and denominator are the same kind",
+        "recall_legacy_flagcount": 0.032,
+        "legacy_denominator_was": 158,
+        "line_level": {
+          "issue_lines_found": 20,
+          "issue_lines_total": 81,
+          "recall": 0.247,
+          "precision": 0.952
+        },
+        "tp_line_ids": [
+          "E01-L029",
+          "E03-L003",
+          "E03-L006",
+          "E03-L012",
+          "E06-L011"
+        ],
+        "fp_line_ids": [
+          "E01-L014",
+          "E01-L015",
+          "E01-L017",
+          "E02-L026",
+          "E02-L031",
+          "E03-L002",
+          "E03-L008",
+          "E03-L010",
+          "E03-L024",
+          "E03-L031",
+          "E05-L011",
+          "E05-L029",
+          "E05-L031",
+          "E05-L032",
+          "E06-L008",
+          "E06-L024"
+        ],
+        "missed": [
+          [
+            "E01-L001",
+            "meaning"
+          ],
+          [
+            "E01-L003",
+            "timing"
+          ],
+          [
+            "E01-L004",
+            "meaning"
+          ],
+          [
+            "E01-L004",
+            "naturalness"
+          ],
+          [
+            "E01-L004",
+            "timing"
+          ],
+          [
+            "E01-L005",
+            "naturalness"
+          ],
+          [
+            "E01-L005",
+            "timing"
+          ],
+          [
+            "E01-L006",
+            "naturalness"
+          ],
+          [
+            "E01-L014",
+            "meaning"
+          ],
+          [
+            "E01-L014",
+            "naturalness"
+          ],
+          [
+            "E01-L015",
+            "naturalness"
+          ],
+          [
+            "E01-L017",
+            "meaning"
+          ],
+          [
+            "E01-L017",
+            "script"
+          ],
+          [
+            "E01-L024",
+            "meaning"
+          ],
+          [
+            "E01-L024",
+            "timing"
+          ],
+          [
+            "E01-L025",
+            "naturalness"
+          ],
+          [
+            "E01-L026",
+            "naturalness"
+          ],
+          [
+            "E01-L029",
+            "meaning"
+          ],
+          [
+            "E01-L029",
+            "naturalness"
+          ],
+          [
+            "E01-L029",
+            "timing"
+          ],
+          [
+            "E01-L030",
+            "naturalness"
+          ],
+          [
+            "E01-L030",
+            "timing"
+          ],
+          [
+            "E02-L004",
+            "naturalness"
+          ],
+          [
+            "E02-L006",
+            "meaning"
+          ],
+          [
+            "E02-L006",
+            "naturalness"
+          ],
+          [
+            "E02-L006",
+            "script"
+          ],
+          [
+            "E02-L007",
+            "meaning"
+          ],
+          [
+            "E02-L007",
+            "naturalness"
+          ],
+          [
+            "E02-L009",
+            "meaning"
+          ],
+          [
+            "E02-L009",
+            "script"
+          ],
+          [
+            "E02-L010",
+            "naturalness"
+          ],
+          [
+            "E02-L011",
+            "naturalness"
+          ],
+          [
+            "E02-L012",
+            "naturalness"
+          ],
+          [
+            "E02-L012",
+            "timing"
+          ],
+          [
+            "E02-L013",
+            "naturalness"
+          ],
+          [
+            "E02-L020",
+            "naturalness"
+          ],
+          [
+            "E02-L026",
+            "meaning"
+          ],
+          [
+            "E02-L026",
+            "script"
+          ],
+          [
+            "E02-L028",
+            "meaning"
+          ],
+          [
+            "E02-L028",
+            "script"
+          ],
+          [
+            "E02-L029",
+            "meaning"
+          ],
+          [
+            "E02-L029",
+            "naturalness"
+          ],
+          [
+            "E02-L029",
+            "script"
+          ],
+          [
+            "E02-L030",
+            "meaning"
+          ],
+          [
+            "E02-L030",
+            "naturalness"
+          ],
+          [
+            "E02-L030",
+            "script"
+          ],
+          [
+            "E02-L031",
+            "meaning"
+          ],
+          [
+            "E02-L031",
+            "naturalness"
+          ],
+          [
+            "E02-L031",
+            "script"
+          ],
+          [
+            "E03-L002",
+            "script"
+          ],
+          [
+            "E03-L003",
+            "meaning"
+          ],
+          [
+            "E03-L003",
+            "script"
+          ],
+          [
+            "E03-L006",
+            "meaning"
+          ],
+          [
+            "E03-L006",
+            "script"
+          ],
+          [
+            "E03-L008",
+            "naturalness"
+          ],
+          [
+            "E03-L008",
+            "script"
+          ],
+          [
+            "E03-L010",
+            "meaning"
+          ],
+          [
+            "E03-L010",
+            "naturalness"
+          ],
+          [
+            "E03-L010",
+            "script"
+          ],
+          [
+            "E03-L011",
+            "meaning"
+          ],
+          [
+            "E03-L011",
+            "script"
+          ],
+          [
+            "E03-L011",
+            "timing"
+          ],
+          [
+            "E03-L012",
+            "naturalness"
+          ],
+          [
+            "E03-L012",
+            "script"
+          ],
+          [
+            "E03-L014",
+            "meaning"
+          ],
+          [
+            "E03-L018",
+            "meaning"
+          ],
+          [
+            "E03-L018",
+            "naturalness"
+          ],
+          [
+            "E03-L023",
+            "meaning"
+          ],
+          [
+            "E03-L023",
+            "naturalness"
+          ],
+          [
+            "E03-L023",
+            "timing"
+          ],
+          [
+            "E03-L024",
+            "meaning"
+          ],
+          [
+            "E03-L024",
+            "naturalness"
+          ],
+          [
+            "E03-L025",
+            "naturalness"
+          ],
+          [
+            "E03-L031",
+            "meaning"
+          ],
+          [
+            "E03-L031",
+            "naturalness"
+          ],
+          [
+            "E04-L001",
+            "meaning"
+          ],
+          [
+            "E04-L004",
+            "meaning"
+          ],
+          [
+            "E04-L004",
+            "naturalness"
+          ],
+          [
+            "E04-L006",
+            "meaning"
+          ],
+          [
+            "E04-L006",
+            "naturalness"
+          ],
+          [
+            "E04-L007",
+            "meaning"
+          ],
+          [
+            "E04-L007",
+            "naturalness"
+          ],
+          [
+            "E04-L009",
+            "meaning"
+          ],
+          [
+            "E04-L009",
+            "naturalness"
+          ],
+          [
+            "E04-L011",
+            "meaning"
+          ],
+          [
+            "E04-L013",
+            "meaning"
+          ],
+          [
+            "E04-L013",
+            "naturalness"
+          ],
+          [
+            "E04-L014",
+            "naturalness"
+          ],
+          [
+            "E04-L014",
+            "timing"
+          ],
+          [
+            "E04-L015",
+            "naturalness"
+          ],
+          [
+            "E04-L015",
+            "timing"
+          ],
+          [
+            "E04-L017",
+            "meaning"
+          ],
+          [
+            "E04-L023",
+            "naturalness"
+          ],
+          [
+            "E04-L023",
+            "timing"
+          ],
+          [
+            "E04-L025",
+            "naturalness"
+          ],
+          [
+            "E04-L027",
+            "meaning"
+          ],
+          [
+            "E04-L027",
+            "naturalness"
+          ],
+          [
+            "E04-L027",
+            "relationship"
+          ],
+          [
+            "E05-L003",
+            "meaning"
+          ],
+          [
+            "E05-L003",
+            "naturalness"
+          ],
+          [
+            "E05-L007",
+            "naturalness"
+          ],
+          [
+            "E05-L009",
+            "naturalness"
+          ],
+          [
+            "E05-L009",
+            "timing"
+          ],
+          [
+            "E05-L011",
+            "naturalness"
+          ],
+          [
+            "E05-L012",
+            "naturalness"
+          ],
+          [
+            "E05-L012",
+            "timing"
+          ],
+          [
+            "E05-L014",
+            "relationship"
+          ],
+          [
+            "E05-L015",
+            "naturalness"
+          ],
+          [
+            "E05-L015",
+            "timing"
+          ],
+          [
+            "E05-L016",
+            "timing"
+          ],
+          [
+            "E05-L017",
+            "meaning"
+          ],
+          [
+            "E05-L017",
+            "naturalness"
+          ],
+          [
+            "E05-L019",
+            "naturalness"
+          ],
+          [
+            "E05-L019",
+            "timing"
+          ],
+          [
+            "E05-L022",
+            "meaning"
+          ],
+          [
+            "E05-L022",
+            "relationship"
+          ],
+          [
+            "E05-L027",
+            "naturalness"
+          ],
+          [
+            "E05-L027",
+            "script"
+          ],
+          [
+            "E05-L029",
+            "meaning"
+          ],
+          [
+            "E05-L029",
+            "timing"
+          ],
+          [
+            "E05-L032",
+            "meaning"
+          ],
+          [
+            "E05-L032",
+            "naturalness"
+          ],
+          [
+            "E05-L032",
+            "timing"
+          ],
+          [
+            "E06-L002",
+            "meaning"
+          ],
+          [
+            "E06-L002",
+            "naturalness"
+          ],
+          [
+            "E06-L004",
+            "meaning"
+          ],
+          [
+            "E06-L004",
+            "naturalness"
+          ],
+          [
+            "E06-L004",
+            "relationship"
+          ],
+          [
+            "E06-L006",
+            "meaning"
+          ],
+          [
+            "E06-L008",
+            "meaning"
+          ],
+          [
+            "E06-L008",
+            "naturalness"
+          ],
+          [
+            "E06-L010",
+            "naturalness"
+          ],
+          [
+            "E06-L010",
+            "relationship"
+          ],
+          [
+            "E06-L010",
+            "script"
+          ],
+          [
+            "E06-L011",
+            "naturalness"
+          ],
+          [
+            "E06-L011",
+            "script"
+          ],
+          [
+            "E06-L012",
+            "meaning"
+          ],
+          [
+            "E06-L012",
+            "relationship"
+          ],
+          [
+            "E06-L012",
+            "script"
+          ],
+          [
+            "E06-L016",
+            "naturalness"
+          ],
+          [
+            "E06-L016",
+            "script"
+          ],
+          [
+            "E06-L017",
+            "meaning"
+          ],
+          [
+            "E06-L017",
+            "script"
+          ],
+          [
+            "E06-L018",
+            "naturalness"
+          ],
+          [
+            "E06-L018",
+            "script"
+          ],
+          [
+            "E06-L019",
+            "meaning"
+          ],
+          [
+            "E06-L019",
+            "naturalness"
+          ],
+          [
+            "E06-L019",
+            "script"
+          ],
+          [
+            "E06-L020",
+            "naturalness"
+          ],
+          [
+            "E06-L020",
+            "script"
+          ],
+          [
+            "E06-L023",
+            "meaning"
+          ],
+          [
+            "E06-L024",
+            "meaning"
+          ],
+          [
+            "E06-L024",
+            "naturalness"
+          ]
+        ],
+        "credited_instances": [
+          [
+            "E01-L029",
+            "relationship"
+          ],
+          [
+            "E03-L003",
+            "relationship"
+          ],
+          [
+            "E03-L006",
+            "relationship"
+          ],
+          [
+            "E03-L012",
+            "relationship"
+          ],
+          [
+            "E06-L011",
+            "relationship"
+          ]
+        ],
+        "flags_rescued_by_chain_matching": 0,
+        "type_instances_total": 11,
+        "type_instances_found": 5,
+        "type_recall": 0.455
+      },
+      "script": {
+        "flags": 22,
+        "lines_flagged": 22,
+        "true_positive_flags": 22,
+        "false_positive_flags": 0,
+        "instances_found": 22,
+        "instances_total": 158,
+        "missed_human_issues": 136,
+        "precision": 1.0,
+        "recall": 0.139,
+        "recall_note": "instances credited / reviewer instances; numerator and denominator are the same kind",
+        "recall_legacy_flagcount": 0.139,
+        "legacy_denominator_was": 158,
+        "line_level": {
+          "issue_lines_found": 22,
+          "issue_lines_total": 81,
+          "recall": 0.272,
+          "precision": 1.0
+        },
+        "tp_line_ids": [
+          "E01-L017",
+          "E02-L009",
+          "E02-L026",
+          "E02-L028",
+          "E02-L029",
+          "E02-L030",
+          "E02-L031",
+          "E03-L002",
+          "E03-L003",
+          "E03-L006",
+          "E03-L008",
+          "E03-L010",
+          "E03-L011",
+          "E03-L012",
+          "E06-L010",
+          "E06-L011",
+          "E06-L012",
+          "E06-L016",
+          "E06-L017",
+          "E06-L018",
+          "E06-L019",
+          "E06-L020"
+        ],
+        "fp_line_ids": [],
+        "missed": [
+          [
+            "E01-L001",
+            "meaning"
+          ],
+          [
+            "E01-L003",
+            "timing"
+          ],
+          [
+            "E01-L004",
+            "meaning"
+          ],
+          [
+            "E01-L004",
+            "naturalness"
+          ],
+          [
+            "E01-L004",
+            "timing"
+          ],
+          [
+            "E01-L005",
+            "naturalness"
+          ],
+          [
+            "E01-L005",
+            "timing"
+          ],
+          [
+            "E01-L006",
+            "naturalness"
+          ],
+          [
+            "E01-L014",
+            "meaning"
+          ],
+          [
+            "E01-L014",
+            "naturalness"
+          ],
+          [
+            "E01-L015",
+            "naturalness"
+          ],
+          [
+            "E01-L017",
+            "meaning"
+          ],
+          [
+            "E01-L024",
+            "meaning"
+          ],
+          [
+            "E01-L024",
+            "timing"
+          ],
+          [
+            "E01-L025",
+            "naturalness"
+          ],
+          [
+            "E01-L026",
+            "naturalness"
+          ],
+          [
+            "E01-L029",
+            "meaning"
+          ],
+          [
+            "E01-L029",
+            "naturalness"
+          ],
+          [
+            "E01-L029",
+            "relationship"
+          ],
+          [
+            "E01-L029",
+            "timing"
+          ],
+          [
+            "E01-L030",
+            "naturalness"
+          ],
+          [
+            "E01-L030",
+            "timing"
+          ],
+          [
+            "E02-L004",
+            "naturalness"
+          ],
+          [
+            "E02-L006",
+            "meaning"
+          ],
+          [
+            "E02-L006",
+            "naturalness"
+          ],
+          [
+            "E02-L006",
+            "script"
+          ],
+          [
+            "E02-L007",
+            "meaning"
+          ],
+          [
+            "E02-L007",
+            "naturalness"
+          ],
+          [
+            "E02-L009",
+            "meaning"
+          ],
+          [
+            "E02-L010",
+            "naturalness"
+          ],
+          [
+            "E02-L011",
+            "naturalness"
+          ],
+          [
+            "E02-L012",
+            "naturalness"
+          ],
+          [
+            "E02-L012",
+            "timing"
+          ],
+          [
+            "E02-L013",
+            "naturalness"
+          ],
+          [
+            "E02-L020",
+            "naturalness"
+          ],
+          [
+            "E02-L026",
+            "meaning"
+          ],
+          [
+            "E02-L028",
+            "meaning"
+          ],
+          [
+            "E02-L029",
+            "meaning"
+          ],
+          [
+            "E02-L029",
+            "naturalness"
+          ],
+          [
+            "E02-L030",
+            "meaning"
+          ],
+          [
+            "E02-L030",
+            "naturalness"
+          ],
+          [
+            "E02-L031",
+            "meaning"
+          ],
+          [
+            "E02-L031",
+            "naturalness"
+          ],
+          [
+            "E03-L003",
+            "meaning"
+          ],
+          [
+            "E03-L003",
+            "relationship"
+          ],
+          [
+            "E03-L006",
+            "meaning"
+          ],
+          [
+            "E03-L006",
+            "relationship"
+          ],
+          [
+            "E03-L008",
+            "naturalness"
+          ],
+          [
+            "E03-L010",
+            "meaning"
+          ],
+          [
+            "E03-L010",
+            "naturalness"
+          ],
+          [
+            "E03-L011",
+            "meaning"
+          ],
+          [
+            "E03-L011",
+            "timing"
+          ],
+          [
+            "E03-L012",
+            "naturalness"
+          ],
+          [
+            "E03-L012",
+            "relationship"
+          ],
+          [
+            "E03-L014",
+            "meaning"
+          ],
+          [
+            "E03-L018",
+            "meaning"
+          ],
+          [
+            "E03-L018",
+            "naturalness"
+          ],
+          [
+            "E03-L023",
+            "meaning"
+          ],
+          [
+            "E03-L023",
+            "naturalness"
+          ],
+          [
+            "E03-L023",
+            "timing"
+          ],
+          [
+            "E03-L024",
+            "meaning"
+          ],
+          [
+            "E03-L024",
+            "naturalness"
+          ],
+          [
+            "E03-L025",
+            "naturalness"
+          ],
+          [
+            "E03-L031",
+            "meaning"
+          ],
+          [
+            "E03-L031",
+            "naturalness"
+          ],
+          [
+            "E04-L001",
+            "meaning"
+          ],
+          [
+            "E04-L004",
+            "meaning"
+          ],
+          [
+            "E04-L004",
+            "naturalness"
+          ],
+          [
+            "E04-L006",
+            "meaning"
+          ],
+          [
+            "E04-L006",
+            "naturalness"
+          ],
+          [
+            "E04-L007",
+            "meaning"
+          ],
+          [
+            "E04-L007",
+            "naturalness"
+          ],
+          [
+            "E04-L009",
+            "meaning"
+          ],
+          [
+            "E04-L009",
+            "naturalness"
+          ],
+          [
+            "E04-L011",
+            "meaning"
+          ],
+          [
+            "E04-L013",
+            "meaning"
+          ],
+          [
+            "E04-L013",
+            "naturalness"
+          ],
+          [
+            "E04-L014",
+            "naturalness"
+          ],
+          [
+            "E04-L014",
+            "timing"
+          ],
+          [
+            "E04-L015",
+            "naturalness"
+          ],
+          [
+            "E04-L015",
+            "timing"
+          ],
+          [
+            "E04-L017",
+            "meaning"
+          ],
+          [
+            "E04-L023",
+            "naturalness"
+          ],
+          [
+            "E04-L023",
+            "timing"
+          ],
+          [
+            "E04-L025",
+            "naturalness"
+          ],
+          [
+            "E04-L027",
+            "meaning"
+          ],
+          [
+            "E04-L027",
+            "naturalness"
+          ],
+          [
+            "E04-L027",
+            "relationship"
+          ],
+          [
+            "E05-L003",
+            "meaning"
+          ],
+          [
+            "E05-L003",
+            "naturalness"
+          ],
+          [
+            "E05-L007",
+            "naturalness"
+          ],
+          [
+            "E05-L009",
+            "naturalness"
+          ],
+          [
+            "E05-L009",
+            "timing"
+          ],
+          [
+            "E05-L011",
+            "naturalness"
+          ],
+          [
+            "E05-L012",
+            "naturalness"
+          ],
+          [
+            "E05-L012",
+            "timing"
+          ],
+          [
+            "E05-L014",
+            "relationship"
+          ],
+          [
+            "E05-L015",
+            "naturalness"
+          ],
+          [
+            "E05-L015",
+            "timing"
+          ],
+          [
+            "E05-L016",
+            "timing"
+          ],
+          [
+            "E05-L017",
+            "meaning"
+          ],
+          [
+            "E05-L017",
+            "naturalness"
+          ],
+          [
+            "E05-L019",
+            "naturalness"
+          ],
+          [
+            "E05-L019",
+            "timing"
+          ],
+          [
+            "E05-L022",
+            "meaning"
+          ],
+          [
+            "E05-L022",
+            "relationship"
+          ],
+          [
+            "E05-L027",
+            "naturalness"
+          ],
+          [
+            "E05-L027",
+            "script"
+          ],
+          [
+            "E05-L029",
+            "meaning"
+          ],
+          [
+            "E05-L029",
+            "timing"
+          ],
+          [
+            "E05-L032",
+            "meaning"
+          ],
+          [
+            "E05-L032",
+            "naturalness"
+          ],
+          [
+            "E05-L032",
+            "timing"
+          ],
+          [
+            "E06-L002",
+            "meaning"
+          ],
+          [
+            "E06-L002",
+            "naturalness"
+          ],
+          [
+            "E06-L004",
+            "meaning"
+          ],
+          [
+            "E06-L004",
+            "naturalness"
+          ],
+          [
+            "E06-L004",
+            "relationship"
+          ],
+          [
+            "E06-L006",
+            "meaning"
+          ],
+          [
+            "E06-L008",
+            "meaning"
+          ],
+          [
+            "E06-L008",
+            "naturalness"
+          ],
+          [
+            "E06-L010",
+            "naturalness"
+          ],
+          [
+            "E06-L010",
+            "relationship"
+          ],
+          [
+            "E06-L011",
+            "naturalness"
+          ],
+          [
+            "E06-L011",
+            "relationship"
+          ],
+          [
+            "E06-L012",
+            "meaning"
+          ],
+          [
+            "E06-L012",
+            "relationship"
+          ],
+          [
+            "E06-L016",
+            "naturalness"
+          ],
+          [
+            "E06-L017",
+            "meaning"
+          ],
+          [
+            "E06-L018",
+            "naturalness"
+          ],
+          [
+            "E06-L019",
+            "meaning"
+          ],
+          [
+            "E06-L019",
+            "naturalness"
+          ],
+          [
+            "E06-L020",
+            "naturalness"
+          ],
+          [
+            "E06-L023",
+            "meaning"
+          ],
+          [
+            "E06-L024",
+            "meaning"
+          ],
+          [
+            "E06-L024",
+            "naturalness"
+          ]
+        ],
+        "credited_instances": [
+          [
+            "E01-L017",
+            "script"
+          ],
+          [
+            "E02-L009",
+            "script"
+          ],
+          [
+            "E02-L026",
+            "script"
+          ],
+          [
+            "E02-L028",
+            "script"
+          ],
+          [
+            "E02-L029",
+            "script"
+          ],
+          [
+            "E02-L030",
+            "script"
+          ],
+          [
+            "E02-L031",
+            "script"
+          ],
+          [
+            "E03-L002",
+            "script"
+          ],
+          [
+            "E03-L003",
+            "script"
+          ],
+          [
+            "E03-L006",
+            "script"
+          ],
+          [
+            "E03-L008",
+            "script"
+          ],
+          [
+            "E03-L010",
+            "script"
+          ],
+          [
+            "E03-L011",
+            "script"
+          ],
+          [
+            "E03-L012",
+            "script"
+          ],
+          [
+            "E06-L010",
+            "script"
+          ],
+          [
+            "E06-L011",
+            "script"
+          ],
+          [
+            "E06-L012",
+            "script"
+          ],
+          [
+            "E06-L016",
+            "script"
+          ],
+          [
+            "E06-L017",
+            "script"
+          ],
+          [
+            "E06-L018",
+            "script"
+          ],
+          [
+            "E06-L019",
+            "script"
+          ],
+          [
+            "E06-L020",
+            "script"
+          ]
+        ],
+        "flags_rescued_by_chain_matching": 0,
+        "type_instances_total": 24,
+        "type_instances_found": 22,
+        "type_recall": 0.917
+      },
+      "timing": {
+        "flags": 37,
+        "lines_flagged": 36,
+        "true_positive_flags": 17,
+        "false_positive_flags": 20,
+        "instances_found": 16,
+        "instances_total": 158,
+        "missed_human_issues": 142,
+        "precision": 0.459,
+        "recall": 0.101,
+        "recall_note": "instances credited / reviewer instances; numerator and denominator are the same kind",
+        "recall_legacy_flagcount": 0.107,
+        "legacy_denominator_was": 159,
+        "line_level": {
+          "issue_lines_found": 32,
+          "issue_lines_total": 81,
+          "recall": 0.395,
+          "precision": 0.889
+        },
+        "tp_line_ids": [
+          "E01-L003",
+          "E01-L004",
+          "E01-L005",
+          "E01-L024",
+          "E01-L029",
+          "E01-L030",
+          "E02-L012",
+          "E03-L023",
+          "E04-L015",
+          "E04-L023",
+          "E05-L009",
+          "E05-L012",
+          "E05-L015",
+          "E05-L016",
+          "E05-L029",
+          "E05-L032"
+        ],
+        "fp_line_ids": [
+          "E01-L015",
+          "E01-L021",
+          "E02-L004",
+          "E02-L006",
+          "E02-L007",
+          "E02-L010",
+          "E02-L011",
+          "E02-L020",
+          "E03-L018",
+          "E03-L029",
+          "E03-L030",
+          "E04-L004",
+          "E04-L006",
+          "E04-L009",
+          "E04-L027",
+          "E05-L010",
+          "E05-L022",
+          "E06-L002",
+          "E06-L004",
+          "E06-L006"
+        ],
+        "missed": [
+          [
+            "E01-L001",
+            "meaning"
+          ],
+          [
+            "E01-L004",
+            "meaning"
+          ],
+          [
+            "E01-L004",
+            "naturalness"
+          ],
+          [
+            "E01-L005",
+            "naturalness"
+          ],
+          [
+            "E01-L006",
+            "naturalness"
+          ],
+          [
+            "E01-L014",
+            "meaning"
+          ],
+          [
+            "E01-L014",
+            "naturalness"
+          ],
+          [
+            "E01-L015",
+            "naturalness"
+          ],
+          [
+            "E01-L017",
+            "meaning"
+          ],
+          [
+            "E01-L017",
+            "script"
+          ],
+          [
+            "E01-L024",
+            "meaning"
+          ],
+          [
+            "E01-L025",
+            "naturalness"
+          ],
+          [
+            "E01-L026",
+            "naturalness"
+          ],
+          [
+            "E01-L029",
+            "meaning"
+          ],
+          [
+            "E01-L029",
+            "naturalness"
+          ],
+          [
+            "E01-L029",
+            "relationship"
+          ],
+          [
+            "E01-L030",
+            "naturalness"
+          ],
+          [
+            "E02-L004",
+            "naturalness"
+          ],
+          [
+            "E02-L006",
+            "meaning"
+          ],
+          [
+            "E02-L006",
+            "naturalness"
+          ],
+          [
+            "E02-L006",
+            "script"
+          ],
+          [
+            "E02-L007",
+            "meaning"
+          ],
+          [
+            "E02-L007",
+            "naturalness"
+          ],
+          [
+            "E02-L009",
+            "meaning"
+          ],
+          [
+            "E02-L009",
+            "script"
+          ],
+          [
+            "E02-L010",
+            "naturalness"
+          ],
+          [
+            "E02-L011",
+            "naturalness"
+          ],
+          [
+            "E02-L012",
+            "naturalness"
+          ],
+          [
+            "E02-L013",
+            "naturalness"
+          ],
+          [
+            "E02-L020",
+            "naturalness"
+          ],
+          [
+            "E02-L026",
+            "meaning"
+          ],
+          [
+            "E02-L026",
+            "script"
+          ],
+          [
+            "E02-L028",
+            "meaning"
+          ],
+          [
+            "E02-L028",
+            "script"
+          ],
+          [
+            "E02-L029",
+            "meaning"
+          ],
+          [
+            "E02-L029",
+            "naturalness"
+          ],
+          [
+            "E02-L029",
+            "script"
+          ],
+          [
+            "E02-L030",
+            "meaning"
+          ],
+          [
+            "E02-L030",
+            "naturalness"
+          ],
+          [
+            "E02-L030",
+            "script"
+          ],
+          [
+            "E02-L031",
+            "meaning"
+          ],
+          [
+            "E02-L031",
+            "naturalness"
+          ],
+          [
+            "E02-L031",
+            "script"
+          ],
+          [
+            "E03-L002",
+            "script"
+          ],
+          [
+            "E03-L003",
+            "meaning"
+          ],
+          [
+            "E03-L003",
+            "relationship"
+          ],
+          [
+            "E03-L003",
+            "script"
+          ],
+          [
+            "E03-L006",
+            "meaning"
+          ],
+          [
+            "E03-L006",
+            "relationship"
+          ],
+          [
+            "E03-L006",
+            "script"
+          ],
+          [
+            "E03-L008",
+            "naturalness"
+          ],
+          [
+            "E03-L008",
+            "script"
+          ],
+          [
+            "E03-L010",
+            "meaning"
+          ],
+          [
+            "E03-L010",
+            "naturalness"
+          ],
+          [
+            "E03-L010",
+            "script"
+          ],
+          [
+            "E03-L011",
+            "meaning"
+          ],
+          [
+            "E03-L011",
+            "script"
+          ],
+          [
+            "E03-L011",
+            "timing"
+          ],
+          [
+            "E03-L012",
+            "naturalness"
+          ],
+          [
+            "E03-L012",
+            "relationship"
+          ],
+          [
+            "E03-L012",
+            "script"
+          ],
+          [
+            "E03-L014",
+            "meaning"
+          ],
+          [
+            "E03-L018",
+            "meaning"
+          ],
+          [
+            "E03-L018",
+            "naturalness"
+          ],
+          [
+            "E03-L023",
+            "meaning"
+          ],
+          [
+            "E03-L023",
+            "naturalness"
+          ],
+          [
+            "E03-L024",
+            "meaning"
+          ],
+          [
+            "E03-L024",
+            "naturalness"
+          ],
+          [
+            "E03-L025",
+            "naturalness"
+          ],
+          [
+            "E03-L031",
+            "meaning"
+          ],
+          [
+            "E03-L031",
+            "naturalness"
+          ],
+          [
+            "E04-L001",
+            "meaning"
+          ],
+          [
+            "E04-L004",
+            "meaning"
+          ],
+          [
+            "E04-L004",
+            "naturalness"
+          ],
+          [
+            "E04-L006",
+            "meaning"
+          ],
+          [
+            "E04-L006",
+            "naturalness"
+          ],
+          [
+            "E04-L007",
+            "meaning"
+          ],
+          [
+            "E04-L007",
+            "naturalness"
+          ],
+          [
+            "E04-L009",
+            "meaning"
+          ],
+          [
+            "E04-L009",
+            "naturalness"
+          ],
+          [
+            "E04-L011",
+            "meaning"
+          ],
+          [
+            "E04-L013",
+            "meaning"
+          ],
+          [
+            "E04-L013",
+            "naturalness"
+          ],
+          [
+            "E04-L014",
+            "naturalness"
+          ],
+          [
+            "E04-L014",
+            "timing"
+          ],
+          [
+            "E04-L015",
+            "naturalness"
+          ],
+          [
+            "E04-L017",
+            "meaning"
+          ],
+          [
+            "E04-L023",
+            "naturalness"
+          ],
+          [
+            "E04-L025",
+            "naturalness"
+          ],
+          [
+            "E04-L027",
+            "meaning"
+          ],
+          [
+            "E04-L027",
+            "naturalness"
+          ],
+          [
+            "E04-L027",
+            "relationship"
+          ],
+          [
+            "E05-L003",
+            "meaning"
+          ],
+          [
+            "E05-L003",
+            "naturalness"
+          ],
+          [
+            "E05-L007",
+            "naturalness"
+          ],
+          [
+            "E05-L009",
+            "naturalness"
+          ],
+          [
+            "E05-L011",
+            "naturalness"
+          ],
+          [
+            "E05-L012",
+            "naturalness"
+          ],
+          [
+            "E05-L014",
+            "relationship"
+          ],
+          [
+            "E05-L015",
+            "naturalness"
+          ],
+          [
+            "E05-L017",
+            "meaning"
+          ],
+          [
+            "E05-L017",
+            "naturalness"
+          ],
+          [
+            "E05-L019",
+            "naturalness"
+          ],
+          [
+            "E05-L019",
+            "timing"
+          ],
+          [
+            "E05-L022",
+            "meaning"
+          ],
+          [
+            "E05-L022",
+            "relationship"
+          ],
+          [
+            "E05-L027",
+            "naturalness"
+          ],
+          [
+            "E05-L027",
+            "script"
+          ],
+          [
+            "E05-L029",
+            "meaning"
+          ],
+          [
+            "E05-L032",
+            "meaning"
+          ],
+          [
+            "E05-L032",
+            "naturalness"
+          ],
+          [
+            "E06-L002",
+            "meaning"
+          ],
+          [
+            "E06-L002",
+            "naturalness"
+          ],
+          [
+            "E06-L004",
+            "meaning"
+          ],
+          [
+            "E06-L004",
+            "naturalness"
+          ],
+          [
+            "E06-L004",
+            "relationship"
+          ],
+          [
+            "E06-L006",
+            "meaning"
+          ],
+          [
+            "E06-L008",
+            "meaning"
+          ],
+          [
+            "E06-L008",
+            "naturalness"
+          ],
+          [
+            "E06-L010",
+            "naturalness"
+          ],
+          [
+            "E06-L010",
+            "relationship"
+          ],
+          [
+            "E06-L010",
+            "script"
+          ],
+          [
+            "E06-L011",
+            "naturalness"
+          ],
+          [
+            "E06-L011",
+            "relationship"
+          ],
+          [
+            "E06-L011",
+            "script"
+          ],
+          [
+            "E06-L012",
+            "meaning"
+          ],
+          [
+            "E06-L012",
+            "relationship"
+          ],
+          [
+            "E06-L012",
+            "script"
+          ],
+          [
+            "E06-L016",
+            "naturalness"
+          ],
+          [
+            "E06-L016",
+            "script"
+          ],
+          [
+            "E06-L017",
+            "meaning"
+          ],
+          [
+            "E06-L017",
+            "script"
+          ],
+          [
+            "E06-L018",
+            "naturalness"
+          ],
+          [
+            "E06-L018",
+            "script"
+          ],
+          [
+            "E06-L019",
+            "meaning"
+          ],
+          [
+            "E06-L019",
+            "naturalness"
+          ],
+          [
+            "E06-L019",
+            "script"
+          ],
+          [
+            "E06-L020",
+            "naturalness"
+          ],
+          [
+            "E06-L020",
+            "script"
+          ],
+          [
+            "E06-L023",
+            "meaning"
+          ],
+          [
+            "E06-L024",
+            "meaning"
+          ],
+          [
+            "E06-L024",
+            "naturalness"
+          ]
+        ],
+        "credited_instances": [
+          [
+            "E01-L003",
+            "timing"
+          ],
+          [
+            "E01-L004",
+            "timing"
+          ],
+          [
+            "E01-L005",
+            "timing"
+          ],
+          [
+            "E01-L024",
+            "timing"
+          ],
+          [
+            "E01-L029",
+            "timing"
+          ],
+          [
+            "E01-L030",
+            "timing"
+          ],
+          [
+            "E02-L012",
+            "timing"
+          ],
+          [
+            "E03-L023",
+            "timing"
+          ],
+          [
+            "E04-L015",
+            "timing"
+          ],
+          [
+            "E04-L023",
+            "timing"
+          ],
+          [
+            "E05-L009",
+            "timing"
+          ],
+          [
+            "E05-L012",
+            "timing"
+          ],
+          [
+            "E05-L015",
+            "timing"
+          ],
+          [
+            "E05-L016",
+            "timing"
+          ],
+          [
+            "E05-L029",
+            "timing"
+          ],
+          [
+            "E05-L032",
+            "timing"
+          ]
+        ],
+        "flags_rescued_by_chain_matching": 0,
+        "type_instances_total": 19,
+        "type_instances_found": 16,
+        "type_recall": 0.842
+      }
+    },
+    "severity_sweep": [
+      {
+        "at_least": "high",
+        "flags": 53,
+        "precision": 0.679,
+        "recall": 0.228
+      },
+      {
+        "at_least": "medium",
+        "flags": 93,
+        "precision": 0.591,
+        "recall": 0.335
+      },
+      {
+        "at_least": "low",
+        "flags": 142,
+        "precision": 0.606,
+        "recall": 0.532
+      }
+    ],
+    "errors": []
+  },
+  "baseline": {
+    "overall": {
+      "flags": 58,
+      "lines_flagged": 58,
+      "true_positive_flags": 52,
+      "false_positive_flags": 6,
+      "instances_found": 109,
+      "instances_total": 158,
+      "missed_human_issues": 49,
+      "precision": 0.897,
+      "recall": 0.69,
+      "recall_note": "instances credited / reviewer instances; numerator and denominator are the same kind",
+      "recall_legacy_flagcount": 0.248,
+      "legacy_denominator_was": 210,
+      "line_level": {
+        "issue_lines_found": 52,
+        "issue_lines_total": 81,
+        "recall": 0.642,
+        "precision": 0.897
+      },
+      "tp_line_ids": [
+        "E01-L001",
+        "E01-L003",
+        "E01-L004",
+        "E01-L014",
+        "E01-L015",
+        "E01-L017",
+        "E01-L024",
+        "E02-L004",
+        "E02-L006",
+        "E02-L009",
+        "E02-L011",
+        "E02-L026",
+        "E02-L028",
+        "E02-L029",
+        "E02-L031",
+        "E03-L003",
+        "E03-L010",
+        "E03-L011",
+        "E03-L012",
+        "E03-L018",
+        "E03-L023",
+        "E03-L025",
+        "E03-L031",
+        "E04-L004",
+        "E04-L007",
+        "E04-L009",
+        "E04-L011",
+        "E04-L014",
+        "E04-L023",
+        "E04-L025",
+        "E04-L027",
+        "E05-L003",
+        "E05-L007",
+        "E05-L009",
+        "E05-L012",
+        "E05-L015",
+        "E05-L017",
+        "E05-L022",
+        "E05-L027",
+        "E05-L029",
+        "E05-L032",
+        "E06-L004",
+        "E06-L006",
+        "E06-L008",
+        "E06-L010",
+        "E06-L011",
+        "E06-L012",
+        "E06-L016",
+        "E06-L017",
+        "E06-L018",
+        "E06-L019",
+        "E06-L023"
+      ],
+      "fp_line_ids": [
+        "E02-L015",
+        "E02-L025",
+        "E03-L030",
+        "E04-L021",
+        "E05-L010",
+        "E05-L026"
+      ],
+      "missed": [
+        [
+          "E01-L005",
+          "naturalness"
+        ],
+        [
+          "E01-L005",
+          "timing"
+        ],
+        [
+          "E01-L006",
+          "naturalness"
+        ],
+        [
+          "E01-L025",
+          "naturalness"
+        ],
+        [
+          "E01-L026",
+          "naturalness"
+        ],
+        [
+          "E01-L029",
+          "meaning"
+        ],
+        [
+          "E01-L029",
+          "naturalness"
+        ],
+        [
+          "E01-L029",
+          "relationship"
+        ],
+        [
+          "E01-L029",
+          "timing"
+        ],
+        [
+          "E01-L030",
+          "naturalness"
+        ],
+        [
+          "E01-L030",
+          "timing"
+        ],
+        [
+          "E02-L007",
+          "meaning"
+        ],
+        [
+          "E02-L007",
+          "naturalness"
+        ],
+        [
+          "E02-L010",
+          "naturalness"
+        ],
+        [
+          "E02-L012",
+          "naturalness"
+        ],
+        [
+          "E02-L012",
+          "timing"
+        ],
+        [
+          "E02-L013",
+          "naturalness"
+        ],
+        [
+          "E02-L020",
+          "naturalness"
+        ],
+        [
+          "E02-L030",
+          "meaning"
+        ],
+        [
+          "E02-L030",
+          "naturalness"
+        ],
+        [
+          "E02-L030",
+          "script"
+        ],
+        [
+          "E03-L002",
+          "script"
+        ],
+        [
+          "E03-L006",
+          "meaning"
+        ],
+        [
+          "E03-L006",
+          "relationship"
+        ],
+        [
+          "E03-L006",
+          "script"
+        ],
+        [
+          "E03-L008",
+          "naturalness"
+        ],
+        [
+          "E03-L008",
+          "script"
+        ],
+        [
+          "E03-L014",
+          "meaning"
+        ],
+        [
+          "E03-L024",
+          "meaning"
+        ],
+        [
+          "E03-L024",
+          "naturalness"
+        ],
+        [
+          "E04-L001",
+          "meaning"
+        ],
+        [
+          "E04-L006",
+          "meaning"
+        ],
+        [
+          "E04-L006",
+          "naturalness"
+        ],
+        [
+          "E04-L013",
+          "meaning"
+        ],
+        [
+          "E04-L013",
+          "naturalness"
+        ],
+        [
+          "E04-L015",
+          "naturalness"
+        ],
+        [
+          "E04-L015",
+          "timing"
+        ],
+        [
+          "E04-L017",
+          "meaning"
+        ],
+        [
+          "E05-L011",
+          "naturalness"
+        ],
+        [
+          "E05-L014",
+          "relationship"
+        ],
+        [
+          "E05-L016",
+          "timing"
+        ],
+        [
+          "E05-L019",
+          "naturalness"
+        ],
+        [
+          "E05-L019",
+          "timing"
+        ],
+        [
+          "E06-L002",
+          "meaning"
+        ],
+        [
+          "E06-L002",
+          "naturalness"
+        ],
+        [
+          "E06-L020",
+          "naturalness"
+        ],
+        [
+          "E06-L020",
+          "script"
+        ],
+        [
+          "E06-L024",
+          "meaning"
+        ],
+        [
+          "E06-L024",
+          "naturalness"
+        ]
+      ],
+      "credited_instances": [
+        [
+          "E01-L001",
+          "meaning"
+        ],
+        [
+          "E01-L003",
+          "timing"
+        ],
+        [
+          "E01-L004",
+          "meaning"
+        ],
+        [
+          "E01-L004",
+          "naturalness"
+        ],
+        [
+          "E01-L004",
+          "timing"
+        ],
+        [
+          "E01-L014",
+          "meaning"
+        ],
+        [
+          "E01-L014",
+          "naturalness"
+        ],
+        [
+          "E01-L015",
+          "naturalness"
+        ],
+        [
+          "E01-L017",
+          "meaning"
+        ],
+        [
+          "E01-L017",
+          "script"
+        ],
+        [
+          "E01-L024",
+          "meaning"
+        ],
+        [
+          "E01-L024",
+          "timing"
+        ],
+        [
+          "E02-L004",
+          "naturalness"
+        ],
+        [
+          "E02-L006",
+          "meaning"
+        ],
+        [
+          "E02-L006",
+          "naturalness"
+        ],
+        [
+          "E02-L006",
+          "script"
+        ],
+        [
+          "E02-L009",
+          "meaning"
+        ],
+        [
+          "E02-L009",
+          "script"
+        ],
+        [
+          "E02-L011",
+          "naturalness"
+        ],
+        [
+          "E02-L026",
+          "meaning"
+        ],
+        [
+          "E02-L026",
+          "script"
+        ],
+        [
+          "E02-L028",
+          "meaning"
+        ],
+        [
+          "E02-L028",
+          "script"
+        ],
+        [
+          "E02-L029",
+          "meaning"
+        ],
+        [
+          "E02-L029",
+          "naturalness"
+        ],
+        [
+          "E02-L029",
+          "script"
+        ],
+        [
+          "E02-L031",
+          "meaning"
+        ],
+        [
+          "E02-L031",
+          "naturalness"
+        ],
+        [
+          "E02-L031",
+          "script"
+        ],
+        [
+          "E03-L003",
+          "meaning"
+        ],
+        [
+          "E03-L003",
+          "relationship"
+        ],
+        [
+          "E03-L003",
+          "script"
+        ],
+        [
+          "E03-L010",
+          "meaning"
+        ],
+        [
+          "E03-L010",
+          "naturalness"
+        ],
+        [
+          "E03-L010",
+          "script"
+        ],
+        [
+          "E03-L011",
+          "meaning"
+        ],
+        [
+          "E03-L011",
+          "script"
+        ],
+        [
+          "E03-L011",
+          "timing"
+        ],
+        [
+          "E03-L012",
+          "naturalness"
+        ],
+        [
+          "E03-L012",
+          "relationship"
+        ],
+        [
+          "E03-L012",
+          "script"
+        ],
+        [
+          "E03-L018",
+          "meaning"
+        ],
+        [
+          "E03-L018",
+          "naturalness"
+        ],
+        [
+          "E03-L023",
+          "meaning"
+        ],
+        [
+          "E03-L023",
+          "naturalness"
+        ],
+        [
+          "E03-L023",
+          "timing"
+        ],
+        [
+          "E03-L025",
+          "naturalness"
+        ],
+        [
+          "E03-L031",
+          "meaning"
+        ],
+        [
+          "E03-L031",
+          "naturalness"
+        ],
+        [
+          "E04-L004",
+          "meaning"
+        ],
+        [
+          "E04-L004",
+          "naturalness"
+        ],
+        [
+          "E04-L007",
+          "meaning"
+        ],
+        [
+          "E04-L007",
+          "naturalness"
+        ],
+        [
+          "E04-L009",
+          "meaning"
+        ],
+        [
+          "E04-L009",
+          "naturalness"
+        ],
+        [
+          "E04-L011",
+          "meaning"
+        ],
+        [
+          "E04-L014",
+          "naturalness"
+        ],
+        [
+          "E04-L014",
+          "timing"
+        ],
+        [
+          "E04-L023",
+          "naturalness"
+        ],
+        [
+          "E04-L023",
+          "timing"
+        ],
+        [
+          "E04-L025",
+          "naturalness"
+        ],
+        [
+          "E04-L027",
+          "meaning"
+        ],
+        [
+          "E04-L027",
+          "naturalness"
+        ],
+        [
+          "E04-L027",
+          "relationship"
+        ],
+        [
+          "E05-L003",
+          "meaning"
+        ],
+        [
+          "E05-L003",
+          "naturalness"
+        ],
+        [
+          "E05-L007",
+          "naturalness"
+        ],
+        [
+          "E05-L009",
+          "naturalness"
+        ],
+        [
+          "E05-L009",
+          "timing"
+        ],
+        [
+          "E05-L012",
+          "naturalness"
+        ],
+        [
+          "E05-L012",
+          "timing"
+        ],
+        [
+          "E05-L015",
+          "naturalness"
+        ],
+        [
+          "E05-L015",
+          "timing"
+        ],
+        [
+          "E05-L017",
+          "meaning"
+        ],
+        [
+          "E05-L017",
+          "naturalness"
+        ],
+        [
+          "E05-L022",
+          "meaning"
+        ],
+        [
+          "E05-L022",
+          "relationship"
+        ],
+        [
+          "E05-L027",
+          "naturalness"
+        ],
+        [
+          "E05-L027",
+          "script"
+        ],
+        [
+          "E05-L029",
+          "meaning"
+        ],
+        [
+          "E05-L029",
+          "timing"
+        ],
+        [
+          "E05-L032",
+          "meaning"
+        ],
+        [
+          "E05-L032",
+          "naturalness"
+        ],
+        [
+          "E05-L032",
+          "timing"
+        ],
+        [
+          "E06-L004",
+          "meaning"
+        ],
+        [
+          "E06-L004",
+          "naturalness"
+        ],
+        [
+          "E06-L004",
+          "relationship"
+        ],
+        [
+          "E06-L006",
+          "meaning"
+        ],
+        [
+          "E06-L008",
+          "meaning"
+        ],
+        [
+          "E06-L008",
+          "naturalness"
+        ],
+        [
+          "E06-L010",
+          "naturalness"
+        ],
+        [
+          "E06-L010",
+          "relationship"
+        ],
+        [
+          "E06-L010",
+          "script"
+        ],
+        [
+          "E06-L011",
+          "naturalness"
+        ],
+        [
+          "E06-L011",
+          "relationship"
+        ],
+        [
+          "E06-L011",
+          "script"
+        ],
+        [
+          "E06-L012",
+          "meaning"
+        ],
+        [
+          "E06-L012",
+          "relationship"
+        ],
+        [
+          "E06-L012",
+          "script"
+        ],
+        [
+          "E06-L016",
+          "naturalness"
+        ],
+        [
+          "E06-L016",
+          "script"
+        ],
+        [
+          "E06-L017",
+          "meaning"
+        ],
+        [
+          "E06-L017",
+          "script"
+        ],
+        [
+          "E06-L018",
+          "naturalness"
+        ],
+        [
+          "E06-L018",
+          "script"
+        ],
+        [
+          "E06-L019",
+          "meaning"
+        ],
+        [
+          "E06-L019",
+          "naturalness"
+        ],
+        [
+          "E06-L019",
+          "script"
+        ],
+        [
+          "E06-L023",
+          "meaning"
+        ]
+      ],
+      "flags_rescued_by_chain_matching": 0
+    },
+    "severity_sweep": [
+      {
+        "at_least": "high",
+        "flags": 0,
+        "precision": null,
+        "recall": 0.0
+      },
+      {
+        "at_least": "medium",
+        "flags": 58,
+        "precision": 0.897,
+        "recall": 0.69
+      },
+      {
+        "at_least": "low",
+        "flags": 58,
+        "precision": 0.897,
+        "recall": 0.69
+      }
+    ],
+    "stats": {
+      "raw_problems": [
+        {
+          "line_id": "E01-L001",
+          "issue": "Telugu phrasing \"దీపం వెలిగేలా ఉంది\" is awkward; more natural would be \"దీపం వెలిగి ఉంది\" or \"దీపం వెలిగేలా ఉంది\" is redundant.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E01-L003",
+          "issue": "Uses \"ఒక గంటకు ముందు\" which means \"an hour before\" instead of the correct \"an hour ago\" – should be \"ఒక గంట క్రితం\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E01-L004",
+          "issue": "Unnecessary addition of the name \"ఎడ్డా,\" which isn’t in the English line, and the tense \"నీవు నిద్రిస్తున్నప్పుడు\" is present progressive rather than past; a more accurate translation would omit the name and use \"నీవు నిద్రించినప్పుడు\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E01-L014",
+          "issue": "\"deed\" translated as \"ఒప్పందం\" (agreement) which is inaccurate; a better term would be \"కార్యం\" or \"క్రియ\". The overall phrasing sounds unnatural.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E01-L015",
+          "issue": "Added \"దయచేసి\" (please) which is not present in the English line, altering the tone.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E01-L017",
+          "issue": "\"tide\" translated as \"జలానికి\" (to water) which is incorrect; the proper word is \"అలలు\" or \"అలలకు\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E01-L024",
+          "issue": "Added \"మిస్ హాలొరన్\" (Miss Halloran) which is not present in the original English line, altering the meaning.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E02-L004",
+          "issue": "Literal translation is awkward; should convey \"Ticket burned along with the ship\" e.g., \"టికెట్ నౌకతో కలిసి కాలిపోయింది\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E02-L006",
+          "issue": "Unnatural phrasing and unnecessary speaker name; \"అతని తల నింపుతున్నారా?\" is literal and sounds odd, better \"అతని మనసు నింపుతున్నారా?\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E02-L009",
+          "issue": "Incorrect verb form and unnatural phrasing; \"వినిపిస్తారు\" is wrong. Should be something like \"Mistress Caine దీనిని గురించి వింటారు\" or \"ఇది గురించి తెలుసుకుంటారు\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E02-L011",
+          "issue": "Verb form incorrect; should be \"అతను దీపాన్ని కోరుకుంటున్నాడు\" instead of the plural/respectful \"కోరుకుంటున్నారు\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E02-L015",
+          "issue": "Missing possessive marker for \"keeper's\"; translation should reflect \"కీపర్ యొక్క శీతాకాలానికి\" rather than \"కీపర్ శీతాకాలానికి\" for naturalness.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E02-L025",
+          "issue": "Translation is incomplete; only \"మీరు ఎలా ...\" is given, missing the rest of the phrase.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E02-L026",
+          "issue": "Literal translation is unnatural; \"darwaza chadavadam\" is odd for \"read a gate\" and the year should be expressed as \"61లో\" or \"1961లో\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E02-L028",
+          "issue": "\"Shanthamga undi\" is not the usual way to say \"Hush now\"; a more natural rendering would be \"శాంతంగా ఉండండి\" or \"నిశ్శబ్దంగా ఉండండి\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E02-L029",
+          "issue": "Missing the notion of \"costs\"; the Telugu version says she doesn't know about a signature, not what it costs. Should convey \"సంతకం ఎంత ఖర్చు అవుతుందో ఆమెకు తెలియదు\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E02-L031",
+          "issue": "The translation is garbled and does not convey the original meaning. \"Darwaza nilipi, Edda. Aadani arthur meeru\" is incorrect; a proper rendering would be \"గేట్‌ను మూసేయి, ఎడ్డా. అతను నిన్ను ఉద్దేశిస్తున్నాడు.\"",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E03-L003",
+          "issue": "The translation misinterprets \"tide\" as \"aapada\" (disaster) and does not convey the intended meaning of \"time\"; also the phrase is unnatural in Telugu.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E03-L010",
+          "issue": "The phrase \"mruthyu vyakti patra\" is awkward and does not naturally express \"dead man's paper\"; the overall sentence sounds stilted.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E03-L011",
+          "issue": "Adds \"Miss Halloran\" which is not in the English line, and uses unnatural wording like \"naa bed lo undi\"; the translation does not accurately reflect the original phrasing.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E03-L012",
+          "issue": "The expression \"seal ki kooda layakaledu\" is unnatural; a more natural rendering would avoid the literal word \"seal\" and use a phrase that fits Telugu idiom.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E03-L018",
+          "issue": "Telugu adds speaker name “మారెక్,” which isn’t in the English line, and the translation misinterprets the garbled English phrase; it should reflect the original meaning without inserting names.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E03-L023",
+          "issue": "The translation of “being priced” as “ధరలతో చూస్తున్నారు” and “not courted” as “ప్రేమతో కాదు” is unnatural and inaccurate; it doesn’t convey the idea of being evaluated for value versus being romantically pursued.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E03-L025",
+          "issue": "\"My girl\" rendered as \"నా అమ్మాయి\" is awkward for a father speaking to his daughter; a more natural term would be \"నా కుమార్తె\" or \"నా ప్రియతమా\". Also the address is split into a separate sentence, losing the comma.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E03-L030",
+          "issue": "\"dare\" translated as \"సవాల్\" (challenge) which is not the best equivalent; a more appropriate word would be \"ధైర్యం\" or \"సాహసం\". The phrase also ends abruptly with an em dash, not matching the English ellipsis.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E03-L031",
+          "issue": "The translation omits the \"... a dare\" part that continues from the previous line, leaving only \"I hear you, Father.\"",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E04-L004",
+          "issue": "Incorrect translation of \"stair\" – used \"సీడీ\" which means \"CD\"; should be \"మెట్లు\" or \"సీడీ\" is wrong context.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E04-L007",
+          "issue": "Awkward phrasing; \"తిరుగు అతనికి\" is unnatural for \"Turn to him\" and \"అతను నా తండ్రి నీరు\" sounds literal and unclear; a more natural rendering would be \"అతనివైపు తిరుగు, అతను నా తండ్రి నీరు\" or rephrase for context.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E04-L009",
+          "issue": "The fragment \"Nobody's.\" is ambiguous; translation \"ఎవరికి కూడా కాదు\" is vague and does not convey the intended meaning.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E04-L011",
+          "issue": "\"The trawler did not\" is mistranslated as \"ట్రాలర్ కాదు\" which means \"not the trawler\"; it should convey that the trawler did not hold, e.g., \"ట్రాలర్ నిలిచలేదు\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E04-L014",
+          "issue": "Speaker is Halloran (Edda's father) but translation addresses \"ఎడ్డా\"; also \"నాకె చెప్పు\" lacks a space and sounds unnatural. Should be \"నాకు చెప్పు\" and avoid misnaming.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E04-L021",
+          "issue": "Uses \"ఇది\" (this) instead of the more natural \"అది\" (that) for referring to the lamp.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E04-L023",
+          "issue": "The negative imperative \"ఆపకు\" is ungrammatical; a natural form would be \"ఆపకండి\" or \"ఆపకండి\". Also the flow could be smoother, e.g., \"నా తండ్రి నన్ను తొమ్మిదేళ్ల వయస్సులో ఇక్కడ పెట్టి, లెక్కించమని, ఆపకండి అని చెప్పారు.\"",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E04-L025",
+          "issue": "\"ఇది సరిపోతుంది\" is acceptable, but \"దిగు\" is a very abrupt informal command; a more natural phrasing would be \"కిందకు రా\" or \"కిందకు వెళ్లండి.\"",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E04-L027",
+          "issue": "The verb form \"నిలబెడతావు\" is awkward; a natural future tense would be \"నిలబెడుతావు\". Also saying \"దానిలోనే\" (inside it) for a lamp sounds odd; \"దాని లోపల\" or rephrasing the whole sentence would be clearer.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E05-L003",
+          "issue": "\"written off\" is rendered as \"వదిలివేయబడింది\" which means \"abandoned\"; the correct sense (declared a loss) is missing.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E05-L007",
+          "issue": "Unnatural address \"ఫాదర్ యాన్సెల్మ్ గారు\" and loanword \"లెడ్జర్\"; a more natural Telugu would use \"అన్సెల్మ్ పాద్రి\" and \"ఖాతాపుస్తకం\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E05-L009",
+          "issue": "\"Caine\" is mistakenly turned into \"మిస్ట్రెస్ కేన్ గారు\" and the verb \"gives\" is translated as \"ఇస్తారు\" without context; the name should stay as \"కేన్\" and the phrase needs proper meaning.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E05-L010",
+          "issue": "Same error as above: \"Caine gives\" is mistranslated as \"కేన్ ఇస్తారు\"; also the sentence structure is awkward and does not convey the conditional tone of the English line.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E05-L012",
+          "issue": "Added address \"ఎడ్డా,\" which is not present in the English line.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E05-L015",
+          "issue": "Inserted \"మిస్ హల్లొరాన్\" (Miss Halloran) which is not in the original dialogue.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E05-L017",
+          "issue": "Translation of \"see whose name it has\" is awkward; should be something like \"దాని మీద ఎవరి పేరు ఉందో చూడండి\" instead of \"దాని పేరు ఎవరికో చూడండి\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E05-L022",
+          "issue": "Mixed English and Telugu in the address (\"ఫాదర్ ఆంసెల్మ్ గారు\") and added honorifics not in the source; should be consistent, e.g., \"అన్సెల్మ్ గారు\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E05-L026",
+          "issue": "‘coat’ is mistranslated as కోట (fort) instead of కోట్ (coat); the phrase lacks the initial ‘Then’ and sounds unnatural.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E05-L027",
+          "issue": "Contains a Chinese character 钱 and mixes languages; the Telugu sentence is malformed.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E05-L029",
+          "issue": "Verb tense is wrong (present progressive instead of past); ‘starve’ is rendered as ఆకలితో which is inaccurate.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E05-L032",
+          "issue": "Adds an unnecessary speaker name ‘ఎడ్డా’; the translation of ‘out of duty’ is awkward and not a direct match for the English.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E06-L004",
+          "issue": "Incorrect speaker name added (\"మిస్ హల్లొరన్\") and wrong honorific; should reflect \"Mistress Caine\" in Telugu.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E06-L006",
+          "issue": "\"smuggler on the water\" rendered as \"నీటిపై దొంగతనం చేస్తున్నాడు\" which changes meaning; should convey \"smuggler\" rather than \"theft\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E06-L008",
+          "issue": "Contains extraneous text \"సిలాస్ వేన్\" and misspells \"ఆరోపణ\" as \"ఆరోగణ\"; translation is inaccurate and unnatural.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E06-L010",
+          "issue": "Awkward phrasing and incorrect pronoun/verb form; \"mee kaligina\" is unnatural and should be \"nee kaligina\" or \"nee\" and the verb should be \"marchav\" not \"marchaaru\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E06-L011",
+          "issue": "Translation of \"Just not kind\" is wrong – \"Kani dayava ledu\" means \"no mercy\"; also the first sentence is clumsy: \"Nee eppudu kutumbam laanti vunnavu\" should be rephrased.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E06-L012",
+          "issue": "Redundant and unnatural wording; \"Meeru mee lampu neeku pettukondi\" repeats pronouns and should be simplified to something like \"Nee lampu pettukondi\".",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E06-L016",
+          "issue": "Sentence is incomplete and unnatural; \"meeru appudu emi?\" does not convey \"what are you then?\" and needs a proper question form.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E06-L017",
+          "issue": "Wrong word for \"bargeman\" (translated as \"bargain\") and the clause \"Nee deepam neeti pettina\" is awkward.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E06-L018",
+          "issue": "Unnecessary \"meeru\" at the end and unnatural word order; should be \"Adhi icchadam chinna vishayam kaadu.\"",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E06-L019",
+          "issue": "Multiple unnatural expressions: \"poddalu\" for \"stair\", awkward phrase \"mari inka nilabadutunnanu\", and \"naa pai choosthavo\" sounds forced.",
+          "hallucinated_id": false
+        },
+        {
+          "line_id": "E06-L023",
+          "issue": "The phrase \"Light the stair\" is mistranslated as \"కాంతి వెలిగించు\" which means \"turn on the light\"; it should convey lighting the stairway (e.g., \"సీడీని వెలిగించు\" or similar).",
+          "hallucinated_id": false
+        }
+      ],
+      "batches": 18,
+      "batches_with_no_problems": 0,
+      "problems_reported": 58,
+      "unknown_ids": 0
+    },
+    "errors": []
+  },
+  "comparison_at_similar_precision": {
+    "available": false,
+    "target_precision": 0.897,
+    "reason": "no severity cut reaches that precision",
+    "points": [
+      {
+        "at_least": "high",
+        "flags": 53,
+        "precision": 0.679,
+        "recall": 0.228
+      },
+      {
+        "at_least": "medium",
+        "flags": 93,
+        "precision": 0.591,
+        "recall": 0.335
+      },
+      {
+        "at_least": "low",
+        "flags": 142,
+        "precision": 0.606,
+        "recall": 0.532
+      }
+    ]
+  },
+  "acceptance_rate": {
+    "meaning": {
+      "accept": 0,
+      "accept_but_modify": 0,
+      "dismiss": 0,
+      "pending": 13,
+      "decisions_recorded": 0,
+      "acceptance_rate": null,
+      "modify_share": null,
+      "dismissal_rate": null
+    },
+    "naturalness": {
+      "accept": 0,
+      "accept_but_modify": 0,
+      "dismiss": 0,
+      "pending": 49,
+      "decisions_recorded": 0,
+      "acceptance_rate": null,
+      "modify_share": null,
+      "dismissal_rate": null
+    },
+    "relationship": {
+      "accept": 0,
+      "accept_but_modify": 0,
+      "dismiss": 0,
+      "pending": 21,
+      "decisions_recorded": 0,
+      "acceptance_rate": null,
+      "modify_share": null,
+      "dismissal_rate": null
+    },
+    "script": {
+      "accept": 0,
+      "accept_but_modify": 0,
+      "dismiss": 0,
+      "pending": 22,
+      "decisions_recorded": 0,
+      "acceptance_rate": null,
+      "modify_share": null,
+      "dismissal_rate": null
+    },
+    "timing": {
+      "accept": 0,
+      "accept_but_modify": 0,
+      "dismiss": 0,
+      "pending": 69,
+      "decisions_recorded": 0,
+      "acceptance_rate": null,
+      "modify_share": null,
+      "dismissal_rate": null
+    }
+  },
+  "seeded_errors": {
+    "status": "not measured",
+    "reason": "structured_seeded_flags.json does not exist, so nothing here was run against the seeded draft. The 9 edits in seeded_manifest.json were never scored.",
+    "command": "python scripts/run_seeded.py && python scripts/run_structured.py --telugu-file data/telugu/first_pass_seeded.json --label structured_seeded"
+  },
+  "thresholds": {
+    "genuine_issues_at_least_10": {
+      "value": 81,
+      "pass": true
+    },
+    "structured_recall_at_least_0_5": {
+      "value": 0.532,
+      "basis": "reviewer (line, type) instances credited / instances the reviewer reported",
+      "value_legacy_flagcount": 0.537,
+      "pass": true
+    },
+    "structured_beats_baseline_at_similar_precision": {
+      "baseline_precision": 0.897,
+      "baseline_recall": 0.69,
+      "structured_at_that_precision": {
+        "available": false,
+        "target_precision": 0.897,
+        "reason": "no severity cut reaches that precision",
+        "points": [
+          {
+            "at_least": "high",
+            "flags": 53,
+            "precision": 0.679,
+            "recall": 0.228
+          },
+          {
+            "at_least": "medium",
+            "flags": 93,
+            "precision": 0.591,
+            "recall": 0.335
+          },
+          {
+            "at_least": "low",
+            "flags": 142,
+            "precision": 0.606,
+            "recall": 0.532
+          }
+        ]
+      },
+      "pass": false
+    },
+    "false_positives_reported": {
+      "structured": 56,
+      "baseline": 6,
+      "pass": true
+    },
+    "naturalness_precision_reported_separately": {
+      "value": 0.633,
+      "pass": true
+    },
+    "acceptance_rate_available": {
+      "checks_with_decisions": [
+        "meaning",
+        "naturalness",
+        "relationship",
+        "script",
+        "timing"
+      ],
+      "pass": true
+    },
+    "line_level_reported": {
+      "structured": {
+        "issue_lines_found": 68,
+        "issue_lines_total": 81,
+        "recall": 0.84,
+        "precision": 0.919
+      },
+      "baseline": {
+        "issue_lines_found": 52,
+        "issue_lines_total": 81,
+        "recall": 0.642,
+        "precision": 0.897
+      },
+      "pass": true,
+      "note": "did the system put any flag on a line the reviewer marked, and how many of the lines it touched were ones the reviewer marked - the operational reading"
+    },
+    "instance_coverage_reported": {
+      "structured": "84/158",
+      "baseline": "109/158",
+      "pass": true,
+      "note": "one untyped baseline flag credits every type the reviewer named on that line, so the baseline leads on this row while flagging fewer issue lines"
+    }
+  },
+  "decision": "NO-GO",
+  "caveats": [
+    "seeded errors not measured: no run against the seeded draft exists, so any seeded number in a document is unsupported"
+  ],
+  "checks_to_drop": [
+    "relationship"
+  ]
+}

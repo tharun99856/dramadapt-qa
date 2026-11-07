@@ -10,7 +10,7 @@
     "priced": false,
     "models": []
   },
-  "_updated": "2026-11-07T07:56:03+00:00",
+  "_updated": "2026-11-07T10:23:55+00:00",
   "_aggregate": {
     "requests_total": 134,
     "prompt_tokens": 181911,
@@ -211,6 +211,17 @@
     ]
   },
   "new_input_code": {
+    "requests_total": 0,
+    "requests_measured": 0,
+    "requests_unmeasured_provenance": 0,
+    "by_kind": {},
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": null,
+    "priced": false,
+    "models": []
+  },
+  "timing_derived583": {
     "requests_total": 0,
     "requests_measured": 0,
     "requests_unmeasured_provenance": 0,

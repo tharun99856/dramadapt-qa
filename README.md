@@ -67,6 +67,10 @@ python scripts/select_sample.py
 python scripts/calibrate_rate.py --template    # writes 12 lines to time aloud
 #    ... read them at the show's pace, put the seconds in column 3 ...
 python scripts/calibrate_rate.py               # writes data/calibration.json
+#    while those cells are empty this bounds the rate from text already in the repo. It is labelled
+#    derived because it is not a measurement, and it writes calibration_derived.json, never
+#    calibration.json - src/config.py only ever reads the hand-timed one:
+python scripts/derive_rate.py
 
 # 5. Step A: first-pass Telugu for all 100 lines, one fixed prompt, output stored untouched
 python scripts/run_first_pass.py            # add --compare to run config.yaml's second model too
@@ -281,6 +285,15 @@ Full text in `docs/phase0_results.md`; the failures behind this run are entries 
   the overrun share next to the flag count so that "this check is shortlisting almost everything" is visible
   instead of impressive. Until those ten readings exist, timing's 50 false positives cannot be interpreted:
   18 of its 19 reviewer-confirmed overruns are found, which is the part that is already real.
+- **What a rate in between does.** `python scripts/derive_rate.py` bounds the rate from text already in the
+  repo - the reviewer's own `corrected_line` akshara divided by that line's slot - and the median is
+  **5.83 akshara/s** over 83 lines, against the 3.5 the submitted run used and the 6.11 the draft itself
+  demands. Re-pricing timing at 5.83 is free (no model calls) and lands at
+  `results/timing_derived583_flags.json`: **37 flags instead of 69, precision 0.275 → 0.459, false positives
+  50 → 20, and 16 of the reviewer's 19 timing instances instead of 18.** Whole-run precision 0.506 → 0.606
+  with recall 0.544 → 0.532, and the decision is still NO-GO. That is a sensitivity check, not a calibration:
+  a rate derived from corrected lines makes those lines fit by construction, and the reviewer graded the
+  3.5 flag list, not this one, so `results/scores.json` keeps describing the run that was actually annotated.
 - **Step D acceptance pass** in `app.py` - the builder's own approve / edit / dismiss decisions, which is
   what PRD §9 uses to drop a check. Until they exist, `checks_to_drop: ["relationship"]` is arithmetic.
 - **Step E seeded errors.** Never run against the seeded draft; the numbers that used to be in

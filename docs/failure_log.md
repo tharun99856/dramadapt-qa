@@ -418,6 +418,31 @@ clean full pass prices at about 130,000 of the 200,000 daily tokens rather than 
 resumability as *prompt-text* replay, not as free re-runs, and treat a signed-off input file as a change to the
 experiment, because it invalidates the cached answers that were produced under the old one.
 
+**27. Two numbers arrived in a draft paragraph, and neither was in the build.** The text described "an assumed
+speech rate of about 6.5 akshara per second" and "the 28% acceptance rate for timing". The first matches nothing:
+`config.yaml` is `syllables_per_second: null`, `data/calibration.json` does not exist, and
+`results/structured_flags.json` records `"syllables_per_second": 3.5, "rate_source": "override passed on the
+command line - not calibrated"`. The second was not an acceptance pass either - the sheet behind it split 87
+approved / 87 dismissed with **zero** rows disagreeing with the scorer, no `editor_action_ts` anywhere, and a
+note on every row saying `editor to confirm`, and its per-check rates reproduced `scores.json` precision exactly
+(timing 0.275, naturalness 0.633, relationship 0.238, script 1.000). "28% acceptance for timing" was timing's
+precision wearing the name of the metric PRD §9 uses to drop a check, which makes the drop decision an
+assumption dressed as a measurement - the same family of error as entry 22. Neither number went into a document,
+and `data/annotation/decisions.csv` still ships all 174 rows `pending` because the statuses are the reviewer's
+to give.
+
+What could honestly be done instead was: bound the rate from text already in the repo.
+`scripts/derive_rate.py` divides the reviewer's own `corrected_line` akshara by that line's slot and gets a
+median **5.83 akshara/s** (n=83), where the draft's own text demands 6.11 and the run used 3.5; it writes
+`data/calibration_derived.json`, which `src/config.py` does not read, so a derived number can never quietly
+become the calibration. Re-pricing timing at 5.83 costs nothing - the check is plain Python - and via
+`--checks timing --rate 5.83 --merge structured` gives 37 flags instead of 69, precision 0.275 → 0.459,
+false positives 50 → 20, and 16 rather than 18 of the reviewer's 19 timing instances. The honest limits of that
+are written into the file: a rate derived from corrected lines makes those lines fit by construction, and the
+reviewer annotated the 3.5 list, so `results/scores.json` keeps describing the run that was actually graded and
+this one sits beside it as `results/scores_timing_derived583.json`. The ten hand-timed seconds are still the
+only thing that can close this.
+
 ## Small, real, worth writing down
 
 
