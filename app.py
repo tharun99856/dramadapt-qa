@@ -120,6 +120,55 @@ def main() -> None:
         "auto-approved, and no number in this UI is a confidence score about Telugu correctness."
     )
 
+    st.markdown(
+        "**What this page does.** Suppose a studio has an English microdrama script, a machine-made Telugu "
+        "translation of it, and a dubbing artist booked at 10am. Someone has to read both scripts and find "
+        "what is wrong before the artist is in the booth. That is this tool. It takes the English line and "
+        "the Telugu line and returns a list of specific problems, each one pointing at a line id: a meaning "
+        "that silently changed, the wrong form of address between two characters, a line that cannot be "
+        "spoken inside its time slot, phrasing no Telugu speaker would actually say, Telugu typed in Latin "
+        "letters. Five checks do that work: `meaning`, `relationship` and `naturalness` ask a model, `timing` "
+        "and `script` are computed from the text and cost zero model calls. "
+        "**It does not translate, does not dub, does not lip-sync, and does not clear a line.** Every row is "
+        "a question for a human editor, and each row carries the evidence and a place to record what that "
+        "human decided."
+    )
+    st.caption(
+        "**The honest status of the `structured` run, stated before the numbers.** Against a 100-line sheet "
+        "graded by hand, it put a flag on 80 of the 81 lines the reviewer marked as needing work, but only "
+        "0.506 of its 174 flags were problems the reviewer agreed with, while one generic \"find the errors\" "
+        "prompt got 0.897 of 58. The project's rule was written down before the run, and that rule returns "
+        "**NO-GO**. The prototype is submitted carrying that verdict instead of a friendlier one. "
+        "See `docs/phase0_results.md` and the expander below; other labels in the sidebar are subsets or "
+        "re-pricings of these same 100 lines, not new evidence."
+    )
+
+    with st.expander("Why Telugu, and why this problem", expanded=True):
+        st.markdown(
+            "- **Because Telugu is my native language, I could be the evaluator myself.** No dubbing house, "
+            "no studio, no interpreter: 100 lines graded by hand (81 `needs_revision`, 19 acceptable), 83 of "
+            "them rewritten in my own Telugu, and 34 of the 174 flags put through a second pass that says "
+            "accept, accept-with-an-edit or dismiss. The cost is just as real and is written down: one "
+            "evaluator, one language, no inter-rater agreement, and the grades were recorded in batches with "
+            "an AI assistant drafting some of them for review, which is human-reviewed AI-suggested "
+            "annotation, not independent annotation.\n"
+            "- **Because the models are weak here, in a measurable way.** TeluguEval (Gundam and Mamidi, "
+            "LoResLM @ ACL 2026) has Llama-3.1-8B fall from 90.95 to 48.10 on GSM8K when the same questions "
+            "are asked in Telugu instead of English. A cheap first-pass translation is exactly the input this "
+            "tool is meant to catch, so a QA gate is not decorative in this language pair.\n"
+            "- **Because Telugu makes error classes interesting that English does not.** Register lives in "
+            "the pronoun and the verb ending, so నువ్వు and మీరు are not two spellings of \"you\" but two "
+            "different relationships, and a model flips them between lines. Telugu is verb-final, so an "
+            "English sentence cut into two lines often needs re-ordering or the punch lands on the wrong "
+            "word. And a huge amount of machine Telugu comes back typed in Latin letters, which a voice "
+            "artist cannot read aloud at all.\n"
+            "- **Because of where the failure sits in the pipeline.** The translation is checked before the "
+            "booth, not after the episode ships. A flag here costs one editor reading one line; the same "
+            "defect found later costs a re-dub.\n"
+            "\nWhat the checks actually flag is in `docs/solution_two_pager.md`, and every wrong turn this "
+            "project took is numbered in `docs/failure_log.md`."
+        )
+
     runs = available_runs()
     if not runs:
         st.warning("No run found. Run `python scripts/run_structured.py --label demo` first.")
@@ -175,6 +224,26 @@ def main() -> None:
                                for c, ids in sorted(gaps.items()))
                    + ". These lines are neither flagged nor cleared - for relationship that is "
                    "usually no sheet row for the pair or an addressee the line never names.")
+
+    with st.expander("How to read the numbers above"):
+        st.markdown(
+            "- **Lines / With Telugu.** A line with no Telugu text is not a clean line, it is an unjudged "
+            "one, which is why the gap is a warning rather than a metric.\n"
+            "- **Lines flagged.** The five checks flag independently, so one line can carry three flags and "
+            "still count once here. Flag count and line count answer different questions.\n"
+            "- **Requests.** Only three checks call a model, and they are batched by scene, so requests "
+            "scale with scenes rather than lines. `timing` and `script` are computed from the text: zero "
+            "calls, zero cost, and they are the two checks that cannot change their mind between runs.\n"
+            "- **The timing line.** The akshara-per-second rate in it is an assumption, not a measurement. "
+            "Nothing has been hand-timed yet. Re-pricing the same draft at 5.83 akshara/s, a rate derived "
+            "from the reviewer's own 83 corrected lines, moves the timing check's false positives from 50 to "
+            "20 and whole-run precision from 0.506 to 0.606, so this number is the cheapest real result left "
+            "in the project - see `docs/phase0_results_timing_derived583.md`.\n"
+            "- **The script-form line.** Counted from Unicode blocks, not asked of a model. Lines with no "
+            "Telugu letters are unreadable in the booth; mixed-script lines are unreadable in a different way.\n"
+            "- **\"Sent to the model but not classified.\"** This is a coverage gap and deliberately not "
+            "counted as clean. A batch the model refused to answer in full leaves those lines unjudged."
+        )
 
     st.subheader("Flagged lines")
     st.caption("Worst first within each check. Timing flags are risk against the English window, not failure.")
