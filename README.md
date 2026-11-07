@@ -19,8 +19,8 @@ Companion docs: `PRD.md` (requirements and the Phase 0 experiment), `PRD_ADDENDU
 Assignment, Problem 3 (find your own problem). Solo author.
 
 Repository: https://github.com/tharun99856/dramadapt-qa. The API key is not in it and never will be -
-`src/config.py` reads `GROQ_API_KEY` from the environment or an untracked `.api_key` file, and
-`.env.example` documents both. Without a key the tool still runs: `--checks timing,script` and
+`src/config.py` reads `GROQ_API_KEY` from the environment or from a git-ignored `.env` in this folder,
+and `.env.example` documents both. Without a key the tool still runs: `--checks timing,script` and
 `--skip-step-a` need no model at all, which is how the new-input path is rehearsed.
 
 ---
@@ -46,8 +46,9 @@ python -m pip install pyyaml openai streamlit pandas
 ```
 
 Model access is configured in `config.yaml` (base URL, model, API key environment variable) so any
-OpenAI-compatible provider can be swapped in. The key itself is never stored in the repo: put it in the
-environment, or in `.api_key` at the repo root, which `.gitignore` excludes. Without a key the LLM
+OpenAI-compatible provider can be swapped in. The key itself is never stored in the repo: put it in
+`.env` at the repo root (`GROQ_API_KEY=gsk_...`), which `.gitignore` excludes; a real environment
+variable overrides it, and the older `.api_key` file still works. Without a key the LLM
 checks fail loudly and the report says so - see *Running without a key* below.
 
 ## Run order

@@ -26,16 +26,35 @@ def load(path: Path | str | None = None) -> dict:
     return cfg
 
 
+def _dotenv() -> dict:
+    """Parse ROOT/.env without a dependency. Real environment variables win over it."""
+    path = ROOT / ".env"
+    values: dict[str, str] = {}
+    if not path.exists():
+        return values
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        name, _, value = line.partition("=")
+        name = name.replace("export ", "").strip()
+        value = value.strip().strip('"').strip("'")
+        if name and value:
+            values[name] = value
+    return values
+
+
 def api_key(cfg: dict) -> str:
     env = cfg["provider"].get("api_key_env", "OPENAI_API_KEY")
-    key = os.environ.get(env, "").strip()
+    key = os.environ.get(env, "").strip() or _dotenv().get(env, "").strip()
     local = ROOT / ".api_key"
     if not key and local.exists():
         key = local.read_text(encoding="utf-8").strip()
     if not key:
         raise ConfigError(
-            f"No API key. Set the environment variable {env}, or put the key in {local} "
-            f"(that file is git-ignored). Nothing in this repo stores a key."
+            f"No API key. Set the environment variable {env}, or put it in {ROOT / '.env'} as "
+            f"{env}=gsk_... , or in {local} (both files are git-ignored). "
+            f"Nothing in this repo stores a key."
         )
     return key
 
