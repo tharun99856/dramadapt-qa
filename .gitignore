@@ -2,6 +2,8 @@
 .api_key
 *.key
 .env
+# If a local secrets.toml is ever used to test the hosted path, it stays local too.
+.streamlit/secrets.toml
 
 # The Kuku input pack must not appear in this repository in any form.
 # Excluded by name pattern so a stray copy cannot be added by accident.

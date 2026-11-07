@@ -23,6 +23,10 @@ def load_sample(telugu_path: Path | None = None) -> tuple[list[DialogueLine], di
         raise SampleError("data/annotation/sample_lines.json missing - run scripts/select_sample.py")
     payload = json.loads(SAMPLE_JSON.read_text(encoding="utf-8"))
     path = Path(telugu_path) if telugu_path else TELUGU_JSON
+    # Run artifacts written on Windows store "data\\telugu\\first_pass.json"; on Linux that is one
+    # filename with backslashes in it, so a hosted clone would silently load zero Telugu lines.
+    if "\\" in str(path):
+        path = Path(str(path).replace("\\", "/"))
     if not path.is_absolute():
         path = ROOT / path
     meta = {"seed": payload.get("seed"), "telugu_file": None, "telugu_provenance": None}

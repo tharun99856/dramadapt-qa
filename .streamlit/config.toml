@@ -1,0 +1,6 @@
+# Only what a hosted demo needs. Anything a viewer should see is in app.py itself.
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"

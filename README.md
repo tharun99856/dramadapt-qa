@@ -124,6 +124,29 @@ python tests/run_ui_test.py
 python scripts/make_pdf.py
 ```
 
+## Hosting the prototype
+
+The UI is a single `app.py` at the repo root with a pinned `requirements.txt`, which is all Streamlit
+Community Cloud needs. Roughly five minutes, and the URL it gives you is the prototype link the brief asks for.
+
+1. https://share.streamlit.io (or streamlit.cloud), sign in with the GitHub account that owns
+   `tharun99856/dramadapt-qa`.
+2. **New app** → Repository `tharun99856/dramadapt-qa`, Main file path `app.py`,
+   Python `3.11` or newer. Leave the requirements path at the default `requirements.txt`.
+3. Deploy. The first build installs streamlit, pandas, PyYAML and openai; the log shows it working.
+4. Optional, only if the hosted app should make model calls: **Settings → Secrets**, add
+   `GROQ_API_KEY = "gsk_..."`. `app.py` reads that into the environment on load. Never put a key in a
+   repo file, public or private - the `.env` in this folder is git-ignored and stays on this machine.
+
+What the hosted app does without any of that: it reads the committed `results/*_flags.json`, so a viewer
+sees the real 174-flag run, the coverage gaps, the timing distribution and every suggestion, and can try
+`timing` and `script`, which need no key. The three LLM checks fail loudly and say why.
+
+Two limits worth knowing before you send the link. The cloud filesystem is ephemeral, so decisions made
+there do not survive a redeploy - use **Export → decisions CSV** to keep them, and fill the real
+`data/annotation/decisions.csv` locally. And the free community tier sleeps when nobody is on it, so the
+first load after a gap takes a few seconds.
+
 ## What each part does
 
 | Path | Role |

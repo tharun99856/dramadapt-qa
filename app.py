@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -33,6 +34,27 @@ from src.report import (DECISIONS, FLAG_COLUMNS, apply_decisions, coverage_gaps,
 
 force_utf8()
 RESULTS = ROOT / "results"
+
+
+def apply_secrets() -> None:
+    """A deployed app has no .env file. Streamlit Cloud secrets are the only place a key can live
+    there, and they belong in the environment where src/config.py already looks for it."""
+    try:
+        secrets = st.secrets
+        for name in ("GROQ_API_KEY", "OPENAI_API_KEY"):
+            value = secrets.get(name)
+            if value and not os.environ.get(name):
+                os.environ[name] = str(value)
+    except Exception:  # noqa: BLE001 - no secrets.toml raises here, and unset is the same as absent
+        return
+
+
+def key_available() -> bool:
+    try:
+        config_mod.api_key(config_mod.load(None))
+        return True
+    except Exception:  # noqa: BLE001 - any reason the key is missing is the same answer here
+        return False
 
 
 def available_runs() -> list[str]:
@@ -91,6 +113,7 @@ def attempt_write(action: str, fn, report) -> tuple[bool, object]:
 
 def main() -> None:
     st.set_page_config(page_title="DramAdapt QA", layout="wide")
+    apply_secrets()
     st.title("DramAdapt QA - pre-dubbing quality gate")
     st.caption(
         "Quality assurance, not translation. Every flag needs an editor action; nothing here is "
@@ -105,8 +128,8 @@ def main() -> None:
     preferred = [r for r in ("structured", "demo_timing_uncalibrated") if r in runs]
     label = st.sidebar.selectbox("Run", runs, index=runs.index(preferred[0]) if preferred else len(runs) - 1)
     payload = load_run(label)
-    telugu_file = st.sidebar.text_input("Telugu draft file", payload.get("source", {})
-                                        .get("telugu_file") or "data/telugu/first_pass.json")
+    stored = payload.get("source", {}).get("telugu_file") or "data/telugu/first_pass.json"
+    telugu_file = st.sidebar.text_input("Telugu draft file", str(stored).replace("\\", "/"))
 
     lines, meta = sample_lines(Path(telugu_file))
     by_id = {rec.line_id: rec for rec in lines}
@@ -213,8 +236,15 @@ def main() -> None:
         else:
             st.write("no rows in data/relationship_sheet.yaml")
         block = sheet.get("telugu_register_standard", {})
-        st.markdown("**Telugu register standard** — "
-                    "addendum open item 3: this paragraph is a draft until the builder signs it off.")
+        st.markdown(f"**Telugu register standard** - status: `{block.get('status', 'unset')}`. "
+                    "The two reviewer decisions are recorded in `reviewer_decisions` below; the rest of "
+                    "the paragraph is still unconfirmed against the episodes.")
+        for decision in sheet.get("reviewer_decisions") or []:
+            if not isinstance(decision, dict):
+                continue
+            line = decision.get("report_sentence") or ", ".join(
+                f"{k}={v}" for k, v in decision.items() if k not in ("id", "decided", "note"))
+            st.caption(f"decided {decision.get('decided', '?')} - {decision.get('id', '')}: {line}")
         status = st.text_input("status", block.get("status", ""))
         para = st.text_area("register standard", block.get("draft_paragraph", ""), height=180)
         if st.button("Sign off / save register standard"):
@@ -225,6 +255,11 @@ def main() -> None:
                 st.rerun()
 
     with st.expander("Run checks now"):
+        st.caption("Model calls need a key: locally from `.env`, on a hosted app from Streamlit "
+                   "secrets. `timing` and `script` need none and always run."
+                   if key_available() else
+                   "No API key is available here, so the three LLM checks will fail loudly. "
+                   "`timing` and `script` need no key and always run.")
         checks = st.multiselect("checks", list(ALL_CHECKS), default=list(ALL_CHECKS))
         rate = st.text_input("Telugu rate (akshara/s) - blank uses data/calibration.json", "")
         model = st.text_input("model override (blank uses config.yaml)", "")
